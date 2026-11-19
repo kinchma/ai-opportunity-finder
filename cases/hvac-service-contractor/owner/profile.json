@@ -1,0 +1,20 @@
+{
+  "name": "Larkmoor Comfort Heating & Air",
+  "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+  "industry": "HVAC contracting and repair",
+  "size": "unknown",
+  "confidence": "high",
+  "evidence": "The website explicitly identifies the business as a family-owned heating and air conditioning (HVAC) contractor that provides repair, installation, and maintenance for residential and commercial properties.",
+  "note": "",
+  "evidence_source": {
+    "page": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+    "fields": [
+      "title",
+      "description",
+      "text"
+    ],
+    "local_fixture": true
+  },
+  "confirmed_by_owner": true,
+  "owner_corrections": {}
+}

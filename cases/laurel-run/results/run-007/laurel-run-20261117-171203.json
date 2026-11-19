@@ -1,0 +1,216 @@
+{
+  "thread_id": "laurel-run",
+  "status": "complete",
+  "review_rounds": 2,
+  "summary": {
+    "calls": 8,
+    "calls_by_agent": {
+      "discovery_profile": 1,
+      "discovery_website": 1,
+      "discovery_research": 1,
+      "process_mapper": 1,
+      "matcher": 1,
+      "strategist": 1,
+      "critic": 1,
+      "planner": 1
+    },
+    "by_agent": {
+      "discovery_profile": {
+        "calls": 1,
+        "input_tokens": 719,
+        "output_tokens": 1193,
+        "seconds": 17.419,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_website": {
+        "calls": 1,
+        "input_tokens": 833,
+        "output_tokens": 2407,
+        "seconds": 28.765,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_research": {
+        "calls": 1,
+        "input_tokens": 1203,
+        "output_tokens": 3175,
+        "seconds": 224.711,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "process_mapper": {
+        "calls": 1,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "seconds": 240.466,
+        "errors": 1,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "matcher": {
+        "calls": 1,
+        "input_tokens": 443,
+        "output_tokens": 4527,
+        "seconds": 52.151,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "strategist": {
+        "calls": 1,
+        "input_tokens": 1053,
+        "output_tokens": 3311,
+        "seconds": 39.736,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "critic": {
+        "calls": 1,
+        "input_tokens": 1789,
+        "output_tokens": 411,
+        "seconds": 12.57,
+        "errors": 0,
+        "models": [
+          "qwen2.5-7b-instruct"
+        ]
+      },
+      "planner": {
+        "calls": 1,
+        "input_tokens": 646,
+        "output_tokens": 2845,
+        "seconds": 36.955,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      }
+    },
+    "input_tokens": 6686,
+    "output_tokens": 17869,
+    "calls_without_usage": 1,
+    "errors": 1,
+    "seconds": 652.773,
+    "stub_records_ignored": 0
+  },
+  "call_log": [
+    {
+      "ts": "2026-11-16T19:52:25+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 17.419,
+      "error": null,
+      "stub": false,
+      "input_tokens": 719,
+      "output_tokens": 1193
+    },
+    {
+      "ts": "2026-11-16T19:52:53+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.765,
+      "error": null,
+      "stub": false,
+      "input_tokens": 833,
+      "output_tokens": 2407
+    },
+    {
+      "ts": "2026-11-17T22:09:23+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 224.711,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1203,
+      "output_tokens": 3175
+    },
+    {
+      "ts": "2026-11-17T22:09:42+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 240.466,
+      "error": "OpenAITimeoutError('Request timed out.')",
+      "stub": false,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-17T22:10:34+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 52.151,
+      "error": null,
+      "stub": false,
+      "input_tokens": 443,
+      "output_tokens": 4527
+    },
+    {
+      "ts": "2026-11-17T22:11:13+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 39.736,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1053,
+      "output_tokens": 3311
+    },
+    {
+      "ts": "2026-11-17T22:11:26+00:00",
+      "agent": "critic",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 12.57,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1789,
+      "output_tokens": 411
+    },
+    {
+      "ts": "2026-11-17T22:12:03+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 36.955,
+      "error": null,
+      "stub": false,
+      "input_tokens": 646,
+      "output_tokens": 2845
+    }
+  ],
+  "verified": true,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "enabler leads lowest_risk by 8.2% (under 10%). They differ in: Automated Invoice Reconciliation Agent vs Website AI assistant."
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 7.0/10, chatbot: not_found",
+    "discovery_research: 5 practices from 6 passages (hybrid retrieval)",
+    "process_mapper: 0 processes, 0 with document citations (hybrid retrieval per process) [LLM call failed: Request timed out.]",
+    "matcher: 6 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 8.2%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 3 with a rubric",
+    "review_gate: round 2, kept 3, pruned 0, best leads by 8.2%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
+  ],
+  "pruned_log": [
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "score": 0.121,
+      "reason": "ranked below top 3"
+    }
+  ]
+}

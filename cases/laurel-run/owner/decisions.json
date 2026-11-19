@@ -73,5 +73,14 @@
     "detail": {
       "note": "case folder moved to the Nov 17 layout; run 1 authorized documents (company, processes), interviews and data; research added but not authorized"
     }
+  },
+  {
+    "when": "2026-11-17T16:57:06",
+    "kind": "company_index_built",
+    "detail": {
+      "passages": 390,
+      "embed_model": "text-embedding-nomic-embed-text-v1.5",
+      "fingerprint": "a7b0f59ea394d9bb"
+    }
   }
 ]

@@ -1,0 +1,844 @@
+{
+  "company_input": {
+    "website": "local",
+    "risk_tolerance": 0.4,
+    "description": "Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard."
+  },
+  "profile": {
+    "name": "Larkmoor Comfort Heating & Air",
+    "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+    "industry": "HVAC contracting and repair",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website explicitly identifies the business as a family-owned heating and air conditioning (HVAC) contractor that provides repair, installation, and maintenance for residential and commercial properties.",
+    "note": "",
+    "evidence_source": {
+      "page": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+      "fields": [
+        "title",
+        "description",
+        "text"
+      ],
+      "local_fixture": true
+    },
+    "confirmed_by_owner": true,
+    "owner_corrections": {}
+  },
+  "site_text": "Larkmoor Comfort Heating & Air is a family-owned HVAC contractor in Larkmoor, Ohio: furnace and air conditioner repair, replacement, the Comfort Club maintenance plan, and commercial maintenance agreements across the north and east Columbus suburbs. Larkmoor Comfort Heating & Air Family-owned heating and air conditioning (HVAC) contractor since 1994. Service, repair and installation for homes and commercial buildings in Larkmoor, Westerville, Gahanna, New Albany, Delaware and the north and east Columbus suburbs of Ohio. Call (614) 555-0142 service@larkmoorcomfort.example Heating and cooling service and repair Furnaces, heat pumps, central air conditioners, ductless mini-splits, humidifiers and thermostats. Our licensed technicians repair all major brands. Same-day service when the schedule allows; after-hours emergency service through our answering service. System replacement When repair no longer makes sense, a Comfort Advisor visits your home, measures the house and gives you written options. Our install crews replace about 300 home systems a year. We are an authorized dealer for Aerovance heating and cooling equipment. Comfort Club maintenance plan Two tune-ups a year (spring cooling, fall heating), priority scheduling, no overtime charges and 15% off repairs. $189 per year. More than 600 neighbors are members. Commercial HVAC Preventive maintenance agreements, rooftop unit (RTU) service and replacement for offices, retail centers, churches, schools and property managers. Our commercial team maintains equipment for about 90 buildings in central Ohio. Request service Name Phone Address What is going on? Send request Requests sent through this form go to our office inbox. For no heat or no cooling, please call. About us Glen and Ruth Vossberg started Larkmoor Comfort in 1994 with one truck. Today about 35 people work here, including 14 service technicians and two install crews. Ohio HVAC contractor license on file. Hours: Monday to Friday 7:30 am to 5:00 pm; emergency service after hours. Follow us on Facebook . Larkmoor Comfort Heating & Air, Inc. | 2290 Fenwick Road, Larkmoor, OH | (614) 555-0142 Fictional company created for an academic test case. Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard.",
+  "documents": [],
+  "document_chunks": [],
+  "company_index": "cases/hvac-service-contractor/index",
+  "company_retrieval": {
+    "mode": "off",
+    "reason": "no authorized company material"
+  },
+  "website_assessment": {
+    "rating": 8.2,
+    "partial": false,
+    "social_presence": {
+      "found_on_pages_read": {
+        "facebook": [
+          "https://www.facebook.com/larkmoorcomfort.example"
+        ]
+      },
+      "not_found_on_pages_read": [
+        "linkedin",
+        "instagram",
+        "tiktok",
+        "youtube",
+        "x_twitter"
+      ],
+      "owner_pasted_linkedin": false,
+      "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+    },
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 9,
+        "reason": "The page explicitly states the business name, service types, target locations, and customer segments (homeowners and commercial property managers) within the first few lines.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 9,
+        "reason": "The page provides a direct phone number, an email address, and a prominent 'Request service' form with clear instructions to call for emergencies.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The text provides substantial credibility markers including a 1994 founding date, an on-file state license, specific employee and project counts, and a named equipment partnership.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 10,
+        "reason": "found phone link, email link, form",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 7,
+        "reason": "not served over https",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Schedule a Comfort Club",
+      "Request Emergency Service",
+      "Get a System Quote"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "intake_confirmed": true,
+  "best_practices": {
+    "industry": "HVAC contracting and repair",
+    "practices": [
+      {
+        "practice": "Publish a short public statement disclosing how the business uses AI tools.",
+        "why_it_matters": "Builds transparency and manages customer expectations, even though no federal or state law currently requires it.",
+        "chunk_id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business",
+        "url": "https://www.sba.gov/counseling/manage-your-business/#si-for-small-business"
+      },
+      {
+        "practice": "Assign a dedicated owner and document the specific purpose and data scope for each AI tool.",
+        "why_it_matters": "Establishes clear accountability and identifies potential privacy or security risks upfront.",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "practice": "Implement mandatory human review of AI outputs before they are shared with customers, employees, or regulators.",
+        "why_it_matters": "Safeguards against ethics issues, security risks, IP infringement, and inaccurate or confabulated content.",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "practice": "Track operational metrics such as error rates, correction frequency, and time saved per tool.",
+        "why_it_matters": "Provides measurable data to evaluate effectiveness and justify continued use or adjustments.",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "practice": "Maintain a reliable off-switch and recovery process for all AI implementations.",
+        "why_it_matters": "Ensures business continuity and allows immediate mitigation if a tool malfunctions or causes harm.",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "practice": "Prohibit entering sensitive business data into uncontrolled or free AI tools.",
+        "why_it_matters": "Protects confidential information from security breaches and intellectual property infringement.",
+        "chunk_id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business",
+        "url": "https://www.sba.gov/counseling/manage-your-business/#si-for-small-business"
+      }
+    ],
+    "note": "no curated sources for 'HVAC contracting and repair'; using general guidance only",
+    "sources": [
+      "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+      "SBA Business Guide: AI for small business"
+    ],
+    "passages": [
+      {
+        "id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business"
+      },
+      {
+        "id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources"
+      }
+    ],
+    "retrieval": {
+      "mode": "hybrid",
+      "reason": "",
+      "embed_model": "text-embedding-nomic-embed-text-v1.5",
+      "index_rebuilt": false,
+      "query": "HVAC contracting and repair AI automation best practices process efficiency The website explicitly identifies the business as a family-owned heating and air conditioning (HVAC) contractor that provides repair, installation, and maintenance for residential and commercial properties. Family-owned HVAC",
+      "embedding_calls": [
+        {
+          "agent": "embedding",
+          "model": "text-embedding-nomic-embed-text-v1.5",
+          "texts": 1,
+          "seconds": 0.307,
+          "error": null
+        }
+      ]
+    }
+  },
+  "process_map": {
+    "processes": [
+      {
+        "name": "Service Request Intake & Dispatch",
+        "description": "Customers submit service requests via a website form or phone call; office staff log them on paper tickets and route urgent cases to an answering service for after-hours emergencies.",
+        "pain_points": [
+          "Manual data entry from web form to paper tickets",
+          "Risk of lost or misrouted emergency calls",
+          "No automated routing to available technicians"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Scheduling & Dispatch Management",
+        "description": "Office staff use a physical whiteboard and spreadsheet to assign jobs, prioritize Comfort Club members, and manage same-day or after-hours emergency calls across 14 technicians.",
+        "pain_points": [
+          "Whiteboard visibility limits for remote or off-site staff",
+          "Spreadsheet version control and manual updates",
+          "Difficulty balancing priority members with emergency requests"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Field Repair & Maintenance Execution",
+        "description": "Licensed technicians visit residential and commercial sites to diagnose, repair, or maintain HVAC systems including furnaces, heat pumps, central ACs, and ductless mini-splits.",
+        "pain_points": [
+          "Travel time between suburban job sites",
+          "Manual parts tracking on paper tickets",
+          "Inconsistent documentation of completed work and warranties"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "System Replacement & Installation Project Management",
+        "description": "Comfort Advisors conduct home assessments, perform load calculations, provide written replacement options, and coordinate two install crews to replace approximately 300 home systems annually.",
+        "pain_points": [
+          "Manual measurement and quoting process",
+          "Coordination friction between advisors and install crews",
+          "Tracking 300+ annual installations on spreadsheets"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Membership Plan Administration (Comfort Club)",
+        "description": "Manage 600+ annual subscribers for $189, schedule bi-annual tune-ups (spring cooling, fall heating), apply priority scheduling, and waive overtime charges for members.",
+        "pain_points": [
+          "Manual tracking of 600+ active memberships",
+          "Scheduling conflicts between priority members and regular jobs",
+          "Manual calculation and application of overtime waivers"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Commercial Account & Preventive Maintenance Management",
+        "description": "Manage preventive maintenance agreements and rooftop unit (RTU) service/replacement for approximately 90 commercial buildings, including offices, retail centers, churches, and schools.",
+        "pain_points": [
+          "Tracking service history across 90 diverse commercial sites",
+          "Manual contract renewal and billing tracking",
+          "Coordinating specialized commercial technicians with residential schedules"
+        ],
+        "basis": "typical",
+        "sources": []
+      }
+    ],
+    "doc_vs_reality_gaps": [],
+    "sources_index": {},
+    "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+    "retrieval": {
+      "mode": "off"
+    }
+  },
+  "gap_report": [
+    {
+      "process": "Service Request Intake & Dispatch",
+      "gap": "Manual data entry from web forms to paper tickets and manual call routing.",
+      "opportunity": "Automated Service Request Triage Agent",
+      "supporting_chunk_id": "nist-ai-rmf#2"
+    },
+    {
+      "process": "Scheduling & Dispatch Management",
+      "gap": "Manual whiteboard/spreadsheet updates with version control issues and difficulty balancing priority members vs emergencies.",
+      "opportunity": "Priority-Based Scheduling Optimizer Agent",
+      "supporting_chunk_id": "nist-ai-rmf#2"
+    },
+    {
+      "process": "Field Repair & Maintenance Execution",
+      "gap": "Manual parts tracking on paper tickets and inconsistent work/warranty documentation.",
+      "opportunity": "Technician Job Site Documentation Assistant",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": "System Replacement & Installation Project Management",
+      "gap": "Manual measurement/quoting process and coordination friction between advisors and install crews.",
+      "opportunity": "Load Calculation & Quote Drafting Agent",
+      "supporting_chunk_id": "nist-ai-rmf#2"
+    },
+    {
+      "process": "Membership Plan Administration (Comfort Club)",
+      "gap": "Manual tracking of 600+ active memberships and manual calculation/application of overtime waivers.",
+      "opportunity": "Comfort Club Renewal & Scheduling Coordinator Agent",
+      "supporting_chunk_id": "nist-ai-rmf#2"
+    },
+    {
+      "process": "Commercial Account & Preventive Maintenance Management",
+      "gap": "Manual tracking of service history across diverse commercial sites and fragmented contract data.",
+      "opportunity": "Commercial Service History Knowledge Base Agent",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "opportunity": "Website AI assistant",
+      "supporting_chunk_id": null
+    }
+  ],
+  "scored_opportunities": [
+    {
+      "name": "Automated Service Request Triage Agent",
+      "what_the_agent_does": "Parses incoming web forms and phone transcripts to extract customer details, HVAC system type, and urgency level, then auto-creates digital tickets and routes high-priority cases to the answering service or on-call technician.",
+      "process": "Service Request Intake & Dispatch",
+      "gap": "Manual data entry from web forms to paper tickets and manual call routing.",
+      "supporting_chunk_id": "nist-ai-rmf#2",
+      "value": 8,
+      "effort": 4,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value by eliminating paper ticket entry and accelerating emergency routing; moderate effort to integrate with existing web forms; low risk as mandatory human review catches misclassifications before dispatch.",
+      "placeholder": false,
+      "score": 0.42
+    },
+    {
+      "name": "Priority-Based Scheduling Optimizer Agent",
+      "what_the_agent_does": "Analyzes technician locations, certifications, Comfort Club status, and job urgency to auto-suggest optimal daily routes and flag schedule conflicts for office staff approval.",
+      "process": "Scheduling & Dispatch Management",
+      "gap": "Manual whiteboard/spreadsheet updates with version control issues and difficulty balancing priority members vs emergencies.",
+      "supporting_chunk_id": "nist-ai-rmf#2",
+      "value": 9,
+      "effort": 6,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "High value by resolving spreadsheet version control and priority conflicts; higher effort due to real-time location/skill data integration; moderate risk managed by mandatory human approval before finalizing routes.",
+      "placeholder": false,
+      "score": 0.36
+    },
+    {
+      "name": "Technician Job Site Documentation Assistant",
+      "what_the_agent_does": "Uses voice-to-text and photo analysis to auto-populate service reports, track parts used against inventory lists, and generate warranty documentation for completed HVAC repairs.",
+      "process": "Field Repair & Maintenance Execution",
+      "gap": "Manual parts tracking on paper tickets and inconsistent work/warranty documentation.",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 7,
+      "effort": 5,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Solid value by standardizing field documentation and reducing paper waste; moderate effort to build voice/image parsing; low risk due to straightforward verification by office staff before filing.",
+      "placeholder": false,
+      "score": 0.33
+    },
+    {
+      "name": "Load Calculation & Quote Drafting Agent",
+      "what_the_agent_does": "Processes home assessment notes and square footage data to run preliminary load calculations, draft replacement options with pricing tiers, and sync project timelines between Comfort Advisors and install crews.",
+      "process": "System Replacement & Installation Project Management",
+      "gap": "Manual measurement/quoting process and coordination friction between advisors and install crews.",
+      "supporting_chunk_id": "nist-ai-rmf#2",
+      "value": 8,
+      "effort": 7,
+      "risk": 5,
+      "enabler": false,
+      "rating_reason": "High value by streamlining 300+ annual quotes and crew coordination; higher effort due to HVAC load calculation complexity; moderate risk requires licensed advisor review before finalizing equipment sizing.",
+      "placeholder": false,
+      "score": 0.15
+    },
+    {
+      "name": "Comfort Club Renewal & Scheduling Coordinator Agent",
+      "what_the_agent_does": "Monitors 600+ membership expiration dates, auto-schedules bi-annual tune-ups prioritizing Comfort Club members, calculates overtime waivers, and flags scheduling conflicts for office staff.",
+      "process": "Membership Plan Administration (Comfort Club)",
+      "gap": "Manual tracking of 600+ active memberships and manual calculation/application of overtime waivers.",
+      "supporting_chunk_id": "nist-ai-rmf#2",
+      "value": 9,
+      "effort": 3,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "High value by automating renewal tracking and priority scheduling; low effort using existing CRM/calendar data; minimal risk as office staff manually confirm bookings before sending confirmations.",
+      "placeholder": false,
+      "score": 0.63
+    },
+    {
+      "name": "Commercial Service History Knowledge Base Agent",
+      "what_the_agent_does": "Ingests historical work orders, contract terms, and equipment manuals for 90 commercial sites into a searchable AI knowledge base to enable quick retrieval of service history and contract details.",
+      "process": "Commercial Account & Preventive Maintenance Management",
+      "gap": "Manual tracking of service history across diverse commercial sites and fragmented contract data.",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 6,
+      "effort": 4,
+      "risk": 1,
+      "enabler": true,
+      "rating_reason": "Foundation work that unlocks other agents by centralizing fragmented data; moderate effort to clean and index historical records; very low risk as it only retrieves existing information without making autonomous decisions.",
+      "placeholder": false,
+      "score": 0.34
+    },
+    {
+      "name": "Website AI assistant",
+      "what_the_agent_does": "Greets visitors and offers starting choices (Schedule a Comfort Club; Request Emergency Service; Get a System Quote), answers common questions from approved business information, and hands off to a person.",
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "supporting_chunk_id": null,
+      "enabler": false,
+      "rating_reason": "ratings set by code (fixed defaults), not by the model",
+      "placeholder": false,
+      "from_website_check": true,
+      "starter_prompts": [
+        "Schedule a Comfort Club",
+        "Request Emergency Service",
+        "Get a System Quote"
+      ],
+      "value": 6,
+      "effort": 3,
+      "risk": 3,
+      "score": 0.27
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "opportunities": [
+        "Comfort Club Renewal & Scheduling Coordinator Agent",
+        "Priority-Based Scheduling Optimizer Agent",
+        "Automated Service Request Triage Agent"
+      ],
+      "score": 0.529,
+      "rationale": "Starting with the Comfort Club agent captures recurring revenue and secures high-value memberships before tackling complex routing. The scheduling optimizer builds on that data to maximize technician utilization and reduce overtime costs. Finally, triage handles incoming demand efficiently once the core membership and routing logic are stable.",
+      "pilot_reason": "The Comfort Club agent is piloted first because it directly protects existing revenue streams with minimal technical complexity and immediate office staff adoption.",
+      "assumption": "Office staff will consistently update membership expiration data in the existing system for the agent to function accurately.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Membership Plan Administration (Comfort Club)",
+          "Scheduling & Dispatch Management",
+          "Service Request Intake & Dispatch"
+        ],
+        "objection": "The sequencing assumes a level of data maturity that may not exist initially, potentially requiring significant upfront data cleaning and structuring before the agents can function effectively.",
+        "weakest_item": "Priority-Based Scheduling Optimizer Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.47,
+      "penalty": 0,
+      "coded_score": 0.47,
+      "findings": []
+    },
+    {
+      "id": "enabler",
+      "angle": "enabler",
+      "opportunities": [
+        "Commercial Service History Knowledge Base Agent",
+        "Comfort Club Renewal & Scheduling Coordinator Agent",
+        "Automated Service Request Triage Agent"
+      ],
+      "score": 0.521,
+      "rationale": "Establishing the knowledge base first creates a centralized data repository that all subsequent agents will depend on for accurate context and historical reference. The Comfort Club agent builds directly on this foundation to automate membership management using the newly structured data. The triage agent is implemented last because it requires robust historical and operational data streams to accurately parse urgency and route requests effectively.",
+      "pilot_reason": "The knowledge base is piloted first because it provides the essential data infrastructure required for all other automation agents to function correctly.",
+      "assumption": "The business has sufficient digitized historical records and contract documents to populate the knowledge base with enough quality data to drive downstream automation.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Commercial Account & Preventive Maintenance Management",
+          "Membership Plan Administration (Comfort Club)",
+          "Service Request Intake & Dispatch"
+        ],
+        "objection": "While the enabler approach is sound, it relies heavily on a successful knowledge base implementation which itself can be challenging to populate and maintain accurately.",
+        "weakest_item": "Automated Service Request Triage Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.463,
+      "penalty": 0,
+      "coded_score": 0.463,
+      "findings": []
+    },
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "Commercial Service History Knowledge Base Agent",
+        "Comfort Club Renewal & Scheduling Coordinator Agent",
+        "Technician Job Site Documentation Assistant"
+      ],
+      "score": 0.488,
+      "rationale": "Building the knowledge base first establishes a secure, read-only foundation that poses zero operational disruption to active field or office workflows. The Comfort Club agent follows as a low-risk automation that leverages existing scheduling processes without altering core operations. The field documentation assistant is deployed last because it introduces new hardware interactions with technicians, requiring proven stability from earlier steps.",
+      "pilot_reason": "The knowledge base is piloted first because it operates passively in the background, eliminating any risk of disrupting active service calls or office operations.",
+      "assumption": "Historical work orders and equipment manuals are digitized and accessible enough to be successfully ingested into the knowledge base without extensive manual cleanup.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 5,
+        "sequencing": 4,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Commercial Account & Preventive Maintenance Management",
+          "Membership Plan Administration (Comfort Club)",
+          "Field Repair & Maintenance Execution"
+        ],
+        "objection": "The Technician Job Site Documentation Assistant introduces hardware interaction, which could be problematic for technicians and requires a more robust testing phase.",
+        "weakest_item": "Technician Job Site Documentation Assistant",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.433,
+      "penalty": 0,
+      "coded_score": 0.433,
+      "findings": []
+    }
+  ],
+  "review_round": 2,
+  "revision_exhausted": true,
+  "pruned_log": [
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "score": 0.473,
+      "reason": "ranked below top 3"
+    }
+  ],
+  "verified": true,
+  "verification_report": {
+    "roadmap": "highest_value",
+    "claims": [
+      {
+        "idea": "Comfort Club Renewal & Scheduling Coordinator Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Membership Plan Administration (Comfort Club)",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage describes AI governance frameworks and risk management, not scheduling or membership tracking."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Priority-Based Scheduling Optimizer Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Scheduling & Dispatch Management",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage outlines AI risk management guidelines, not route optimization or scheduling practices."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Automated Service Request Triage Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Service Request Intake & Dispatch",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage discusses AI governance frameworks, not automated ticket creation or routing."
+        },
+        "note": ""
+      }
+    ],
+    "coverage": 1.0,
+    "grounded": 3,
+    "practices_available": 6,
+    "passed": true,
+    "reasons": [],
+    "no_practices": false,
+    "note": "",
+    "rejected": []
+  },
+  "escalate_now": false,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "highest_value leads enabler by 1.5% (under 10%). They differ in: Priority-Based Scheduling Optimizer Agent vs Commercial Service History Knowledge Base Agent."
+    }
+  ],
+  "final_recommendation": {
+    "roadmap": {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "opportunities": [
+        "Comfort Club Renewal & Scheduling Coordinator Agent",
+        "Priority-Based Scheduling Optimizer Agent",
+        "Automated Service Request Triage Agent"
+      ],
+      "score": 0.529,
+      "rationale": "Starting with the Comfort Club agent captures recurring revenue and secures high-value memberships before tackling complex routing. The scheduling optimizer builds on that data to maximize technician utilization and reduce overtime costs. Finally, triage handles incoming demand efficiently once the core membership and routing logic are stable.",
+      "pilot_reason": "The Comfort Club agent is piloted first because it directly protects existing revenue streams with minimal technical complexity and immediate office staff adoption.",
+      "assumption": "Office staff will consistently update membership expiration data in the existing system for the agent to function accurately.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Membership Plan Administration (Comfort Club)",
+          "Scheduling & Dispatch Management",
+          "Service Request Intake & Dispatch"
+        ],
+        "objection": "The sequencing assumes a level of data maturity that may not exist initially, potentially requiring significant upfront data cleaning and structuring before the agents can function effectively.",
+        "weakest_item": "Priority-Based Scheduling Optimizer Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.47,
+      "penalty": 0,
+      "coded_score": 0.47,
+      "findings": []
+    },
+    "agents_to_build": [
+      "Comfort Club Renewal & Scheduling Coordinator Agent",
+      "Priority-Based Scheduling Optimizer Agent",
+      "Automated Service Request Triage Agent"
+    ],
+    "runner_up": {
+      "id": "enabler",
+      "angle": "enabler",
+      "opportunities": [
+        "Commercial Service History Knowledge Base Agent",
+        "Comfort Club Renewal & Scheduling Coordinator Agent",
+        "Automated Service Request Triage Agent"
+      ],
+      "score": 0.521,
+      "rationale": "Establishing the knowledge base first creates a centralized data repository that all subsequent agents will depend on for accurate context and historical reference. The Comfort Club agent builds directly on this foundation to automate membership management using the newly structured data. The triage agent is implemented last because it requires robust historical and operational data streams to accurately parse urgency and route requests effectively.",
+      "pilot_reason": "The knowledge base is piloted first because it provides the essential data infrastructure required for all other automation agents to function correctly.",
+      "assumption": "The business has sufficient digitized historical records and contract documents to populate the knowledge base with enough quality data to drive downstream automation.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Commercial Account & Preventive Maintenance Management",
+          "Membership Plan Administration (Comfort Club)",
+          "Service Request Intake & Dispatch"
+        ],
+        "objection": "While the enabler approach is sound, it relies heavily on a successful knowledge base implementation which itself can be challenging to populate and maintain accurately.",
+        "weakest_item": "Automated Service Request Triage Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.463,
+      "penalty": 0,
+      "coded_score": 0.463,
+      "findings": []
+    },
+    "close_call": true,
+    "lead_margin": 0.015,
+    "verified": true,
+    "verification": {
+      "roadmap": "highest_value",
+      "claims": [
+        {
+          "idea": "Comfort Club Renewal & Scheduling Coordinator Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Membership Plan Administration (Comfort Club)",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage describes AI governance frameworks and risk management, not scheduling or membership tracking."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Priority-Based Scheduling Optimizer Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Scheduling & Dispatch Management",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage outlines AI risk management guidelines, not route optimization or scheduling practices."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Automated Service Request Triage Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Service Request Intake & Dispatch",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage discusses AI governance frameworks, not automated ticket creation or routing."
+          },
+          "note": ""
+        }
+      ],
+      "coverage": 1.0,
+      "grounded": 3,
+      "practices_available": 6,
+      "passed": true,
+      "reasons": [],
+      "no_practices": false,
+      "note": "",
+      "rejected": []
+    },
+    "close_call_detail": "highest_value leads enabler by 1.5% (under 10%). They differ in: Priority-Based Scheduling Optimizer Agent vs Commercial Service History Knowledge Base Agent."
+  },
+  "status": "complete",
+  "model_calls": 8,
+  "trace": [
+    "discovery_profile: website guess -> HVAC contracting and repair (high) | website rating 8.2/10, chatbot: not_found",
+    "discovery_research: 6 practices from 2 passages (hybrid retrieval) [no curated sources for 'HVAC contracting and repair'; using general guidance only]",
+    "process_mapper: 6 processes",
+    "matcher: 7 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 1.5%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 3 with a rubric",
+    "review_gate: round 2, kept 3, pruned 0, best leads by 1.5%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
+  ],
+  "call_log": [
+    {
+      "ts": "2026-11-18T20:28:39+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 31.905,
+      "error": null,
+      "stub": false,
+      "input_tokens": 714,
+      "output_tokens": 1364
+    },
+    {
+      "ts": "2026-11-18T20:29:04+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 25.08,
+      "error": null,
+      "stub": false,
+      "input_tokens": 797,
+      "output_tokens": 2044
+    },
+    {
+      "ts": "2026-11-18T20:32:07+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 56.486,
+      "error": null,
+      "stub": false,
+      "input_tokens": 518,
+      "output_tokens": 2997
+    },
+    {
+      "ts": "2026-11-18T20:32:16+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 66.528,
+      "error": null,
+      "stub": false,
+      "input_tokens": 900,
+      "output_tokens": 3731
+    },
+    {
+      "ts": "2026-11-18T20:33:04+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 47.391,
+      "error": null,
+      "stub": false,
+      "input_tokens": 849,
+      "output_tokens": 3936
+    },
+    {
+      "ts": "2026-11-18T20:33:51+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 46.809,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1189,
+      "output_tokens": 3800
+    },
+    {
+      "ts": "2026-11-18T20:34:56+00:00",
+      "agent": "critic",
+      "model": "google/gemma-3-12b",
+      "seconds": 64.909,
+      "error": null,
+      "stub": false,
+      "input_tokens": 2069,
+      "output_tokens": 503
+    },
+    {
+      "ts": "2026-11-18T20:35:23+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 27.233,
+      "error": null,
+      "stub": false,
+      "input_tokens": 852,
+      "output_tokens": 1813
+    }
+  ]
+}

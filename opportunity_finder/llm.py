@@ -68,10 +68,27 @@ def llm_settings(agent: str | None = None, model: str | None = None) -> dict:
     }
 
 
+# Seconds to wait for one reply. A local thinking model (Qwen3.6) writes thousands of hidden
+# reasoning tokens, and two agents share the GPU when they run in parallel: run-005's research call
+# took 196 s, and the Process Mapper's retrieval prompt (about 18,000 tokens) timed out at 120 s in
+# runs 006 and 007. Override with LLM_TIMEOUT or LLM_<AGENT>_TIMEOUT.
+DEFAULT_TIMEOUT = 300
+AGENT_TIMEOUTS = {"process_mapper": 900, "discovery_research": 600}
+
+
+def timeout_for(agent: str | None) -> float:
+    if agent and os.getenv(f"LLM_{agent.upper()}_TIMEOUT"):
+        return float(os.getenv(f"LLM_{agent.upper()}_TIMEOUT"))
+    if os.getenv("LLM_TIMEOUT"):
+        return float(os.getenv("LLM_TIMEOUT"))
+    return float(AGENT_TIMEOUTS.get((agent or "").lower(), DEFAULT_TIMEOUT))
+
+
 def get_llm(agent: str | None = None, model: str | None = None,
-            temperature: float = 0.2, timeout: float = 120):
+            temperature: float = 0.2, timeout: float | None = None):
     """Return a chat model for `agent`. Raises HostedModelNotAllowed if that agent points at a
-    hosted model without being listed in LLM_ALLOW_HOSTED."""
+    hosted model without being listed in LLM_ALLOW_HOSTED. No automatic retry on a timeout: the
+    local server keeps working on an abandoned request, so a retry would only queue behind it."""
     from langchain_openai import ChatOpenAI  # imported lazily so stubs run without it
 
     s = llm_settings(agent, model)
@@ -80,4 +97,4 @@ def get_llm(agent: str | None = None, model: str | None = None,
             f"{agent or 'this agent'} is configured for a hosted model at {s['base_url']}; "
             f"add '{agent}' to LLM_ALLOW_HOSTED to allow it")
     return ChatOpenAI(model=s["model"], temperature=temperature, base_url=s["base_url"],
-                      api_key=s["api_key"], timeout=timeout, max_retries=1)
+                      api_key=s["api_key"], timeout=timeout or timeout_for(agent), max_retries=0)

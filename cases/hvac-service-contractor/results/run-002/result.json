@@ -1,0 +1,838 @@
+{
+  "company_input": {
+    "website": "local",
+    "risk_tolerance": 0.4,
+    "description": "Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard."
+  },
+  "profile": {
+    "name": "Larkmoor Comfort Heating & Air",
+    "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+    "industry": "HVAC contracting and repair",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website explicitly identifies the business as a family-owned heating and air conditioning (HVAC) contractor that provides repair, installation, and maintenance for residential and commercial properties.",
+    "note": "",
+    "evidence_source": {
+      "page": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+      "fields": [
+        "title",
+        "description",
+        "text"
+      ],
+      "local_fixture": true
+    },
+    "confirmed_by_owner": true,
+    "owner_corrections": {}
+  },
+  "site_text": "Larkmoor Comfort Heating & Air is a family-owned HVAC contractor in Larkmoor, Ohio: furnace and air conditioner repair, replacement, the Comfort Club maintenance plan, and commercial maintenance agreements across the north and east Columbus suburbs. Larkmoor Comfort Heating & Air Family-owned heating and air conditioning (HVAC) contractor since 1994. Service, repair and installation for homes and commercial buildings in Larkmoor, Westerville, Gahanna, New Albany, Delaware and the north and east Columbus suburbs of Ohio. Call (614) 555-0142 service@larkmoorcomfort.example Heating and cooling service and repair Furnaces, heat pumps, central air conditioners, ductless mini-splits, humidifiers and thermostats. Our licensed technicians repair all major brands. Same-day service when the schedule allows; after-hours emergency service through our answering service. System replacement When repair no longer makes sense, a Comfort Advisor visits your home, measures the house and gives you written options. Our install crews replace about 300 home systems a year. We are an authorized dealer for Aerovance heating and cooling equipment. Comfort Club maintenance plan Two tune-ups a year (spring cooling, fall heating), priority scheduling, no overtime charges and 15% off repairs. $189 per year. More than 600 neighbors are members. Commercial HVAC Preventive maintenance agreements, rooftop unit (RTU) service and replacement for offices, retail centers, churches, schools and property managers. Our commercial team maintains equipment for about 90 buildings in central Ohio. Request service Name Phone Address What is going on? Send request Requests sent through this form go to our office inbox. For no heat or no cooling, please call. About us Glen and Ruth Vossberg started Larkmoor Comfort in 1994 with one truck. Today about 35 people work here, including 14 service technicians and two install crews. Ohio HVAC contractor license on file. Hours: Monday to Friday 7:30 am to 5:00 pm; emergency service after hours. Follow us on Facebook . Larkmoor Comfort Heating & Air, Inc. | 2290 Fenwick Road, Larkmoor, OH | (614) 555-0142 Fictional company created for an academic test case. Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard.",
+  "documents": [],
+  "document_chunks": [],
+  "company_index": "cases/hvac-service-contractor/index",
+  "company_retrieval": {
+    "mode": "off",
+    "reason": "no authorized company material"
+  },
+  "website_assessment": {
+    "rating": 8.2,
+    "partial": false,
+    "social_presence": {
+      "found_on_pages_read": {
+        "facebook": [
+          "https://www.facebook.com/larkmoorcomfort.example"
+        ]
+      },
+      "not_found_on_pages_read": [
+        "linkedin",
+        "instagram",
+        "tiktok",
+        "youtube",
+        "x_twitter"
+      ],
+      "owner_pasted_linkedin": false,
+      "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+    },
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 9,
+        "reason": "The page explicitly states the business name, service types, target locations, and customer segments (homeowners and commercial property managers) within the first few lines.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 9,
+        "reason": "The page provides a direct phone number, an email address, and a prominent 'Request service' form with clear instructions to call for emergencies.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The text provides substantial credibility markers including a 1994 founding date, an on-file state license, specific employee and project counts, and a named equipment partnership.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 10,
+        "reason": "found phone link, email link, form",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 7,
+        "reason": "not served over https",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Schedule a Comfort Club",
+      "Request Emergency Service",
+      "Get a System Quote"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "intake_confirmed": true,
+  "best_practices": {
+    "industry": "HVAC contracting and repair",
+    "practices": [
+      {
+        "practice": "Automate repeat tasks, analyze business data, and improve customer service",
+        "why_it_matters": "These are core benefits that help small businesses streamline operations and enhance service delivery",
+        "chunk_id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business",
+        "url": "https://www.sba.gov/counseling/manage-your-business/#si-for-small-business"
+      },
+      {
+        "practice": "Require human review of outputs from free or general-purpose AI tools",
+        "why_it_matters": "Ensures ethics, security, and accuracy while preventing intellectual-property infringement or sensitive data exposure",
+        "chunk_id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business",
+        "url": "https://www.sba.gov/counseling/manage-your-business/#si-for-small-business"
+      },
+      {
+        "practice": "Publish a short public statement disclosing AI usage",
+        "why_it_matters": "Builds transparency and manages customer expectations, helping to preempt pushback on automated outreach",
+        "chunk_id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business",
+        "url": "https://www.sba.gov/counseling/manage-your-business/#si-for-small-business"
+      },
+      {
+        "practice": "Assign a dedicated owner for each AI use and document its purpose and data access",
+        "why_it_matters": "Establishes clear accountability and governance to prevent misuse or privacy breaches",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "practice": "Maintain human oversight and review of AI outputs before they reach external or internal stakeholders",
+        "why_it_matters": "Ensures decision accountability and prevents harmful content, confabulation, or integrity issues from affecting customers or regulators",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "practice": "Track performance metrics (error rates, correction frequency, time saved) and maintain an off-switch/recovery mechanism",
+        "why_it_matters": "Enables continuous improvement, measures actual value, and ensures business continuity if the tool fails",
+        "chunk_id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "note": "no curated sources for 'HVAC contracting and repair'; using general guidance only",
+    "sources": [
+      "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources",
+      "SBA Business Guide: AI for small business"
+    ],
+    "passages": [
+      {
+        "id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business"
+      },
+      {
+        "id": "nist-ai-rmf#2",
+        "source": "NIST AI Risk Management Framework 1.0 (NIST AI 100-1, January 2023) and companion resources"
+      }
+    ],
+    "retrieval": {
+      "mode": "hybrid",
+      "reason": "",
+      "embed_model": "text-embedding-nomic-embed-text-v1.5",
+      "index_rebuilt": false,
+      "query": "HVAC contracting and repair AI automation best practices process efficiency The website explicitly identifies the business as a family-owned heating and air conditioning (HVAC) contractor that provides repair, installation, and maintenance for residential and commercial properties. Family-owned HVAC",
+      "embedding_calls": [
+        {
+          "agent": "embedding",
+          "model": "text-embedding-nomic-embed-text-v1.5",
+          "texts": 1,
+          "seconds": 0.256,
+          "error": null
+        }
+      ]
+    }
+  },
+  "process_map": {
+    "processes": [
+      {
+        "name": "Service Request Intake",
+        "description": "Receiving service calls via phone, online contact form, and third-party answering service for after-hours emergencies.",
+        "pain_points": [
+          "Manual data entry from paper/online forms",
+          "Potential call routing delays"
+        ],
+        "basis": "stated",
+        "sources": []
+      },
+      {
+        "name": "Scheduling & Dispatch",
+        "description": "Assigning technicians to jobs using a whiteboard and spreadsheet, managing priority for maintenance members.",
+        "pain_points": [
+          "Reliance on manual tracking tools",
+          "Risk of double-booking or missed priorities"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Field Repair & Installation Execution",
+        "description": "Technicians performing diagnostics, repairs, and emergency calls on residential and commercial HVAC systems.",
+        "pain_points": [
+          "Travel time management",
+          "Parts availability tracking"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "On-Site Quoting & Estimating",
+        "description": "Comfort Advisors visit homes, measure properties, and provide written replacement options.",
+        "pain_points": [
+          "Manual measurement/data collection",
+          "Delayed quote generation"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Membership & Contract Administration",
+        "description": "Managing Comfort Club subscriptions and commercial maintenance agreements for residential and business clients.",
+        "pain_points": [
+          "Tracking renewal dates manually",
+          "Scheduling bi-annual tune-ups"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Invoicing & Payment Processing",
+        "description": "Generating bills for repairs, installations, and memberships, tracking payments, and following up on outstanding balances.",
+        "pain_points": [
+          "Manual invoice creation from paper tickets",
+          "Delayed payment follow-up"
+        ],
+        "basis": "typical",
+        "sources": []
+      }
+    ],
+    "doc_vs_reality_gaps": [],
+    "sources_index": {},
+    "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+    "retrieval": {
+      "mode": "off"
+    }
+  },
+  "gap_report": [
+    {
+      "process": "Service Request Intake",
+      "gap": "Manual data entry from paper/online forms and call routing delays.",
+      "opportunity": "Intake Triage & Routing Agent",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": "Scheduling & Dispatch",
+      "gap": "Reliance on manual tracking tools (whiteboard/spreadsheet) leading to double-booking or missed priorities.",
+      "opportunity": "Dynamic Route & Priority Optimizer",
+      "supporting_chunk_id": "nist-ai-rmf#2"
+    },
+    {
+      "process": "Field Repair & Installation Execution",
+      "gap": "Travel time management and parts availability tracking (technicians making extra trips).",
+      "opportunity": "First-Trip Parts Predictor",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": "On-Site Quoting & Estimating",
+      "gap": "Manual measurement/data collection and delayed quote generation (customers wait days).",
+      "opportunity": "Automated Quote Generator",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": "Membership & Contract Administration",
+      "gap": "Tracking renewal dates manually and scheduling bi-annual tune-ups (high churn, missed revenue).",
+      "opportunity": "Renewal & Tune-Up Scheduler",
+      "supporting_chunk_id": "nist-ai-rmf#2"
+    },
+    {
+      "process": "Invoicing & Payment Processing",
+      "gap": "Manual invoice creation from paper tickets and delayed payment follow-up (cash flow delays).",
+      "opportunity": "Invoice & AR Follow-Up Agent",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "opportunity": "Website AI assistant",
+      "supporting_chunk_id": null
+    }
+  ],
+  "scored_opportunities": [
+    {
+      "name": "Intake Triage & Routing Agent",
+      "what_the_agent_does": "Parses incoming phone calls, web forms, and answering service transcripts to extract customer details, HVAC symptoms, urgency level, and property type, then drafts a dispatch ticket.",
+      "process": "Service Request Intake",
+      "gap": "Manual data entry from paper/online forms and call routing delays.",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 8,
+      "effort": 4,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value by cutting intake time and reducing missed calls; moderate effort requires telephony/web form integration; low risk as dispatchers verify critical details before assignment.",
+      "placeholder": false,
+      "score": 0.42
+    },
+    {
+      "name": "Dynamic Route & Priority Optimizer",
+      "what_the_agent_does": "Analyzes technician locations, certifications, van inventory, and job urgency to auto-suggest optimal daily routes and assignments, flagging scheduling conflicts.",
+      "process": "Scheduling & Dispatch",
+      "gap": "Reliance on manual tracking tools (whiteboard/spreadsheet) leading to double-booking or missed priorities.",
+      "supporting_chunk_id": "nist-ai-rmf#2",
+      "value": 9,
+      "effort": 6,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "High value directly addresses operational bottlenecks and fuel costs; medium effort due to real-time calendar/GPS integration complexity; moderate risk managed by mandatory dispatcher approval.",
+      "placeholder": false,
+      "score": 0.36
+    },
+    {
+      "name": "First-Trip Parts Predictor",
+      "what_the_agent_does": "Reviews symptom descriptions and historical job data to predict likely replacement parts, pre-stocking technician vans or triggering warehouse orders before dispatch.",
+      "process": "Field Repair & Installation Execution",
+      "gap": "Travel time management and parts availability tracking (technicians making extra trips).",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 7,
+      "effort": 5,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Strong value by cutting costly second service calls; medium effort requires historical data structuring and ML model training; low risk as incorrect predictions only result in minor schedule adjustments.",
+      "placeholder": false,
+      "score": 0.33
+    },
+    {
+      "name": "Automated Quote Generator",
+      "what_the_agent_does": "Processes Comfort Advisor field notes and property photos to auto-generate compliant HVAC replacement quotes with pricing tiers, efficiency ratings, and financing options.",
+      "process": "On-Site Quoting & Estimating",
+      "gap": "Manual measurement/data collection and delayed quote generation (customers wait days).",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 8,
+      "effort": 5,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value accelerates sales cycle and reduces manual quoting hours; medium effort involves multimodal processing and pricing logic; low risk ensured by mandatory Comfort Advisor review before sending.",
+      "placeholder": false,
+      "score": 0.37
+    },
+    {
+      "name": "Renewal & Tune-Up Scheduler",
+      "what_the_agent_does": "Monitors subscription expiration dates and contract terms, auto-schedules bi-annual maintenance windows, and sends personalized renewal reminders with upgrade options.",
+      "process": "Membership & Contract Administration",
+      "gap": "Tracking renewal dates manually and scheduling bi-annual tune-ups (high churn, missed revenue).",
+      "supporting_chunk_id": "nist-ai-rmf#2",
+      "value": 9,
+      "effort": 3,
+      "risk": 1,
+      "enabler": false,
+      "rating_reason": "Very high value directly protects recurring revenue streams; low effort due to straightforward database triggers and messaging automation; minimal risk as errors are easily corrected with customer opt-out.",
+      "placeholder": false,
+      "score": 0.69
+    },
+    {
+      "name": "Invoice & AR Follow-Up Agent",
+      "what_the_agent_does": "Converts paper service tickets into formatted invoices, matches them to open contracts or POs, and auto-sends payment reminders for overdue accounts.",
+      "process": "Invoicing & Payment Processing",
+      "gap": "Manual invoice creation from paper tickets and delayed payment follow-up (cash flow delays).",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 8,
+      "effort": 4,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "High value improves cash flow and reduces accounts receivable days; medium effort requires OCR and accounting system sync; low risk as human accounting staff verify all invoices before dispatch.",
+      "placeholder": false,
+      "score": 0.48
+    },
+    {
+      "name": "Website AI assistant",
+      "what_the_agent_does": "Greets visitors and offers starting choices (Schedule a Comfort Club; Request Emergency Service; Get a System Quote), answers common questions from approved business information, and hands off to a person.",
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "supporting_chunk_id": null,
+      "enabler": false,
+      "rating_reason": "ratings set by code (fixed defaults), not by the model",
+      "placeholder": false,
+      "from_website_check": true,
+      "starter_prompts": [
+        "Schedule a Comfort Club",
+        "Request Emergency Service",
+        "Get a System Quote"
+      ],
+      "value": 6,
+      "effort": 3,
+      "risk": 3,
+      "score": 0.27
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": "balanced",
+      "angle": "balanced",
+      "opportunities": [
+        "Renewal & Tune-Up Scheduler",
+        "Invoice & AR Follow-Up Agent",
+        "Intake Triage & Routing Agent"
+      ],
+      "score": 0.583,
+      "rationale": "Starting with the scheduler establishes a reliable revenue foundation before introducing any new customer touchpoints. Adding invoicing automation next streamlines financial operations and reduces manual data entry errors across the board. Prioritizing intake triage last ensures that new service requests are properly captured and routed only after the backend financial and retention systems are running smoothly.",
+      "pilot_reason": "The scheduler is piloted first because it requires no changes to field operations or customer communication channels, allowing the owner to verify system reliability before scaling.",
+      "assumption": "The company must maintain consistent data hygiene across customer accounts to ensure automated scheduling and billing align correctly.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "Membership & Contract Administration",
+          "Invoicing & Payment Processing",
+          "Service Request Intake"
+        ],
+        "objection": "The Intake Triage & Routing Agent introduces a new layer of complexity to the customer service process, potentially increasing errors if not carefully implemented and monitored.",
+        "weakest_item": "Intake Triage & Routing Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.53,
+      "penalty": 0,
+      "coded_score": 0.53,
+      "findings": []
+    },
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "Renewal & Tune-Up Scheduler",
+        "Invoice & AR Follow-Up Agent",
+        "First-Trip Parts Predictor"
+      ],
+      "score": 0.563,
+      "rationale": "Beginning with the scheduler minimizes operational disruption while securing predictable recurring revenue. Introducing invoicing automation next addresses cash flow and administrative errors without impacting field technicians or customer interactions. Reserving the parts predictor for last ensures that complex predictive algorithms are only deployed after foundational financial and customer processes are fully automated.",
+      "pilot_reason": "The scheduler is piloted first because it operates entirely on existing administrative data and poses zero risk to active service calls or technician safety.",
+      "assumption": "The business must consistently track and update customer expiration dates to prevent missed renewals or billing errors.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 5,
+        "sequencing": 4,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Membership & Contract Administration",
+          "Invoicing & Payment Processing",
+          "Field Repair & Installation Execution"
+        ],
+        "objection": "The First-Trip Parts Predictor, while valuable, introduces complexity and potential inaccuracies that could negatively impact field operations.",
+        "weakest_item": "First-Trip Parts Predictor",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.5,
+      "penalty": 0,
+      "coded_score": 0.5,
+      "findings": []
+    },
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "opportunities": [
+        "Renewal & Tune-Up Scheduler",
+        "Dynamic Route & Priority Optimizer",
+        "Invoice & AR Follow-Up Agent"
+      ],
+      "score": 0.561,
+      "rationale": "Starting with the scheduler captures recurring revenue and strengthens customer relationships before tackling complex operational changes. Prioritizing route optimization next ensures that increased maintenance volume is handled efficiently by technicians without causing dispatch bottlenecks. Finishing with invoicing automation secures cash flow and reduces administrative friction once the customer base is actively engaged.",
+      "pilot_reason": "The scheduler serves as the pilot because it directly generates immediate revenue and requires minimal technical integration, making it safe for a cautious owner to validate the concept.",
+      "assumption": "The business must maintain accurate, up-to-date customer contract records for the automation to function correctly.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "Membership & Contract Administration",
+          "Scheduling & Dispatch",
+          "Invoicing & Payment Processing"
+        ],
+        "objection": "The Dynamic Route & Priority Optimizer, while high value, carries a risk rating that may exceed the owner's comfort level given their 0.4 risk tolerance.",
+        "weakest_item": "Dynamic Route & Priority Optimizer",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.51,
+      "penalty": 0,
+      "coded_score": 0.51,
+      "findings": []
+    }
+  ],
+  "review_round": 2,
+  "revision_exhausted": true,
+  "pruned_log": [
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "score": 0.54,
+      "reason": "ranked below top 3"
+    }
+  ],
+  "verified": true,
+  "verification_report": {
+    "roadmap": "balanced",
+    "claims": [
+      {
+        "idea": "Renewal & Tune-Up Scheduler",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Membership & Contract Administration",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage discusses AI risk management frameworks and operational oversight, not subscription tracking or maintenance scheduling."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Invoice & AR Follow-Up Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Invoicing & Payment Processing",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage lists generic AI benefits like automating tasks, but does not describe invoice generation or payment reminders."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Intake Triage & Routing Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Service Request Intake",
+            "stated": true
+          }
+        ],
+        "assumption": false,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage outlines general AI benefits and risks, not call parsing or dispatch ticket generation."
+        },
+        "note": ""
+      }
+    ],
+    "coverage": 1.0,
+    "grounded": 3,
+    "practices_available": 6,
+    "passed": true,
+    "reasons": [],
+    "no_practices": false,
+    "note": "",
+    "rejected": []
+  },
+  "escalate_now": false,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "balanced leads lowest_risk by 3.6% (under 10%). They differ in: Intake Triage & Routing Agent vs First-Trip Parts Predictor."
+    }
+  ],
+  "final_recommendation": {
+    "roadmap": {
+      "id": "balanced",
+      "angle": "balanced",
+      "opportunities": [
+        "Renewal & Tune-Up Scheduler",
+        "Invoice & AR Follow-Up Agent",
+        "Intake Triage & Routing Agent"
+      ],
+      "score": 0.583,
+      "rationale": "Starting with the scheduler establishes a reliable revenue foundation before introducing any new customer touchpoints. Adding invoicing automation next streamlines financial operations and reduces manual data entry errors across the board. Prioritizing intake triage last ensures that new service requests are properly captured and routed only after the backend financial and retention systems are running smoothly.",
+      "pilot_reason": "The scheduler is piloted first because it requires no changes to field operations or customer communication channels, allowing the owner to verify system reliability before scaling.",
+      "assumption": "The company must maintain consistent data hygiene across customer accounts to ensure automated scheduling and billing align correctly.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "Membership & Contract Administration",
+          "Invoicing & Payment Processing",
+          "Service Request Intake"
+        ],
+        "objection": "The Intake Triage & Routing Agent introduces a new layer of complexity to the customer service process, potentially increasing errors if not carefully implemented and monitored.",
+        "weakest_item": "Intake Triage & Routing Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.53,
+      "penalty": 0,
+      "coded_score": 0.53,
+      "findings": []
+    },
+    "agents_to_build": [
+      "Renewal & Tune-Up Scheduler",
+      "Invoice & AR Follow-Up Agent",
+      "Intake Triage & Routing Agent"
+    ],
+    "runner_up": {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "Renewal & Tune-Up Scheduler",
+        "Invoice & AR Follow-Up Agent",
+        "First-Trip Parts Predictor"
+      ],
+      "score": 0.563,
+      "rationale": "Beginning with the scheduler minimizes operational disruption while securing predictable recurring revenue. Introducing invoicing automation next addresses cash flow and administrative errors without impacting field technicians or customer interactions. Reserving the parts predictor for last ensures that complex predictive algorithms are only deployed after foundational financial and customer processes are fully automated.",
+      "pilot_reason": "The scheduler is piloted first because it operates entirely on existing administrative data and poses zero risk to active service calls or technician safety.",
+      "assumption": "The business must consistently track and update customer expiration dates to prevent missed renewals or billing errors.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 5,
+        "sequencing": 4,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "Membership & Contract Administration",
+          "Invoicing & Payment Processing",
+          "Field Repair & Installation Execution"
+        ],
+        "objection": "The First-Trip Parts Predictor, while valuable, introduces complexity and potential inaccuracies that could negatively impact field operations.",
+        "weakest_item": "First-Trip Parts Predictor",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.5,
+      "penalty": 0,
+      "coded_score": 0.5,
+      "findings": []
+    },
+    "close_call": true,
+    "lead_margin": 0.036,
+    "verified": true,
+    "verification": {
+      "roadmap": "balanced",
+      "claims": [
+        {
+          "idea": "Renewal & Tune-Up Scheduler",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Membership & Contract Administration",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage discusses AI risk management frameworks and operational oversight, not subscription tracking or maintenance scheduling."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Invoice & AR Follow-Up Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Invoicing & Payment Processing",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage lists generic AI benefits like automating tasks, but does not describe invoice generation or payment reminders."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Intake Triage & Routing Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Service Request Intake",
+              "stated": true
+            }
+          ],
+          "assumption": false,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage outlines general AI benefits and risks, not call parsing or dispatch ticket generation."
+          },
+          "note": ""
+        }
+      ],
+      "coverage": 1.0,
+      "grounded": 3,
+      "practices_available": 6,
+      "passed": true,
+      "reasons": [],
+      "no_practices": false,
+      "note": "",
+      "rejected": []
+    },
+    "close_call_detail": "balanced leads lowest_risk by 3.6% (under 10%). They differ in: Intake Triage & Routing Agent vs First-Trip Parts Predictor."
+  },
+  "status": "complete",
+  "model_calls": 8,
+  "trace": [
+    "discovery_profile: website guess -> HVAC contracting and repair (high) | website rating 8.2/10, chatbot: not_found",
+    "discovery_research: 6 practices from 2 passages (hybrid retrieval) [no curated sources for 'HVAC contracting and repair'; using general guidance only]",
+    "process_mapper: 6 processes",
+    "matcher: 7 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 3.6%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 3 with a rubric",
+    "review_gate: round 2, kept 3, pruned 0, best leads by 3.6%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
+  ],
+  "call_log": [
+    {
+      "ts": "2026-11-18T20:28:39+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 31.905,
+      "error": null,
+      "stub": false,
+      "input_tokens": 714,
+      "output_tokens": 1364
+    },
+    {
+      "ts": "2026-11-18T20:29:04+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 25.08,
+      "error": null,
+      "stub": false,
+      "input_tokens": 797,
+      "output_tokens": 2044
+    },
+    {
+      "ts": "2026-11-18T21:55:31+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 50.815,
+      "error": null,
+      "stub": false,
+      "input_tokens": 518,
+      "output_tokens": 2347
+    },
+    {
+      "ts": "2026-11-18T21:55:47+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 66.383,
+      "error": null,
+      "stub": false,
+      "input_tokens": 900,
+      "output_tokens": 3674
+    },
+    {
+      "ts": "2026-11-18T21:56:51+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 64.252,
+      "error": null,
+      "stub": false,
+      "input_tokens": 656,
+      "output_tokens": 5332
+    },
+    {
+      "ts": "2026-11-18T21:57:34+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 42.737,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1061,
+      "output_tokens": 3485
+    },
+    {
+      "ts": "2026-11-18T21:58:34+00:00",
+      "agent": "critic",
+      "model": "google/gemma-3-12b",
+      "seconds": 59.757,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1840,
+      "output_tokens": 468
+    },
+    {
+      "ts": "2026-11-18T21:59:15+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 41.028,
+      "error": null,
+      "stub": false,
+      "input_tokens": 802,
+      "output_tokens": 2699
+    }
+  ]
+}

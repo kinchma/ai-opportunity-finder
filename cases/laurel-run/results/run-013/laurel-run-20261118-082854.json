@@ -1,0 +1,208 @@
+{
+  "thread_id": "laurel-run",
+  "status": "complete",
+  "review_rounds": 1,
+  "summary": {
+    "calls": 8,
+    "calls_by_agent": {
+      "discovery_profile": 1,
+      "discovery_website": 1,
+      "discovery_research": 1,
+      "process_mapper": 1,
+      "matcher": 1,
+      "strategist": 1,
+      "critic": 1,
+      "planner": 1
+    },
+    "by_agent": {
+      "discovery_profile": {
+        "calls": 1,
+        "input_tokens": 719,
+        "output_tokens": 1193,
+        "seconds": 17.419,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_website": {
+        "calls": 1,
+        "input_tokens": 833,
+        "output_tokens": 2407,
+        "seconds": 28.765,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_research": {
+        "calls": 1,
+        "input_tokens": 1203,
+        "output_tokens": 4012,
+        "seconds": 202.513,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "process_mapper": {
+        "calls": 1,
+        "input_tokens": 18227,
+        "output_tokens": 9031,
+        "seconds": 268.038,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "matcher": {
+        "calls": 1,
+        "input_tokens": 1070,
+        "output_tokens": 6793,
+        "seconds": 79.832,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "strategist": {
+        "calls": 1,
+        "input_tokens": 1158,
+        "output_tokens": 3785,
+        "seconds": 45.764,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "critic": {
+        "calls": 1,
+        "input_tokens": 2102,
+        "output_tokens": 441,
+        "seconds": 54.783,
+        "errors": 0,
+        "models": [
+          "google/gemma-3-12b"
+        ]
+      },
+      "planner": {
+        "calls": 1,
+        "input_tokens": 243,
+        "output_tokens": 2259,
+        "seconds": 30.13,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      }
+    },
+    "input_tokens": 25555,
+    "output_tokens": 29921,
+    "calls_without_usage": 0,
+    "errors": 0,
+    "seconds": 727.244,
+    "stub_records_ignored": 0
+  },
+  "call_log": [
+    {
+      "ts": "2026-11-16T19:52:25+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 17.419,
+      "error": null,
+      "stub": false,
+      "input_tokens": 719,
+      "output_tokens": 1193
+    },
+    {
+      "ts": "2026-11-16T19:52:53+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.765,
+      "error": null,
+      "stub": false,
+      "input_tokens": 833,
+      "output_tokens": 2407
+    },
+    {
+      "ts": "2026-11-18T13:24:15+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 202.513,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1203,
+      "output_tokens": 4012
+    },
+    {
+      "ts": "2026-11-18T13:25:23+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 268.038,
+      "error": null,
+      "stub": false,
+      "input_tokens": 18227,
+      "output_tokens": 9031
+    },
+    {
+      "ts": "2026-11-18T13:26:43+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 79.832,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1070,
+      "output_tokens": 6793
+    },
+    {
+      "ts": "2026-11-18T13:27:29+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 45.764,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1158,
+      "output_tokens": 3785
+    },
+    {
+      "ts": "2026-11-18T13:28:23+00:00",
+      "agent": "critic",
+      "model": "google/gemma-3-12b",
+      "seconds": 54.783,
+      "error": null,
+      "stub": false,
+      "input_tokens": 2102,
+      "output_tokens": 441
+    },
+    {
+      "ts": "2026-11-18T13:28:53+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 30.13,
+      "error": null,
+      "stub": false,
+      "input_tokens": 243,
+      "output_tokens": 2259
+    }
+  ],
+  "verified": true,
+  "flags": [],
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 7.0/10, chatbot: not_found",
+    "discovery_research: 6 practices from 6 passages (hybrid retrieval)",
+    "process_mapper: 6 processes, 6 with document citations (hybrid retrieval per process), 3 document-vs-interview gap(s)",
+    "matcher: 8 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 11.2%",
+    "planner: verified, 3 of 3 ideas grounded"
+  ],
+  "pruned_log": [
+    {
+      "id": "enabler",
+      "angle": "enabler",
+      "score": 0.315,
+      "reason": "ranked below top 3"
+    }
+  ]
+}

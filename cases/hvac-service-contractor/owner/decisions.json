@@ -1,0 +1,38 @@
+[
+  {
+    "when": "2026-11-18T15:29:41",
+    "kind": "profile_confirmed",
+    "detail": {
+      "corrections": {},
+      "note": "",
+      "after_rejection": false
+    }
+  },
+  {
+    "when": "2026-11-18T17:28:46",
+    "kind": "materials_authorized",
+    "detail": {
+      "folders": [
+        "documents",
+        "interviews",
+        "data",
+        "research"
+      ],
+      "now_authorized": [
+        "documents",
+        "interviews",
+        "data",
+        "research"
+      ]
+    }
+  },
+  {
+    "when": "2026-11-18T17:28:53",
+    "kind": "company_index_built",
+    "detail": {
+      "passages": 251,
+      "embed_model": "text-embedding-nomic-embed-text-v1.5",
+      "fingerprint": "b6ab8361dfb09c5d"
+    }
+  }
+]

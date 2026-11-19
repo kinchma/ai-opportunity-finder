@@ -1,0 +1,73 @@
+{
+  "processes": [
+    {
+      "name": "Service Request Intake",
+      "description": "Receiving service calls via phone, online contact form, and third-party answering service for after-hours emergencies.",
+      "pain_points": [
+        "Manual data entry from paper/online forms",
+        "Potential call routing delays"
+      ],
+      "basis": "stated",
+      "sources": []
+    },
+    {
+      "name": "Scheduling & Dispatch",
+      "description": "Assigning technicians to jobs using a whiteboard and spreadsheet, managing priority for maintenance members.",
+      "pain_points": [
+        "Reliance on manual tracking tools",
+        "Risk of double-booking or missed priorities"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Field Repair & Installation Execution",
+      "description": "Technicians performing diagnostics, repairs, and emergency calls on residential and commercial HVAC systems.",
+      "pain_points": [
+        "Travel time management",
+        "Parts availability tracking"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "On-Site Quoting & Estimating",
+      "description": "Comfort Advisors visit homes, measure properties, and provide written replacement options.",
+      "pain_points": [
+        "Manual measurement/data collection",
+        "Delayed quote generation"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Membership & Contract Administration",
+      "description": "Managing Comfort Club subscriptions and commercial maintenance agreements for residential and business clients.",
+      "pain_points": [
+        "Tracking renewal dates manually",
+        "Scheduling bi-annual tune-ups"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Invoicing & Payment Processing",
+      "description": "Generating bills for repairs, installations, and memberships, tracking payments, and following up on outstanding balances.",
+      "pain_points": [
+        "Manual invoice creation from paper tickets",
+        "Delayed payment follow-up"
+      ],
+      "basis": "typical",
+      "sources": []
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {},
+  "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+  "retrieval": {
+    "mode": "off"
+  },
+  "run": "run-002",
+  "saved": "2026-11-18T16:59:15",
+  "run_note": "built from the website and description only"
+}

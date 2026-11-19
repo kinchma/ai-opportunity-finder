@@ -1,0 +1,245 @@
+{
+  "thread_id": "laurel-run",
+  "status": "complete",
+  "review_rounds": 3,
+  "summary": {
+    "calls": 10,
+    "calls_by_agent": {
+      "discovery_profile": 1,
+      "discovery_website": 1,
+      "discovery_research": 1,
+      "process_mapper": 1,
+      "matcher": 1,
+      "strategist": 2,
+      "critic": 2,
+      "planner": 1
+    },
+    "by_agent": {
+      "discovery_profile": {
+        "calls": 1,
+        "input_tokens": 719,
+        "output_tokens": 1193,
+        "seconds": 17.419,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_website": {
+        "calls": 1,
+        "input_tokens": 833,
+        "output_tokens": 2407,
+        "seconds": 28.765,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_research": {
+        "calls": 1,
+        "input_tokens": 1203,
+        "output_tokens": 3893,
+        "seconds": 130.434,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "process_mapper": {
+        "calls": 1,
+        "input_tokens": 18227,
+        "output_tokens": 9880,
+        "seconds": 209.326,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "matcher": {
+        "calls": 1,
+        "input_tokens": 1086,
+        "output_tokens": 5175,
+        "seconds": 60.709,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "strategist": {
+        "calls": 2,
+        "input_tokens": 1601,
+        "output_tokens": 7621,
+        "seconds": 94.233,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "critic": {
+        "calls": 2,
+        "input_tokens": 3291,
+        "output_tokens": 503,
+        "seconds": 16.963,
+        "errors": 0,
+        "models": [
+          "qwen2.5-7b-instruct"
+        ]
+      },
+      "planner": {
+        "calls": 1,
+        "input_tokens": 640,
+        "output_tokens": 2537,
+        "seconds": 29.838,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      }
+    },
+    "input_tokens": 27600,
+    "output_tokens": 33209,
+    "calls_without_usage": 0,
+    "errors": 0,
+    "seconds": 587.687,
+    "stub_records_ignored": 0
+  },
+  "call_log": [
+    {
+      "ts": "2026-11-16T19:52:25+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 17.419,
+      "error": null,
+      "stub": false,
+      "input_tokens": 719,
+      "output_tokens": 1193
+    },
+    {
+      "ts": "2026-11-16T19:52:53+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.765,
+      "error": null,
+      "stub": false,
+      "input_tokens": 833,
+      "output_tokens": 2407
+    },
+    {
+      "ts": "2026-11-17T22:27:32+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 130.434,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1203,
+      "output_tokens": 3893
+    },
+    {
+      "ts": "2026-11-17T22:28:54+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 209.326,
+      "error": null,
+      "stub": false,
+      "input_tokens": 18227,
+      "output_tokens": 9880
+    },
+    {
+      "ts": "2026-11-17T22:29:55+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 60.709,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1086,
+      "output_tokens": 5175
+    },
+    {
+      "ts": "2026-11-17T22:30:51+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 56.357,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1126,
+      "output_tokens": 4611
+    },
+    {
+      "ts": "2026-11-17T22:31:05+00:00",
+      "agent": "critic",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 14.302,
+      "error": null,
+      "stub": false,
+      "input_tokens": 2162,
+      "output_tokens": 414
+    },
+    {
+      "ts": "2026-11-17T22:31:43+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 37.876,
+      "error": null,
+      "stub": false,
+      "input_tokens": 475,
+      "output_tokens": 3010
+    },
+    {
+      "ts": "2026-11-17T22:31:46+00:00",
+      "agent": "critic",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 2.661,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1129,
+      "output_tokens": 89
+    },
+    {
+      "ts": "2026-11-17T22:32:16+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 29.838,
+      "error": null,
+      "stub": false,
+      "input_tokens": 640,
+      "output_tokens": 2537
+    }
+  ],
+  "verified": true,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "lowest_risk leads enabler by 4.9% (under 10%). They differ in: Inventory Replenishment & Discrepancy Tracker vs Quote-to-Order Automation Agent."
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 7.0/10, chatbot: not_found",
+    "discovery_research: 6 practices from 6 passages (hybrid retrieval)",
+    "process_mapper: 6 processes, 6 with document citations (hybrid retrieval per process), 3 document-vs-interview gap(s)",
+    "matcher: 7 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 4.9%",
+    "strategist: 4 roadmaps [1 revised]",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 2, kept 3, pruned 1, best leads by 4.9%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 3 with a rubric",
+    "review_gate: round 3, kept 3, pruned 0, best leads by 4.9%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
+  ],
+  "pruned_log": [
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "score": 0.363,
+      "reason": "ranked below top 3"
+    },
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "score": 0.375,
+      "reason": "ranked below top 3"
+    }
+  ]
+}

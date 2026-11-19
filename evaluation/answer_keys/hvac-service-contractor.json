@@ -1,0 +1,28 @@
+{
+  "_note": "Written by Claude on 2026-11-18 together with the synthetic case. Top picks are the three largest AI-addressable items (I01 ticket entry, I03 commercial renewals, I06 Comfort Club tune-up booking). The largest single dollar item is I09 (supplier re-quote, not AI).",
+  "expected_industry": "hvac",
+  "expected_top_picks": [["ticket"], ["renewal"], ["tune-up"]],
+  "planted_issues": [
+    ["ticket"],
+    ["dispatch"],
+    ["renewal"],
+    ["answering"],
+    ["web"],
+    ["tune-up"],
+    ["timesheet"],
+    ["van"],
+    ["supplier"],
+    ["housecall"],
+    ["delivery"],
+    ["pricing"],
+    ["month-end"],
+    ["warranty"],
+    ["review"]
+  ],
+  "forbidden_claims": ["instagram.com", "linkedin.com/company", "tiktok.com", "youtube.com", "@larkmoor"],
+  "min_citation_coverage": 0.6,
+  "conflicts": [
+    {"process": "maintenance_agreements", "document": "documents/processes/04_maintenance_agreements.md", "interview": "interviews/04_maintenance_agreements_interview.md", "summary": "Procedure: renewal letter 90 days before end date, calls at 60 and 30 days. Practice: Wes renews ad hoc, usually in the last month or after the end date, no letters."},
+    {"process": "installations", "document": "documents/processes/05_installations.md", "interview": "interviews/05_installations_interview.md", "summary": "Procedure: no job closed without data plate photos. Practice: crews often skip photos when late and Ben closes the job anyway."}
+  ]
+}

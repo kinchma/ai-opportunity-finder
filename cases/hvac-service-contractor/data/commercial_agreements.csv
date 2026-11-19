@@ -1,0 +1,14 @@
+agreement_id,customer,buildings,units,visits_per_year,annual_price,start_date,end_date,status,renewal_contact_date,notes
+CA-2025-014,Gahanna Commerce Center LLC,1,2,2,2800,2025-04-01,2026-03-31,Lost,2026-05-12,called after spring visit missed; went with other contractor
+CA-2025-022,Brookfield Pike Properties,14,46,4,38400,2025-07-01,2026-06-30,Renewed late,2026-07-20,lapsed 20 days; June visit for 3 buildings missed
+CA-2025-031,St. Brendan Parish,2,5,2,3600,2025-05-01,2026-04-30,Renewed late,2026-06-08,customer called about May visit
+CA-2025-038,Maple Run Dental Group,1,5,2,4200,2025-08-01,2026-07-31,Lost,2026-08-19,Wes out 2 weeks July; no reply
+CA-2025-044,Westerville Office Park II,3,9,3,7900,2025-02-01,2026-01-31,Renewed late,2026-03-02,
+CA-2025-047,Delaware Pike Retail Strip,2,9,2,6900,2025-06-01,2026-05-31,Lost,2026-07-06,owner sold building
+CA-2025-052,New Albany Montessori,1,4,2,3900,2025-09-01,2026-08-31,Renewed late,2026-09-21,
+CA-2025-055,Fenwick Road Medical Offices,1,4,2,3700,2025-03-01,2026-02-28,Renewed late,2026-03-24,
+CA-2025-058,Ridgewood Baptist Church,1,3,2,2600,2025-10-01,2026-09-30,Renewed late,2026-10-14,
+CA-2025-060,Larkmoor Storage Center,1,4,2,4100,2025-05-01,2026-04-30,Lost,2026-06-15,no response
+CA-2025-061,Harlan Street Church,1,4,2,3200,2025-07-01,2026-06-30,Renewed,2026-06-24,renewed at 3350
+CA-2025-066,Lindell Office Suites,2,6,3,5600,2025-01-01,2025-12-31,Renewed late,2026-01-22,
+CA-2025-070,Gahanna Learning Academy,1,8,4,9800,2025-08-01,2026-07-31,Renewed,2026-07-08,

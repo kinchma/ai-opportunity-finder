@@ -1,0 +1,12 @@
+call_id,date,customer,call_type,tech_id,priority,source,status,ticket_received_date,invoice_id,days_job_to_invoice
+SC-2026-4102,2026-09-03,Brookfield Pike Properties (bldg 7),commercial repair,EMP-023,P2,phone,Done,2026-09-08,INV-2026-1877,8
+SC-2026-4130,2026-09-04,Westerville Office Park II,commercial repair,EMP-020,P2,phone,Done,2026-09-14,INV-2026-1885,11
+SC-2026-4166,2026-09-08,Lindell Office Suites,commercial PM,EMP-012,P3,agreement,Done,2026-09-10,INV-2026-1890,5
+SC-2026-4201,2026-09-10,Tom and Ellen Brandt,residential repair,EMP-025,P2,web form (received 2026-09-08 11:05),Done,2026-09-15,INV-2026-1894,5
+SC-2026-4244,2026-09-12,Gahanna Learning Academy,commercial PM,EMP-020,P3,agreement,Done,2026-09-21,INV-2026-1903,9
+SC-2026-4290,2026-09-15,Marta Ruiz,residential repair,EMP-017,P1,after-hours message,Needs Return,2026-09-15,,
+SC-2026-4315,2026-09-16,Gordon Pike,residential repair,EMP-013,P2,phone,Parts on Order,2026-09-16,,
+SC-2026-4377,2026-09-19,Brookfield Pike Properties (bldg 2),commercial repair,EMP-012,P2,phone,Done,2026-09-28,INV-2026-1911,9
+SC-2026-4418,2026-09-23,Raymond Pell,residential repair,EMP-019,P2,web form (received 2026-09-18 16:40),Done,2026-09-23,paid on site,0
+SC-2026-3290,2026-07-14,Andrea Kessler,residential repair,EMP-021,P2,phone,Done,2026-07-14,paid on site,0
+SC-2026-0112-07,2026-01-12,Patricia Hollins,residential repair,EMP-016,P1,after-hours message,Done,2026-01-12,paid on site,0

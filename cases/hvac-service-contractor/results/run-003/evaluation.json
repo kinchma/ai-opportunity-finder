@@ -1,0 +1,82 @@
+{
+  "case": "hvac-service-contractor",
+  "run": "run-003",
+  "answer_key": "hvac-service-contractor.json",
+  "status": "complete",
+  "verified": true,
+  "model_calls": 8,
+  "recommended": [
+    "Ticket-to-Invoice OCR Agent",
+    "Renewal & Priority Booking Agent",
+    "Omni-Channel Dispatch Triage Agent"
+  ],
+  "industry": {
+    "expected": "hvac",
+    "got": "HVAC contracting and repair",
+    "match": true
+  },
+  "expected_picks": {
+    "total": 3,
+    "in_recommendation": 2,
+    "detail": [
+      {
+        "keywords": [
+          "ticket"
+        ],
+        "found": true
+      },
+      {
+        "keywords": [
+          "renewal"
+        ],
+        "found": true
+      },
+      {
+        "keywords": [
+          "tune-up"
+        ],
+        "found": false
+      }
+    ],
+    "anywhere_in_candidates": 2
+  },
+  "planted_issues": {
+    "total": 15,
+    "surfaced": 8
+  },
+  "citations": {
+    "grounded": 3,
+    "claims": 3,
+    "coverage": 1.0,
+    "with_document_citation": 3,
+    "meets_minimum": true
+  },
+  "forbidden_claims": {
+    "checked": 5,
+    "found": []
+  },
+  "conflicts": {
+    "planted": 2,
+    "detected": 0,
+    "gaps_reported": 0,
+    "gaps_not_matching_a_planted_conflict": 0
+  },
+  "placeholders_used": false,
+  "social_presence_reported": {
+    "found_on_pages_read": {
+      "facebook": [
+        "https://www.facebook.com/larkmoorcomfort.example"
+      ]
+    },
+    "not_found_on_pages_read": [
+      "linkedin",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "x_twitter"
+    ],
+    "owner_pasted_linkedin": false,
+    "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+  },
+  "pass": true
+}

@@ -1,0 +1,194 @@
+{
+  "thread_id": "laurel-run",
+  "status": "needs_owner_help",
+  "review_rounds": 0,
+  "summary": {
+    "calls": 7,
+    "calls_by_agent": {
+      "discovery_profile": 1,
+      "discovery_website": 1,
+      "discovery_research": 1,
+      "process_mapper": 1,
+      "matcher": 1,
+      "strategist": 1,
+      "critic": 1
+    },
+    "by_agent": {
+      "discovery_profile": {
+        "calls": 1,
+        "input_tokens": 719,
+        "output_tokens": 1193,
+        "seconds": 17.419,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_website": {
+        "calls": 1,
+        "input_tokens": 833,
+        "output_tokens": 2407,
+        "seconds": 28.765,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_research": {
+        "calls": 1,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "seconds": 240.513,
+        "errors": 1,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "process_mapper": {
+        "calls": 1,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "seconds": 240.425,
+        "errors": 1,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "matcher": {
+        "calls": 1,
+        "input_tokens": 252,
+        "output_tokens": 3391,
+        "seconds": 43.324,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "strategist": {
+        "calls": 1,
+        "input_tokens": 706,
+        "output_tokens": 4487,
+        "seconds": 54.722,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "critic": {
+        "calls": 1,
+        "input_tokens": 1355,
+        "output_tokens": 371,
+        "seconds": 12.183,
+        "errors": 0,
+        "models": [
+          "qwen2.5-7b-instruct"
+        ]
+      }
+    },
+    "input_tokens": 3865,
+    "output_tokens": 11849,
+    "calls_without_usage": 2,
+    "errors": 2,
+    "seconds": 637.351,
+    "stub_records_ignored": 0
+  },
+  "call_log": [
+    {
+      "ts": "2026-11-16T19:52:25+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 17.419,
+      "error": null,
+      "stub": false,
+      "input_tokens": 719,
+      "output_tokens": 1193
+    },
+    {
+      "ts": "2026-11-16T19:52:53+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.765,
+      "error": null,
+      "stub": false,
+      "input_tokens": 833,
+      "output_tokens": 2407
+    },
+    {
+      "ts": "2026-11-17T22:01:29+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 240.513,
+      "error": "OpenAITimeoutError('Request timed out.')",
+      "stub": false,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-17T22:01:32+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 240.425,
+      "error": "OpenAITimeoutError('Request timed out.')",
+      "stub": false,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-17T22:04:23+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 43.324,
+      "error": null,
+      "stub": false,
+      "input_tokens": 252,
+      "output_tokens": 3391
+    },
+    {
+      "ts": "2026-11-17T22:05:18+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 54.722,
+      "error": null,
+      "stub": false,
+      "input_tokens": 706,
+      "output_tokens": 4487
+    },
+    {
+      "ts": "2026-11-17T22:05:30+00:00",
+      "agent": "critic",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 12.183,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1355,
+      "output_tokens": 371,
+      "reply_sample": "{\n    \"reviews\": [\n        {\n            \"id\": \"highest_value\",\n            \"feasibility\": 2,\n            \"sequencing\": 4,\n            \"fit\": 3,\n            \"evidence\": [\"value 9\", \"effort 8\", \"risk 6\"],\n            \"objection\": \"All ideas are placeholders and not from this business, exceeding the owner's risk tolerance.\",\n            \"weakest_item\": null\n        },\n        {\n            \"id\": \"quick_win\",\n            \"feasibility\": 3,\n            \"sequencing\": 4,\n            \"fit\": 2,\n         "
+    }
+  ],
+  "verified": false,
+  "flags": [
+    {
+      "type": "practices_empty",
+      "detail": "Discovery returned no usable best practices"
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 7.0/10, chatbot: not_found",
+    "discovery_research: 0 practices from 6 passages (hybrid retrieval) [LLM call failed: Request timed out.]",
+    "process_mapper: 0 processes, 0 with document citations (hybrid retrieval per process) [LLM call failed: Request timed out.]",
+    "matcher: 6 candidates scored [6 candidate(s) dropped (no valid process or practice, or bad ratings). too few valid candidates: using PLACEHOLDER opportunities. added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 0 with a rubric [4 review(s) dropped (4 no evidence)]",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 2185.7%",
+    "planner: verification failed (1): placeholder ideas were used instead of ideas from this business; only 1 of 3 recommended ideas trace to a source (need 60%); no best practices were retrieved, so nothing is checked against the knowledge base",
+    "escalate_to_owner: 2 model call(s) failed (discovery_research, process_mapper; model qwen3.6-35b-a3b-mlx), so this run has little or nothing from the model. Check that the model server is running and reachable, then re-run."
+  ],
+  "pruned_log": [
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "score": 0.0,
+      "reason": "ranked below top 3"
+    }
+  ]
+}

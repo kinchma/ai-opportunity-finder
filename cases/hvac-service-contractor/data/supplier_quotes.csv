@@ -1,0 +1,7 @@
+quote_id,date,supplier,item,model,northgate_price,ridgeview_price,difference_pct,status
+RQ-2026-03,2026-03-17,Ridgeview HVAC Supply,3-ton AC condenser,AV-AC36-16,2310,2137,-7.5,with Kyle for review
+RQ-2026-03,2026-03-17,Ridgeview HVAC Supply,96% furnace 80k BTU,AV-GF80-96,1980,1832,-7.5,with Kyle for review
+RQ-2026-03,2026-03-17,Ridgeview HVAC Supply,3-ton evaporator coil,AV-EC36-C,780,722,-7.4,with Kyle for review
+RQ-2026-03,2026-03-17,Ridgeview HVAC Supply,3-ton heat pump,AV-HP36-17,3450,3191,-7.5,with Kyle for review
+RQ-2026-03,2026-03-17,Ridgeview HVAC Supply,10-ton rooftop unit,AV-RT120-G,13150,12164,-7.5,with Kyle for review
+RQ-2026-03,2026-03-17,Ridgeview HVAC Supply,all Aerovance equipment lines (quote terms),,,,-7.5,valid to 2026-12-31; free next-day delivery

@@ -1,0 +1,79 @@
+{
+  "processes": [
+    {
+      "name": "Service Request Intake & Dispatch",
+      "description": "Customers submit service requests via a website form or phone call; office staff log them on paper tickets and route urgent cases to an answering service for after-hours emergencies.",
+      "pain_points": [
+        "Manual data entry from web form to paper tickets",
+        "Risk of lost or misrouted emergency calls",
+        "No automated routing to available technicians"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Scheduling & Dispatch Management",
+      "description": "Office staff use a physical whiteboard and spreadsheet to assign jobs, prioritize Comfort Club members, and manage same-day or after-hours emergency calls across 14 technicians.",
+      "pain_points": [
+        "Whiteboard visibility limits for remote or off-site staff",
+        "Spreadsheet version control and manual updates",
+        "Difficulty balancing priority members with emergency requests"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Field Repair & Maintenance Execution",
+      "description": "Licensed technicians visit residential and commercial sites to diagnose, repair, or maintain HVAC systems including furnaces, heat pumps, central ACs, and ductless mini-splits.",
+      "pain_points": [
+        "Travel time between suburban job sites",
+        "Manual parts tracking on paper tickets",
+        "Inconsistent documentation of completed work and warranties"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "System Replacement & Installation Project Management",
+      "description": "Comfort Advisors conduct home assessments, perform load calculations, provide written replacement options, and coordinate two install crews to replace approximately 300 home systems annually.",
+      "pain_points": [
+        "Manual measurement and quoting process",
+        "Coordination friction between advisors and install crews",
+        "Tracking 300+ annual installations on spreadsheets"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Membership Plan Administration (Comfort Club)",
+      "description": "Manage 600+ annual subscribers for $189, schedule bi-annual tune-ups (spring cooling, fall heating), apply priority scheduling, and waive overtime charges for members.",
+      "pain_points": [
+        "Manual tracking of 600+ active memberships",
+        "Scheduling conflicts between priority members and regular jobs",
+        "Manual calculation and application of overtime waivers"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Commercial Account & Preventive Maintenance Management",
+      "description": "Manage preventive maintenance agreements and rooftop unit (RTU) service/replacement for approximately 90 commercial buildings, including offices, retail centers, churches, and schools.",
+      "pain_points": [
+        "Tracking service history across 90 diverse commercial sites",
+        "Manual contract renewal and billing tracking",
+        "Coordinating specialized commercial technicians with residential schedules"
+      ],
+      "basis": "typical",
+      "sources": []
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {},
+  "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+  "retrieval": {
+    "mode": "off"
+  },
+  "run": "run-001",
+  "saved": "2026-11-18T15:35:23",
+  "run_note": "built from the website and description only"
+}

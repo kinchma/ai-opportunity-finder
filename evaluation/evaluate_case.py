@@ -15,7 +15,10 @@ evaluation/answer_keys/, outside cases/, so no path from a case reaches it):
   "planted_issues": [["purchase order", "approval"], ...],   # optional; same matching, any idea
   "forbidden_claims": ["linkedin.com/company", "tiktok", "@laurelrun"],   # strings that must not
       # appear anywhere in the recommendation text (invented profiles, handles, outages)
-  "min_citation_coverage": 0.6
+  "min_citation_coverage": 0.6,
+  "conflicts": [{"process": "...", "document": "documents/processes/05_x.md", "interview": "interviews/05_x_interview.md"}]
+      # optional: planted document-vs-interview conflicts; a reported gap matches one when its
+      # sources include both files
 }
 
     python evaluation/evaluate_case.py <case_id> evaluation/answer_keys/<case>.json [--run run-NNN] [--cases-dir cases]
@@ -78,7 +81,16 @@ def evaluate(result: dict, exp: dict, profile: dict | None = None) -> dict:
     text = _text_of(result)
     found = [f for f in exp.get("forbidden_claims", []) if f.lower() in text]
     report["forbidden_claims"] = {"checked": len(exp.get("forbidden_claims", [])), "found": found}
-    # 6. honesty signals
+    # 6. document-vs-interview conflicts planted in the key, and gaps the run reported
+    gaps = (result.get("process_map") or {}).get("doc_vs_reality_gaps") or []
+    def _hits(conflict):
+        want = [conflict.get("document", ""), conflict.get("interview", "")]
+        return [g for g in gaps if all(any(w and w in s for s in g.get("sources", [])) for w in want)]
+    conflicts = exp.get("conflicts", [])
+    matched = {id(g) for c in conflicts for g in _hits(c)}
+    report["conflicts"] = {"planted": len(conflicts), "detected": sum(1 for c in conflicts if _hits(c)),
+                           "gaps_reported": len(gaps), "gaps_not_matching_a_planted_conflict": len(gaps) - len(matched)}
+    # 7. honesty signals
     report["placeholders_used"] = any(o.get("placeholder") for o in opps)
     report["social_presence_reported"] = (result.get("website_assessment") or {}).get("social_presence")
     report["pass"] = (report["industry"]["match"] and report["citations"]["meets_minimum"]

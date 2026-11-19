@@ -1,0 +1,20 @@
+{
+  "id": "hvac-service-contractor",
+  "name": "Larkmoor Comfort Heating & Air, Inc.",
+  "stage": "analyzed",
+  "status": "Recommendation ready.",
+  "created": "2026-10-31T09:00:00",
+  "updated": "2026-11-18T22:41:53",
+  "company_input": {
+    "website": "local",
+    "risk_tolerance": 0.6,
+    "description": "Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard."
+  },
+  "materials_authorized": [
+    "documents",
+    "interviews",
+    "data",
+    "research"
+  ],
+  "latest_run": "run-009"
+}

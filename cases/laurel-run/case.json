@@ -4,15 +4,15 @@
   "stage": "analyzed",
   "status": "Recommendation ready.",
   "created": "2026-11-16T14:50:50",
-  "updated": "2026-11-17T15:15:59",
+  "updated": "2026-11-18T08:50:03",
   "company_input": {
     "website": "local",
-    "risk_tolerance": 0.4
+    "risk_tolerance": 0.2
   },
   "materials_authorized": [
     "documents",
     "interviews",
     "data"
   ],
-  "latest_run": "run-005"
+  "latest_run": "run-015"
 }

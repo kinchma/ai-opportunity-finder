@@ -1,0 +1,110 @@
+{
+  "processes": [],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {},
+  "note": "LLM call failed: Request timed out.; built from 99 passage(s) from 40 shared file(s), retrieved per process (hybrid search) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "retrieval": {
+    "mode": "hybrid",
+    "reason": "",
+    "anchored_on": "process documents",
+    "per_process": [
+      {
+        "process": "documents/processes/01_order_to_delivery.md",
+        "retrieved": [
+          "doc:interviews/01_order_to_delivery_interview.md#2",
+          "doc:interviews/01_order_to_delivery_interview.md#1",
+          "doc:interviews/08_quoting_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/02_production_scheduling.md",
+        "retrieved": [
+          "doc:interviews/02_production_scheduling_interview.md#1",
+          "doc:interviews/02_production_scheduling_interview.md#2",
+          "doc:interviews/08_quoting_interview.md#11",
+          "doc:documents/company/03_tools_inventory.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/03_purchasing_and_receiving.md",
+        "retrieved": [
+          "doc:interviews/03_purchasing_and_receiving_interview.md#1",
+          "doc:interviews/04_inventory_counting_interview.md#1",
+          "doc:interviews/03_purchasing_and_receiving_interview.md#5",
+          "doc:documents/company/03_tools_inventory.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/04_inventory_counting.md",
+        "retrieved": [
+          "doc:interviews/04_inventory_counting_interview.md#2",
+          "doc:interviews/04_inventory_counting_interview.md#8",
+          "doc:interviews/04_inventory_counting_interview.md#1",
+          "doc:data/DATA_DICTIONARY.md#26"
+        ]
+      },
+      {
+        "process": "documents/processes/05_month_end_close.md",
+        "retrieved": [
+          "doc:interviews/05_month_end_close_interview.md#1",
+          "doc:interviews/05_month_end_close_interview.md#2",
+          "doc:interviews/05_month_end_close_interview.md#3",
+          "doc:data/DATA_DICTIONARY.md#22"
+        ]
+      },
+      {
+        "process": "documents/processes/06_payroll_and_time_cards.md",
+        "retrieved": [
+          "doc:interviews/06_payroll_and_time_cards_interview.md#2",
+          "doc:interviews/09_onboarding_interview.md#16",
+          "doc:interviews/06_payroll_and_time_cards_interview.md#1",
+          "doc:data/DATA_DICTIONARY.md#23"
+        ]
+      },
+      {
+        "process": "documents/processes/07_warranty_and_returns.md",
+        "retrieved": [
+          "doc:interviews/07_warranty_and_returns_interview.md#1",
+          "doc:interviews/07_warranty_and_returns_interview.md#4",
+          "doc:interviews/07_warranty_and_returns_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#11"
+        ]
+      },
+      {
+        "process": "documents/processes/08_quoting.md",
+        "retrieved": [
+          "doc:interviews/08_quoting_interview.md#2",
+          "doc:interviews/01_order_to_delivery_interview.md#3",
+          "doc:interviews/01_order_to_delivery_interview.md#2",
+          "doc:documents/company/04_marketing_social_media.md#7"
+        ]
+      },
+      {
+        "process": "documents/processes/09_onboarding.md",
+        "retrieved": [
+          "doc:interviews/06_payroll_and_time_cards_interview.md#1",
+          "doc:interviews/09_onboarding_interview.md#2",
+          "doc:interviews/09_onboarding_interview.md#1",
+          "doc:documents/company/03_tools_inventory.md#1"
+        ]
+      },
+      {
+        "process": "documents/processes/10_facilities_upkeep.md",
+        "retrieved": [
+          "doc:interviews/10_facilities_upkeep_interview.md#1",
+          "doc:interviews/10_facilities_upkeep_interview.md#3",
+          "doc:interviews/10_facilities_upkeep_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#2"
+        ]
+      }
+    ],
+    "skipped_for_space": [],
+    "embedding_calls": 20,
+    "index_rebuilt": false,
+    "passages_in_index": 390
+  },
+  "run": "run-006",
+  "saved": "2026-11-17T17:05:30",
+  "run_note": "built from 1 owner document(s)"
+}

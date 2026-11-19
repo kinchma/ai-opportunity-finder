@@ -1,0 +1,285 @@
+{
+  "processes": [
+    {
+      "name": "Dealer Quoting & Sales Coordination",
+      "description": "Priya Ellwood handles dealer requests via Outlook/calls, checks IDs against an Excel list, and populates a quote template. Tessa Bellamy approves quotes, manages the pricing/formula workbook, and handles ~100 exceptional pricing questions annually. Quotes are offers until written acceptance.",
+      "pain_points": [
+        "Manual Excel template management",
+        "Ambiguous credit status handling",
+        "Reliance on manual routing for calls/messages"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/08_quoting.md#2",
+        "doc:interviews/08_quoting_interview.md#2"
+      ]
+    },
+    {
+      "name": "Order Intake & Production Scheduling",
+      "description": "Upon written dealer acceptance, Priya creates an order in Excel and a paper build packet. Jonah Sutter assigns unique WO identifiers, sets target dates (estimates, not guarantees), sequences work weekly in Excel/whiteboard, and hands packets to the floor. Supervisors report progress/exceptions back to Jonah for schedule updates.",
+      "pain_points": [
+        "Target dates treated as promises by dealers",
+        "Manual re-keying between quote/order/register",
+        "No named backup scheduler"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#3",
+        "doc:interviews/02_production_scheduling_interview.md#2"
+      ]
+    },
+    {
+      "name": "Purchasing, Receiving & Inventory Management",
+      "description": "Devon Kersey oversees purchasing; Jalen Sorrell creates POs. Cora Whitlock hand-counts 6 frequent SKUs weekly, updates an Excel stock sheet, and records receipts against POs. Exceptions go to Devon. QuickBooks is for bills only; Excel/paper are working shop-floor counts.",
+      "pain_points": [
+        "Discrepancy between accounting system (QuickBooks) and working inventory (Excel/paper)",
+        "Manual cycle counting of only 6 SKUs",
+        "Shortage handling causes worker idle time"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/03_purchasing_and_receiving.md#2",
+        "doc:interviews/04_inventory_counting_interview.md#8"
+      ]
+    },
+    {
+      "name": "Shipping, Invoicing & Month-End Close",
+      "description": "Mateo Renshaw schedules shipments and sends confirmations. Elena Corwin issues dealer invoices in QuickBooks at shipment (net 30). Lydia Fenner oversees monthly close: bank/AP/AR reconciliation, shipping vs invoice comparison, management summary export/re-keying to Excel, and checklist signoff.",
+      "pain_points": [
+        "Manual re-keying of management summaries",
+        "Close timeline often extends beyond 5-day target (e.g., October open at snapshot)",
+        "No named backup for Controller signoff"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#6",
+        "doc:interviews/05_month_end_close_interview.md#2"
+      ]
+    },
+    {
+      "name": "Warranty Claims & Returns Processing",
+      "description": "Priya receives dealer warranty messages, forwards details/photos to Iris Calder. Iris opens claims (CLM-YYYY-NNNN), verifies components, approves dealer repairs before work starts, and closes claims upon completion evidence. No blanket coverage rule; each claim reviewed individually.",
+      "pain_points": [
+        "Ambiguous warranty terms/coverage rules",
+        "No backup repair approver if Iris is unavailable",
+        "Manual tracking via Excel index/email threads"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/07_warranty_and_returns.md#2",
+        "doc:interviews/07_warranty_and_returns_interview.md#4"
+      ]
+    },
+    {
+      "name": "Payroll & Time Card Administration",
+      "description": "Nia Hadley collects paper time cards/exception notices, resolves omissions, enters biweekly hours into RUN Powered by ADP, reviews totals with Controller Lydia Fenner, and submits payroll. 36 hourly staff use cards; 14 salaried use exception notices. Supervisors approve direct reports' cards.",
+      "pain_points": [
+        "Manual paper-to-system data entry",
+        "Unclear legal overtime classification based on pay basis alone",
+        "No named backup payroll submitter or approver"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/06_payroll_and_time_cards.md#2",
+        "doc:interviews/09_onboarding_interview.md#16"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [
+    {
+      "process": "Dealer Quoting & Sales Coordination",
+      "document_says": "Priya Ellwood, Dealer Account Coordinator, handles the requests and routine quote template. Tessa Bellamy, Dealer Sales Manager, owns the Excel pricing/formula workbook and approves quotes.",
+      "interview_says": "I manage dealer sales and report to Mara Bellamy. Priya Ellwood is our Dealer Account Coordinator and reports to me.",
+      "sources": [
+        "doc:documents/processes/08_quoting.md#1",
+        "doc:interviews/08_quoting_interview.md#2"
+      ]
+    },
+    {
+      "process": "Order Intake & Production Scheduling",
+      "document_says": "Jonah Sutter, Production Scheduler, keeps the Excel schedule and the shop whiteboard. Owen Bellamy, Plant Manager, owns the floor.",
+      "interview_says": "I report to Owen Bellamy, our plant manager. I keep the production schedule in Excel and the shop whiteboard.",
+      "sources": [
+        "doc:documents/processes/02_production_scheduling.md#1",
+        "doc:interviews/02_production_scheduling_interview.md#2"
+      ]
+    }
+  ],
+  "sources_index": {
+    "doc:documents/processes/01_order_to_delivery.md#3": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "2. Make the order and schedule it"
+    },
+    "doc:documents/processes/01_order_to_delivery.md#6": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "4. Ship, invoice and answer status calls"
+    },
+    "doc:documents/processes/02_production_scheduling.md#1": {
+      "name": "documents/processes/02_production_scheduling.md",
+      "source_type": "process_document",
+      "heading": "Production scheduling"
+    },
+    "doc:documents/processes/03_purchasing_and_receiving.md#2": {
+      "name": "documents/processes/03_purchasing_and_receiving.md",
+      "source_type": "process_document",
+      "heading": "Before ordering"
+    },
+    "doc:documents/processes/06_payroll_and_time_cards.md#2": {
+      "name": "documents/processes/06_payroll_and_time_cards.md",
+      "source_type": "process_document",
+      "heading": "Cards and signoff"
+    },
+    "doc:documents/processes/07_warranty_and_returns.md#2": {
+      "name": "documents/processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "When a dealer reports a problem"
+    },
+    "doc:documents/processes/08_quoting.md#1": {
+      "name": "documents/processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "Quoting"
+    },
+    "doc:documents/processes/08_quoting.md#2": {
+      "name": "documents/processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "From request to quote"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#2": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[00:00]"
+    },
+    "doc:interviews/04_inventory_counting_interview.md#8": {
+      "name": "interviews/04_inventory_counting_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[04:00]"
+    },
+    "doc:interviews/05_month_end_close_interview.md#2": {
+      "name": "interviews/05_month_end_close_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[00:00]"
+    },
+    "doc:interviews/07_warranty_and_returns_interview.md#4": {
+      "name": "interviews/07_warranty_and_returns_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[00:00] Role and first contact"
+    },
+    "doc:interviews/08_quoting_interview.md#2": {
+      "name": "interviews/08_quoting_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Laurel Run Trailer Works \u2014 Quoting Interview"
+    },
+    "doc:interviews/09_onboarding_interview.md#16": {
+      "name": "interviews/09_onboarding_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Onboarding interview \u2014 Laurel Run Trailer Works"
+    }
+  },
+  "note": "built from 99 passage(s) from 40 shared file(s), retrieved per process (hybrid search) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "retrieval": {
+    "mode": "hybrid",
+    "reason": "",
+    "anchored_on": "process documents",
+    "per_process": [
+      {
+        "process": "documents/processes/01_order_to_delivery.md",
+        "retrieved": [
+          "doc:interviews/01_order_to_delivery_interview.md#2",
+          "doc:interviews/01_order_to_delivery_interview.md#1",
+          "doc:interviews/08_quoting_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/02_production_scheduling.md",
+        "retrieved": [
+          "doc:interviews/02_production_scheduling_interview.md#1",
+          "doc:interviews/02_production_scheduling_interview.md#2",
+          "doc:interviews/08_quoting_interview.md#11",
+          "doc:documents/company/03_tools_inventory.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/03_purchasing_and_receiving.md",
+        "retrieved": [
+          "doc:interviews/03_purchasing_and_receiving_interview.md#1",
+          "doc:interviews/04_inventory_counting_interview.md#1",
+          "doc:interviews/03_purchasing_and_receiving_interview.md#5",
+          "doc:documents/company/03_tools_inventory.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/04_inventory_counting.md",
+        "retrieved": [
+          "doc:interviews/04_inventory_counting_interview.md#2",
+          "doc:interviews/04_inventory_counting_interview.md#8",
+          "doc:interviews/04_inventory_counting_interview.md#1",
+          "doc:data/DATA_DICTIONARY.md#26"
+        ]
+      },
+      {
+        "process": "documents/processes/05_month_end_close.md",
+        "retrieved": [
+          "doc:interviews/05_month_end_close_interview.md#1",
+          "doc:interviews/05_month_end_close_interview.md#2",
+          "doc:interviews/05_month_end_close_interview.md#3",
+          "doc:data/DATA_DICTIONARY.md#22"
+        ]
+      },
+      {
+        "process": "documents/processes/06_payroll_and_time_cards.md",
+        "retrieved": [
+          "doc:interviews/06_payroll_and_time_cards_interview.md#2",
+          "doc:interviews/09_onboarding_interview.md#16",
+          "doc:interviews/06_payroll_and_time_cards_interview.md#1",
+          "doc:data/DATA_DICTIONARY.md#23"
+        ]
+      },
+      {
+        "process": "documents/processes/07_warranty_and_returns.md",
+        "retrieved": [
+          "doc:interviews/07_warranty_and_returns_interview.md#1",
+          "doc:interviews/07_warranty_and_returns_interview.md#4",
+          "doc:interviews/07_warranty_and_returns_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#11"
+        ]
+      },
+      {
+        "process": "documents/processes/08_quoting.md",
+        "retrieved": [
+          "doc:interviews/08_quoting_interview.md#2",
+          "doc:interviews/01_order_to_delivery_interview.md#3",
+          "doc:interviews/01_order_to_delivery_interview.md#2",
+          "doc:documents/company/04_marketing_social_media.md#7"
+        ]
+      },
+      {
+        "process": "documents/processes/09_onboarding.md",
+        "retrieved": [
+          "doc:interviews/06_payroll_and_time_cards_interview.md#1",
+          "doc:interviews/09_onboarding_interview.md#2",
+          "doc:interviews/09_onboarding_interview.md#1",
+          "doc:documents/company/03_tools_inventory.md#1"
+        ]
+      },
+      {
+        "process": "documents/processes/10_facilities_upkeep.md",
+        "retrieved": [
+          "doc:interviews/10_facilities_upkeep_interview.md#1",
+          "doc:interviews/10_facilities_upkeep_interview.md#3",
+          "doc:interviews/10_facilities_upkeep_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#2"
+        ]
+      }
+    ],
+    "skipped_for_space": [],
+    "embedding_calls": 20,
+    "index_rebuilt": false,
+    "passages_in_index": 390
+  },
+  "run": "run-012",
+  "saved": "2026-11-17T21:09:49",
+  "run_note": "built from 1 owner document(s)"
+}

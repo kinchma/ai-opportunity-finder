@@ -1,0 +1,4 @@
+season,members,tuneups_due,booked_and_done,not_booked_by_season_end,calls_made,avg_calls_per_booking,minutes_per_call
+spring 2026 (Mar-Apr),640,640,527,113,1320,2.5,4
+fall 2026 (Sep-Oct),640,640,517,123,1260,2.4,4
+year,640,1280,1044,236,2580,2.5,4

@@ -152,3 +152,13 @@ def test_the_verifier_can_read_a_cited_company_passage(monkeypatch):
     monkeypatch.setattr(planner, "ask_json", fake_ask)
     status, _, _ = planner.check_citations({"document_chunks": [chunk]}, [({"name": "Order re-entry"}, chunk["id"])])
     assert status["Order re-entry"]["status"] == "confirmed" and "We key orders twice." in seen["prompt"]
+
+
+def test_slow_local_agents_get_longer_timeouts(monkeypatch):
+    from opportunity_finder import llm
+    monkeypatch.delenv("LLM_TIMEOUT", raising=False)
+    monkeypatch.delenv("LLM_PROCESS_MAPPER_TIMEOUT", raising=False)
+    assert llm.timeout_for("process_mapper") == 900 and llm.timeout_for("discovery_research") == 600
+    assert llm.timeout_for("critic") == 300 and llm.timeout_for(None) == 300
+    monkeypatch.setenv("LLM_PROCESS_MAPPER_TIMEOUT", "1200")
+    assert llm.timeout_for("process_mapper") == 1200
