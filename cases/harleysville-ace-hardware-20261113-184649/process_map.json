@@ -1,59 +1,69 @@
 {
   "processes": [
     {
-      "name": "Inventory Management",
-      "description": "Tracking and managing stock levels of hardware items.",
+      "name": "Inventory Management & Procurement",
+      "description": "Monitoring stock levels, placing orders through the franchise distribution network, and managing backroom storage to ensure product availability.",
       "pain_points": [
-        "Stockouts",
-        "Overstocking",
-        "Outdated inventory data"
+        "Frequent stockouts of high-demand items",
+        "Overstocking slow-moving merchandise",
+        "Manual inventory count discrepancies"
       ],
       "basis": "typical"
     },
     {
-      "name": "Customer Service",
-      "description": "Assisting customers with product inquiries, sales, and returns.",
+      "name": "Sales Transaction Processing",
+      "description": "Handling walk-in purchases, processing payments, issuing receipts, and managing returns or exchanges at the point of sale.",
       "pain_points": [
-        "Long wait times",
-        "Product knowledge gaps",
-        "Handling complaints"
-      ],
-      "basis": "stated"
-    },
-    {
-      "name": "Order Processing",
-      "description": "Handling customer orders for in-store pickup or delivery.",
-      "pain_points": [
-        "Processing delays",
-        "Order errors",
-        "Customer dissatisfaction with order accuracy"
+        "Long checkout lines during peak hours",
+        "Payment terminal downtime or errors",
+        "Complex return policy handling"
       ],
       "basis": "typical"
     },
     {
-      "name": "Sales and Marketing",
-      "description": "Promoting products, running promotions, and managing advertising campaigns.",
+      "name": "Customer Service & Technical Support",
+      "description": "Assisting shoppers with product selection, providing DIY guidance, and managing special orders or warranty claims.",
       "pain_points": [
-        "Low sales performance",
-        "Ineffective marketing strategies",
-        "Budget constraints"
+        "Inconsistent staff knowledge due to turnover",
+        "Limited specialized expertise for complex projects",
+        "High volume of repetitive inquiries"
       ],
       "basis": "typical"
     },
     {
-      "name": "Supplier Management",
-      "description": "Maintaining relationships with suppliers to ensure product availability and quality.",
+      "name": "Store Operations & Facility Maintenance",
+      "description": "Managing daily store layout, safety compliance, cleaning routines, equipment upkeep, and opening/closing procedures.",
       "pain_points": [
-        "Supply chain disruptions",
-        "Price fluctuations",
-        "Quality issues"
+        "Aging fixtures causing operational delays",
+        "Inconsistent cleaning and safety standards",
+        "Stress from frequent compliance audits"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Franchise Compliance & Corporate Reporting",
+      "description": "Adhering to brand standards, submitting required sales and financial reports, and participating in corporate programs.",
+      "pain_points": [
+        "Time-consuming administrative tasks",
+        "Strict brand guidelines limiting local flexibility",
+        "Frequent system or policy updates"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Local Marketing & Community Engagement",
+      "description": "Executing store-specific promotions, managing local advertising channels, and participating in community events or contractor programs.",
+      "pain_points": [
+        "Limited marketing budget vs. big-box competitors",
+        "Difficulty tracking local campaign ROI",
+        "Unpredictable seasonal demand fluctuations"
       ],
       "basis": "typical"
     }
   ],
   "doc_vs_reality_gaps": [],
   "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)",
-  "version": 1,
-  "saved": "2026-11-13T18:48:57",
+  "version": 2,
+  "saved": "2026-11-14T20:41:48",
   "version_note": "built from the website and description only"
 }

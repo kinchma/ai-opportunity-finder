@@ -1,0 +1,24 @@
+{
+  "_note": "Transcribed by Claude from CASE_EXPECTATIONS.md and DO_NOT_SHARE_WITH_THE_ANALYSIS_AGENT.md on Nov 16. Top picks are chosen from the largest AI-addressable issues in the key (I07, I02, I01/I09); the key itself does not name 'expected picks'. Review before treating as final.",
+  "expected_industry": "trailer manufacturing",
+  "expected_top_picks": [["inventory"], ["schedule"], ["quote"]],
+  "planted_issues": [
+    ["re-key"],
+    ["schedule", "whiteboard"],
+    ["axle"],
+    ["wastebasket"],
+    ["month-end"],
+    ["time card"],
+    ["cycle count"],
+    ["claim"],
+    ["pricing", "formula"],
+    ["crm"],
+    ["build sheet"],
+    ["status"],
+    ["packing slip"],
+    ["facilities"],
+    ["social"]
+  ],
+  "forbidden_claims": ["linkedin.com/company", "tiktok.com", "instagram.com/", "facebook.com/", "@laurelrun"],
+  "min_citation_coverage": 0.6
+}

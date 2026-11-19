@@ -1,0 +1,10 @@
+period_start,period_end,step_id,task,completed_by_employee_id,completed_by_name,completed_date,status,completion_note
+2026-09-01,2026-09-30,01,Post shipment invoices through September cutoff,E006,Elena Corwin,2026-09-30,Complete,Posted invoices through the cutoff
+2026-09-01,2026-09-30,02,Post received approved bills through September cutoff,E006,Elena Corwin,2026-10-01,Complete,Posted received approved bills
+2026-09-01,2026-09-30,03,Review bank report and reconciliation,E004,Lydia Fenner,2026-10-02,Complete,Reviewed bank reconciliation
+2026-09-01,2026-09-30,04,Review accounts receivable report,E004,Lydia Fenner,2026-10-05,Complete,Reviewed accounts receivable report
+2026-09-01,2026-09-30,05,Review accounts payable report,E004,Lydia Fenner,2026-10-05,Complete,Reviewed accounts payable report
+2026-09-01,2026-09-30,06,Compare shipping and invoice records,E004,Lydia Fenner,2026-10-06,Complete,Compared September shipping and invoice records
+2026-09-01,2026-09-30,07,Export selected reports and prepare management summary,E004,Lydia Fenner,2026-10-06,Complete,Exported selected reports and entered management summary
+2026-09-01,2026-09-30,08,Review approved adjustments and record as applicable,E004,Lydia Fenner,2026-10-07,Complete,Reviewed; no approved adjustments pending
+2026-09-01,2026-09-30,09,Sign September close checklist,E004,Lydia Fenner,2026-10-07,Complete,Signed September checklist

@@ -384,9 +384,9 @@
       "changes": [
         "moved foundation work first"
       ],
-      "rationale": "Starting with the lowest-risk initiatives aligns perfectly with a cautious owner, allowing the business to secure quick wins and build operational confidence before tackling more complex integrations. By sequencing foundational quality tracking first, the company establishes reliable data streams that naturally support subsequent customer-facing and quoting automation. This progressive approach minimizes disruption to active trailer assembly lines while steadily improving dealer communication and quote accuracy.",
-      "pilot_reason": "The Warranty-Trend Feedback Analyzer serves as the ideal pilot because it relies solely on existing internal data and customer feedback, requiring minimal process changes or cross-departmental coordination to deploy successfully.",
-      "assumption": "This roadmap will only succeed if the company maintains consistent, well-organized records of production batches and component types to accurately feed the initial quality tracking system.",
+      "rationale": "Starting with the lowest-risk initiatives aligns perfectly with an owner who prefers caution, as it minimizes operational disruption while building foundational data quality. Placing the foundation work first ensures engineering receives reliable defect trends before scaling to customer-facing scheduling and quoting tools. This sequence reduces the chance of compounding errors in a custom manufacturing environment where production accuracy directly impacts dealer trust and warranty costs.",
+      "pilot_reason": "The Warranty-Trend Feedback Analyzer serves as the pilot because it requires minimal integration with live production systems, allowing the team to validate data aggregation and reporting processes without risking order fulfillment or quote accuracy.",
+      "assumption": "This plan assumes that historical warranty claims and customer survey data are sufficiently digitized and accessible to be reliably aggregated without extensive manual cleanup.",
       "narrative_by": "model",
       "rubric": null,
       "reviewed": true,
@@ -403,12 +403,24 @@
         "Warranty-Trend Feedback Analyzer",
         "Custom Spec Extractor & Quote Validator"
       ],
-      "score": 0.437,
-      "rationale": "Ordering by lowest risk aligns perfectly with a cautious owner who prioritizes stability and incremental progress. Beginning with the Production Schedule Status Assistant ensures early success without disrupting core manufacturing or financial workflows. The subsequent tools are sequenced to build on established data flows, minimizing integration errors and allowing the business to scale confidence gradually.",
-      "pilot_reason": "The Production Schedule Status Assistant is the pilot because it carries minimal operational disruption and leverages already-stable production data.",
-      "assumption": "The owner must maintain strict change-control protocols to prevent early-stage automation from interfering with active production schedules.",
+      "score": 0.469,
+      "rationale": "Given the owner\u2019s cautious risk profile, sequencing initiatives by lowest risk ensures that Car Mate Trailers avoids disruptive failures and maintains steady operations during digital transformation. The production status assistant and warranty trend analyzer rely on established data streams and carry minimal implementation friction, allowing the team to validate processes safely. This conservative progression builds internal competence before introducing slightly higher-risk quoting automation.",
+      "pilot_reason": "The Production Schedule Status Assistant is piloted first because it operates entirely within existing workflows and carries the lowest implementation risk, aligning perfectly with the owner\u2019s cautious approach.",
+      "assumption": "The core manufacturing and shipping data systems are stable, accurate, and available for integration without requiring costly infrastructure upgrades.",
       "narrative_by": "model",
-      "rubric": null,
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 3,
+        "avg": 4.0,
+        "evidence": [
+          "smb-ai-adoption#2",
+          "order-to-delivery#1"
+        ],
+        "objection": "The 'Warranty Eligibility Verifier' is placed third, which may be too late to address the owner's risk tolerance.",
+        "weakest_item": null,
+        "model": "qwen2.5-7b-instruct"
+      },
       "reviewed": true,
       "base_score": 0.487,
       "penalty": 0.05,
@@ -430,12 +442,24 @@
         "Production Schedule Status Assistant",
         "Warranty Eligibility Verifier"
       ],
-      "score": 0.43,
-      "rationale": "Placing foundational tools first ensures that downstream automation relies on accurate, aggregated data rather than fragmented inputs. The Warranty-Trend Feedback Analyzer establishes a centralized quality and feedback repository, which is essential for engineering improvements and accurate claim validation. Once this data foundation is secure, the business can confidently automate status inquiries and complex warranty verification without risking data inconsistencies.",
-      "pilot_reason": "The Warranty-Trend Feedback Analyzer is the pilot because it creates the necessary data infrastructure that all subsequent automation tools depend upon.",
-      "assumption": "Engineering and quality teams must consistently log batch-specific defect data and customer survey responses into a centralized system.",
+      "score": 0.462,
+      "rationale": "Placing foundational enablers first ensures that downstream automation tools have reliable data pipelines and standardized inputs to function correctly. The warranty trend analyzer establishes the necessary quality feedback loop, which then supports accurate production tracking and complex quoting validation. This sequence prevents downstream bottlenecks by ensuring data integrity and process standardization before automating customer-facing workflows.",
+      "pilot_reason": "The Warranty-Trend Feedback Analyzer is piloted first because it creates the essential data foundation and quality reporting framework that all subsequent automation tools depend on.",
+      "assumption": "Engineering and quality teams will consistently input accurate batch/component data and customer survey responses into the system.",
       "narrative_by": "model",
-      "rubric": null,
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 3,
+        "avg": 4.0,
+        "evidence": [
+          "smb-ai-adoption#2",
+          "order-to-delivery#1"
+        ],
+        "objection": "",
+        "weakest_item": null,
+        "model": "qwen2.5-7b-instruct"
+      },
       "reviewed": true,
       "base_score": 0.43,
       "penalty": 0,
@@ -443,19 +467,19 @@
       "findings": []
     }
   ],
-  "review_round": 2,
-  "revision_exhausted": false,
+  "review_round": 3,
+  "revision_exhausted": true,
   "pruned_log": [
     {
       "id": "highest_value",
       "angle": "highest_value",
-      "score": 0.347,
+      "score": 0.373,
       "reason": "ranked below top 3"
     },
     {
       "id": "quick_win",
       "angle": "quick_win",
-      "score": 0.413,
+      "score": 0.444,
       "reason": "ranked below top 3"
     }
   ],
@@ -477,7 +501,7 @@
         "placeholder": false,
         "citation": {
           "status": "rejected",
-          "detail": "The passage outlines general AI deployment best practices rather than warranty data aggregation or defect reporting."
+          "detail": "The passage discusses AI implementation guidelines, not warranty data aggregation or defect reporting."
         },
         "note": ""
       },
@@ -538,7 +562,12 @@
     "rejected": []
   },
   "escalate_now": false,
-  "flags": [],
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "lowest_risk_r1 leads lowest_risk by 3.8% (under 10%). They hold the same ideas in a different order."
+    }
+  ],
   "final_recommendation": {
     "roadmap": {
       "id": "lowest_risk_r1",
@@ -553,9 +582,9 @@
       "changes": [
         "moved foundation work first"
       ],
-      "rationale": "Starting with the lowest-risk initiatives aligns perfectly with a cautious owner, allowing the business to secure quick wins and build operational confidence before tackling more complex integrations. By sequencing foundational quality tracking first, the company establishes reliable data streams that naturally support subsequent customer-facing and quoting automation. This progressive approach minimizes disruption to active trailer assembly lines while steadily improving dealer communication and quote accuracy.",
-      "pilot_reason": "The Warranty-Trend Feedback Analyzer serves as the ideal pilot because it relies solely on existing internal data and customer feedback, requiring minimal process changes or cross-departmental coordination to deploy successfully.",
-      "assumption": "This roadmap will only succeed if the company maintains consistent, well-organized records of production batches and component types to accurately feed the initial quality tracking system.",
+      "rationale": "Starting with the lowest-risk initiatives aligns perfectly with an owner who prefers caution, as it minimizes operational disruption while building foundational data quality. Placing the foundation work first ensures engineering receives reliable defect trends before scaling to customer-facing scheduling and quoting tools. This sequence reduces the chance of compounding errors in a custom manufacturing environment where production accuracy directly impacts dealer trust and warranty costs.",
+      "pilot_reason": "The Warranty-Trend Feedback Analyzer serves as the pilot because it requires minimal integration with live production systems, allowing the team to validate data aggregation and reporting processes without risking order fulfillment or quote accuracy.",
+      "assumption": "This plan assumes that historical warranty claims and customer survey data are sufficiently digitized and accessible to be reliably aggregated without extensive manual cleanup.",
       "narrative_by": "model",
       "rubric": null,
       "reviewed": true,
@@ -577,12 +606,24 @@
         "Warranty-Trend Feedback Analyzer",
         "Custom Spec Extractor & Quote Validator"
       ],
-      "score": 0.437,
-      "rationale": "Ordering by lowest risk aligns perfectly with a cautious owner who prioritizes stability and incremental progress. Beginning with the Production Schedule Status Assistant ensures early success without disrupting core manufacturing or financial workflows. The subsequent tools are sequenced to build on established data flows, minimizing integration errors and allowing the business to scale confidence gradually.",
-      "pilot_reason": "The Production Schedule Status Assistant is the pilot because it carries minimal operational disruption and leverages already-stable production data.",
-      "assumption": "The owner must maintain strict change-control protocols to prevent early-stage automation from interfering with active production schedules.",
+      "score": 0.469,
+      "rationale": "Given the owner\u2019s cautious risk profile, sequencing initiatives by lowest risk ensures that Car Mate Trailers avoids disruptive failures and maintains steady operations during digital transformation. The production status assistant and warranty trend analyzer rely on established data streams and carry minimal implementation friction, allowing the team to validate processes safely. This conservative progression builds internal competence before introducing slightly higher-risk quoting automation.",
+      "pilot_reason": "The Production Schedule Status Assistant is piloted first because it operates entirely within existing workflows and carries the lowest implementation risk, aligning perfectly with the owner\u2019s cautious approach.",
+      "assumption": "The core manufacturing and shipping data systems are stable, accurate, and available for integration without requiring costly infrastructure upgrades.",
       "narrative_by": "model",
-      "rubric": null,
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 3,
+        "avg": 4.0,
+        "evidence": [
+          "smb-ai-adoption#2",
+          "order-to-delivery#1"
+        ],
+        "objection": "The 'Warranty Eligibility Verifier' is placed third, which may be too late to address the owner's risk tolerance.",
+        "weakest_item": null,
+        "model": "qwen2.5-7b-instruct"
+      },
       "reviewed": true,
       "base_score": 0.487,
       "penalty": 0.05,
@@ -596,8 +637,8 @@
         }
       ]
     },
-    "close_call": false,
-    "lead_margin": 0.114,
+    "close_call": true,
+    "lead_margin": 0.038,
     "verified": true,
     "verification": {
       "roadmap": "lowest_risk_r1",
@@ -616,7 +657,7 @@
           "placeholder": false,
           "citation": {
             "status": "rejected",
-            "detail": "The passage outlines general AI deployment best practices rather than warranty data aggregation or defect reporting."
+            "detail": "The passage discusses AI implementation guidelines, not warranty data aggregation or defect reporting."
           },
           "note": ""
         },
@@ -675,7 +716,8 @@
       "no_practices": false,
       "note": "",
       "rejected": []
-    }
+    },
+    "close_call_detail": "lowest_risk_r1 leads lowest_risk by 3.8% (under 10%). They hold the same ideas in a different order."
   },
   "status": "complete",
   "model_calls": 10,
@@ -685,12 +727,15 @@
     "process_mapper: 6 processes",
     "matcher: 7 candidates scored [added a website AI assistant (no chat widget found on the site).]",
     "strategist: 4 roadmaps",
-    "critic: scored 4 roadmaps, 0 with a rubric [4 review(s) dropped (bad ratings or no valid evidence)]",
-    "review_gate: round 1, kept 3, pruned 1, best leads by 1.6%",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 1.5%",
     "strategist: 4 roadmaps [1 revised]",
-    "critic: scored 4 roadmaps, 0 with a rubric [1 review(s) dropped (bad ratings or no valid evidence)]",
-    "review_gate: round 2, kept 3, pruned 1, best leads by 11.4%",
-    "planner: verified, 3 of 3 ideas grounded"
+    "critic: scored 4 roadmaps, 3 with a rubric [1 review(s) dropped (1 unknown id)]",
+    "review_gate: round 2, kept 3, pruned 1, best leads by 3.8%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 2 with a rubric",
+    "review_gate: round 3, kept 3, pruned 0, best leads by 3.8%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
   ],
   "call_log": [
     {
@@ -714,84 +759,85 @@
       "output_tokens": 169
     },
     {
-      "ts": "2026-11-15T00:46:26+00:00",
+      "ts": "2026-11-16T16:09:33+00:00",
       "agent": "discovery_research",
       "model": "qwen3.6-35b-a3b-mlx",
-      "seconds": 71.858,
+      "seconds": 71.792,
       "error": null,
       "stub": false,
       "input_tokens": 952,
       "output_tokens": 3455
     },
     {
-      "ts": "2026-11-15T00:46:24+00:00",
+      "ts": "2026-11-16T16:09:31+00:00",
       "agent": "process_mapper",
       "model": "qwen3.6-35b-a3b-mlx",
-      "seconds": 69.855,
+      "seconds": 69.837,
       "error": null,
       "stub": false,
       "input_tokens": 928,
       "output_tokens": 3289
     },
     {
-      "ts": "2026-11-15T00:47:17+00:00",
+      "ts": "2026-11-16T16:10:24+00:00",
       "agent": "matcher",
       "model": "qwen3.6-35b-a3b-mlx",
-      "seconds": 51.078,
+      "seconds": 50.844,
       "error": null,
       "stub": false,
       "input_tokens": 765,
       "output_tokens": 4347
     },
     {
-      "ts": "2026-11-15T00:47:59+00:00",
+      "ts": "2026-11-16T16:11:12+00:00",
       "agent": "strategist",
       "model": "qwen3.6-35b-a3b-mlx",
-      "seconds": 41.789,
+      "seconds": 47.932,
       "error": null,
       "stub": false,
       "input_tokens": 1071,
-      "output_tokens": 3381
+      "output_tokens": 4012
     },
     {
-      "ts": "2026-11-15T00:48:11+00:00",
+      "ts": "2026-11-16T16:11:25+00:00",
       "agent": "critic",
       "model": "qwen2.5-7b-instruct",
-      "seconds": 12.421,
+      "seconds": 12.557,
       "error": null,
       "stub": false,
-      "input_tokens": 1909,
-      "output_tokens": 568
+      "input_tokens": 1936,
+      "output_tokens": 351
     },
     {
-      "ts": "2026-11-15T00:48:48+00:00",
+      "ts": "2026-11-16T16:11:51+00:00",
       "agent": "strategist",
       "model": "qwen3.6-35b-a3b-mlx",
-      "seconds": 37.211,
+      "seconds": 26.297,
       "error": null,
       "stub": false,
       "input_tokens": 439,
-      "output_tokens": 3043
+      "output_tokens": 2175
     },
     {
-      "ts": "2026-11-15T00:48:53+00:00",
+      "ts": "2026-11-16T16:11:54+00:00",
       "agent": "critic",
       "model": "qwen2.5-7b-instruct",
-      "seconds": 4.552,
+      "seconds": 3.033,
       "error": null,
       "stub": false,
-      "input_tokens": 974,
-      "output_tokens": 149
+      "input_tokens": 988,
+      "output_tokens": 110,
+      "reply_sample": "{\n    \"reviews\": [\n        {\n            \"id\": \"lowest_r1\",\n            \"feasibility\": 4,\n            \"sequencing\": 5,\n            \"fit\": 4,\n            \"evidence\": [\"smb-ai-adoption#2\", \"order-to-delivery#1\"],\n            \"objection\": \"The warranty trend feedback analyzer, while valuable, is a higher-risk initiative given the owner's risk tolerance.\",\n            \"weakest_item\": \"Warranty-Trend Feedback Analyzer\"\n        }\n    ]\n}"
     },
     {
-      "ts": "2026-11-15T00:49:20+00:00",
+      "ts": "2026-11-16T16:12:18+00:00",
       "agent": "planner",
       "model": "qwen3.6-35b-a3b-mlx",
-      "seconds": 26.937,
+      "seconds": 24.193,
       "error": null,
       "stub": false,
       "input_tokens": 652,
-      "output_tokens": 2208
+      "output_tokens": 2038
     }
   ]
 }

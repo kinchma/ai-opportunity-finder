@@ -1,0 +1,51 @@
+employee_id,full_name,title,reporting_manager_id,hire_date,tenure_years_as_of_2026_10_31,finance_accounting_pct,sales_pct,marketing_pct,production_operations_pct,purchasing_inventory_pct,quality_warranty_pct,customer_service_pct,hr_payroll_pct,it_pct,facilities_admin_pct
+E001,Mara Bellamy,President and CEO,,1993-06-14,33.38,25,20,5,15,5,5,0,10,5,10
+E002,Owen Bellamy,Plant Manager,E001,1997-03-03,29.66,0,5,0,65,5,10,0,5,0,10
+E003,Tessa Bellamy,Dealer Sales Manager,E001,2002-08-12,24.22,10,70,10,5,0,0,5,0,0,0
+E004,Lydia Fenner,Controller,E001,2008-04-21,18.53,85,5,0,0,0,0,0,5,0,5
+E005,Nia Hadley,Office and Payroll Administrator,E004,2013-09-16,13.12,15,0,0,0,0,0,0,80,0,5
+E006,Elena Corwin,Accounting Clerk,E004,2019-02-11,7.72,90,0,0,0,0,0,5,0,0,5
+E007,Holly Darnell,Reception and Admin Coordinator,E001,2018-05-07,8.48,0,0,5,0,0,0,65,5,0,25
+E008,Priya Ellwood,Dealer Account Coordinator,E003,2017-07-10,9.31,5,50,5,0,0,0,40,0,0,0
+E009,Grant Tolland,Dealer Account Representative,E003,2020-01-13,6.80,0,80,5,5,0,0,10,0,0,0
+E010,Keira Morrow,Marketing and Dealer Support Coordinator,E003,2021-06-07,5.40,0,10,70,0,0,0,15,0,0,5
+E011,Jonah Sutter,Production Scheduler,E002,2015-10-19,11.03,0,5,0,80,10,5,0,0,0,0
+E012,Devon Kersey,Materials and Purchasing Manager,E002,2009-11-09,16.98,5,0,0,10,75,5,5,0,0,0
+E013,Jalen Sorrell,Buyer,E012,2018-04-02,8.58,10,0,0,5,80,5,0,0,0,0
+E014,Cora Whitlock,Receiving and Inventory Clerk,E012,2020-09-14,6.13,0,0,0,5,80,5,0,0,0,10
+E015,Mateo Renshaw,Shipping Coordinator,E012,2016-12-05,9.90,0,0,0,60,20,0,10,0,0,10
+E016,Iris Calder,Quality and Warranty Lead,E002,2012-02-06,14.73,0,0,0,5,5,75,15,0,0,0
+E017,Felix Harrow,Manufacturing Engineer,E002,2019-05-20,7.45,0,0,0,65,10,20,0,0,5,0
+E018,Simon Denby,Facilities and IT Coordinator,E002,2014-01-27,12.76,0,0,0,10,0,0,0,0,45,45
+E019,Theo Lowry,Fabrication Supervisor,E002,2007-07-23,19.27,0,0,0,80,0,10,0,5,0,5
+E020,Avery Carver,Assembly Supervisor,E002,2011-03-14,15.63,0,0,0,80,0,10,0,5,0,5
+E021,Micah Orlin,Fabricator/Welder,E019,2017-04-03,9.58,0,0,0,90,0,5,0,0,0,5
+E022,Daphne Weller,Fabricator/Welder,E019,2016-06-13,10.38,0,0,0,90,0,5,0,0,0,5
+E023,Silas Breck,Fabricator/Welder,E019,2022-03-21,4.61,0,0,0,90,0,5,0,0,0,5
+E024,Naomi Peller,Fabricator/Welder,E019,2018-10-15,8.04,0,0,0,90,0,5,0,0,0,5
+E025,Ruben Mallory,Fabricator/Welder,E019,2023-01-09,3.81,0,0,0,90,0,5,0,0,0,5
+E026,Mira Ellery,Fabricator/Welder,E019,2014-08-18,12.20,0,0,0,90,0,5,0,0,0,5
+E027,Caleb Winsor,Fabricator/Welder,E019,2019-07-22,7.28,0,0,0,90,0,5,0,0,0,5
+E028,Orla Penwick,Fabricator/Welder,E019,2020-04-06,6.57,0,0,0,90,0,5,0,0,0,5
+E029,Evan Torrey,Fabricator/Welder,E019,2021-11-01,5.00,0,0,0,90,0,5,0,0,0,5
+E030,Taryn Holcomb,Fabricator/Welder,E019,2024-02-12,2.72,0,0,0,90,0,5,0,0,0,5
+E031,Dorian Wren,Fabricator/Welder,E019,2025-01-06,1.82,0,0,0,90,0,5,0,0,0,5
+E032,Nell Forster,Cutting Technician,E019,2018-03-12,8.64,0,0,0,95,0,5,0,0,0,0
+E033,Bryce Langley,Cutting Technician,E019,2022-09-19,4.12,0,0,0,95,0,5,0,0,0,0
+E034,Vera Linden,Cutting Technician,E019,2024-06-10,2.39,0,0,0,95,0,5,0,0,0,0
+E035,Elise Worrall,Paint Technician,E019,2016-01-25,10.77,0,0,0,90,0,5,0,0,0,5
+E036,Harlan Mott,Paint Technician,E019,2023-05-15,3.46,0,0,0,90,0,5,0,0,0,5
+E037,Ada Fenwick,Assembly Technician,E020,2015-12-07,10.90,0,0,0,90,0,10,0,0,0,0
+E038,Gavin Thorne,Assembly Technician,E020,2019-11-04,6.99,0,0,0,90,0,10,0,0,0,0
+E039,Liora Beckett,Assembly Technician,E020,2020-07-13,6.30,0,0,0,90,0,10,0,0,0,0
+E040,Rowan Delaney,Assembly Technician,E020,2017-09-25,9.10,0,0,0,90,0,10,0,0,0,0
+E041,Mabel Keene,Assembly Technician,E020,2021-04-19,5.53,0,0,0,90,0,10,0,0,0,0
+E042,Quinn Alden,Assembly Technician,E020,2018-12-03,7.91,0,0,0,90,0,10,0,0,0,0
+E043,Soren Maddox,Assembly Technician,E020,2022-05-09,4.48,0,0,0,90,0,10,0,0,0,0
+E044,June Merritt,Assembly Technician,E020,2023-08-14,3.21,0,0,0,90,0,10,0,0,0,0
+E045,Ellis Calderwood,Assembly Technician,E020,2024-01-22,2.77,0,0,0,90,0,10,0,0,0,0
+E046,Rhea Voss,Assembly Technician,E020,2020-02-17,6.70,0,0,0,90,0,10,0,0,0,0
+E047,Jonah Weller,Assembly Technician,E020,2025-02-03,1.74,0,0,0,90,0,10,0,0,0,0
+E048,Faye Hollis,Assembly Technician,E020,2025-09-08,1.14,0,0,0,90,0,10,0,0,0,0
+E049,Ansel Croft,Finish and Inspection Technician,E020,2016-11-14,9.96,0,0,0,70,0,30,0,0,0,0
+E050,Esme Larkin,Finish and Inspection Technician,E020,2022-07-18,4.29,0,0,0,70,0,30,0,0,0,0

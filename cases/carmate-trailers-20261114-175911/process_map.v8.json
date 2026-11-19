@@ -1,0 +1,69 @@
+{
+  "processes": [
+    {
+      "name": "Quote Management",
+      "description": "Processes customer requests for custom cargo and car trailers, capturing specifications like width, depth, front style, and finish options to generate accurate pricing.",
+      "pain_points": [
+        "Complex custom configurations increase error risk",
+        "Manual specification verification slows turnaround",
+        "Tracking quote-to-order conversion rates"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Custom Manufacturing & Production Scheduling",
+      "description": "Converts approved quotes into build orders, manages raw material procurement, coordinates assembly line workflows, and conducts in-process quality inspections.",
+      "pain_points": [
+        "Supply chain delays for specialized components",
+        "Bottlenecks from high-mix custom orders",
+        "Inventory tracking across numerous variants"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Dealer Channel Management & Onboarding",
+      "description": "Handles dealer applications, integrates financing partnerships (e.g., Sheffield Financial), manages dealer portal access, and maintains the store locator system.",
+      "pain_points": [
+        "Inconsistent dealer compliance with branding",
+        "Complex multi-lender financing paperwork",
+        "Dealer portal synchronization issues"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Warranty Registration & Claims Processing",
+      "description": "Manages lifetime warranty registrations, validates claims against dealer/purchase records, and authorizes repairs or part replacements per company policy.",
+      "pain_points": [
+        "Manual claim verification across decades of models",
+        "Preventing warranty fraud or misuse",
+        "Tracking coverage eligibility for used trailers"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Customer Support & Parts Fulfillment",
+      "description": "Provides technical assistance, distributes owner\u2019s manuals, and processes spare parts orders for existing trailer owners.",
+      "pain_points": [
+        "Identifying correct parts for older/custom builds",
+        "High volume of technical support inquiries",
+        "Shipping costs and logistics for heavy components"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Quality Assurance & Customer Feedback Collection",
+      "description": "Collects and analyzes customer survey data, monitors warranty claim trends for defect identification, and drives continuous improvement initiatives.",
+      "pain_points": [
+        "Low survey response rates",
+        "Linking feedback to specific production batches",
+        "Translating insights into actionable engineering changes"
+      ],
+      "basis": "stated"
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)",
+  "version": 8,
+  "saved": "2026-11-14T20:36:11",
+  "version_note": "built from the website and description only"
+}

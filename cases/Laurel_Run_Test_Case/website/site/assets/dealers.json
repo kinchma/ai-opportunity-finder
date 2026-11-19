@@ -1,0 +1,402 @@
+[
+  {
+    "dealer_id": "DLR-0001",
+    "dealer_name": "Cedar Bend Trailer Sales",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0002",
+    "dealer_name": "Maple Span Equipment",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0003",
+    "dealer_name": "Arrow Hollow Trailer Center",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0004",
+    "dealer_name": "Stonegate Trailer Outlet",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0005",
+    "dealer_name": "Alder Barrow Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0006",
+    "dealer_name": "Ashen Grove Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0007",
+    "dealer_name": "Birch Moor Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0008",
+    "dealer_name": "Briar Vale Hauler Supply",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0009",
+    "dealer_name": "Brook Dell Trailer Exchange",
+    "state": "Maryland"
+  },
+  {
+    "dealer_id": "DLR-0010",
+    "dealer_name": "Clover Landing Equipment Center",
+    "state": "New Jersey"
+  },
+  {
+    "dealer_id": "DLR-0011",
+    "dealer_name": "Copper Span Trailer Sales",
+    "state": "Virginia"
+  },
+  {
+    "dealer_id": "DLR-0012",
+    "dealer_name": "Dogwood Crossing Hauler Supply",
+    "state": "Delaware"
+  },
+  {
+    "dealer_id": "DLR-0013",
+    "dealer_name": "Dovetail Hill Trailer Exchange",
+    "state": "Kentucky"
+  },
+  {
+    "dealer_id": "DLR-0014",
+    "dealer_name": "Elm Ridge Equipment Center",
+    "state": "Indiana"
+  },
+  {
+    "dealer_id": "DLR-0015",
+    "dealer_name": "Fern Basin Trailer Sales",
+    "state": "Vermont"
+  },
+  {
+    "dealer_id": "DLR-0016",
+    "dealer_name": "Fieldstone Haven Hauler Supply",
+    "state": "North Carolina"
+  },
+  {
+    "dealer_id": "DLR-0017",
+    "dealer_name": "Glen Notch Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0018",
+    "dealer_name": "Hawthorn Way Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0019",
+    "dealer_name": "Hemlock Ford Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0020",
+    "dealer_name": "Juniper Mead Hauler Supply",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0021",
+    "dealer_name": "Laurel Valley Trailer Exchange",
+    "state": "Maryland"
+  },
+  {
+    "dealer_id": "DLR-0022",
+    "dealer_name": "Linden Dale Equipment Center",
+    "state": "New Jersey"
+  },
+  {
+    "dealer_id": "DLR-0023",
+    "dealer_name": "Meadow Hollow Trailer Sales",
+    "state": "Virginia"
+  },
+  {
+    "dealer_id": "DLR-0024",
+    "dealer_name": "Millstone Run Hauler Supply",
+    "state": "Delaware"
+  },
+  {
+    "dealer_id": "DLR-0025",
+    "dealer_name": "Oak Brook Trailer Exchange",
+    "state": "Kentucky"
+  },
+  {
+    "dealer_id": "DLR-0026",
+    "dealer_name": "Pine Heath Equipment Center",
+    "state": "Indiana"
+  },
+  {
+    "dealer_id": "DLR-0027",
+    "dealer_name": "Quarry Pass Trailer Sales",
+    "state": "Vermont"
+  },
+  {
+    "dealer_id": "DLR-0028",
+    "dealer_name": "Silver Barrow Hauler Supply",
+    "state": "North Carolina"
+  },
+  {
+    "dealer_id": "DLR-0029",
+    "dealer_name": "Willow Grove Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0030",
+    "dealer_name": "Alder Notch Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0031",
+    "dealer_name": "Ashen Way Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0032",
+    "dealer_name": "Birch Ford Hauler Supply",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0033",
+    "dealer_name": "Briar Mead Trailer Exchange",
+    "state": "Maryland"
+  },
+  {
+    "dealer_id": "DLR-0034",
+    "dealer_name": "Brook Valley Equipment Center",
+    "state": "New Jersey"
+  },
+  {
+    "dealer_id": "DLR-0035",
+    "dealer_name": "Clover Dale Trailer Sales",
+    "state": "Virginia"
+  },
+  {
+    "dealer_id": "DLR-0036",
+    "dealer_name": "Copper Hollow Hauler Supply",
+    "state": "Delaware"
+  },
+  {
+    "dealer_id": "DLR-0037",
+    "dealer_name": "Dogwood Run Trailer Exchange",
+    "state": "Kentucky"
+  },
+  {
+    "dealer_id": "DLR-0038",
+    "dealer_name": "Dovetail Brook Equipment Center",
+    "state": "Indiana"
+  },
+  {
+    "dealer_id": "DLR-0039",
+    "dealer_name": "Elm Heath Trailer Sales",
+    "state": "Vermont"
+  },
+  {
+    "dealer_id": "DLR-0040",
+    "dealer_name": "Fern Pass Hauler Supply",
+    "state": "North Carolina"
+  },
+  {
+    "dealer_id": "DLR-0041",
+    "dealer_name": "Fieldstone Barrow Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0042",
+    "dealer_name": "Glen Grove Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0043",
+    "dealer_name": "Hawthorn Moor Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0044",
+    "dealer_name": "Hemlock Vale Hauler Supply",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0045",
+    "dealer_name": "Juniper Dell Trailer Exchange",
+    "state": "Maryland"
+  },
+  {
+    "dealer_id": "DLR-0046",
+    "dealer_name": "Laurel Landing Equipment Center",
+    "state": "New Jersey"
+  },
+  {
+    "dealer_id": "DLR-0047",
+    "dealer_name": "Linden Span Trailer Sales",
+    "state": "Virginia"
+  },
+  {
+    "dealer_id": "DLR-0048",
+    "dealer_name": "Meadow Crossing Hauler Supply",
+    "state": "Delaware"
+  },
+  {
+    "dealer_id": "DLR-0049",
+    "dealer_name": "Millstone Hill Trailer Exchange",
+    "state": "Kentucky"
+  },
+  {
+    "dealer_id": "DLR-0050",
+    "dealer_name": "Oak Ridge Equipment Center",
+    "state": "Indiana"
+  },
+  {
+    "dealer_id": "DLR-0051",
+    "dealer_name": "Pine Basin Trailer Sales",
+    "state": "Vermont"
+  },
+  {
+    "dealer_id": "DLR-0052",
+    "dealer_name": "Quarry Haven Hauler Supply",
+    "state": "North Carolina"
+  },
+  {
+    "dealer_id": "DLR-0053",
+    "dealer_name": "Silver Notch Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0054",
+    "dealer_name": "Willow Way Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0055",
+    "dealer_name": "Alder Grove Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0056",
+    "dealer_name": "Ashen Moor Hauler Supply",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0057",
+    "dealer_name": "Birch Vale Trailer Exchange",
+    "state": "Maryland"
+  },
+  {
+    "dealer_id": "DLR-0058",
+    "dealer_name": "Briar Dell Equipment Center",
+    "state": "New Jersey"
+  },
+  {
+    "dealer_id": "DLR-0059",
+    "dealer_name": "Brook Landing Trailer Sales",
+    "state": "Virginia"
+  },
+  {
+    "dealer_id": "DLR-0060",
+    "dealer_name": "Clover Span Hauler Supply",
+    "state": "Delaware"
+  },
+  {
+    "dealer_id": "DLR-0061",
+    "dealer_name": "Copper Crossing Trailer Exchange",
+    "state": "Kentucky"
+  },
+  {
+    "dealer_id": "DLR-0062",
+    "dealer_name": "Dogwood Hill Equipment Center",
+    "state": "Indiana"
+  },
+  {
+    "dealer_id": "DLR-0063",
+    "dealer_name": "Dovetail Ridge Trailer Sales",
+    "state": "Vermont"
+  },
+  {
+    "dealer_id": "DLR-0064",
+    "dealer_name": "Elm Basin Hauler Supply",
+    "state": "North Carolina"
+  },
+  {
+    "dealer_id": "DLR-0065",
+    "dealer_name": "Fern Haven Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0066",
+    "dealer_name": "Fieldstone Notch Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0067",
+    "dealer_name": "Glen Way Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0068",
+    "dealer_name": "Hawthorn Ford Hauler Supply",
+    "state": "West Virginia"
+  },
+  {
+    "dealer_id": "DLR-0069",
+    "dealer_name": "Hemlock Mead Trailer Exchange",
+    "state": "Maryland"
+  },
+  {
+    "dealer_id": "DLR-0070",
+    "dealer_name": "Juniper Valley Equipment Center",
+    "state": "New Jersey"
+  },
+  {
+    "dealer_id": "DLR-0071",
+    "dealer_name": "Laurel Dale Trailer Sales",
+    "state": "Virginia"
+  },
+  {
+    "dealer_id": "DLR-0072",
+    "dealer_name": "Linden Hollow Hauler Supply",
+    "state": "Delaware"
+  },
+  {
+    "dealer_id": "DLR-0073",
+    "dealer_name": "Meadow Run Trailer Exchange",
+    "state": "Kentucky"
+  },
+  {
+    "dealer_id": "DLR-0074",
+    "dealer_name": "Millstone Brook Equipment Center",
+    "state": "Indiana"
+  },
+  {
+    "dealer_id": "DLR-0075",
+    "dealer_name": "Oak Heath Trailer Sales",
+    "state": "Vermont"
+  },
+  {
+    "dealer_id": "DLR-0076",
+    "dealer_name": "Pine Pass Hauler Supply",
+    "state": "North Carolina"
+  },
+  {
+    "dealer_id": "DLR-0077",
+    "dealer_name": "Quarry Barrow Trailer Exchange",
+    "state": "Pennsylvania"
+  },
+  {
+    "dealer_id": "DLR-0078",
+    "dealer_name": "Silver Grove Equipment Center",
+    "state": "New York"
+  },
+  {
+    "dealer_id": "DLR-0079",
+    "dealer_name": "Willow Moor Trailer Sales",
+    "state": "Ohio"
+  },
+  {
+    "dealer_id": "DLR-0080",
+    "dealer_name": "Alder Way Hauler Supply",
+    "state": "West Virginia"
+  }
+]

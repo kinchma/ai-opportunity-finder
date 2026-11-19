@@ -46,6 +46,7 @@ def run_case(tmp_path, fx, discovery=None):
     if discovery:   # a case whose Discovery already ran (website cases): seed what it saved
         cases.save(cid, "discovery.json", discovery, tmp_path)
         cases.save(cid, "profile.json", discovery["profile"], tmp_path)
+        cases.set_stage(cid, "discovered", tmp_path)   # as a real Discovery run would leave it
     else:           # no website: the synthetic profile path, no model call
         case_runner.discover(cid, tmp_path)
     case_runner.confirm(cid, {}, tmp_path)

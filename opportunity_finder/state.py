@@ -18,7 +18,8 @@ class OpportunityState(TypedDict, total=False):
     company_input: dict            # website / LinkedIn URL, risk tolerance, budget
     profile: dict
     site_text: str                 # trimmed website text, for later agents
-    documents: list                # owner-provided documents [{name, text}] (text files)
+    documents: list                # owner-provided documents [{name, text, source_type}] (text files, capped)
+    document_chunks: list          # the same documents as citable chunks [{id, name, source_type, heading, text}]
     website_assessment: dict       # 1-10 website rating, chatbot finding, starter prompts
     intake_confirmed: bool
     # research results (written by agents, read by the next one)

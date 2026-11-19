@@ -34,6 +34,24 @@ CHAT_TEXT = re.compile(r"\b(live chat|chat with us|chat now|ask our (ai )?assist
 CTA_WORDS = re.compile(r"\b(get a quote|request a quote|contact us|book (a|an|your)|schedule|call us|get started|free estimate|request a (call|demo)|sign up|buy now|order now)\b", re.I)
 
 
+SOCIAL_HOSTS = {"linkedin": ("linkedin.com",), "facebook": ("facebook.com", "fb.com"),
+                "instagram": ("instagram.com",), "tiktok": ("tiktok.com",),
+                "youtube": ("youtube.com", "youtu.be"), "x_twitter": ("twitter.com", "x.com")}
+
+
+def social_links(html: str) -> dict:
+    """{platform: [links found on this page]} for every platform in SOCIAL_HOSTS. A platform with an
+    empty list was NOT FOUND ON THE PAGE READ; that is all it means (rule 3: never "does not exist")."""
+    hrefs = re.findall(r"""href\s*=\s*["']([^"']+)["']""", html, flags=re.I)
+    found = {name: [] for name in SOCIAL_HOSTS}
+    for h in hrefs:
+        host = re.sub(r"^https?://(www\.)?", "", h.strip().lower()).split("/")[0]
+        for name, hosts in SOCIAL_HOSTS.items():
+            if any(host == d or host.endswith("." + d) for d in hosts) and h not in found[name]:
+                found[name].append(h)
+    return found
+
+
 def analyze_html(html: str, url: str = "") -> dict:
     """Return a dict of simple facts about the page source."""
     low = html.lower()
@@ -56,4 +74,5 @@ def analyze_html(html: str, url: str = "") -> dict:
         "cta_hits": len(CTA_WORDS.findall(visible)),
         "has_title": bool(re.search(r"<title[^>]*>\s*\S", html, flags=re.I)),
         "has_meta_description": bool(re.search(r"<meta[^>]+name=[\"']description[\"']", html, flags=re.I)),
+        "social_links": social_links(html),
     }

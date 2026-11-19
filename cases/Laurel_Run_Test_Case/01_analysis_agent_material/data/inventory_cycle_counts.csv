@@ -1,0 +1,7 @@
+count_date,sku,description,unit,stock_sheet_before_count,physical_count,count_variance,stock_sheet_after_count,counted_by_employee_id,counted_by_name,reviewed_by_employee_id
+2026-10-30,SKU-0001,"3,500-lb electric-braked spring axle assembly",each,21,21,0,21,E014,Cora Whitlock,E012
+2026-10-30,SKU-0002,"3,500-lb electric-braked spring axle",each,34,34,0,34,E014,Cora Whitlock,E012
+2026-10-30,SKU-0003,"5,200-lb electric-braked spring axle",each,27,26,-1,26,E014,Cora Whitlock,E012
+2026-10-30,SKU-0004,Rectangular steel tube,length,73,73,0,73,E014,Cora Whitlock,E012
+2026-10-30,SKU-0005,Mounted 15-inch tire/wheel,assembly,110,110,0,110,E014,Cora Whitlock,E012
+2026-10-30,SKU-0012,Floor-screw box,box,18,17,-1,17,E014,Cora Whitlock,E012

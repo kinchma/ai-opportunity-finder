@@ -25,9 +25,12 @@ def grounding(opp: dict, process_map: dict | None, best_practices: dict | None,
     proc = processes.get(opp.get("process"))
     if proc:
         basis.append({"type": "process", "id": proc["name"], "stated": proc.get("basis") == "stated"})
+        for cid in proc.get("sources") or []:  # the file and section the process was read from
+            basis.append({"type": "document", "id": cid, "process": proc["name"]})
     if opp.get("from_website_check") and (website_assessment or {}).get("chatbot", {}).get("status") == "not_found":
         basis.append({"type": "website_check", "id": "no chat assistant found on the site"})
     only_typical = bool(basis) and all(b["type"] == "process" and not b["stated"] for b in basis)
+    # (a process with document sources is "stated", so a document basis never counts as an assumption)
     return {"grounded": bool(basis), "basis": basis, "assumption": only_typical,
             "note": "" if basis else "no process, cited practice or website finding"}
 

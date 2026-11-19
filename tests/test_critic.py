@@ -121,3 +121,38 @@ def test_call_cap_means_coded_checks_only(scripted):
     seen = scripted({"critic": {"reviews": [review("quick_win")]}})
     out = critic(state(TWO, model_calls=40))
     assert not seen and out["model_calls"] == 0 and "cap reached" in out["trace"][0]
+
+
+def test_small_model_phrasing_is_still_a_valid_review(scripted):
+    """Ids with different case or spaces, ratings like '4/5', and evidence given as an idea name,
+    a practice sentence or a phrase containing a process name all count."""
+    scripted({"critic": {"reviews": [
+        review("Quick Win", "4/5", "5 - strong", 4.0, evidence=["Spec-to-Quote"]),              # idea name
+        review("HIGHEST_VALUE", 3, 3, 3, evidence=["the Spec-to-Quote process is slow today"])]}})  # phrase
+    out = critic(state(TWO))
+    q, h = out["roadmaps"]
+    assert q["rubric"] and q["rubric"]["feasibility"] == 4 and q["rubric"]["sequencing"] == 5
+    assert q["rubric"]["evidence"] and h["rubric"] and h["rubric"]["evidence"]
+    assert "dropped" not in out["trace"][0]
+
+
+def test_drop_reasons_and_reply_sample_are_recorded(scripted):
+    scripted({"critic": {"reviews": [review("nope", 4, 4, 4), review("quick_win", "great", 3, 3),
+                                     review("highest_value", 4, 4, 4, evidence=["trust me"])]}})
+    out = critic(state(TWO))
+    assert "3 review(s) dropped (1 unknown id, 1 bad ratings, 1 no evidence)" in out["trace"][0]
+    assert "trust me" in out["call_log"][-1]["reply_sample"]
+
+
+def test_no_reply_sample_when_every_review_is_kept(scripted):
+    scripted({"critic": {"reviews": [review("quick_win"), review("highest_value")]}})
+    out = critic(state(TWO))
+    assert "reply_sample" not in out["call_log"][-1]
+
+
+def test_abbreviated_roadmap_id_matches_when_unambiguous(scripted):
+    both = [rm("lowest_risk_r1", "Spec-to-Quote", "Freight KB"), rm("lowest_risk", "Freight KB", "Spec-to-Quote")]
+    scripted({"critic": {"reviews": [review("lowest_r1"), review("lowest")]}})   # "lowest" fits both: dropped
+    out = critic(state(both))
+    assert out["roadmaps"][0]["rubric"] and out["roadmaps"][1]["rubric"] is None
+    assert "1 unknown id" in out["trace"][0]

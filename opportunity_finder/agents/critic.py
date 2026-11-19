@@ -8,6 +8,8 @@ score by at most +/- SETTINGS.rubric_weight.
 
 The model is set with LLM_CRITIC_MODEL / LLM_CRITIC_BASE_URL / LLM_CRITIC_API_KEY in .env.
 """
+import re
+
 from ..config import SETTINGS
 from ..llm import llm_settings
 from ..summaries import ANGLE_MEANING
@@ -22,7 +24,8 @@ SYSTEM_PROMPT = (
     "this size do it with ordinary tools and staff), \"sequencing\" (does the order make sense), "
     "\"fit\" (does it suit the owner's risk tolerance and the listed pain points). \"evidence\" is "
     "a list of 1 to 3 items copied exactly from the listed process names or practice ids that "
-    "support your view; a review without evidence is discarded. \"objection\" is the biggest "
+    "support your view, for example [\"Quoting\", \"order-to-delivery#1\"]; a review without evidence "
+    "is discarded. \"objection\" is the biggest "
     "weakness in one sentence, or \"\" if there is none. \"weakest_item\" is the idea you would "
     "replace, copied exactly, or null. Reply with ONLY a JSON object: "
     '{"reviews": [{"id": string, "feasibility": integer, "sequencing": integer, "fit": integer, '
@@ -33,40 +36,88 @@ RUBRIC_KEYS = ("feasibility", "sequencing", "fit")
 
 
 def _rating(v) -> int | None:
+    """1-5 integer from 4, 4.0, "4", "4/5" or "4 - strong"; None if there is no number."""
     try:
         return max(1, min(5, int(round(float(v)))))
     except (TypeError, ValueError):
-        return None
+        pass
+    m = re.search(r"\d+(?:\.\d+)?", str(v or ""))
+    return max(1, min(5, int(round(float(m.group(0)))))) if m else None
 
 
-def _validator(roadmaps: dict, process_names: list, chunk_ids: set):
-    procs = {n.lower(): n for n in process_names}
+def _norm(text) -> str:
+    return re.sub(r"[\s_\-]+", " ", str(text or "").strip().strip("[]()\"'`").lower())
+
+
+def _validator(roadmaps: dict, process_names: list, chunk_ids: set, by_name: dict | None = None,
+               practice_text: dict | None = None):
+    """Validate the model's reviews. Tolerant about how a small model writes things: roadmap
+    ids and process names are matched case- and punctuation-insensitively, practice ids through
+    match_chunk_id, a practice's own sentence maps to its id, and an idea name counts as the
+    process or practice that idea stands on. Returns kept reviews plus a count per drop reason."""
+    procs = {_norm(n): n for n in process_names}
     chunks = {c: c for c in chunk_ids}
+    ids = {_norm(k): k for k in roadmaps}
+    ideas = {_norm(n): o for n, o in (by_name or {}).items()}
+    texts = {_norm(t): c for t, c in (practice_text or {}).items()}
+
+    def _roadmap_id(given, ids: dict) -> str | None:
+        """Exact (normalized) id, or an abbreviation whose every word appears in exactly one id
+        (a 7B wrote "lowest_r1" for "lowest_risk_r1")."""
+        key = _norm(given)
+        if key in ids:
+            return ids[key]
+        words = key.split()
+        hits = [real for norm, real in ids.items() if words and all(w in norm.split() for w in words)]
+        return hits[0] if len(hits) == 1 else None
+
+    def resolve(e) -> str | None:
+        key = _norm(e)
+        if not key:
+            return None
+        if key in procs:
+            return procs[key]
+        real = match_chunk_id(e, chunks)
+        if real:
+            return real
+        for t, cid in texts.items():  # the practice sentence instead of its id
+            if key == t or (len(key) > 20 and (key in t or t in key)):
+                return cid
+        if key in ideas:  # an idea name: credit the process or practice behind it
+            o = ideas[key]
+            return o.get("process") or (o.get("supporting_chunk_id") if o.get("supporting_chunk_id") in chunks else None)
+        for n, real in procs.items():  # a process name inside a longer phrase
+            if n in key:
+                return real
+        return None
 
     def validate(data: dict | None):
         if not data or not isinstance(data.get("reviews"), list):
             return None
-        kept, dropped = {}, 0
+        kept, reasons = {}, {"unknown_id": 0, "bad_ratings": 0, "no_evidence": 0}
         for item in data["reviews"]:
-            rid = str(item.get("id", "")).strip() if isinstance(item, dict) else ""
-            if rid not in roadmaps or rid in kept:
-                dropped += 1
+            rid = _roadmap_id(item.get("id"), ids) if isinstance(item, dict) else None
+            if rid is None or rid in kept:
+                reasons["unknown_id"] += 1
                 continue
             ratings = {k: _rating(item.get(k)) for k in RUBRIC_KEYS}
+            if None in ratings.values():
+                reasons["bad_ratings"] += 1
+                continue
             raw = item.get("evidence") if isinstance(item.get("evidence"), list) else [item.get("evidence")]
             evidence = []
             for e in raw:
-                real = procs.get(str(e or "").strip().lower()) or match_chunk_id(e, chunks)
+                real = resolve(e)
                 if real and real not in evidence:
                     evidence.append(real)
-            if None in ratings.values() or not evidence:
-                dropped += 1  # bad ratings, or nothing real cited
+            if not evidence:
+                reasons["no_evidence"] += 1
                 continue
-            names = {n.lower(): n for n in roadmaps[rid]["opportunities"]}
+            names = {_norm(n): n for n in roadmaps[rid]["opportunities"]}
             kept[rid] = {**ratings, "avg": round(sum(ratings.values()) / len(ratings), 2), "evidence": evidence[:3],
                          "objection": str(item.get("objection") or "").strip()[:300],
-                         "weakest_item": names.get(str(item.get("weakest_item") or "").strip().lower())}
-        return {"kept": kept, "dropped": dropped}
+                         "weakest_item": names.get(_norm(item.get("weakest_item")))}
+        return {"kept": kept, "dropped": sum(reasons.values()), "reasons": reasons}
     return validate
 
 
@@ -116,14 +167,19 @@ def critic(state: dict) -> dict:
     elif new:
         names = [p["name"] for p in state.get("process_map", {}).get("processes", [])]
         chunk_ids = {p["chunk_id"] for p in state.get("best_practices", {}).get("practices", [])}
+        practice_text = {p["practice"]: p["chunk_id"] for p in state.get("best_practices", {}).get("practices", [])}
+        raw: list = []
         result, records, note = ask_json(
             "critic", [("system", SYSTEM_PROMPT), ("human", _prompt(state, new, by_name, coded))],
-            _validator({r["id"]: r for r in new}, names, chunk_ids))
+            _validator({r["id"]: r for r in new}, names, chunk_ids, by_name, practice_text), raw_out=raw)
         reviews = (result or {}).get("kept", {})
         if note:
             notes.append(f"rubric unavailable ({note}): coded checks only")
         if result and result["dropped"]:
-            notes.append(f"{result['dropped']} review(s) dropped (bad ratings or no valid evidence)")
+            why = ", ".join(f"{v} {k.replace('_', ' ')}" for k, v in result["reasons"].items() if v)
+            notes.append(f"{result['dropped']} review(s) dropped ({why})")
+            if records and raw:  # keep what the model wrote so a drop can be diagnosed later
+                records[-1]["reply_sample"] = raw[-1]
         if records and same_model_as_strategist():
             notes.append("WARNING: the Critic ran on the same model as the Strategist; set LLM_CRITIC_MODEL")
 

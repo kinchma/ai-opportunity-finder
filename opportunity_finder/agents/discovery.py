@@ -52,7 +52,11 @@ def _profile_from_website(src: dict) -> tuple[dict, list, str, dict]:
     owner_desc = (src.get("description") or "").strip()
     profile = {"name": src.get("name") or site["title"] or "unknown", "website": site["url"],
                "industry": "unknown", "size": src.get("size", "unknown"),
-               "confidence": "low", "evidence": "", "note": ""}
+               "confidence": "low", "evidence": "", "note": "",
+               # where the evidence came from: the one page read (title, meta description and
+               # visible text), so the owner can check the claim against it
+               "evidence_source": {"page": site["url"], "fields": ["title", "description", "text"],
+                                   "local_fixture": bool(site.get("local_fixture"))}}
     records: list = []
     if site["error"]:
         profile["note"] = site["error"]

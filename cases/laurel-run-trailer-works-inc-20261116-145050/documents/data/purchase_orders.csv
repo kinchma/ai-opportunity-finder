@@ -1,0 +1,13 @@
+po_id,line_number,order_date,received_date,supplier_id,supplier_name,sku,quantity_ordered,quantity_received,unit,delivered_unit_price_usd,line_total_usd,price_basis,payment_terms,receipt_status_as_of_snapshot
+PO-2025-0311,1,2025-11-10,2025-11-17,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2025-0336,1,2025-12-08,2025-12-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0022,1,2026-01-08,2026-01-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0045,1,2026-02-09,2026-02-16,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0068,1,2026-03-09,2026-03-16,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0091,1,2026-04-08,2026-04-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0116,1,2026-05-08,2026-05-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0140,1,2026-06-08,2026-06-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0164,1,2026-07-08,2026-07-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0189,1,2026-08-10,2026-08-17,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0213,1,2026-09-08,2026-09-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full
+PO-2026-0237,1,2026-10-08,2026-10-15,SUP-0001,Ridge Hollow Components LLC,SKU-0001,50,50,each,276.00,13800.00,Delivered; excludes sales tax,Net 30,Received in full

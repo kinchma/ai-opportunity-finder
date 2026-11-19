@@ -1,0 +1,13 @@
+sku,description,specification,supplier_id,supplier_name,unit,delivered_unit_price_usd,price_basis,supplier_status_as_of_snapshot
+SKU-0001,"3,500-lb electric-braked spring axle assembly","Complete assembly with electric brakes, both drums and hubs; 89-inch hub-face; 74-inch spring-center; five-on-4.5-inch bolt pattern; springs and hangers separate",SUP-0001,Ridge Hollow Components LLC,each,276.00,Delivered; excludes sales tax,Supplier of record
+SKU-0002,"3,500-lb electric-braked spring axle",95-inch hub-face; 80-inch spring-center; five-on-4.5-inch hubs,SUP-0004,Fernbank Running Gear LLC,each,310.00,Delivered; excludes sales tax,Supplier of record
+SKU-0003,"5,200-lb electric-braked spring axle",95-inch hub-face; 80-inch spring-center; six-on-5.5-inch hubs,SUP-0004,Fernbank Running Gear LLC,each,440.00,Delivered; excludes sales tax,Supplier of record
+SKU-0004,Rectangular steel tube,2 x 3 inches; 0.120-inch wall; 20-foot length,SUP-0003,Northmere Metals Service LLC,length,72.00,Delivered; excludes sales tax,Supplier of record
+SKU-0005,Mounted 15-inch tire/wheel,15-inch mounted assembly; five-on-4.5-inch bolt pattern; rated for specified Trailfield/Enclosure build,SUP-0005,Alder Wheel Supply LLC,assembly,120.00,Delivered; excludes sales tax,Supplier of record
+SKU-0006,Mounted 16-inch tire/wheel,16-inch mounted assembly; six-on-5.5-inch bolt pattern; rated for specified Workspan build,SUP-0005,Alder Wheel Supply LLC,assembly,140.00,Delivered; excludes sales tax,Supplier of record
+SKU-0007,Painted aluminum sheet,4 x 10 feet; specified finish,SUP-0006,Meadowline Sheet Supply LLC,sheet,88.00,Delivered; excludes sales tax,Supplier of record
+SKU-0008,Plywood panel,4 x 8 feet; 3/4-inch thickness; specified grade,SUP-0007,Briar Panel Supply LLC,sheet,65.00,Delivered; excludes sales tax,Supplier of record
+SKU-0009,Trailer light and wiring kit,Light and wiring kit for a specified build,SUP-0008,Larkspur Electrical and Hitch LLC,kit,42.00,Delivered; excludes sales tax,Supplier of record
+SKU-0010,2-inch coupler,"2-inch coupler; 3,500-lb rating",SUP-0008,Larkspur Electrical and Hitch LLC,each,25.00,Delivered; excludes sales tax,Supplier of record
+SKU-0011,2-5/16-inch coupler,2-5/16-inch coupler; rated for specified equipment configuration,SUP-0008,Larkspur Electrical and Hitch LLC,each,65.00,Delivered; excludes sales tax,Supplier of record
+SKU-0012,Floor-screw box,250 floor screws per box,SUP-0009,Torfield Industrial Fasteners LLC,box,38.00,Delivered; excludes sales tax,Supplier of record

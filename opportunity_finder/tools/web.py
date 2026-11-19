@@ -4,6 +4,9 @@ Small local models do badly with long inputs, so we keep just the title, the met
 description and the first few thousand characters of visible text.
 """
 import re
+import ssl
+from pathlib import Path
+from urllib.parse import unquote, urlparse
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
@@ -59,20 +62,66 @@ def extract_text(html: str, max_chars: int = 3000) -> dict:
 
 def normalize_url(url: str) -> str:
     url = url.strip()
-    return url if re.match(r"^https?://", url, re.I) else "https://" + url
+    return url if re.match(r"^(https?|file)://", url, re.I) else "https://" + url
+
+
+def _read_local_site(url: str) -> tuple[bytes | None, str, str | None]:
+    """Read one page of a local static site given as file:///path/to/site[/page.html].
+
+    Used for offline fixtures (a synthetic company's website) so Discovery can run with no
+    network and no live server. The boundary is deliberate: only the directory named in the URL
+    (or the single .html file named) is read; the resolved path must stay inside that directory,
+    symlinks are refused, and nothing else on disk is reachable through this route.
+    Returns (bytes, resolved_url, error)."""
+    raw = unquote(urlparse(url).path)
+    base = Path(raw)
+    page = base / "index.html" if base.is_dir() else base
+    if page.suffix.lower() not in (".html", ".htm"):
+        return None, url, "local site: only a directory with index.html or an .html file can be read"
+    if page.is_symlink() or base.is_symlink():
+        return None, url, "local site: symbolic links are not followed"
+    try:
+        root = (base if base.is_dir() else base.parent).resolve(strict=True)
+        real = page.resolve(strict=True)
+    except OSError:
+        return None, url, "local site: page not found"
+    if root not in real.parents and real != root:
+        return None, url, "local site: page is outside the site directory"
+    return real.read_bytes(), real.as_uri(), None
+
+
+def _ssl_context():
+    """Verify HTTPS with the certifi bundle when it is installed. A Python installed from
+    python.org on macOS has no root certificates until "Install Certificates.command" is run,
+    which fails every fetch with CERTIFICATE_VERIFY_FAILED; certifi (installed with the OpenAI
+    client) removes that dependence on the machine's setup. Verification is never disabled."""
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
 
 
 def fetch_site_text(url: str, max_chars: int = 3000, timeout: float = 15) -> dict:
     """Fetch a page. Never raises: on failure returns {"error": "..."} with empty fields."""
     url = normalize_url(url)
-    out = {"url": url, "title": "", "description": "", "text": "", "error": None, "signals": {}}
+    out = {"url": url, "title": "", "description": "", "text": "", "error": None, "signals": {},
+           "local_fixture": url.lower().startswith("file://")}
+    if out["local_fixture"]:
+        raw, out["url"], out["error"] = _read_local_site(url)
+        if out["error"]:
+            return out
+        html = raw.decode("utf-8", errors="replace")
+        out.update(extract_text(html, max_chars))
+        out["signals"] = analyze_html(html, out["url"])
+        return out
     try:
         req = urllib.request.Request(url, headers={
             "User-Agent": USER_AGENT,
             "Accept": "text/html,application/xhtml+xml",
             "Accept-Language": "en-US,en;q=0.9",
         })
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout, context=_ssl_context()) as resp:
             ctype = resp.headers.get("Content-Type", "")
             if "html" not in ctype.lower():
                 out["error"] = f"not an HTML page (Content-Type: {ctype or 'unknown'})"

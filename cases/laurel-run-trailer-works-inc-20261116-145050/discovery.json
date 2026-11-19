@@ -1,0 +1,122 @@
+{
+  "profile": {
+    "name": "Laurel Run Trailer Works",
+    "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/website/site/index.html",
+    "industry": "trailer manufacturing",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website explicitly identifies the company as a 'Pennsylvania trailer manufacturer' that builds utility, enclosed cargo, and equipment trailers through an in-house shop process involving cutting, welding, painting, and assembly.",
+    "note": "",
+    "evidence_source": {
+      "page": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/website/site/index.html",
+      "fields": [
+        "title",
+        "description",
+        "text"
+      ],
+      "local_fixture": true
+    }
+  },
+  "site_text": "Laurel Run is a family-owned Pennsylvania manufacturer of utility, enclosed cargo, and equipment trailers, sold through independent dealers. Skip to content Fictional company website \u00b7 Created for discovery testing LR LAUREL RUN TRAILER WORKS \u2022 PENNSYLVANIA Family-owned since 1988 Menu \u2630 Home Trailers Owners Information Find a dealer Contact us \u2192 Family-owned. Pennsylvania built. Since 1988. Trailers built for the work ahead Pennsylvania trailer manufacturing Welcome to Laurel Run Trailer Works From our shop in Hollow Glen, Pennsylvania, we build utility, enclosed cargo, and equipment trailers for work on the road and at the job site. Our family started Laurel Run in 1988 with a simple idea: make useful equipment and stand behind the people who use it. Today our team cuts, welds, paints, assembles, and checks trailers for a network of independent dealers. Each dealer can help you choose a model, discuss options, and arrange a purchase. Our story \u2192 Ready for the next job? Have a trailer in mind? Explore the lineup, then connect with an independent dealer. Explore our trailers \u2192 Made for the way you work Find your trailer From open utility trailers to enclosed cargo and equipment haulers, start with the style that fits your work. Open utility Trailfield A versatile open deck and rear loading gate for everyday hauling. View trailer \u2192 Enclosed cargo Enclosure Covered room for tools and materials, built around a steel frame. View trailer \u2192 Equipment Workspan A wider open deck with loading ramps for equipment and materials. View trailer \u2192 People you can talk to Find an independent dealer Laurel Run works with approximately 80 independent dealers. Dealers provide local product information, discuss available configurations, set retail prices, and handle purchases. We do not sell trailers directly from the factory to retail customers. Find a dealer \u2192 80 + Independent dealer network Browse our fictional network by state. Browse dealer locations \u2192 Made with care Built from the frame up Our shop brings together steel frames, exterior panels, wiring, running gear, and finishing work. We check each trailer before it leaves the facility, with attention to the model and options ordered by the dealer. Ask your dealer for the specifications, load label, and available options for the finished unit. Owner resources \u2192 LR LAUREL RUN TRAILER WORKS Fictional trailer manufacturing Hollow Glen, Pennsylvania Family-owned since 1988. Explore Our trailers Our story Find a dealer Contact & confirmation For owners Owner resources Warranty information Trailer care Dealer support Our trailers Trailfield Utility Enclosure Cargo Workspan Equipment \u00a9 2026 Laurel Run Trailer Works, Inc. \u00b7 Fictional academic simulation; no real sales or inquiries. Privacy | Terms",
+  "website_assessment": {
+    "rating": 7.0,
+    "partial": false,
+    "social_presence": {
+      "found_on_pages_read": {},
+      "not_found_on_pages_read": [
+        "linkedin",
+        "facebook",
+        "instagram",
+        "tiktok",
+        "youtube",
+        "x_twitter"
+      ],
+      "owner_pasted_linkedin": false,
+      "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+    },
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 9,
+        "reason": "The text clearly identifies the company as a Pennsylvania-based manufacturer that sells utility, cargo, and equipment trailers exclusively through an independent dealer network rather than directly to consumers.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 8,
+        "reason": "The website provides clear calls to action to explore trailer models and locate a nearby independent dealer, though it explicitly removes direct factory sales or instant quoting from the user journey.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 6,
+        "reason": "The site builds credibility through its 1988 founding date, Pennsylvania manufacturing location, and mention of eighty dealers, but the footer disclaimer explicitly labels it as a fictional academic simulation.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 3,
+        "reason": "no phone, email or form found on the page",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 7,
+        "reason": "not served over https",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Find a dealer",
+      "Explore our trailers",
+      "Browse dealer locations"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "model_calls": 2,
+  "call_log": [
+    {
+      "ts": "2026-11-16T19:52:25+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 17.419,
+      "error": null,
+      "stub": false,
+      "input_tokens": 719,
+      "output_tokens": 1193
+    },
+    {
+      "ts": "2026-11-16T19:52:53+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.765,
+      "error": null,
+      "stub": false,
+      "input_tokens": 833,
+      "output_tokens": 2407
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 7.0/10, chatbot: not_found"
+  ],
+  "flags": []
+}

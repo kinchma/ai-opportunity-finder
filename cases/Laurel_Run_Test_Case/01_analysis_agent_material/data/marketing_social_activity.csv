@@ -1,0 +1,13 @@
+month,facebook_posts,instagram_posts,shared_facebook_instagram_post_pairs,tiktok_account_present,tiktok_posts,facebook_followers_at_month_end,instagram_followers_at_month_end,facebook_product_inquiries,instagram_product_inquiries,facebook_replied_within_2_business_days,instagram_replied_within_2_business_days,facebook_given_dealer_contact,instagram_given_dealer_contact,facebook_forwarded_to_dealer_with_consent,instagram_forwarded_to_dealer_with_consent,monthly_recap_minutes
+2025-11,2,1,1,No,0,221,53,1,0,1,0,1,0,0,0,50
+2025-12,1,0,0,No,0,222,53,1,0,1,0,1,0,1,0,45
+2026-01,0,0,0,No,0,222,53,0,0,0,0,0,0,0,0,15
+2026-02,2,1,1,No,0,225,55,1,1,1,1,1,1,0,0,55
+2026-03,1,0,0,No,0,226,55,2,0,2,0,1,0,1,0,50
+2026-04,3,1,1,No,0,230,59,1,0,1,0,1,0,0,0,50
+2026-05,1,0,0,No,0,231,59,0,0,0,0,0,0,0,0,30
+2026-06,2,1,1,No,0,235,63,1,1,1,1,1,1,1,0,55
+2026-07,0,0,0,No,0,235,63,1,0,1,0,1,0,0,0,25
+2026-08,3,2,2,No,0,241,68,2,1,2,1,1,1,1,1,65
+2026-09,1,0,0,No,0,243,68,1,0,1,0,1,0,0,0,40
+2026-10,2,1,1,No,0,248,73,2,1,2,1,2,1,1,0,60

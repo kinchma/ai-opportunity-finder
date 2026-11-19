@@ -12,14 +12,35 @@ P_PILOT_EFFORT = 0.03     # a high-effort idea in the pilot slot
 PILOT_EFFORT_LIMIT = 7
 
 
+EFFORT_WEIGHT = 0.5        # score lost per effort point (1-10). Untuned: see the sensitivity test
+                           # before changing it; every ranking in the project depends on it.
+
+
 def score_opportunity(value: int, effort: int, risk: int,
                       risk_tolerance: float = 0.5) -> float:
     """value/effort/risk on a 1-10 scale. Returns 0..1, higher is better.
 
-    Lower risk tolerance makes risk count more. TODO: tune weights.
+    Lower risk tolerance makes risk count more (weight 1 - tolerance). The result is a ranking
+    index, not a percentage: the best idea possible at tolerance 0.5 scores 0.90, and a strong
+    real idea (value 9, effort 4, risk 2) scores 0.60. Use score_index() to show it on a 0-100
+    scale relative to that best possible score.
     """
-    raw = value - 0.5 * effort - (1.0 - risk_tolerance) * risk
+    raw = value - EFFORT_WEIGHT * effort - (1.0 - risk_tolerance) * risk
     return round(max(raw, 0.0) / 10, 3)
+
+
+def best_possible_score(risk_tolerance: float = 0.5) -> float:
+    """The score of a value-10, effort-1, risk-1 idea at this tolerance: the top of the scale."""
+    return score_opportunity(10, 1, 1, risk_tolerance)
+
+
+def score_index(score: float | None, risk_tolerance: float = 0.5) -> int | None:
+    """A score as 0-100, relative to the best possible score at the owner's risk tolerance.
+    Display only: rankings are still decided by the raw score, so this never changes an order."""
+    if score is None:
+        return None
+    top = best_possible_score(risk_tolerance) or 1.0
+    return int(round(100 * max(0.0, min(float(score), top)) / top))
 
 
 def risk_limit(risk_tolerance: float = 0.5) -> float:

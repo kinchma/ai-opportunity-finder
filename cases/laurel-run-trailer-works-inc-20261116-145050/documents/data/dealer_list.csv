@@ -1,0 +1,81 @@
+dealer_id,dealer_name,state,account_status_as_of_snapshot,dealer_type,credit_status,standard_terms
+DLR-0001,Cedar Bend Trailer Sales,Pennsylvania,Active,Independent dealer,Approved for credit,Net 30 from shipment invoice for dealers approved for credit
+DLR-0002,Maple Span Equipment,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0003,Arrow Hollow Trailer Center,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0004,Stonegate Trailer Outlet,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0005,Alder Barrow Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0006,Ashen Grove Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0007,Birch Moor Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0008,Briar Vale Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0009,Brook Dell Trailer Exchange,Maryland,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0010,Clover Landing Equipment Center,New Jersey,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0011,Copper Span Trailer Sales,Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0012,Dogwood Crossing Hauler Supply,Delaware,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0013,Dovetail Hill Trailer Exchange,Kentucky,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0014,Elm Ridge Equipment Center,Indiana,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0015,Fern Basin Trailer Sales,Vermont,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0016,Fieldstone Haven Hauler Supply,North Carolina,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0017,Glen Notch Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0018,Hawthorn Way Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0019,Hemlock Ford Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0020,Juniper Mead Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0021,Laurel Valley Trailer Exchange,Maryland,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0022,Linden Dale Equipment Center,New Jersey,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0023,Meadow Hollow Trailer Sales,Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0024,Millstone Run Hauler Supply,Delaware,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0025,Oak Brook Trailer Exchange,Kentucky,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0026,Pine Heath Equipment Center,Indiana,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0027,Quarry Pass Trailer Sales,Vermont,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0028,Silver Barrow Hauler Supply,North Carolina,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0029,Willow Grove Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0030,Alder Notch Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0031,Ashen Way Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0032,Birch Ford Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0033,Briar Mead Trailer Exchange,Maryland,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0034,Brook Valley Equipment Center,New Jersey,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0035,Clover Dale Trailer Sales,Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0036,Copper Hollow Hauler Supply,Delaware,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0037,Dogwood Run Trailer Exchange,Kentucky,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0038,Dovetail Brook Equipment Center,Indiana,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0039,Elm Heath Trailer Sales,Vermont,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0040,Fern Pass Hauler Supply,North Carolina,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0041,Fieldstone Barrow Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0042,Glen Grove Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0043,Hawthorn Moor Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0044,Hemlock Vale Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0045,Juniper Dell Trailer Exchange,Maryland,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0046,Laurel Landing Equipment Center,New Jersey,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0047,Linden Span Trailer Sales,Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0048,Meadow Crossing Hauler Supply,Delaware,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0049,Millstone Hill Trailer Exchange,Kentucky,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0050,Oak Ridge Equipment Center,Indiana,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0051,Pine Basin Trailer Sales,Vermont,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0052,Quarry Haven Hauler Supply,North Carolina,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0053,Silver Notch Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0054,Willow Way Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0055,Alder Grove Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0056,Ashen Moor Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0057,Birch Vale Trailer Exchange,Maryland,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0058,Briar Dell Equipment Center,New Jersey,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0059,Brook Landing Trailer Sales,Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0060,Clover Span Hauler Supply,Delaware,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0061,Copper Crossing Trailer Exchange,Kentucky,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0062,Dogwood Hill Equipment Center,Indiana,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0063,Dovetail Ridge Trailer Sales,Vermont,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0064,Elm Basin Hauler Supply,North Carolina,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0065,Fern Haven Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0066,Fieldstone Notch Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0067,Glen Way Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0068,Hawthorn Ford Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0069,Hemlock Mead Trailer Exchange,Maryland,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0070,Juniper Valley Equipment Center,New Jersey,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0071,Laurel Dale Trailer Sales,Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0072,Linden Hollow Hauler Supply,Delaware,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0073,Meadow Run Trailer Exchange,Kentucky,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0074,Millstone Brook Equipment Center,Indiana,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0075,Oak Heath Trailer Sales,Vermont,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0076,Pine Pass Hauler Supply,North Carolina,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0077,Quarry Barrow Trailer Exchange,Pennsylvania,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0078,Silver Grove Equipment Center,New York,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0079,Willow Moor Trailer Sales,Ohio,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit
+DLR-0080,Alder Way Hauler Supply,West Virginia,Active,Independent dealer,Not specified,Net 30 from shipment invoice for dealers approved for credit

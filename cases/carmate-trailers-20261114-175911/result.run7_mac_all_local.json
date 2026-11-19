@@ -1,0 +1,826 @@
+{
+  "company_input": {
+    "risk_tolerance": 0.4,
+    "website": "carmate-trailers.com",
+    "description": "100 person trailer manufacturing company"
+  },
+  "profile": {
+    "name": "Car Mate Trailers, Inc.",
+    "website": "https://carmate-trailers.com",
+    "industry": "trailer manufacturing",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website describes various types of cargo and utility trailers for sale, with a focus on quality and longevity.",
+    "note": ""
+  },
+  "site_text": "Car Mate Trailers makes high-quality, custom open and enclosed trailers. Whatever you need to haul, there's a Car Mate Trailer that's right for you! HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Get a quote HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Trailers that Work for a living Welcome to car mate trailers Car Mate Trailers, Inc. in Leeper, PA, manufactures the best quality cargo and utility trailers in the industry backed by the industry\u2019s best warranty, LIFETIME PLUS 10. Established in 1982, Car Mate has become the name synonymous with quality and longevity when it comes to enclosed cargo & equipment \u201cTrailers that work for a living\u201d. Car Mate is the brand preferred by contractors of all types. Learn More Have a trailer in mind? Request a quote Check out our dealer locator Store locator is loading from StoreRocket Store Locator Widget .. Look & See How they are made Look at these trailer features Car Mate Trailers 100 person trailer manufacturing company",
+  "documents": [],
+  "website_assessment": {
+    "rating": 6.5,
+    "partial": false,
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 7,
+        "reason": "The text clearly states the business name and what it does (manufacturing trailers), but the layout is repetitive with multiple sections of similar information.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 6,
+        "reason": "There is a clear call to action for requesting a quote, but the navigation and product listings are confusing, making it hard to find specific actions like contacting dealers or viewing brochures.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The business has been in operation since 1982 and offers a lifetime warranty with an additional 10 years, which is a strong indicator of trustworthiness. However, there are no customer reviews or testimonials displayed on the page.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 3,
+        "reason": "no phone, email or form found on the page",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 8,
+        "reason": "14 of 17 images lack alt text",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Request Quote",
+      "Contact Dealers",
+      "View Brochures"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "intake_confirmed": true,
+  "best_practices": {
+    "industry": "trailer manufacturing",
+    "practices": [
+      {
+        "practice": "Keep agents away from safety-critical decisions and use AI only to prepare or check paperwork.",
+        "why_it_matters": "Weight ratings, structural specifications, and regulatory compliance require engineering sign-off, preventing unsafe or non-compliant decisions.",
+        "chunk_id": "risk-and-rollout#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Start with read-only access to ERP or accounting systems before allowing agents to write records.",
+        "why_it_matters": "Integrations are the main effort and risk in manufacturing automations, so read-only access minimizes system disruption.",
+        "chunk_id": "risk-and-rollout#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Automate the extraction of options, dimensions, and quantities from incoming customer requests, with human confirmation.",
+        "why_it_matters": "Shortens quote turnaround time and removes transcription errors in order intake.",
+        "chunk_id": "order-to-delivery#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Deploy a question-answering assistant grounded in company manuals and policies to handle dealer support requests.",
+        "why_it_matters": "Handles routine spec questions, parts lookups, and warranty rules efficiently while handing off complex issues.",
+        "chunk_id": "order-to-delivery#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Use AI to classify invoices, match them to purchase orders and receiving records, and flag mismatches.",
+        "why_it_matters": "Reduces manual matching work in accounts payable and streamlines financial processing.",
+        "chunk_id": "order-to-delivery#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Start with high-volume, repetitive, rule-governed work and measure the current process before implementation.",
+        "why_it_matters": "These tasks have clear answers and enough repetitions to show measurable savings quickly, while baselines prove the AI's impact.",
+        "chunk_id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      }
+    ],
+    "note": "",
+    "sources": [
+      "Author-written starter note (replace with a real, citable source)"
+    ],
+    "passages": [
+      {
+        "id": "risk-and-rollout#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "order-to-delivery#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "order-to-delivery#2",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "order-to-delivery#3",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      }
+    ]
+  },
+  "process_map": {
+    "processes": [
+      {
+        "name": "Quoting & Sales Inquiry",
+        "description": "Process for capturing customer or dealer requests, specifying trailer type, dimensions, and custom options to generate accurate pricing.",
+        "pain_points": [
+          "Manual spec entry errors",
+          "Delayed response times",
+          "Inconsistent pricing across sales channels"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Dealer & Distributor Management",
+        "description": "Onboarding, credentialing, and ongoing support for authorized dealers, including portal access, inventory allocation, and marketing materials.",
+        "pain_points": [
+          "Fragmented dealer communication",
+          "Manual onboarding paperwork",
+          "Inconsistent brand representation at retail"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Warranty & Customer Support",
+        "description": "Handling warranty registrations, processing claims, providing technical support, and collecting customer feedback/surveys.",
+        "pain_points": [
+          "Lengthy claim verification",
+          "Tracking missing warranty documents",
+          "Inconsistent support response times"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Financing & Credit Processing",
+        "description": "Facilitating dealer and end-customer financing applications through partnered lenders to close sales.",
+        "pain_points": [
+          "Lengthy approval cycles",
+          "Manual document submission",
+          "Mismatched credit criteria across lenders"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Production & Manufacturing",
+        "description": "Converting raw materials into finished cargo and car trailers through cutting, welding, assembly, painting, and final inspection.",
+        "pain_points": [
+          "Supply chain delays for specialized components",
+          "Production bottlenecks during peak contractor season",
+          "Quality control inconsistencies"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Order Fulfillment & Logistics",
+        "description": "Scheduling production, coordinating freight/shipping to dealers or direct customers, and managing delivery documentation.",
+        "pain_points": [
+          "Freight damage during transit",
+          "Scheduling conflicts with carrier availability",
+          "Tracking delays for customers"
+        ],
+        "basis": "typical"
+      }
+    ],
+    "doc_vs_reality_gaps": [],
+    "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)"
+  },
+  "gap_report": [
+    {
+      "process": "Quoting & Sales Inquiry",
+      "gap": "Manual spec entry causes errors and delays; no automated parsing of customer requests.",
+      "opportunity": "Spec-to-Quote Extractor Agent",
+      "supporting_chunk_id": "order-to-delivery#1"
+    },
+    {
+      "process": "Dealer & Distributor Management",
+      "gap": "Manual onboarding paperwork and fragmented communication delay dealer activation.",
+      "opportunity": "Dealer Onboarding Assistant",
+      "supporting_chunk_id": "order-to-delivery#2"
+    },
+    {
+      "process": "Warranty & Customer Support",
+      "gap": "Lengthy claim verification and missing warranty documents slow down processing.",
+      "opportunity": "Warranty Claim Triage Agent",
+      "supporting_chunk_id": "order-to-delivery#2"
+    },
+    {
+      "process": "Financing & Credit Processing",
+      "gap": "Manual document submission and mismatched credit criteria cause lengthy approval cycles.",
+      "opportunity": "Lender Application Router Agent",
+      "supporting_chunk_id": "risk-and-rollout#1"
+    },
+    {
+      "process": "Production & Manufacturing",
+      "gap": "Supply chain delays for specialized components cause production bottlenecks.",
+      "opportunity": "Component Shortage Predictor Agent",
+      "supporting_chunk_id": "smb-ai-adoption#1"
+    },
+    {
+      "process": "Order Fulfillment & Logistics",
+      "gap": "Freight damage during transit due to inconsistent packaging/loading checks.",
+      "opportunity": "Freight Damage Pre-Check Agent",
+      "supporting_chunk_id": "risk-and-rollout#1"
+    },
+    {
+      "process": "Dealer & Distributor Management",
+      "gap": "Fragmented dealer communication and inconsistent brand representation due to scattered documentation.",
+      "opportunity": "Dealer Knowledge Base Aggregator",
+      "supporting_chunk_id": "order-to-delivery#2"
+    },
+    {
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "opportunity": "Website AI assistant",
+      "supporting_chunk_id": null
+    }
+  ],
+  "scored_opportunities": [
+    {
+      "name": "Spec-to-Quote Extractor Agent",
+      "what_the_agent_does": "Parses incoming customer emails and web forms to extract trailer dimensions, custom options, and quantities, then drafts a pricing quote in the ERP for sales rep review.",
+      "process": "Quoting & Sales Inquiry",
+      "gap": "Manual spec entry causes errors and delays; no automated parsing of customer requests.",
+      "supporting_chunk_id": "order-to-delivery#1",
+      "value": 8,
+      "effort": 4,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value due to direct impact on sales cycle speed and error reduction; moderate effort given structured email/form inputs; low risk as it only drafts quotes for human approval.",
+      "placeholder": false,
+      "score": 0.42
+    },
+    {
+      "name": "Dealer Onboarding Assistant",
+      "what_the_agent_does": "Guides new dealers through credential verification, auto-fills onboarding paperwork, and provisions portal access based on compliance checks.",
+      "process": "Dealer & Distributor Management",
+      "gap": "Manual onboarding paperwork and fragmented communication delay dealer activation.",
+      "supporting_chunk_id": "order-to-delivery#2",
+      "value": 7,
+      "effort": 5,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "Addresses critical bottleneck in dealer activation; effort is moderate due to integration with CRM/ERP; risk is manageable by restricting write access until final compliance sign-off.",
+      "placeholder": false,
+      "score": 0.21
+    },
+    {
+      "name": "Warranty Claim Triage Agent",
+      "what_the_agent_does": "Extracts claim details from customer submissions, cross-references purchase records and warranty terms, and flags incomplete documentation for human review.",
+      "process": "Warranty & Customer Support",
+      "gap": "Lengthy claim verification and missing warranty documents slow down processing.",
+      "supporting_chunk_id": "order-to-delivery#2",
+      "value": 8,
+      "effort": 6,
+      "risk": 5,
+      "enabler": false,
+      "rating_reason": "High value by reducing verification time and improving customer satisfaction; effort is higher due to document variability; risk is moderate as financial payouts require human oversight.",
+      "placeholder": false,
+      "score": 0.2
+    },
+    {
+      "name": "Lender Application Router Agent",
+      "what_the_agent_does": "Collects dealer/customer financial documents, formats them per specific lender requirements, and submits applications while tracking approval status.",
+      "process": "Financing & Credit Processing",
+      "gap": "Manual document submission and mismatched credit criteria cause lengthy approval cycles.",
+      "supporting_chunk_id": "risk-and-rollout#1",
+      "value": 7,
+      "effort": 5,
+      "risk": 6,
+      "enabler": false,
+      "rating_reason": "Streamlines a major sales blocker; effort is moderate due to multiple lender APIs/formats; risk is higher due to sensitive financial data, mitigated by read-only initial access and human review.",
+      "placeholder": false,
+      "score": 0.09
+    },
+    {
+      "name": "Component Shortage Predictor Agent",
+      "what_the_agent_does": "Monitors inventory levels of specialized components, cross-references production schedules, and alerts procurement when stock falls below threshold for upcoming orders.",
+      "process": "Production & Manufacturing",
+      "gap": "Supply chain delays for specialized components cause production bottlenecks.",
+      "supporting_chunk_id": "smb-ai-adoption#1",
+      "value": 9,
+      "effort": 4,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "High value by preventing costly line stoppages; effort is low as it leverages existing ERP inventory data; risk is minimal since it only generates alerts.",
+      "placeholder": false,
+      "score": 0.58
+    },
+    {
+      "name": "Freight Damage Pre-Check Agent",
+      "what_the_agent_does": "Reviews final inspection reports and packaging specs against carrier requirements, generating a compliance checklist before trailers are loaded for shipping.",
+      "process": "Order Fulfillment & Logistics",
+      "gap": "Freight damage during transit due to inconsistent packaging/loading checks.",
+      "supporting_chunk_id": "risk-and-rollout#1",
+      "value": 7,
+      "effort": 3,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "Reduces costly freight damage and returns; effort is low due to rule-based checklist generation; risk is moderate as shipping delays impact customer satisfaction but are easily corrected.",
+      "placeholder": false,
+      "score": 0.31
+    },
+    {
+      "name": "Dealer Knowledge Base Aggregator",
+      "what_the_agent_does": "Consolidates product manuals, warranty policies, and dealer guidelines into a searchable, AI-indexed repository for internal and dealer portal use.",
+      "process": "Dealer & Distributor Management",
+      "gap": "Fragmented dealer communication and inconsistent brand representation due to scattered documentation.",
+      "supporting_chunk_id": "order-to-delivery#2",
+      "value": 6,
+      "effort": 3,
+      "risk": 1,
+      "enabler": true,
+      "rating_reason": "Foundation work enabling multiple downstream agents; low effort and risk, moderate value as it standardizes information access across channels.",
+      "placeholder": false,
+      "score": 0.39
+    },
+    {
+      "name": "Website AI assistant",
+      "what_the_agent_does": "Greets visitors and offers starting choices (Request Quote; Contact Dealers; View Brochures), answers common questions from approved business information, and hands off to a person.",
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "supporting_chunk_id": null,
+      "enabler": false,
+      "rating_reason": "ratings set by code (fixed defaults), not by the model",
+      "placeholder": false,
+      "from_website_check": true,
+      "starter_prompts": [
+        "Request Quote",
+        "Contact Dealers",
+        "View Brochures"
+      ],
+      "value": 6,
+      "effort": 3,
+      "risk": 3,
+      "score": 0.27
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": "highest_value_r1",
+      "angle": "highest_value",
+      "opportunities": [
+        "Component Shortage Predictor Agent",
+        "Spec-to-Quote Extractor Agent",
+        "Freight Damage Pre-Check Agent"
+      ],
+      "score": 0.48,
+      "parent": "highest_value",
+      "changes": [
+        "replaced Warranty Claim Triage Agent with Freight Damage Pre-Check Agent (risk above tolerance)"
+      ],
+      "rationale": "Starting with the Component Shortage Predictor Agent secures your core production workflow by preventing costly line stoppages, which directly aligns with your cautious risk tolerance. Following that with the Spec-to-Quote Extractor Agent accelerates revenue generation by reducing manual data entry errors, while keeping the Freight Damage Pre-Check Agent last ensures you only tackle higher-complexity logistics after stabilizing production and sales. This sequence prioritizes operational stability before expanding into customer-facing and shipping optimizations.",
+      "pilot_reason": "The Component Shortage Predictor Agent serves as the pilot because it directly addresses your low risk tolerance by preventing expensive production halts with minimal upfront implementation complexity.",
+      "assumption": "The plan assumes your current inventory and ERP systems are sufficiently digitized to integrate with automated monitoring tools without requiring a complete infrastructure overhaul.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "risk-and-rollout#1",
+          "order-to-delivery#1"
+        ],
+        "objection": "The risk level for the Freight Damage Pre-Check Agent is too high given the owner's cautious nature.",
+        "weakest_item": "Freight Damage Pre-Check Agent",
+        "model": "qwen2.5-7b-instruct"
+      },
+      "reviewed": true,
+      "base_score": 0.437,
+      "penalty": 0,
+      "coded_score": 0.437,
+      "findings": []
+    },
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "Dealer Knowledge Base Aggregator",
+        "Component Shortage Predictor Agent",
+        "Spec-to-Quote Extractor Agent"
+      ],
+      "score": 0.463,
+      "rationale": "Leading with the lowest-risk options matches a cautious owner who prefers to validate AI capabilities in low-stakes environments before touching production or sales data. The knowledge base aggregator poses virtually no operational disruption, allowing the team to refine processes and build confidence before addressing inventory forecasting or sales quoting. This gradual escalation ensures that any learning curves are managed safely without jeopardizing manufacturing output or revenue pipelines.",
+      "pilot_reason": "The Dealer Knowledge Base Aggregator is the pilot because it operates independently of live production or sales systems, eliminating operational disruption during initial testing.",
+      "assumption": "The organization has sufficient internal expertise to maintain and update the knowledge base without requiring constant external AI support.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.463,
+      "penalty": 0,
+      "coded_score": 0.463,
+      "findings": []
+    },
+    {
+      "id": "enabler",
+      "angle": "enabler",
+      "opportunities": [
+        "Dealer Knowledge Base Aggregator",
+        "Component Shortage Predictor Agent",
+        "Freight Damage Pre-Check Agent"
+      ],
+      "score": 0.427,
+      "rationale": "Building foundational capabilities first ensures that subsequent automation tools have reliable data sources and established workflows to integrate with. The knowledge base acts as a centralized information hub, which improves data consistency before the system attempts to forecast component shortages or validate shipping compliance. This sequence prevents downstream errors by establishing clear documentation and data governance before layering on predictive or logistical automation.",
+      "pilot_reason": "The Dealer Knowledge Base Aggregator is the pilot because it establishes the necessary data structure and AI indexing framework that all subsequent agents will depend on.",
+      "assumption": "The business can standardize its documentation processes so that the knowledge base remains accurate and up-to-date as products and policies evolve.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.427,
+      "penalty": 0,
+      "coded_score": 0.427,
+      "findings": []
+    }
+  ],
+  "review_round": 3,
+  "revision_exhausted": true,
+  "pruned_log": [
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "score": 0.323,
+      "reason": "ranked below top 3"
+    },
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "score": 0.382,
+      "reason": "ranked below top 3"
+    }
+  ],
+  "verified": true,
+  "verification_report": {
+    "roadmap": "highest_value_r1",
+    "claims": [
+      {
+        "idea": "Component Shortage Predictor Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Production & Manufacturing",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage outlines general AI adoption steps and human oversight, not inventory monitoring or procurement alerts."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Spec-to-Quote Extractor Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "practice",
+            "id": "order-to-delivery#1",
+            "source": "Author-written starter note (replace with a real, citable source)"
+          },
+          {
+            "type": "process",
+            "id": "Quoting & Sales Inquiry",
+            "stated": true
+          }
+        ],
+        "assumption": false,
+        "placeholder": false,
+        "citation": {
+          "status": "confirmed",
+          "detail": "Automating the extraction of options, dimensions and quantities from incoming requests, with a person confirming the result, shortens quote turnaround and removes transcription errors."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Freight Damage Pre-Check Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Order Fulfillment & Logistics",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage advises using AI only to draft paperwork while keeping safety-critical compliance decisions to humans, not freight damage pre-checking."
+        },
+        "note": ""
+      }
+    ],
+    "coverage": 1.0,
+    "grounded": 3,
+    "practices_available": 6,
+    "passed": true,
+    "reasons": [],
+    "no_practices": false,
+    "note": "",
+    "rejected": []
+  },
+  "escalate_now": false,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "highest_value_r1 leads lowest_risk by 3.7% (under 10%). They differ in: Freight Damage Pre-Check Agent vs Dealer Knowledge Base Aggregator."
+    }
+  ],
+  "final_recommendation": {
+    "roadmap": {
+      "id": "highest_value_r1",
+      "angle": "highest_value",
+      "opportunities": [
+        "Component Shortage Predictor Agent",
+        "Spec-to-Quote Extractor Agent",
+        "Freight Damage Pre-Check Agent"
+      ],
+      "score": 0.48,
+      "parent": "highest_value",
+      "changes": [
+        "replaced Warranty Claim Triage Agent with Freight Damage Pre-Check Agent (risk above tolerance)"
+      ],
+      "rationale": "Starting with the Component Shortage Predictor Agent secures your core production workflow by preventing costly line stoppages, which directly aligns with your cautious risk tolerance. Following that with the Spec-to-Quote Extractor Agent accelerates revenue generation by reducing manual data entry errors, while keeping the Freight Damage Pre-Check Agent last ensures you only tackle higher-complexity logistics after stabilizing production and sales. This sequence prioritizes operational stability before expanding into customer-facing and shipping optimizations.",
+      "pilot_reason": "The Component Shortage Predictor Agent serves as the pilot because it directly addresses your low risk tolerance by preventing expensive production halts with minimal upfront implementation complexity.",
+      "assumption": "The plan assumes your current inventory and ERP systems are sufficiently digitized to integrate with automated monitoring tools without requiring a complete infrastructure overhaul.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "risk-and-rollout#1",
+          "order-to-delivery#1"
+        ],
+        "objection": "The risk level for the Freight Damage Pre-Check Agent is too high given the owner's cautious nature.",
+        "weakest_item": "Freight Damage Pre-Check Agent",
+        "model": "qwen2.5-7b-instruct"
+      },
+      "reviewed": true,
+      "base_score": 0.437,
+      "penalty": 0,
+      "coded_score": 0.437,
+      "findings": []
+    },
+    "agents_to_build": [
+      "Component Shortage Predictor Agent",
+      "Spec-to-Quote Extractor Agent",
+      "Freight Damage Pre-Check Agent"
+    ],
+    "runner_up": {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "Dealer Knowledge Base Aggregator",
+        "Component Shortage Predictor Agent",
+        "Spec-to-Quote Extractor Agent"
+      ],
+      "score": 0.463,
+      "rationale": "Leading with the lowest-risk options matches a cautious owner who prefers to validate AI capabilities in low-stakes environments before touching production or sales data. The knowledge base aggregator poses virtually no operational disruption, allowing the team to refine processes and build confidence before addressing inventory forecasting or sales quoting. This gradual escalation ensures that any learning curves are managed safely without jeopardizing manufacturing output or revenue pipelines.",
+      "pilot_reason": "The Dealer Knowledge Base Aggregator is the pilot because it operates independently of live production or sales systems, eliminating operational disruption during initial testing.",
+      "assumption": "The organization has sufficient internal expertise to maintain and update the knowledge base without requiring constant external AI support.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.463,
+      "penalty": 0,
+      "coded_score": 0.463,
+      "findings": []
+    },
+    "close_call": true,
+    "lead_margin": 0.037,
+    "verified": true,
+    "verification": {
+      "roadmap": "highest_value_r1",
+      "claims": [
+        {
+          "idea": "Component Shortage Predictor Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Production & Manufacturing",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage outlines general AI adoption steps and human oversight, not inventory monitoring or procurement alerts."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Spec-to-Quote Extractor Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "practice",
+              "id": "order-to-delivery#1",
+              "source": "Author-written starter note (replace with a real, citable source)"
+            },
+            {
+              "type": "process",
+              "id": "Quoting & Sales Inquiry",
+              "stated": true
+            }
+          ],
+          "assumption": false,
+          "placeholder": false,
+          "citation": {
+            "status": "confirmed",
+            "detail": "Automating the extraction of options, dimensions and quantities from incoming requests, with a person confirming the result, shortens quote turnaround and removes transcription errors."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Freight Damage Pre-Check Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Order Fulfillment & Logistics",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage advises using AI only to draft paperwork while keeping safety-critical compliance decisions to humans, not freight damage pre-checking."
+          },
+          "note": ""
+        }
+      ],
+      "coverage": 1.0,
+      "grounded": 3,
+      "practices_available": 6,
+      "passed": true,
+      "reasons": [],
+      "no_practices": false,
+      "note": "",
+      "rejected": []
+    },
+    "close_call_detail": "highest_value_r1 leads lowest_risk by 3.7% (under 10%). They differ in: Freight Damage Pre-Check Agent vs Dealer Knowledge Base Aggregator."
+  },
+  "status": "complete",
+  "model_calls": 10,
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 6.5/10, chatbot: not_found",
+    "discovery_research: 6 practices from 6 passages",
+    "process_mapper: 6 processes",
+    "matcher: 8 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 0 with a rubric [4 review(s) dropped (bad ratings or no valid evidence)]",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 8.4%",
+    "strategist: 4 roadmaps [1 revised]",
+    "critic: scored 4 roadmaps, 1 with a rubric",
+    "review_gate: round 2, kept 3, pruned 1, best leads by 3.7%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 1 with a rubric",
+    "review_gate: round 3, kept 3, pruned 0, best leads by 3.7%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
+  ],
+  "call_log": [
+    {
+      "ts": "2026-11-14T22:59:27+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 4.454,
+      "error": null,
+      "stub": false,
+      "input_tokens": 889,
+      "output_tokens": 53
+    },
+    {
+      "ts": "2026-11-14T22:59:29+00:00",
+      "agent": "discovery_website",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 2.447,
+      "error": null,
+      "stub": false,
+      "input_tokens": 991,
+      "output_tokens": 169
+    },
+    {
+      "ts": "2026-11-16T15:42:38+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 112.936,
+      "error": null,
+      "stub": false,
+      "input_tokens": 952,
+      "output_tokens": 3528
+    },
+    {
+      "ts": "2026-11-16T15:42:30+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 104.936,
+      "error": null,
+      "stub": false,
+      "input_tokens": 928,
+      "output_tokens": 2858
+    },
+    {
+      "ts": "2026-11-16T15:43:43+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 64.362,
+      "error": null,
+      "stub": false,
+      "input_tokens": 719,
+      "output_tokens": 5543
+    },
+    {
+      "ts": "2026-11-16T15:44:26+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 43.532,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1032,
+      "output_tokens": 3557
+    },
+    {
+      "ts": "2026-11-16T15:44:39+00:00",
+      "agent": "critic",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 12.464,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1839,
+      "output_tokens": 323
+    },
+    {
+      "ts": "2026-11-16T15:45:12+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 33.05,
+      "error": null,
+      "stub": false,
+      "input_tokens": 444,
+      "output_tokens": 2375
+    },
+    {
+      "ts": "2026-11-16T15:45:16+00:00",
+      "agent": "critic",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 4.147,
+      "error": null,
+      "stub": false,
+      "input_tokens": 956,
+      "output_tokens": 150
+    },
+    {
+      "ts": "2026-11-16T15:45:53+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 37.069,
+      "error": null,
+      "stub": false,
+      "input_tokens": 673,
+      "output_tokens": 3063
+    }
+  ]
+}

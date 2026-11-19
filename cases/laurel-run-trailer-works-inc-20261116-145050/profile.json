@@ -1,0 +1,20 @@
+{
+  "name": "Laurel Run Trailer Works",
+  "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/website/site/index.html",
+  "industry": "trailer manufacturing",
+  "size": "unknown",
+  "confidence": "high",
+  "evidence": "The website explicitly identifies the company as a 'Pennsylvania trailer manufacturer' that builds utility, enclosed cargo, and equipment trailers through an in-house shop process involving cutting, welding, painting, and assembly.",
+  "note": "",
+  "evidence_source": {
+    "page": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/website/site/index.html",
+    "fields": [
+      "title",
+      "description",
+      "text"
+    ],
+    "local_fixture": true
+  },
+  "confirmed_by_owner": true,
+  "owner_corrections": {}
+}

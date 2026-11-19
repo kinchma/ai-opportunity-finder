@@ -1,4 +1,5 @@
 """Plain-code summaries the UIs share. No model calls: everything here is derived from the final state."""
+from .tools.scoring import EFFORT_WEIGHT, best_possible_score, score_index
 
 ANGLE_MEANING = {
     "quick_win": "Lowest-effort ideas first",
@@ -59,6 +60,14 @@ def website_check_view(assessment: dict | None) -> dict | None:
         notes.append("The model's content ratings were unavailable, so this rating uses only the facts code could check.")
     if assessment.get("linkedin_used"):
         notes.append("Text the owner pasted from LinkedIn was used as extra evidence.")
+    social = assessment.get("social_presence")
+    if social:
+        found = ", ".join(f"{k} ({len(v)} link{'s' if len(v) != 1 else ''})" for k, v in social["found_on_pages_read"].items())
+        missing = ", ".join(social["not_found_on_pages_read"])
+        notes.append("Social links found on the pages read: " + (found or "none")
+                     + (f". Not found on the pages read: {missing}" if missing else "")
+                     + (". The owner also pasted LinkedIn text." if social.get("owner_pasted_linkedin") else "")
+                     + ". A platform not found here may still exist; nothing was looked up elsewhere.")
     notes.append(assessment.get("caveat", ""))
     return {"rating": rating, "headline": f"{rating} / 10 ({word})",
             "rows": [{"Check": r["name"], "Score": r["score"],
@@ -78,7 +87,7 @@ FLAG_LABEL = {
 }
 
 
-def roadmap_rows(roadmaps: list, pruned_log: list | None = None) -> list:
+def roadmap_rows(roadmaps: list, pruned_log: list | None = None, risk_tolerance: float = 0.5) -> list:
     """Every roadmap the run compared, best first, then the pruned ones."""
     rows = []
     for r in sorted(roadmaps or [], key=lambda r: -r.get("score", 0)):
@@ -86,6 +95,7 @@ def roadmap_rows(roadmaps: list, pruned_log: list | None = None) -> list:
         rows.append({
             "roadmap": r["id"], "strategy": ANGLE_MEANING.get(r.get("angle"), r.get("angle")),
             "ideas (in order)": " → ".join(r.get("opportunities", [])), "score": r.get("score"),
+            "index (0-100)": score_index(r.get("score"), risk_tolerance),
             "idea average": r.get("base_score"), "penalties": r.get("penalty"),
             "critic rubric (1-5)": (f"{rubric['avg']} (feasibility {rubric['feasibility']}, sequencing "
                                     f"{rubric['sequencing']}, fit {rubric['fit']})" if rubric else "none (coded checks only)"),
@@ -95,8 +105,32 @@ def roadmap_rows(roadmaps: list, pruned_log: list | None = None) -> list:
             "narrative by": r.get("narrative_by", ""), "status": "kept"})
     for p in pruned_log or []:
         rows.append({"roadmap": p.get("id"), "strategy": ANGLE_MEANING.get(p.get("angle"), p.get("angle")),
-                     "ideas (in order)": "", "score": p.get("score"), "status": f"pruned: {p.get('reason')}"})
+                     "ideas (in order)": "", "score": p.get("score"),
+                     "index (0-100)": score_index(p.get("score"), risk_tolerance), "status": f"pruned: {p.get('reason')}"})
     return rows
+
+
+def ranking_rows(opps: list, risk_tolerance: float = 0.5) -> list:
+    """One row per idea, best first: rank, the three ratings shown separately, the raw score and
+    the 0-100 index. The ratings are the model's judgment; the score and index are code."""
+    rows = []
+    for i, o in enumerate(sorted(opps or [], key=lambda o: -o.get("score", 0)), 1):
+        rows.append({"rank": i, "opportunity": o["name"], "value (1-10)": o.get("value"),
+                     "effort (1-10)": o.get("effort"), "risk (1-10)": o.get("risk"),
+                     "score": o.get("score"), "index (0-100)": score_index(o.get("score"), risk_tolerance),
+                     "process": o.get("process"), "enabler": "yes" if o.get("enabler") else "",
+                     "rated by": "code (fixed defaults)" if o.get("from_website_check") else
+                                 "placeholder" if o.get("placeholder") else "model",
+                     "what it does": o.get("what_the_agent_does", "")})
+    return rows
+
+
+def score_scale_note(risk_tolerance: float = 0.5) -> str:
+    top = best_possible_score(risk_tolerance)
+    return (f"Scores are a ranking index, not a percentage: (value - {EFFORT_WEIGHT} x effort - "
+            f"{1 - risk_tolerance:.1f} x risk) / 10 at risk tolerance {risk_tolerance}. The best idea possible "
+            f"scores {top:.2f}, so the index shows each score as a share of that (0-100). The model supplies "
+            "the three ratings; code does the arithmetic and the ranking.")
 
 
 def evidence_rows(recommendation: dict | None) -> list:
@@ -109,6 +143,8 @@ def evidence_rows(recommendation: dict | None) -> list:
                 parts.append(f"best practice [{b['id']}]")
             elif b["type"] == "process":
                 parts.append(f"process '{b['id']}' ({'stated' if b.get('stated') else 'typical for the industry: confirm'})")
+            elif b["type"] == "document":
+                parts.append(f"company material [{b['id']}]")
             else:
                 parts.append(f"website check: {b['id']}")
         cite = c.get("citation")

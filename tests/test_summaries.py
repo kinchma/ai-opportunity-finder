@@ -29,3 +29,16 @@ def test_pruned_rows_translate_angles():
     rows = pruned_rows([{"id": "quick_win", "angle": "quick_win", "score": 0.37, "reason": "ranked below top 3"}])
     assert rows[0]["strategy"] == "Lowest-effort ideas first" and rows[0]["why dropped"] == "ranked below top 3"
     assert pruned_rows([]) == []
+
+
+def test_score_index_is_relative_to_the_best_possible_and_never_reorders():
+    from opportunity_finder.tools.scoring import best_possible_score, score_index, score_opportunity
+    from opportunity_finder.summaries import ranking_rows
+    assert best_possible_score(0.5) == 0.9 and best_possible_score(0.4) == 0.89
+    assert score_index(0.9, 0.5) == 100 and score_index(0.0, 0.5) == 0 and score_index(None, 0.5) is None
+    assert score_index(score_opportunity(9, 7, 3, 0.4), 0.4) == 42       # Laurel Run's top idea
+    opps = [{"name": "A", "value": 9, "effort": 7, "risk": 3, "score": 0.37},
+            {"name": "B", "value": 7, "effort": 5, "risk": 2, "score": 0.33}]
+    rows = ranking_rows(opps, 0.4)
+    assert [r["rank"] for r in rows] == [1, 2] and rows[0]["value (1-10)"] == 9 and rows[0]["index (0-100)"] == 42
+    assert rows[0]["index (0-100)"] > rows[1]["index (0-100)"]

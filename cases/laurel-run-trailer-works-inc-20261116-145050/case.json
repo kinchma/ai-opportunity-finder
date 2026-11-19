@@ -1,0 +1,13 @@
+{
+  "id": "laurel-run-trailer-works-inc-20261116-145050",
+  "name": "Laurel Run Trailer Works, Inc.",
+  "stage": "analyzed",
+  "status": "Recommendation ready.",
+  "created": "2026-11-16T14:50:50",
+  "updated": "2026-11-16T15:05:02",
+  "company_input": {
+    "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/website/site",
+    "risk_tolerance": 0.4
+  },
+  "materials_authorized": true
+}

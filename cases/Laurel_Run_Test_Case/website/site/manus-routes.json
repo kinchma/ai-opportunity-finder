@@ -1,0 +1,72 @@
+{
+  "routes": [
+    {
+      "path": "/about/index.html",
+      "title": "About Us | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/contact/dealer.html",
+      "title": "Prepare a Dealer Inquiry | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/contact/index.html",
+      "title": "Contact & Owner Confirmation | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/dealers/index.html",
+      "title": "Find an Independent Dealer | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/",
+      "title": "Laurel Run Trailer Works | Pennsylvania Trailer Manufacturer"
+    },
+    {
+      "path": "/privacy/index.html",
+      "title": "Privacy | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/resources/dealer-support.html",
+      "title": "Dealer Support | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/resources/equipment-brochure.html",
+      "title": "Equipment Trailer Brochure | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/resources/index.html",
+      "title": "Owner Resources | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/resources/trailer-care.html",
+      "title": "Trailer Care & Checklist | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/resources/utility-cargo-brochure.html",
+      "title": "Utility & Cargo Brochure | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/resources/warranty.html",
+      "title": "Warranty Information | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/terms/index.html",
+      "title": "Terms of Use | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/trailers/enclosure.html",
+      "title": "Enclosure 7 \u00d7 14 Cargo Trailer | Laurel Run"
+    },
+    {
+      "path": "/trailers/index.html",
+      "title": "Trailers | Laurel Run Trailer Works"
+    },
+    {
+      "path": "/trailers/trailfield.html",
+      "title": "Trailfield 6 \u00d7 12 Utility Trailer | Laurel Run"
+    },
+    {
+      "path": "/trailers/workspan.html",
+      "title": "Workspan Equipment Trailer | Laurel Run"
+    }
+  ]
+}

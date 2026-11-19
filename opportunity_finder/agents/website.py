@@ -116,7 +116,12 @@ def assess_website(site: dict, profile: dict, linkedin_text: str = "") -> tuple[
             basis[n] = "model"
         prompts = result["prompts"] if len(result["prompts"]) == 3 else DEFAULT_PROMPTS
     ordered = [n for n in WEIGHTS if n in subs]
-    return {"rating": rate(subs), "partial": result is None,
+    links = signals.get("social_links") or {}
+    social = {"found_on_pages_read": {k: v for k, v in links.items() if v},
+              "not_found_on_pages_read": [k for k, v in links.items() if not v],
+              "owner_pasted_linkedin": bool(linkedin_text),
+              "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"}
+    return {"rating": rate(subs), "partial": result is None, "social_presence": social,
             "sub_ratings": [{"name": n, "score": subs[n][0], "reason": subs[n][1], "basis": basis[n]} for n in ordered],
             "chatbot": chat, "starter_prompts": prompts,
             "linkedin_used": bool(linkedin_text), "caveat": CAVEAT,

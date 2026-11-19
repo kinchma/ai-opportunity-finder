@@ -21,43 +21,43 @@
     "industry": "home improvement store",
     "practices": [
       {
-        "practice": "Start with high-volume, repetitive, rule-governed work",
+        "practice": "Start with high-volume, repetitive, rule-governed work such as sorting email, data entry, or answering customer questions.",
         "why_it_matters": "These tasks have clear right answers and enough repetitions to show a measurable saving quickly.",
         "chunk_id": "smb-ai-adoption#1",
         "source": "Author-written starter note (replace with a real, citable source)",
         "url": ""
       },
       {
-        "practice": "Measure the current process before changing it",
+        "practice": "Measure the current process before changing it by recording task duration, frequency, and error rates.",
         "why_it_matters": "Without a baseline you cannot show that an AI agent helped, and you cannot tell which opportunity deserves the next dollar.",
         "chunk_id": "smb-ai-adoption#1",
         "source": "Author-written starter note (replace with a real, citable source)",
         "url": ""
       },
       {
-        "practice": "Keep a person in the loop for anything that touches money, customers or compliance",
-        "why_it_matters": "A common pattern is for the agent to draft or classify and for a person to approve, then to loosen the review only after the error rate has been measured.",
+        "practice": "Keep a person in the loop for anything that touches money, customers or compliance.",
+        "why_it_matters": "This common pattern allows the agent to draft or classify while a person approves, enabling the business to loosen review only after the error rate has been measured.",
         "chunk_id": "smb-ai-adoption#1",
         "source": "Author-written starter note (replace with a real, citable source)",
         "url": ""
       },
       {
-        "practice": "Check data readiness before choosing a use case",
-        "why_it_matters": "An agent can only work with information that is accessible and reasonably clean. If the needed data lives in paper files or in one person's head, the first project is organizing the data.",
+        "practice": "Check data readiness before choosing a use case to ensure information is accessible and reasonably clean.",
+        "why_it_matters": "An agent can only work with information that is accessible and reasonably clean, so unorganized data must be addressed first.",
         "chunk_id": "smb-ai-adoption#2",
         "source": "Author-written starter note (replace with a real, citable source)",
         "url": ""
       },
       {
-        "practice": "Protect sensitive data",
-        "why_it_matters": "Prefer models that run inside the company's own environment for customer, employee or financial records, and send only the minimum needed text to any hosted service.",
+        "practice": "Protect sensitive data by preferring local models for customer, employee or financial records and sending only the minimum needed text to hosted services.",
+        "why_it_matters": "Ensures security and compliance for sensitive business information while minimizing exposure to external services.",
         "chunk_id": "smb-ai-adoption#2",
         "source": "Author-written starter note (replace with a real, citable source)",
         "url": ""
       },
       {
-        "practice": "Pilot narrowly, then expand",
-        "why_it_matters": "One process, one team and a fixed review date keeps the cost of a wrong guess small and gives the business a real result to judge.",
+        "practice": "Pilot narrowly, then expand by focusing on one process, one team and a fixed review date.",
+        "why_it_matters": "Keeps the cost of a wrong guess small and gives the business a real result to judge.",
         "chunk_id": "smb-ai-adoption#2",
         "source": "Author-written starter note (replace with a real, citable source)",
         "url": ""
@@ -81,52 +81,62 @@
   "process_map": {
     "processes": [
       {
-        "name": "Inventory Management",
-        "description": "Tracking and managing stock levels of hardware items.",
+        "name": "Inventory Management & Procurement",
+        "description": "Monitoring stock levels, placing orders through the franchise distribution network, and managing backroom storage to ensure product availability.",
         "pain_points": [
-          "Stockouts",
-          "Overstocking",
-          "Outdated inventory data"
+          "Frequent stockouts of high-demand items",
+          "Overstocking slow-moving merchandise",
+          "Manual inventory count discrepancies"
         ],
         "basis": "typical"
       },
       {
-        "name": "Customer Service",
-        "description": "Assisting customers with product inquiries, sales, and returns.",
+        "name": "Sales Transaction Processing",
+        "description": "Handling walk-in purchases, processing payments, issuing receipts, and managing returns or exchanges at the point of sale.",
         "pain_points": [
-          "Long wait times",
-          "Product knowledge gaps",
-          "Handling complaints"
-        ],
-        "basis": "stated"
-      },
-      {
-        "name": "Order Processing",
-        "description": "Handling customer orders for in-store pickup or delivery.",
-        "pain_points": [
-          "Processing delays",
-          "Order errors",
-          "Customer dissatisfaction with order accuracy"
+          "Long checkout lines during peak hours",
+          "Payment terminal downtime or errors",
+          "Complex return policy handling"
         ],
         "basis": "typical"
       },
       {
-        "name": "Sales and Marketing",
-        "description": "Promoting products, running promotions, and managing advertising campaigns.",
+        "name": "Customer Service & Technical Support",
+        "description": "Assisting shoppers with product selection, providing DIY guidance, and managing special orders or warranty claims.",
         "pain_points": [
-          "Low sales performance",
-          "Ineffective marketing strategies",
-          "Budget constraints"
+          "Inconsistent staff knowledge due to turnover",
+          "Limited specialized expertise for complex projects",
+          "High volume of repetitive inquiries"
         ],
         "basis": "typical"
       },
       {
-        "name": "Supplier Management",
-        "description": "Maintaining relationships with suppliers to ensure product availability and quality.",
+        "name": "Store Operations & Facility Maintenance",
+        "description": "Managing daily store layout, safety compliance, cleaning routines, equipment upkeep, and opening/closing procedures.",
         "pain_points": [
-          "Supply chain disruptions",
-          "Price fluctuations",
-          "Quality issues"
+          "Aging fixtures causing operational delays",
+          "Inconsistent cleaning and safety standards",
+          "Stress from frequent compliance audits"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Franchise Compliance & Corporate Reporting",
+        "description": "Adhering to brand standards, submitting required sales and financial reports, and participating in corporate programs.",
+        "pain_points": [
+          "Time-consuming administrative tasks",
+          "Strict brand guidelines limiting local flexibility",
+          "Frequent system or policy updates"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Local Marketing & Community Engagement",
+        "description": "Executing store-specific promotions, managing local advertising channels, and participating in community events or contractor programs.",
+        "pain_points": [
+          "Limited marketing budget vs. big-box competitors",
+          "Difficulty tracking local campaign ROI",
+          "Unpredictable seasonal demand fluctuations"
         ],
         "basis": "typical"
       }
@@ -136,196 +146,407 @@
   },
   "gap_report": [
     {
-      "process": "Inventory Management",
-      "gap": "Manual tracking leads to stockouts and overstocking, causing lost sales and storage costs.",
-      "opportunity": "Automated Inventory Alerts",
+      "process": "Inventory Management & Procurement",
+      "gap": "Manual inventory counts are error-prone and lead to frequent stockouts of high-demand items.",
+      "opportunity": "Inventory Replenishment Assistant",
       "supporting_chunk_id": "smb-ai-adoption#1"
     },
     {
-      "process": "Customer Service",
-      "gap": "Long wait times and product knowledge gaps lead to dissatisfied customers.",
-      "opportunity": "AI-Powered Chatbot for Customer Service",
+      "process": "Sales Transaction Processing",
+      "gap": "Long checkout lines during peak hours and unaddressed payment terminal downtime cause customer frustration.",
+      "opportunity": "Checkout Queue Optimizer",
       "supporting_chunk_id": "smb-ai-adoption#1"
     },
     {
-      "process": "Order Processing",
-      "gap": "Processing delays and order errors lead to customer dissatisfaction.",
-      "opportunity": "Order Processing Automation",
+      "process": "Customer Service & Technical Support",
+      "gap": "Inconsistent staff knowledge due to turnover and limited specialized expertise for complex projects lead to missed sales.",
+      "opportunity": "DIY Project Advisor",
       "supporting_chunk_id": "smb-ai-adoption#1"
     },
     {
-      "process": "Sales and Marketing",
-      "gap": "Low sales performance due to ineffective marketing strategies.",
-      "opportunity": "Sales Forecasting Tool",
+      "process": "Franchise Compliance & Corporate Reporting",
+      "gap": "Time-consuming administrative tasks and frequent compliance audits create stress and risk of penalties.",
+      "opportunity": "Compliance Audit Pre-Checker",
       "supporting_chunk_id": "smb-ai-adoption#2"
     },
     {
-      "process": "Supplier Management",
-      "gap": "Supply chain disruptions and quality issues lead to stockouts and customer complaints.",
-      "opportunity": "Supplier Performance Monitoring",
+      "process": "Local Marketing & Community Engagement",
+      "gap": "Difficulty tracking local campaign ROI and unpredictable seasonal demand lead to wasted marketing spend.",
+      "opportunity": "Local Campaign ROI Tracker",
+      "supporting_chunk_id": "smb-ai-adoption#2"
+    },
+    {
+      "process": "Store Operations & Facility Maintenance",
+      "gap": "High staff turnover and inconsistent knowledge base create training bottlenecks and service delays.",
+      "opportunity": "Store Knowledge Base & Onboarding Agent",
       "supporting_chunk_id": "smb-ai-adoption#2"
     }
   ],
   "scored_opportunities": [
     {
-      "name": "Automated Inventory Alerts",
-      "what_the_agent_does": "Monitors inventory levels and sends alerts when stock is running low or exceeds optimal levels.",
-      "process": "Inventory Management",
-      "gap": "Manual tracking leads to stockouts and overstocking, causing lost sales and storage costs.",
+      "name": "Inventory Replenishment Assistant",
+      "what_the_agent_does": "Monitors real-time POS and warehouse data, predicts stockouts for high-demand items, and drafts purchase orders to the franchise distribution network for manager approval.",
+      "process": "Inventory Management & Procurement",
+      "gap": "Manual inventory counts are error-prone and lead to frequent stockouts of high-demand items.",
       "supporting_chunk_id": "smb-ai-adoption#1",
       "value": 8,
-      "effort": 4,
-      "risk": 3,
-      "enabler": false,
-      "rating_reason": "Reduces stockouts and overstocking, improving customer satisfaction and reducing storage costs.",
-      "placeholder": false,
-      "score": 0.42
-    },
-    {
-      "name": "AI-Powered Chatbot for Customer Service",
-      "what_the_agent_does": "Provides instant responses to common customer inquiries via chat or voice.",
-      "process": "Customer Service",
-      "gap": "Long wait times and product knowledge gaps lead to dissatisfied customers.",
-      "supporting_chunk_id": "smb-ai-adoption#1",
-      "value": 9,
-      "effort": 5,
-      "risk": 2,
-      "enabler": false,
-      "rating_reason": "Improves customer satisfaction by providing quick and accurate responses, reducing wait times.",
-      "placeholder": false,
-      "score": 0.53
-    },
-    {
-      "name": "Order Processing Automation",
-      "what_the_agent_does": "Automates order processing to reduce delays and errors.",
-      "process": "Order Processing",
-      "gap": "Processing delays and order errors lead to customer dissatisfaction.",
-      "supporting_chunk_id": "smb-ai-adoption#1",
-      "value": 7,
       "effort": 6,
       "risk": 3,
       "enabler": false,
-      "rating_reason": "Improves order accuracy and reduces processing time, enhancing customer satisfaction.",
+      "rating_reason": "High value directly reduces stockouts and increases sales, moderate effort requires POS integration but aligns with automating rule-governed replenishment tasks.",
       "placeholder": false,
-      "score": 0.22
+      "score": 0.32
     },
     {
-      "name": "Sales Forecasting Tool",
-      "what_the_agent_does": "Analyzes sales data to predict future trends and suggest marketing strategies.",
-      "process": "Sales and Marketing",
-      "gap": "Low sales performance due to ineffective marketing strategies.",
-      "supporting_chunk_id": "smb-ai-adoption#2",
+      "name": "Checkout Queue Optimizer",
+      "what_the_agent_does": "Analyzes historical foot traffic and transaction logs to predict peak hours, dynamically adjusts register staffing levels, and flags payment terminal errors for immediate IT support.",
+      "process": "Sales Transaction Processing",
+      "gap": "Long checkout lines during peak hours and unaddressed payment terminal downtime cause customer frustration.",
+      "supporting_chunk_id": "smb-ai-adoption#1",
+      "value": 7,
+      "effort": 5,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Moderate value improves customer experience and reduces wait times, low risk aligns with measuring current process metrics before implementing staffing changes.",
+      "placeholder": false,
+      "score": 0.33
+    },
+    {
+      "name": "DIY Project Advisor",
+      "what_the_agent_does": "Interacts with customers via in-store kiosks or mobile chat to recommend tools and materials for specific DIY projects based on scope and budget, while flagging complex queries for staff.",
+      "process": "Customer Service & Technical Support",
+      "gap": "Inconsistent staff knowledge due to turnover and limited specialized expertise for complex projects lead to missed sales.",
+      "supporting_chunk_id": "smb-ai-adoption#1",
       "value": 8,
       "effort": 7,
       "risk": 4,
       "enabler": false,
-      "rating_reason": "Helps in identifying potential sales opportunities and optimizing marketing efforts.",
+      "rating_reason": "High value drives average transaction size and satisfaction, but moderate risk requires strict human escalation for safety-critical or complex project advice.",
       "placeholder": false,
       "score": 0.21
     },
     {
-      "name": "Supplier Performance Monitoring",
-      "what_the_agent_does": "Tracks supplier performance to ensure product availability and quality.",
-      "process": "Supplier Management",
-      "gap": "Supply chain disruptions and quality issues lead to stockouts and customer complaints.",
+      "name": "Compliance Audit Pre-Checker",
+      "what_the_agent_does": "Scans daily store photos, maintenance logs, and sales reports against corporate brand guidelines, generating a compliance scorecard and flagging deviations for store manager review.",
+      "process": "Franchise Compliance & Corporate Reporting",
+      "gap": "Time-consuming administrative tasks and frequent compliance audits create stress and risk of penalties.",
+      "supporting_chunk_id": "smb-ai-adoption#2",
+      "value": 6,
+      "effort": 5,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "Moderate value reduces audit stress and ensures franchise standing, low risk aligns with protecting sensitive data via local processing while automating routine checks.",
+      "placeholder": false,
+      "score": 0.17
+    },
+    {
+      "name": "Local Campaign ROI Tracker",
+      "what_the_agent_does": "Aggregates data from local flyers, social media, contractor referrals, and POS sales to attribute campaign performance, generating weekly ROI reports for store manager approval before budget reallocation.",
+      "process": "Local Marketing & Community Engagement",
+      "gap": "Difficulty tracking local campaign ROI and unpredictable seasonal demand lead to wasted marketing spend.",
       "supporting_chunk_id": "smb-ai-adoption#2",
       "value": 7,
       "effort": 6,
-      "risk": 3,
+      "risk": 2,
       "enabler": false,
-      "rating_reason": "Improves product availability and quality, reducing supply chain disruptions.",
+      "rating_reason": "Good value optimizes limited marketing budgets and improves targeting, moderate effort matches the narrow pilot best practice to track ROI before scaling.",
       "placeholder": false,
-      "score": 0.22
+      "score": 0.28
+    },
+    {
+      "name": "Store Knowledge Base & Onboarding Agent",
+      "what_the_agent_does": "Centralizes product manuals, warranty policies, and past repair logs into a searchable internal database, enabling new hires to quickly access accurate information for customer inquiries.",
+      "process": "Store Operations & Facility Maintenance",
+      "gap": "High staff turnover and inconsistent knowledge base create training bottlenecks and service delays.",
+      "supporting_chunk_id": "smb-ai-adoption#2",
+      "value": 5,
+      "effort": 8,
+      "risk": 1,
+      "enabler": true,
+      "rating_reason": "High effort and low risk classify this as a foundational enabler; it requires significant data cleanup but enables all other customer-facing and operational agents.",
+      "placeholder": false,
+      "score": 0.04
     }
   ],
   "roadmaps": [
     {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "opportunities": [
+        "Inventory Replenishment Assistant",
+        "DIY Project Advisor",
+        "Checkout Queue Optimizer"
+      ],
+      "score": 0.287,
+      "rationale": "Prioritizing high-value initiatives first aligns with maximizing revenue and operational efficiency for a home improvement retailer. Starting with inventory replenishment ensures high-demand tools and materials are always available, directly supporting sales volume before expanding into customer-facing advisory services. Optimizing checkout queues last makes sense because while it improves customer experience, it does not directly drive the core revenue-generating stock availability that this strategy targets.",
+      "pilot_reason": "The Inventory Replenishment Assistant is piloted first because it directly addresses stockouts, which immediately impact sales and customer trust in a hardware store.",
+      "assumption": "The franchise distribution network can reliably fulfill the drafted purchase orders within standard lead times.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.287,
+      "penalty": 0,
+      "coded_score": 0.287,
+      "findings": []
+    },
+    {
       "id": "quick_win",
       "angle": "quick_win",
       "opportunities": [
-        "Automated Inventory Alerts",
-        "AI-Powered Chatbot for Customer Service",
-        "Order Processing Automation"
+        "Checkout Queue Optimizer",
+        "Compliance Audit Pre-Checker",
+        "Inventory Replenishment Assistant"
       ],
-      "score": 0.39
-    },
-    {
-      "id": "lowest_risk",
-      "angle": "lowest_risk",
-      "opportunities": [
-        "AI-Powered Chatbot for Customer Service",
-        "Automated Inventory Alerts",
-        "Order Processing Automation"
-      ],
-      "score": 0.39
+      "score": 0.273,
+      "rationale": "Focusing on low-effort implementations first allows a cautious business owner to secure early wins and build confidence in automation without heavy resource expenditure. The Checkout Queue Optimizer delivers immediate operational relief during peak hours, while the Compliance Audit Pre-Checker requires minimal staff training to maintain brand standards. Saving the more complex inventory system for last ensures that quick, visible improvements are realized before tackling data-heavy procurement workflows.",
+      "pilot_reason": "The Checkout Queue Optimizer is piloted first because it requires minimal setup and immediately reduces customer wait times during busy weekends.",
+      "assumption": "Historical foot traffic and transaction logs are sufficiently accurate and accessible to generate reliable peak-hour predictions.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.273,
+      "penalty": 0,
+      "coded_score": 0.273,
+      "findings": []
     },
     {
       "id": "enabler",
       "angle": "enabler",
       "opportunities": [
-        "Automated Inventory Alerts",
-        "AI-Powered Chatbot for Customer Service",
-        "Order Processing Automation"
+        "Store Knowledge Base & Onboarding Agent",
+        "Checkout Queue Optimizer",
+        "Inventory Replenishment Assistant"
       ],
-      "score": 0.39
+      "score": 0.23,
+      "rationale": "Building foundational capabilities first ensures that subsequent automation layers have reliable data and trained staff to operate effectively. Centralizing product information and warranty policies creates a single source of truth that supports accurate customer interactions and staff onboarding. Once this knowledge infrastructure is in place, predictive staffing and inventory forecasting can function without relying on fragmented or outdated information.",
+      "pilot_reason": "The Store Knowledge Base and Onboarding Agent is piloted first because it establishes the essential data architecture required for all future automated systems.",
+      "assumption": "Store managers and staff will consistently update and maintain the centralized database with current product and repair information.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.23,
+      "penalty": 0,
+      "coded_score": 0.23,
+      "findings": []
     }
   ],
-  "review_round": 3,
+  "review_round": 2,
+  "revision_exhausted": true,
   "pruned_log": [
     {
-      "id": "highest_value",
-      "angle": "highest_value",
-      "score": 0.387,
-      "reason": "ranked below top 3"
-    },
-    {
-      "id": "blend_1",
-      "angle": "blend",
-      "score": 0.39,
-      "reason": "ranked below top 3"
-    },
-    {
-      "id": "blend_2",
-      "angle": "blend",
-      "score": 0.39,
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "score": 0.217,
       "reason": "ranked below top 3"
     }
   ],
   "verified": true,
+  "verification_report": {
+    "roadmap": "highest_value",
+    "claims": [
+      {
+        "idea": "Inventory Replenishment Assistant",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Inventory Management & Procurement",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage outlines general AI workflow principles rather than inventory monitoring or stockout prediction."
+        },
+        "note": ""
+      },
+      {
+        "idea": "DIY Project Advisor",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Customer Service & Technical Support",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage discusses general customer service automation and human oversight, not DIY recommendations or staff escalation."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Checkout Queue Optimizer",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Sales Transaction Processing",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage describes general process measurement and baseline tracking, not queue prediction or staffing optimization."
+        },
+        "note": ""
+      }
+    ],
+    "coverage": 1.0,
+    "grounded": 3,
+    "practices_available": 6,
+    "passed": true,
+    "reasons": [],
+    "no_practices": false,
+    "note": "",
+    "rejected": []
+  },
+  "escalate_now": false,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "highest_value leads quick_win by 5.1% (under 10%). They differ in: DIY Project Advisor vs Compliance Audit Pre-Checker."
+    }
+  ],
   "final_recommendation": {
     "roadmap": {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "opportunities": [
+        "Inventory Replenishment Assistant",
+        "DIY Project Advisor",
+        "Checkout Queue Optimizer"
+      ],
+      "score": 0.287,
+      "rationale": "Prioritizing high-value initiatives first aligns with maximizing revenue and operational efficiency for a home improvement retailer. Starting with inventory replenishment ensures high-demand tools and materials are always available, directly supporting sales volume before expanding into customer-facing advisory services. Optimizing checkout queues last makes sense because while it improves customer experience, it does not directly drive the core revenue-generating stock availability that this strategy targets.",
+      "pilot_reason": "The Inventory Replenishment Assistant is piloted first because it directly addresses stockouts, which immediately impact sales and customer trust in a hardware store.",
+      "assumption": "The franchise distribution network can reliably fulfill the drafted purchase orders within standard lead times.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.287,
+      "penalty": 0,
+      "coded_score": 0.287,
+      "findings": []
+    },
+    "agents_to_build": [
+      "Inventory Replenishment Assistant",
+      "DIY Project Advisor",
+      "Checkout Queue Optimizer"
+    ],
+    "runner_up": {
       "id": "quick_win",
       "angle": "quick_win",
       "opportunities": [
-        "Automated Inventory Alerts",
-        "AI-Powered Chatbot for Customer Service",
-        "Order Processing Automation"
+        "Checkout Queue Optimizer",
+        "Compliance Audit Pre-Checker",
+        "Inventory Replenishment Assistant"
       ],
-      "score": 0.39
+      "score": 0.273,
+      "rationale": "Focusing on low-effort implementations first allows a cautious business owner to secure early wins and build confidence in automation without heavy resource expenditure. The Checkout Queue Optimizer delivers immediate operational relief during peak hours, while the Compliance Audit Pre-Checker requires minimal staff training to maintain brand standards. Saving the more complex inventory system for last ensures that quick, visible improvements are realized before tackling data-heavy procurement workflows.",
+      "pilot_reason": "The Checkout Queue Optimizer is piloted first because it requires minimal setup and immediately reduces customer wait times during busy weekends.",
+      "assumption": "Historical foot traffic and transaction logs are sufficiently accurate and accessible to generate reliable peak-hour predictions.",
+      "narrative_by": "model",
+      "rubric": null,
+      "reviewed": true,
+      "base_score": 0.273,
+      "penalty": 0,
+      "coded_score": 0.273,
+      "findings": []
     },
-    "agents_to_build": [
-      "Automated Inventory Alerts",
-      "AI-Powered Chatbot for Customer Service",
-      "Order Processing Automation"
-    ]
+    "close_call": true,
+    "lead_margin": 0.051,
+    "verified": true,
+    "verification": {
+      "roadmap": "highest_value",
+      "claims": [
+        {
+          "idea": "Inventory Replenishment Assistant",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Inventory Management & Procurement",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage outlines general AI workflow principles rather than inventory monitoring or stockout prediction."
+          },
+          "note": ""
+        },
+        {
+          "idea": "DIY Project Advisor",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Customer Service & Technical Support",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage discusses general customer service automation and human oversight, not DIY recommendations or staff escalation."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Checkout Queue Optimizer",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Sales Transaction Processing",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage describes general process measurement and baseline tracking, not queue prediction or staffing optimization."
+          },
+          "note": ""
+        }
+      ],
+      "coverage": 1.0,
+      "grounded": 3,
+      "practices_available": 6,
+      "passed": true,
+      "reasons": [],
+      "no_practices": false,
+      "note": "",
+      "rejected": []
+    },
+    "close_call_detail": "highest_value leads quick_win by 5.1% (under 10%). They differ in: DIY Project Advisor vs Compliance Audit Pre-Checker."
   },
   "status": "complete",
-  "model_calls": 11,
+  "model_calls": 7,
   "trace": [
     "discovery_profile: website guess -> home improvement store (low) [could not fetch the page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)> (used the description you provided instead)]",
     "discovery_research: 6 practices from 2 passages [no curated sources for 'home improvement store'; using general guidance only]",
-    "process_mapper: 5 processes",
-    "matcher: 5 candidates scored",
+    "process_mapper: 6 processes",
+    "matcher: 6 candidates scored",
     "strategist: 4 roadmaps",
-    "critic: scored roadmaps",
-    "review_gate: round 1, kept 3, pruned 1",
-    "strategist: 4 roadmaps",
-    "critic: scored roadmaps",
-    "review_gate: round 2, kept 3, pruned 1",
-    "strategist: 4 roadmaps",
-    "critic: scored roadmaps",
-    "review_gate: round 3, kept 3, pruned 1",
-    "planner: verified, recommendation ready"
+    "critic: scored 4 roadmaps, 0 with a rubric [4 review(s) dropped (bad ratings or no valid evidence)]",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 5.1%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 0 with a rubric",
+    "review_gate: round 2, kept 3, pruned 0, best leads by 5.1%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
   ],
   "call_log": [
     {
@@ -339,104 +560,64 @@
       "output_tokens": 33
     },
     {
-      "ts": "2026-11-13T23:48:47+00:00",
+      "ts": "2026-11-15T01:39:31+00:00",
       "agent": "discovery_research",
-      "model": "qwen2.5-7b-instruct",
-      "seconds": 8.976,
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 54.666,
       "error": null,
       "stub": false,
-      "input_tokens": 425,
-      "output_tokens": 427
+      "input_tokens": 435,
+      "output_tokens": 3228
     },
     {
-      "ts": "2026-11-13T23:48:46+00:00",
+      "ts": "2026-11-15T01:39:25+00:00",
       "agent": "process_mapper",
-      "model": "qwen2.5-7b-instruct",
-      "seconds": 7.053,
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 48.537,
       "error": null,
       "stub": false,
-      "input_tokens": 197,
-      "output_tokens": 289
+      "input_tokens": 200,
+      "output_tokens": 2713
     },
     {
-      "ts": "2026-11-13T23:48:57+00:00",
+      "ts": "2026-11-15T01:40:23+00:00",
       "agent": "matcher",
-      "model": "qwen2.5-7b-instruct",
-      "seconds": 9.248,
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 51.536,
       "error": null,
       "stub": false,
-      "input_tokens": 513,
-      "output_tokens": 647
+      "input_tokens": 748,
+      "output_tokens": 4291
     },
     {
-      "ts": "2026-11-13T23:48:57+00:00",
+      "ts": "2026-11-15T01:41:04+00:00",
       "agent": "strategist",
-      "model": "stub",
-      "seconds": null,
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 41.554,
       "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
+      "stub": false,
+      "input_tokens": 1071,
+      "output_tokens": 3346
     },
     {
-      "ts": "2026-11-13T23:48:57+00:00",
+      "ts": "2026-11-15T01:41:20+00:00",
       "agent": "critic",
-      "model": "stub",
-      "seconds": null,
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 15.36,
       "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
+      "stub": false,
+      "input_tokens": 1908,
+      "output_tokens": 509
     },
     {
-      "ts": "2026-11-13T23:48:57+00:00",
-      "agent": "strategist",
-      "model": "stub",
-      "seconds": null,
-      "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
-    },
-    {
-      "ts": "2026-11-13T23:48:57+00:00",
-      "agent": "critic",
-      "model": "stub",
-      "seconds": null,
-      "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
-    },
-    {
-      "ts": "2026-11-13T23:48:57+00:00",
-      "agent": "strategist",
-      "model": "stub",
-      "seconds": null,
-      "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
-    },
-    {
-      "ts": "2026-11-13T23:48:57+00:00",
-      "agent": "critic",
-      "model": "stub",
-      "seconds": null,
-      "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
-    },
-    {
-      "ts": "2026-11-13T23:48:57+00:00",
+      "ts": "2026-11-15T01:41:48+00:00",
       "agent": "planner",
-      "model": "stub",
-      "seconds": null,
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.696,
       "error": null,
-      "stub": true,
-      "input_tokens": null,
-      "output_tokens": null
+      "stub": false,
+      "input_tokens": 759,
+      "output_tokens": 2288
     }
   ]
 }

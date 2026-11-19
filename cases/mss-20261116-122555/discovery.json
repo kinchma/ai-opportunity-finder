@@ -1,0 +1,100 @@
+{
+  "profile": {
+    "name": "MSS",
+    "website": "https://www.mss1.com",
+    "industry": "specialty moving and crating services",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website explicitly states that the company delivers 'specialty and complex third party moving-related services, industrial packing and crating, and installation and assembly solutions.'",
+    "note": ""
+  },
+  "site_text": "We deliver specialty and complex third party moving-related services, industrial packing and crating, and installation and assembly solutions 800.433.1159 211 Commerce Drive | Montgomeryville PA 18936 We're social! 800.433.1159 | M-F 8am-8pm EST Relocation Support Cleaning & Organizing Custom Crating Personal Move Advocates Wine Transportation Precision Packaging & Crating Our Work Fine Art Crating Commercial Move Solutions Pure Install Careers About History Our Team News Environmental & Social Responsibility Privacy Policy Terms of Service Join Our Network Log In Customers Service Providers Contact Relocation Support Cleaning & Organizing Custom Crating Personal Move Advocates Wine Transportation Precision Packaging & Crating Our Work Fine Art Crating Commercial Move Solutions Pure Install Careers About History Our Team News Environmental & Social Responsibility Privacy Policy Terms of Service Join Our Network Log In Customers Service Providers Contact Relocation Support Cleaning & Organizing Custom Crating Personal Move Advocates Wine Transportation Precision Packaging & Crating Our Work Fine Art Crating Commercial Move Solutions Pure Install Careers About History Our Team News Environmental & Social Responsibility Privacy Policy Terms of Service Join Our Network Log In Customers Service Providers Contact Top SPECIALTY RELOCATION, CRATING, AND INSTALLATION SERVICES OUR SERVICES Specialty Moving Services Specialty and Complex Moving Services Appliance disconnect/connect Exercise and outdoor equipment disassembly/assembly Furniture disassembly/assembly Household goods crating (including artwork, statues, light fixtures, etc.) Piano disassembly/assembly TV packaging and mounting Industrial Packing and Crating Superior Protection Solutions Manufacturing, automation , medical, and pharmaceutical machinery, and equipment crating Palletizing and skidding Vapor barrier and weather shield application High-end product packaging Plant relocation crating, evaluation, and execution Installation and Assembly A Single Source for Multi-Trade Projects Commercial, healthcare, hospitality, and retail furniture and fixtures Decommission services Graphics and vinyl installations New-purchase exercise, fitness, and sports equipment assembly and installation Repair and maintenance services MSS offers the most comprehensive and far-reaching network of certified technicians and trade specialists in our industry. Our Customer Service Coordinators have an average of 10.5 years of experience (and over 390 years combined). Our Leadership Team has an average of 30 years of individual industry experience (and over 255 years combined). 97.7% of our customers rate us superior to the competition. We have served more C-Level executives in the past year than all our competitors combined. BY THE NUMBERS 560 Services Offered 1200 Technicians Nationwide 3500000 Families Served CULTURE Work/Play Balance We deliver best-in-class service while creating a supportive, rewarding, and fun place to work. That balance drives our success. Top Workplace Honors In 2025, we ranked #6 in Philly, earned Top Workplace by USA Today , and  biggest pain is screening resumes.  One person, very slow, inconsistnet.  Often lose preferred candidates because of the delays.",
+  "website_assessment": {
+    "rating": 7.4,
+    "partial": false,
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 9,
+        "reason": "The page explicitly lists three core divisions and details their specific services, while clearly identifying corporate transferees, C-level executives, and commercial clients as the target audience.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 6,
+        "reason": "A phone number and contact link are provided, but the page lacks prominent call-to-action buttons like 'Get a Quote' or 'Request Service' to guide new visitors toward immediate engagement.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The site highlights a 1978 founding date, a 97.7% superior rating, and Top Workplace awards, though it omits specific client names or direct review links.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 9,
+        "reason": "found phone link, form",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 6,
+        "reason": "no main heading; 11 of 18 images lack alt text",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Request a Custom Crating Quote",
+      "Schedule Relocation Support Services",
+      "Get Pure Install Assembly Quote"
+    ],
+    "linkedin_used": true,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "model_calls": 2,
+  "call_log": [
+    {
+      "ts": "2026-11-16T17:26:47+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 33.93,
+      "error": null,
+      "stub": false,
+      "input_tokens": 771,
+      "output_tokens": 1847
+    },
+    {
+      "ts": "2026-11-16T17:27:25+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 38.323,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1193,
+      "output_tokens": 2812
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> specialty moving and crating services (high) | website rating 7.4/10, chatbot: not_found"
+  ],
+  "flags": []
+}

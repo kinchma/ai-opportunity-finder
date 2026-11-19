@@ -9,8 +9,9 @@ import streamlit as st
 from opportunity_finder import case_runner, cases
 from opportunity_finder.config import SETTINGS
 from opportunity_finder.observability import summarize
-from opportunity_finder.summaries import (evidence_rows, flag_rows, left_out_ideas, roadmap_rows,
-                                          run_summary_rows, website_check_view)
+from opportunity_finder.summaries import (evidence_rows, flag_rows, left_out_ideas, ranking_rows, roadmap_rows,
+                                          run_summary_rows, score_scale_note, website_check_view)
+from opportunity_finder.tools.scoring import score_index
 
 st.set_page_config(page_title="AI Opportunity Finder: Cases", page_icon="🗂️", layout="wide")
 ss = st.session_state
@@ -18,7 +19,7 @@ STEPS = [("new", "Discovery"), ("discovered", "Confirm profile"), ("confirmed", 
 
 
 def tracker(stage: str):
-    done = cases.STAGES.index(stage)
+    done = cases.tracker_index(stage)
     st.markdown("  →  ".join(
         f"**{'✅' if i < done or stage == 'analyzed' else '⏳' if i == done else '⬜'} {label}**" if i <= done
         else f"⬜ {label}" for i, (_, label) in enumerate(STEPS)))
@@ -94,19 +95,38 @@ if stage == "new":
 # ------------------------------------------------------------------ stage 2: confirm
 profile = cases.load(meta["id"], "profile.json", {})
 disc = cases.load(meta["id"], "discovery.json", {})
-if stage in ("discovered", "confirmed", "analyzed") and profile:
+if stage in ("discovered", "rejected", "confirmed", "analyzed") and profile:
     with st.container(border=True):
         st.markdown(f"**{profile.get('name', 'unknown')}**  ·  {profile.get('website', '')}")
         st.write(f"Industry: **{profile.get('industry', 'unknown')}** ({profile.get('confidence', 'n/a')} confidence)")
         if profile.get("evidence"):
             st.caption(profile["evidence"])
+        src = profile.get("evidence_source") or {}
+        if src.get("page"):
+            st.caption(f"Evidence read from: {src['page']}" + (" (local fixture site, not a live website)" if src.get("local_fixture") else ""))
         if profile.get("note"):
             st.warning(profile["note"])
-if stage == "discovered":
+        if profile.get("confirmed_by_owner"):
+            st.success("Confirmed by the owner" + (f" with corrections: {profile['owner_corrections']}" if profile.get("owner_corrections") else "."))
+if stage == "rejected":
+    st.error("The owner rejected this profile. Correct it and confirm to continue; nothing runs until then.")
+if stage in ("discovered", "rejected"):
+    st.caption("The owner decides here. Accept the profile as is, correct the industry or name and accept, "
+               "or reject it. Nothing further runs until the owner accepts.")
     fix = st.text_input("Industry (edit if wrong)", value=profile.get("industry", ""))
-    if st.button("Confirm profile", type="primary"):
-        corrections = {"industry": fix.strip()} if fix.strip() and fix.strip() != profile.get("industry") else {}
-        case_runner.confirm(meta["id"], corrections)
+    fix_name = st.text_input("Business name (edit if wrong)", value=profile.get("name", ""))
+    note = st.text_input("Owner note (optional)")
+    c1, c2 = st.columns(2)
+    if c1.button("Accept profile" if stage == "discovered" else "Accept corrected profile", type="primary"):
+        corrections = {}
+        if fix.strip() and fix.strip() != profile.get("industry"):
+            corrections["industry"] = fix.strip()
+        if fix_name.strip() and fix_name.strip() != profile.get("name"):
+            corrections["name"] = fix_name.strip()
+        case_runner.confirm(meta["id"], corrections, note=note.strip())
+        st.rerun()
+    if stage == "discovered" and c2.button("Reject profile"):
+        case_runner.reject(meta["id"], note.strip())
         st.rerun()
 
 # ------------------------------------------------------------------ stage 3: documents and analysis
@@ -120,12 +140,34 @@ if stage in ("confirmed", "analyzed"):
             info = cases.add_document(meta["id"], f.name, f.getvalue())
             st.toast(f"Saved {info['file']}" + ("" if info["readable"] else " (stored, not read)"))
         st.rerun()
+    with st.expander("Share a folder of company material (owner authorization)"):
+        st.caption("Copies the files the owner authorizes into this case's documents folder, keeping subfolders "
+                   "(processes/, interviews/, data/ ... tell the pipeline what each file is). The pipeline reads "
+                   "only that folder. Evaluation material, answer keys and generation prompts are refused even if selected.")
+        src_dir = st.text_input("Folder path on this computer", key=f"share-{meta['id']}")
+        include = st.text_input("Subfolders or files to include, comma-separated (blank = whole folder)", key=f"inc-{meta['id']}")
+        if st.button("Share these files with the pipeline"):
+            try:
+                out = case_runner.share(meta["id"], src_dir.strip(),
+                                            [x.strip() for x in include.split(",") if x.strip()] or None)
+                st.success(f"Shared {len(out['copied'])} file(s)." + (f" Refused {len(out['refused'])}." if out["refused"] else ""))
+                for r in out["refused"][:10]:
+                    st.caption(f"refused {r['path']}: {r['reason']}")
+            except (FileNotFoundError, ValueError, case_runner.ConfirmationRequired) as exc:
+                st.error(str(exc))
     files = cases.list_document_files(meta["id"])
-    st.write("Documents on file: " + (", ".join(files) if files else "none yet"))
+    st.write(f"Documents on file ({len(files)}): " + (", ".join(files[:12]) + (" ..." if len(files) > 12 else "") if files else "none yet"))
+    ok, why = case_runner.confirmation_ok(meta["id"])
     label = "Run analysis" if stage == "confirmed" else "Re-run analysis with the current documents"
-    if st.button(label, type="primary"):
+    if not ok:
+        st.error(f"Analysis is blocked: {why}")
+    if st.button(label, type="primary", disabled=not ok):
         with st.spinner("Running the pipeline (this can take a few minutes with a local model)..."):
-            case_runner.analyze(meta["id"])
+            try:
+                case_runner.analyze(meta["id"])
+            except case_runner.ConfirmationRequired as exc:
+                st.error(f"Analysis refused: {exc}")
+                st.stop()
         st.rerun()
 
 # ------------------------------------------------------------------ stage 4: results
@@ -158,10 +200,17 @@ if stage == "analyzed":
         st.success(f"Verified: {ver.get('grounded')} of {len(ver.get('claims', []))} recommended ideas trace to a "
                    f"process, a cited best practice or the website check.")
     names = rec.get("opportunities", [])
+    tol = meta.get("company_input", {}).get("risk_tolerance", 0.5)
     for col, (i, n) in zip(st.columns(max(len(names), 1)), enumerate(names, 1)):
         o = by_name.get(n, {})
-        col.metric(f"{i}. {n}", o.get("score", ""), help=o.get("what_the_agent_does", ""))
-        col.caption(f"Value {o.get('value')} · Effort {o.get('effort')} · Risk {o.get('risk')}")
+        col.metric(f"{i}. {n}", f"{score_index(o.get('score'), tol)} / 100",
+                   help=f"raw score {o.get('score')}. " + o.get("what_the_agent_does", ""))
+        v, e, rk = col.columns(3)
+        v.metric("Value", o.get("value"), help="1-10, model's judgment; higher is better")
+        e.metric("Effort", o.get("effort"), help="1-10, model's judgment; lower is better")
+        rk.metric("Risk", o.get("risk"), help="1-10, model's judgment; lower is better")
+    if rec.get("score") is not None:
+        st.caption(f"Roadmap index {score_index(rec['score'], tol)} / 100 (raw {rec['score']}). " + score_scale_note(tol))
     if rec.get("rationale"):
         st.write(rec["rationale"])
         for label, key in (("Why this pilot", "pilot_reason"), ("Assumption to confirm", "assumption")):
@@ -181,7 +230,7 @@ if stage == "analyzed":
     with tR:
         st.caption("Code builds and scores the roadmaps; the Critic model can move a score by at most "
                    f"{SETTINGS.rubric_weight:.0%}. Roadmaps from runs before Nov 14 have fewer columns.")
-        st.dataframe(roadmap_rows(r.get("roadmaps"), r.get("pruned_log")), hide_index=True, width="stretch")
+        st.dataframe(roadmap_rows(r.get("roadmaps"), r.get("pruned_log"), tol), hide_index=True, width="stretch")
     with tE:
         ev = evidence_rows(full)
         if ev:
@@ -199,9 +248,8 @@ if stage == "analyzed":
         st.code("\n".join(r.get("trace", [])))
     t1, t2, t3, t4 = st.tabs(["Ranking", "Process map", "Website check", "Saved files"])
     with t1:
-        st.dataframe([{"opportunity": o["name"], "score": o["score"], "process": o.get("process"), "value": o["value"],
-                       "effort": o["effort"], "risk": o["risk"], "what it does": o.get("what_the_agent_does", "")}
-                      for o in sorted(opps, key=lambda o: -o["score"])], hide_index=True, width="stretch")
+        st.caption(score_scale_note(tol))
+        st.dataframe(ranking_rows(opps, tol), hide_index=True, width="stretch")
         left = left_out_ideas(opps, names)
         if left:
             st.caption("Left out of the roadmap:")
@@ -212,10 +260,22 @@ if stage == "analyzed":
             v = st.selectbox("Version", versions, index=len(versions) - 1)
             pm = cases.load(meta["id"], v, {})
             st.caption(f"{pm.get('version_note', '')} · {pm.get('note', '')}")
+            idx = pm.get("sources_index", {})
             for p in pm.get("processes", []):
                 st.markdown(f"**{p['name']}** ({p['basis']}): {p['description']}")
                 for pain in p.get("pain_points", []):
                     st.markdown(f"- {pain}")
+                if p.get("sources"):
+                    st.caption("Sources: " + "; ".join(
+                        f"{cid} ({idx.get(cid, {}).get('source_type', '').replace('_', ' ')}"
+                        + (f", {idx[cid]['heading']}" if idx.get(cid, {}).get('heading') else "") + ")"
+                        for cid in p["sources"]))
+            gaps = pm.get("doc_vs_reality_gaps") or []
+            if gaps:
+                st.markdown("**Where a document and an interview disagree (owner to resolve):**")
+                for g in gaps:
+                    st.markdown(f"- **{g.get('process') or 'process'}**: document says *{g['document_says']}*; "
+                                f"interview says *{g['interview_says']}* (sources: {', '.join(g['sources'])})")
     with t3:
         wc = website_check_view(disc.get("website_assessment"))
         if not wc:

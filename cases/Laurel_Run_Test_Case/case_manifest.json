@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "case_id": "laurel-run-trailer-works",
+  "display_name": "Laurel Run Trailer Works, Inc.",
+  "fictional": true,
+  "company_snapshot_date": "2026-10-31",
+  "website": {
+    "published_url": "https://laurelrun-hzs8tm2r.manus.space",
+    "access_last_checked": "2026-11-16",
+    "access_observed": "owner-only; unauthenticated requests redirected to sign-in",
+    "local_site_root": "website/site",
+    "local_start_command": "python3 -m http.server 8000 --directory website/site",
+    "local_start_url": "http://127.0.0.1:8000/"
+  },
+  "stage_sources": {
+    "discovery_website_only": "website/site/",
+    "later_company_analysis": "01_analysis_agent_material/",
+    "evaluation_only_do_not_share_with_agent": "02_evaluator_only_DO_NOT_SHARE/"
+  },
+  "instructions": {
+    "claude_desktop_prompt": "CLAUDE_DESKTOP_PROMPT.md",
+    "operator_guide": "README.md",
+    "synthetic_company_creation_prompt": "SYNTHETIC_COMPANY_CREATION_PROMPT.md",
+    "test_expectations_evaluator_only": "02_evaluator_only_DO_NOT_SHARE/CASE_EXPECTATIONS.md"
+  }
+}
