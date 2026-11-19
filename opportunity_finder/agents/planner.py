@@ -61,6 +61,9 @@ def check_citations(state: dict, cited: list) -> tuple[dict, list, str]:
     """Ask the model whether each cited passage supports its idea. `cited` is [(idea, chunk_id)].
     Returns ({idea name: status}, call records, note); status is confirmed | unconfirmed | rejected."""
     passages = kb.get_passages([cid for _, cid in cited])
+    wanted = {cid for _, cid in cited}          # company passages (doc:...) are checked against the case's own text
+    passages.update({c["id"]: {"text": c["text"], "source": c["name"], "url": ""}
+                     for c in state.get("document_chunks") or [] if c["id"] in wanted})
     askable = [(o, cid) for o, cid in cited if cid in passages]
     status = {o["name"]: {"status": "unconfirmed", "detail": "passage text not found"} for o, cid in cited}
     if not askable:

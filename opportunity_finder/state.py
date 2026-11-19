@@ -20,6 +20,8 @@ class OpportunityState(TypedDict, total=False):
     site_text: str                 # trimmed website text, for later agents
     documents: list                # owner-provided documents [{name, text, source_type}] (text files, capped)
     document_chunks: list          # the same documents as citable chunks [{id, name, source_type, heading, text}]
+    company_index: str             # path of this case's ChromaDB store (cases/<id>/index), set by case_runner
+    company_retrieval: dict        # how that store was opened: mode hybrid|keyword|off, reason, rebuilt, passages
     website_assessment: dict       # 1-10 website rating, chatbot finding, starter prompts
     intake_confirmed: bool
     # research results (written by agents, read by the next one)

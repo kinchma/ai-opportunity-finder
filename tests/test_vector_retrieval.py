@@ -3,6 +3,7 @@ The fake maps a few words to shared "meaning" dimensions, so two texts with no w
 still be close, which is what real embeddings add over keyword search."""
 import math
 import re
+import zlib
 
 import pytest
 
@@ -24,7 +25,7 @@ class FakeEmbeddings:
         for w in re.findall(r"[a-z]+", text.lower()):
             if w in ("search", "document", "query"):
                 continue
-            v[CONCEPTS.get(w, 3 + hash(w) % 13)] += 1.0
+            v[CONCEPTS.get(w, 3 + zlib.crc32(w.encode()) % 13)] += 1.0   # stable across runs
         n = math.sqrt(sum(x * x for x in v)) or 1.0
         return [x / n for x in v]
 

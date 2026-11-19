@@ -10,6 +10,7 @@ cases/laurel-run, whose own website/ folder holds the fixture site.
     python scripts/synthetic_case.py reject    <case_id> [--reason "..."]
     python scripts/synthetic_case.py authorize <case_id> --folders documents,interviews,data[,research]
     python scripts/synthetic_case.py share     <case_id> <folder elsewhere> [--only processes,interviews]
+    python scripts/synthetic_case.py index     <case_id>   (build or refresh the company's RAG store now)
     python scripts/synthetic_case.py analyze   <case_id>
     python scripts/synthetic_case.py status    <case_id>
 
@@ -22,6 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from opportunity_finder import case_runner, cases  # noqa: E402
+from opportunity_finder.tools import company_rag  # noqa: E402
 
 
 def cmd_create(a):
@@ -79,6 +81,14 @@ def cmd_share(a):
         print(f"  refused {r['path']}: {r['reason']}")
 
 
+def cmd_index(a):
+    info = case_runner.refresh_index(a.case_id)
+    print(f"company index: mode {info['mode']}" + (f" ({info['reason']})" if info.get("reason") else ""))
+    if info["mode"] != "off":
+        print(f"  {info.get('passages', 0)} passage(s), embedding model {info.get('embed_model') or '-'}, "
+              f"built this time: {info.get('index_rebuilt')}")
+
+
 def cmd_analyze(a):
     try:
         r = case_runner.analyze(a.case_id)
@@ -99,6 +109,10 @@ def cmd_status(a):
     print(f"{meta['id']}: stage={meta['stage']}  analysis allowed={ok}" + (f" ({why})" if why else ""))
     for row in cases.material_summary(a.case_id):
         print(f"  {row['folder']}: {row['files']} file(s), {'authorized' if row['authorized'] else 'NOT authorized'}")
+    st = company_rag.index_status(cases.case_dir(a.case_id) / "index", cases.document_chunks(a.case_id))
+    print("company index: " + (f"{st['passages']} passage(s), {st['embed_model']}, built {st['built']}, "
+                               f"{'up to date' if st['up_to_date'] else 'OUT OF DATE (rebuilt at the next analysis or index)'}"
+                               if st["exists"] else "not built yet"))
     print(f"runs: {', '.join(cases.runs(a.case_id)) or 'none'}")
 
 
@@ -115,6 +129,7 @@ def main():
     u.set_defaults(fn=cmd_authorize)
     s = sub.add_parser("share"); s.add_argument("case_id"); s.add_argument("folder"); s.add_argument("--only")
     s.set_defaults(fn=cmd_share)
+    i = sub.add_parser("index"); i.add_argument("case_id"); i.set_defaults(fn=cmd_index)
     z = sub.add_parser("analyze"); z.add_argument("case_id"); z.set_defaults(fn=cmd_analyze)
     t = sub.add_parser("status"); t.add_argument("case_id"); t.set_defaults(fn=cmd_status)
     a = ap.parse_args()

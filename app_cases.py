@@ -11,6 +11,7 @@ from opportunity_finder.config import SETTINGS
 from opportunity_finder.observability import summarize
 from opportunity_finder.summaries import (evidence_rows, flag_rows, left_out_ideas, ranking_rows, roadmap_rows,
                                           run_summary_rows, score_scale_note, website_check_view)
+from opportunity_finder.tools import company_rag
 from opportunity_finder.tools.scoring import idea_index, index_band, score_index
 
 st.set_page_config(page_title="AI Opportunity Finder: Cases", page_icon="🗂️", layout="wide")
@@ -138,6 +139,11 @@ if stage in ("confirmed", "analyzed"):
     summary = cases.material_summary(meta["id"])
     if summary:
         st.dataframe(summary, hide_index=True)
+        ist = company_rag.index_status(cases.case_dir(meta["id"]) / "index", cases.document_chunks(meta["id"]))
+        st.caption("Company search index: " + (
+            f"{ist['passages']} passages, {ist['embed_model']}, built {ist['built']}, "
+            + ("up to date." if ist["up_to_date"] else "out of date (rebuilt when the analysis runs).")
+            if ist["exists"] else "not built yet (built when the analysis runs)."))
     pending = [r["folder"] for r in summary if not r["authorized"]]
     if pending:
         pick = st.multiselect("Authorize these folders for the analysis", pending, default=[], key=f"auth-{meta['id']}")

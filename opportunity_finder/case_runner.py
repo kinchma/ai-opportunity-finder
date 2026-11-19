@@ -11,6 +11,7 @@ re-entered after `owner_confirm` with the saved state (graph.update_state), so t
 Supervisor logic are exactly the ones in graph.py.
 """
 from . import cases
+from .tools import company_rag
 from .graph import build_graph
 from .observability import write_run_log
 
@@ -99,12 +100,14 @@ def analyze(case_id: str, base=None) -> dict:
     disc = cases.load(case_id, cases.DISCOVERY, {}, base)
     docs = cases.load_documents(case_id, base)
     chunks = cases.document_chunks(case_id, base)
+    retrieval = refresh_index(case_id, base, chunks)
     seed = {"company_input": meta["company_input"], "profile": cases.load(case_id, cases.PROFILE, {}, base),
             "site_text": disc.get("site_text", ""), "documents": docs, "document_chunks": chunks,
             "intake_confirmed": True,
             "status": "running", "model_calls": disc.get("model_calls", 0),
             "call_log": disc.get("call_log", []), "trace": disc.get("trace", []),
-            "flags": disc.get("flags", [])}
+            "flags": disc.get("flags", []),
+            "company_index": str(cases.case_dir(case_id, base) / "index"), "company_retrieval": retrieval}
     if disc.get("website_assessment"):
         seed["website_assessment"] = disc["website_assessment"]
     graph, cfg = build_graph(), {"configurable": {"thread_id": case_id}}
@@ -118,6 +121,20 @@ def analyze(case_id: str, base=None) -> dict:
     if result.get("status") == "needs_owner_help":  # the Supervisor escalated: say so on the case
         cases.update_case(case_id, base, status="Needs the owner: " + result.get("escalation", {}).get("reason", ""))
     return result
+
+
+def refresh_index(case_id: str, base=None, chunks: list | None = None) -> dict:
+    """Build or refresh the company's ChromaDB store from its authorized material (no-op when
+    COMPANY_RETRIEVAL=off or there is no material). Logged in owner/decisions.json when rebuilt."""
+    chunks = cases.document_chunks(case_id, base) if chunks is None else chunks
+    if not company_rag.enabled():
+        return {"mode": "off", "reason": "COMPANY_RETRIEVAL=off"}
+    if not chunks:
+        return {"mode": "off", "reason": "no authorized company material"}
+    info = company_rag.build_index(cases.case_dir(case_id, base) / "index", chunks)
+    if info["index_rebuilt"]:
+        cases.add_decision(case_id, "company_index_built", {k: info[k] for k in ("passages", "embed_model", "fingerprint")}, base)
+    return info
 
 
 def owner_decision(case_id: str, choice: str, base=None) -> None:
