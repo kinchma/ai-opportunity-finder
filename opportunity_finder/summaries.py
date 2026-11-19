@@ -1,5 +1,6 @@
 """Plain-code summaries the UIs share. No model calls: everything here is derived from the final state."""
-from .tools.scoring import EFFORT_WEIGHT, best_possible_score, score_index
+from .tools.scoring import (EFFORT_WEIGHT, INDEX_BANDS, best_possible_score, idea_index, index_band, score_index,
+                            worst_possible_score)
 
 ANGLE_MEANING = {
     "quick_win": "Lowest-effort ideas first",
@@ -84,6 +85,7 @@ FLAG_LABEL = {
     "close_call": "Close call between the top two roadmaps",
     "practices_empty": "No best practices found",
     "critic_same_model": "Critic ran on the same model as the Strategist",
+    "retrieval_keyword_only": "Vector search unavailable: best practices found by keyword search only",
 }
 
 
@@ -96,6 +98,7 @@ def roadmap_rows(roadmaps: list, pruned_log: list | None = None, risk_tolerance:
             "roadmap": r["id"], "strategy": ANGLE_MEANING.get(r.get("angle"), r.get("angle")),
             "ideas (in order)": " → ".join(r.get("opportunities", [])), "score": r.get("score"),
             "index (0-100)": score_index(r.get("score"), risk_tolerance),
+            "fit": index_band(score_index(r.get("score"), risk_tolerance)),
             "idea average": r.get("base_score"), "penalties": r.get("penalty"),
             "critic rubric (1-5)": (f"{rubric['avg']} (feasibility {rubric['feasibility']}, sequencing "
                                     f"{rubric['sequencing']}, fit {rubric['fit']})" if rubric else "none (coded checks only)"),
@@ -117,7 +120,8 @@ def ranking_rows(opps: list, risk_tolerance: float = 0.5) -> list:
     for i, o in enumerate(sorted(opps or [], key=lambda o: -o.get("score", 0)), 1):
         rows.append({"rank": i, "opportunity": o["name"], "value (1-10)": o.get("value"),
                      "effort (1-10)": o.get("effort"), "risk (1-10)": o.get("risk"),
-                     "score": o.get("score"), "index (0-100)": score_index(o.get("score"), risk_tolerance),
+                     "score": o.get("score"), "index (0-100)": idea_index(o, risk_tolerance),
+                     "fit": index_band(idea_index(o, risk_tolerance)),
                      "process": o.get("process"), "enabler": "yes" if o.get("enabler") else "",
                      "rated by": "code (fixed defaults)" if o.get("from_website_check") else
                                  "placeholder" if o.get("placeholder") else "model",
@@ -126,11 +130,14 @@ def ranking_rows(opps: list, risk_tolerance: float = 0.5) -> list:
 
 
 def score_scale_note(risk_tolerance: float = 0.5) -> str:
-    top = best_possible_score(risk_tolerance)
-    return (f"Scores are a ranking index, not a percentage: (value - {EFFORT_WEIGHT} x effort - "
-            f"{1 - risk_tolerance:.1f} x risk) / 10 at risk tolerance {risk_tolerance}. The best idea possible "
-            f"scores {top:.2f}, so the index shows each score as a share of that (0-100). The model supplies "
-            "the three ratings; code does the arithmetic and the ranking.")
+    top, low = best_possible_score(risk_tolerance), worst_possible_score(risk_tolerance)
+    bands = ", ".join(f"{floor}+ {label.lower()}" if floor else f"under {INDEX_BANDS[-2][0]} {label.lower()}"
+                      for floor, label in INDEX_BANDS)
+    return (f"Score = (value - {EFFORT_WEIGHT} x effort - {1 - risk_tolerance:.1f} x risk) / 10 at risk tolerance "
+            f"{risk_tolerance}. The index places it between the worst idea possible ({low:.2f}: value 1, effort 10, "
+            f"risk 10 = 0) and the best ({top:.2f}: value 10, effort 1, risk 1 = 100). Bands: {bands}. "
+            "The model supplies the three ratings; code does the arithmetic and the ranking, and the index never "
+            "changes an order.")
 
 
 def evidence_rows(recommendation: dict | None) -> list:

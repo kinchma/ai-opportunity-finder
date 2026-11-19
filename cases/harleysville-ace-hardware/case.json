@@ -1,0 +1,16 @@
+{
+  "id": "harleysville-ace-hardware",
+  "name": "Harleysville Ace Hardware",
+  "stage": "analyzed",
+  "status": "Recommendation ready.",
+  "created": "2026-11-13T18:46:49",
+  "updated": "2026-11-14T20:41:48",
+  "company_input": {
+    "risk_tolerance": 0.4,
+    "website": "https://www.acehardware.com/store-details/10740",
+    "description": "Franchise owner",
+    "linkedin_text": "https://www.facebook.com/HarleysvilleHardware"
+  },
+  "latest_run": "run-001",
+  "materials_authorized": []
+}

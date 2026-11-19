@@ -1,0 +1,77 @@
+[
+  {
+    "when": "2026-11-16T14:50:50",
+    "kind": "synthetic_case",
+    "detail": {
+      "manifest_case_id": "laurel-run-trailer-works",
+      "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/website/site",
+      "note": "local fixture site; manifest is harness metadata, not evidence"
+    }
+  },
+  {
+    "when": "2026-11-16T14:57:00",
+    "kind": "profile_confirmed",
+    "detail": {
+      "corrections": {},
+      "note": "",
+      "after_rejection": false
+    }
+  },
+  {
+    "when": "2026-11-16T15:00:00",
+    "kind": "materials_shared",
+    "detail": {
+      "source_root": "/Users/kinch/agentic/ai-opportunity-finder/cases/Laurel_Run_Test_Case/01_analysis_agent_material",
+      "copied": [
+        "processes/01_order_to_delivery.md",
+        "processes/02_production_scheduling.md",
+        "processes/03_purchasing_and_receiving.md",
+        "processes/04_inventory_counting.md",
+        "processes/05_month_end_close.md",
+        "processes/06_payroll_and_time_cards.md",
+        "processes/07_warranty_and_returns.md",
+        "processes/08_quoting.md",
+        "processes/09_onboarding.md",
+        "processes/10_facilities_upkeep.md",
+        "interviews/01_order_to_delivery_interview.md",
+        "interviews/02_production_scheduling_interview.md",
+        "interviews/03_purchasing_and_receiving_interview.md",
+        "interviews/04_inventory_counting_interview.md",
+        "interviews/05_month_end_close_interview.md",
+        "interviews/06_payroll_and_time_cards_interview.md",
+        "interviews/07_warranty_and_returns_interview.md",
+        "interviews/08_quoting_interview.md",
+        "interviews/09_onboarding_interview.md",
+        "interviews/10_facilities_upkeep_interview.md",
+        "interviews/11_marketing_and_social_media_interview.md",
+        "interviews/README.md",
+        "company/01_company_profile_and_website.md",
+        "company/02_org_and_roles.md",
+        "company/03_tools_inventory.md",
+        "company/04_marketing_social_media.md",
+        "data/DATA_DICTIONARY.md",
+        "data/dealer_list.csv",
+        "data/inventory_cycle_counts.csv",
+        "data/inventory_shortages.csv",
+        "data/marketing_social_activity.csv",
+        "data/month_end_checklist.csv",
+        "data/monthly_production_log.csv",
+        "data/order_example.csv",
+        "data/parts_materials.csv",
+        "data/purchase_orders.csv",
+        "data/staff_hours.csv",
+        "data/staff_role_matrix.csv",
+        "data/supplier_offers.csv",
+        "data/warranty_complaint_log.csv"
+      ],
+      "refused": []
+    }
+  },
+  {
+    "when": "2026-11-17T00:00:00",
+    "kind": "layout_migrated",
+    "detail": {
+      "note": "case folder moved to the Nov 17 layout; run 1 authorized documents (company, processes), interviews and data; research added but not authorized"
+    }
+  }
+]

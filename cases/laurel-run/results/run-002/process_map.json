@@ -1,0 +1,149 @@
+{
+  "processes": [
+    {
+      "name": "Dealer Order Intake & Quoting",
+      "description": "Manages dealer requests, generates quotes using Excel pricing workbooks, and routes approvals to sales management before dealers set retail prices.",
+      "pain_points": [
+        "Manual Excel pricing workbooks",
+        "Quote approval bottlenecks",
+        "Dealer-set retail prices create margin uncertainty"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/08_quoting.md#1",
+        "doc:interviews/01_order_to_delivery_interview.md#2"
+      ]
+    },
+    {
+      "name": "Production Scheduling & Shop Floor Execution",
+      "description": "Coordinates weekly setup, tracks orders via Excel and whiteboard, manages paper work orders through the shop, and handles change orders or material shortages.",
+      "pain_points": [
+        "Separate Excel schedule and whiteboard",
+        "Paper work orders slow tracking",
+        "Change order handling disrupts flow"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/02_production_scheduling.md#1",
+        "doc:interviews/02_production_scheduling_interview.md#1"
+      ]
+    },
+    {
+      "name": "Purchasing, Receiving & Inventory Control",
+      "description": "Manages supplier orders via Excel and Outlook, processes paper receiving records, maintains stock sheets, and reconciles counts with QuickBooks for bills.",
+      "pain_points": [
+        "Excel stock sheets vs QuickBooks mismatch",
+        "Paper receiving records slow updates",
+        "Axle/supplier release delays"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/03_purchasing_and_receiving.md#1",
+        "doc:interviews/03_purchasing_and_receiving_interview.md#1"
+      ]
+    },
+    {
+      "name": "Manufacturing, Inspection & Dealer Delivery",
+      "description": "Oversees frame cutting, welding, painting, assembly, and final inspection matching dealer-specified options before shipping to independent dealers.",
+      "pain_points": [
+        "Dealer-arranged delivery creates coordination gaps",
+        "Final inspection must match dealer options",
+        "Status call handling adds admin load"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#1",
+        "doc:interviews/01_order_to_delivery_interview.md#3"
+      ]
+    },
+    {
+      "name": "Warranty Processing & Dealer Claims Support",
+      "description": "Routes dealer-reported issues to quality leads, evaluates claims case-by-case without blanket rules, and approves repairs before execution.",
+      "pain_points": [
+        "No blanket coverage rule requires case-by-case review",
+        "Dealer-mediated claims slow resolution",
+        "Approval before repair creates delays"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/07_warranty_and_returns.md#1"
+      ]
+    },
+    {
+      "name": "Financial Close & Payroll Administration",
+      "description": "Consolidates cutoff records, reviews monthly financials within a target window, and processes biweekly payroll by splitting two workweeks for accurate overtime calculation.",
+      "pain_points": [
+        "5-day close target often missed",
+        "Biweekly payroll requires splitting workweeks manually",
+        "Controller review bottleneck"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/05_month_end_close.md#1",
+        "doc:documents/processes/06_payroll_and_time_cards.md#1"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {
+    "doc:documents/processes/01_order_to_delivery.md#1": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "Order to delivery"
+    },
+    "doc:documents/processes/02_production_scheduling.md#1": {
+      "name": "documents/processes/02_production_scheduling.md",
+      "source_type": "process_document",
+      "heading": "Production scheduling"
+    },
+    "doc:documents/processes/03_purchasing_and_receiving.md#1": {
+      "name": "documents/processes/03_purchasing_and_receiving.md",
+      "source_type": "process_document",
+      "heading": "Purchasing and receiving"
+    },
+    "doc:documents/processes/05_month_end_close.md#1": {
+      "name": "documents/processes/05_month_end_close.md",
+      "source_type": "process_document",
+      "heading": "Month-end close"
+    },
+    "doc:documents/processes/06_payroll_and_time_cards.md#1": {
+      "name": "documents/processes/06_payroll_and_time_cards.md",
+      "source_type": "process_document",
+      "heading": "Payroll and time cards"
+    },
+    "doc:documents/processes/07_warranty_and_returns.md#1": {
+      "name": "documents/processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "Warranty and returns"
+    },
+    "doc:documents/processes/08_quoting.md#1": {
+      "name": "documents/processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "Quoting"
+    },
+    "doc:interviews/01_order_to_delivery_interview.md#2": {
+      "name": "interviews/01_order_to_delivery_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Laurel Run Trailer Works \u2014 Order-to-Delivery Interview"
+    },
+    "doc:interviews/01_order_to_delivery_interview.md#3": {
+      "name": "interviews/01_order_to_delivery_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Laurel Run Trailer Works \u2014 Order-to-Delivery Interview"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#1": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Production scheduling \u2014 simulated interview"
+    },
+    "doc:interviews/03_purchasing_and_receiving_interview.md#1": {
+      "name": "interviews/03_purchasing_and_receiving_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Simulated interview: purchasing and receiving"
+    }
+  },
+  "note": "built from 123 passage(s) from 40 shared file(s) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "run": "run-002",
+  "saved": "2026-11-16T22:56:33",
+  "run_note": "built from 1 owner document(s)"
+}

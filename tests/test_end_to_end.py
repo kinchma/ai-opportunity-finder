@@ -44,8 +44,8 @@ def script_for(fx, **overrides):
 def run_case(tmp_path, fx, discovery=None):
     cid = cases.create_case(fx["company_input"].get("name") or fx["profile"]["name"], fx["company_input"], tmp_path)
     if discovery:   # a case whose Discovery already ran (website cases): seed what it saved
-        cases.save(cid, "discovery.json", discovery, tmp_path)
-        cases.save(cid, "profile.json", discovery["profile"], tmp_path)
+        cases.save(cid, cases.DISCOVERY, discovery, tmp_path)
+        cases.save(cid, cases.PROFILE, discovery["profile"], tmp_path)
         cases.set_stage(cid, "discovered", tmp_path)   # as a real Discovery run would leave it
     else:           # no website: the synthetic profile path, no model call
         case_runner.discover(cid, tmp_path)
@@ -90,7 +90,8 @@ def test_carmate_end_to_end(tmp_path, scripted, fixture_case, monkeypatch):
     assert not any(f["type"] == "critic_same_model" for f in result["flags"])
     assert result["model_calls"] <= 12                          # well under the cap of 40
     assert cases.load_case(cid, tmp_path)["status"] == "Recommendation ready."
-    assert list((cases.case_dir(cid, tmp_path) / "runs").glob("*.json"))
+    run = cases.latest_run(cid, tmp_path)
+    assert run == "run-001" and list(cases.run_dir(cid, run, tmp_path).glob(f"{cid}-*.json"))   # the call log
 
 
 def test_brightline_cautious_owner_gets_a_safe_grounded_roadmap(tmp_path, scripted, fixture_case):
@@ -157,7 +158,7 @@ def test_two_failures_escalate_with_a_decision_card(tmp_path, scripted, fixture_
     assert result["final_recommendation"]["unverified_draft"] is True
     assert cases.load_case(cid, tmp_path)["status"].startswith("Needs the owner")
     case_runner.owner_decision(cid, "add_information", tmp_path)
-    assert cases.load(cid, "decisions.json", [], tmp_path)[-1]["detail"] == {"choice": "add_information"}
+    assert cases.load(cid, cases.DECISIONS, [], tmp_path)[-1]["detail"] == {"choice": "add_information"}
 
 
 def test_empty_practices_escalate_on_the_first_failure(tmp_path, scripted, fixture_case):

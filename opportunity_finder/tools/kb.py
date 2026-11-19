@@ -1,16 +1,23 @@
-"""Tiny retriever over the curated knowledge base in kb/ (standard library only).
+"""Retriever over the curated knowledge base (default kb_sources/, sourced public-domain notes).
 
-Layout: kb/<industry-folder>/<note>.md, each starting with `source:`, `url:` and
-`industries:` header lines, then `---`, then text. `industries: *` marks general
-guidance. Ranking is BM25 over paragraph-sized chunks. To upgrade later, swap `_bm25`
-for embeddings (LM Studio can serve nomic-embed-text) without changing callers.
+Layout: <kb>/<industry-folder>/<note>.md, each starting with `source:`, `url:` and
+`industries:` header lines, then `---`, then text. `industries: *` marks general guidance.
+Passages are paragraph-sized chunks with ids like "nist-mep-lean-methods#2".
+
+Ranking is hybrid (Nov 17): vector similarity from ChromaDB with local nomic embeddings
+(tools/vectorstore.py) plus BM25 keyword scores, merged by reciprocal rank fusion. When vectors
+are not available (no LLM_EMBED_MODEL, Chroma missing, or the embedding server down) it falls
+back to BM25 alone and says so in the retrieval info. KB_DIR=kb selects the old author-written
+placeholder notes (the tests use them).
 """
 import math
 import os
 import re
 from pathlib import Path
 
-DEFAULT_KB_DIR = Path(__file__).resolve().parents[2] / "kb"
+from . import vectorstore
+
+DEFAULT_KB_DIR = Path(__file__).resolve().parents[2] / "kb_sources"
 _STOP = {"the", "and", "of", "for", "a", "an", "in", "to", "with", "inc", "llc", "co", "company",
          "companies", "business", "businesses", "industry", "service", "services", "regional", "small"}
 
@@ -56,7 +63,7 @@ def _chunks(doc: dict, max_chars: int = 900) -> list[dict]:
 
 
 def load_kb(kb_dir: str | Path | None = None) -> list[dict]:
-    root = Path(kb_dir or os.getenv("KB_DIR") or DEFAULT_KB_DIR)
+    root = kb_root(kb_dir)
     chunks = []
     for path in sorted(root.rglob("*.md")):
         if path.name.lower() == "readme.md":
@@ -87,29 +94,70 @@ def _bm25(query: list[str], chunks: list[dict], k1: float = 1.5, b: float = 0.75
     return scores
 
 
-def retrieve(industry: str, k_industry: int = 4, k_general: int = 2,
-             kb_dir: str | Path | None = None) -> tuple[list[dict], str]:
-    """Return (chunks, note). Industry-specific chunks come first, then general guidance.
-    `note` is non-empty when the KB has nothing specific for this industry."""
-    chunks = load_kb(kb_dir)
+def kb_root(kb_dir: str | Path | None = None) -> Path:
+    vectorstore._load_env()
+    return Path(kb_dir or os.getenv("KB_DIR") or DEFAULT_KB_DIR)
+
+
+def retrieve_with_info(industry: str, k_industry: int = 4, k_general: int = 2,
+                       kb_dir: str | Path | None = None, query_text: str = "",
+                       embedder=None) -> tuple[list[dict], str, dict]:
+    """Return (chunks, note, info). Industry-specific chunks come first, then general guidance.
+    `note` is non-empty when the KB has nothing specific for this industry. `info` says how the
+    ranking was done: {"mode": "hybrid"|"keyword", "reason", "embed_model", "index_rebuilt",
+    "query", "embedding_calls"}."""
+    root = kb_root(kb_dir)
+    chunks = load_kb(root)
     want = set(_tokens(industry))
     specific = [c for c in chunks if not c["general"] and c["tag_tokens"] & want]
     general = [c for c in chunks if c["general"]]
-    query = _tokens(f"{industry} AI automation best practices process efficiency")
+    query = f"{industry} AI automation best practices process efficiency {query_text}".strip()
+    qtok = _tokens(query)
+    info = {"mode": "keyword", "reason": "", "embed_model": "", "index_rebuilt": False,
+            "query": query[:300], "embedding_calls": []}
+
+    vec_rank: list[str] | None = None
+    emb = embedder
+    if chunks:
+        try:
+            emb = emb or vectorstore.Embedder()
+            info["embed_model"] = emb.model
+            col, info["index_rebuilt"] = vectorstore.open_store(
+                root / ".chroma", "industry_kb",
+                [{"id": c["id"], "text": c["text"], "source": c["source"], "general": c["general"]} for c in chunks], emb)
+            vec_rank = vectorstore.vector_ranking(col, emb.query(query), len(chunks))
+            info["mode"] = "hybrid"
+            info["embedding_calls"] = list(emb.calls)
+        except vectorstore.VectorsUnavailable as exc:
+            info["reason"] = str(exc)
+            info["embedding_calls"] = list(getattr(emb, "calls", []) or [])
 
     def top(pool, k):
-        scores = _bm25(query, pool)
-        ranked = sorted(zip(scores, range(len(pool))), key=lambda t: (-t[0], t[1]))
-        return [pool[i] for _, i in ranked[:k]]
+        scores = _bm25(qtok, pool)
+        bm = [pool[i]["id"] for _, i in sorted(zip(scores, range(len(pool))), key=lambda t: (-t[0], t[1]))]
+        if vec_rank is None:
+            order = bm
+        else:
+            ids = {c["id"] for c in pool}
+            order = vectorstore.rrf([i for i in vec_rank if i in ids], bm)
+        by_id = {c["id"]: c for c in pool}
+        return [by_id[i] for i in order[:k]]
 
     hits = top(specific, k_industry) + top(general, k_general)
     note = "" if specific else f"no curated sources for '{industry}'; using general guidance only"
+    return hits, note, info
+
+
+def retrieve(industry: str, k_industry: int = 4, k_general: int = 2,
+             kb_dir: str | Path | None = None, query_text: str = "", embedder=None) -> tuple[list[dict], str]:
+    """Return (chunks, note); see retrieve_with_info for the ranking details."""
+    hits, note, _ = retrieve_with_info(industry, k_industry, k_general, kb_dir, query_text, embedder)
     return hits, note
 
 
 def get_passages(ids, kb_dir: str | Path | None = None) -> dict:
     """{passage id: {text, source, url}} for the ids that exist. The Verifier uses this to check
-    a claim against the passage it cites. RAG seam: swap this for a vector-store lookup later."""
+    a claim against the passage it cites (looked up by id, so it works with or without vectors)."""
     want = set(ids)
     return {c["id"]: {"text": c["text"], "source": c["source"], "url": c["url"]}
             for c in load_kb(kb_dir) if c["id"] in want}

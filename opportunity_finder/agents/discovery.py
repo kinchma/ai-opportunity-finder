@@ -161,11 +161,18 @@ def discovery_research(state: dict) -> dict:
     """Retrieve curated best-practice passages for the confirmed industry, then have the
     LLM turn them into practices. Every practice must cite a retrieved passage. Runs in
     parallel with process_mapper."""
-    industry = state.get("profile", {}).get("industry", "unknown")
-    hits, note = kb.retrieve(industry)
+    profile = state.get("profile", {})
+    industry = profile.get("industry", "unknown")
+    # what the company does, in the website's or owner's words, sharpens the search beyond the industry name
+    about = " ".join(str(x) for x in (profile.get("evidence"), (state.get("company_input") or {}).get("description")) if x)[:300]
+    hits, note, info = kb.retrieve_with_info(industry, query_text=about)
     result = {"industry": industry, "practices": [], "note": note,
               "sources": sorted({h["source"] for h in hits}),
-              "passages": [{"id": h["id"], "source": h["source"]} for h in hits]}
+              "passages": [{"id": h["id"], "source": h["source"]} for h in hits],
+              "retrieval": info}
+    flags = []
+    if info["mode"] == "keyword" and info["reason"] and "no embedding model configured" not in info["reason"]:
+        flags.append({"type": "retrieval_keyword_only", "where": "discovery_research", "detail": info["reason"]})
     records: list = []
     if hits:
         passages = "\n\n".join(f"[{h['id']}] ({h['source']})\n{h['text']}" for h in hits)
@@ -209,6 +216,6 @@ def discovery_research(state: dict) -> dict:
     else:
         result["note"] = (result["note"] + " The knowledge base has no passages to search.").strip()
 
-    return {"best_practices": result, "model_calls": len(records), "call_log": records,
+    return {"best_practices": result, "model_calls": len(records), "call_log": records, "flags": flags,
             "trace": [f"discovery_research: {len(result['practices'])} practices from "
-                      f"{len(hits)} passages" + (f" [{result['note']}]" if result["note"] else "")]}
+                      f"{len(hits)} passages ({info['mode']} retrieval)" + (f" [{result['note']}]" if result["note"] else "")]}

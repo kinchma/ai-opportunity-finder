@@ -1,0 +1,137 @@
+{
+  "processes": [
+    {
+      "name": "Dealer Order Intake & Quoting",
+      "description": "Process for receiving dealer configuration requests, generating model-specific quotes using pricing workbooks, securing order acceptance, and handing off to production.",
+      "pain_points": [
+        "Manual Excel pricing workbooks and template reliance",
+        "Dealer-set retail prices create margin ambiguity for factory billing",
+        "Quote approval bottlenecks between coordinator and sales manager"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/08_quoting.md#1",
+        "doc:documents/processes/01_order_to_delivery.md#2"
+      ]
+    },
+    {
+      "name": "Production Scheduling & Shop Floor Management",
+      "description": "Planning weekly production runs, maintaining the Excel schedule and shop whiteboard, managing order changes, tracking material shortages, and coordinating floor handoffs.",
+      "pain_points": [
+        "Separate Excel schedule, order register, and inventory sheets",
+        "Paper work orders traveling through the shop without digital tracking",
+        "Reactive management of change requests and component shortages"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/02_production_scheduling.md#1",
+        "doc:interviews/02_production_scheduling_interview.md#5"
+      ]
+    },
+    {
+      "name": "Purchasing, Receiving & Inventory Control",
+      "description": "Managing supplier orders, receiving materials at the bay, tracking stock via Excel/QuickBooks, and handling component shortages (e.g., axles) to keep assembly lines stocked.",
+      "pain_points": [
+        "Excel stock sheets disconnected from QuickBooks supplier bills",
+        "Manual receiving paperwork and weekly physical counts",
+        "Reactive shortage management for critical components like axles"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/03_purchasing_and_receiving.md#1",
+        "doc:documents/processes/04_inventory_counting.md#1"
+      ]
+    },
+    {
+      "name": "Manufacturing/Assembly & Quality Inspection",
+      "description": "Cutting, welding, painting, wiring, and assembling trailer components (frames, panels, running gear), followed by model-specific pre-shipment inspection before leaving the facility.",
+      "pain_points": [
+        "Coordinating multiple sub-assembly stages (cutting, welding, painting)",
+        "Ensuring model-specific option compliance before shipping",
+        "Pre-shipment inspection bottlenecks causing delivery delays"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#4"
+      ]
+    },
+    {
+      "name": "Shipping, Invoicing & Dealer Delivery Coordination",
+      "description": "Arranging dealer pickup or appointment-based delivery, generating factory invoices, and handling status inquiries while dealers manage retail pricing and final handoff.",
+      "pain_points": [
+        "Dealer-arranged delivery scheduling creates coordination overhead",
+        "Invoicing separated from dealer retail pricing structures",
+        "Frequent status calls requiring dedicated account coordination"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#6"
+      ]
+    },
+    {
+      "name": "Warranty Claims & Post-Sale Support",
+      "description": "Processing dealer-reported issues, evaluating claims against specific warranty terms, approving repairs, and managing returns or credits without blanket coverage rules.",
+      "pain_points": [
+        "No blanket coverage policy requires claim-by-claim evaluation",
+        "Dealer-mediated communication adds administrative steps",
+        "Repair approval delays impact dealer satisfaction and cash flow"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/07_warranty_and_returns.md#1"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {
+    "doc:documents/processes/01_order_to_delivery.md#2": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "1. Request and quote"
+    },
+    "doc:documents/processes/01_order_to_delivery.md#4": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "3. Build, changes and inspection"
+    },
+    "doc:documents/processes/01_order_to_delivery.md#6": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "4. Ship, invoice and answer status calls"
+    },
+    "doc:documents/processes/02_production_scheduling.md#1": {
+      "name": "documents/processes/02_production_scheduling.md",
+      "source_type": "process_document",
+      "heading": "Production scheduling"
+    },
+    "doc:documents/processes/03_purchasing_and_receiving.md#1": {
+      "name": "documents/processes/03_purchasing_and_receiving.md",
+      "source_type": "process_document",
+      "heading": "Purchasing and receiving"
+    },
+    "doc:documents/processes/04_inventory_counting.md#1": {
+      "name": "documents/processes/04_inventory_counting.md",
+      "source_type": "process_document",
+      "heading": "Inventory counting"
+    },
+    "doc:documents/processes/07_warranty_and_returns.md#1": {
+      "name": "documents/processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "Warranty and returns"
+    },
+    "doc:documents/processes/08_quoting.md#1": {
+      "name": "documents/processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "Quoting"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#5": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[04:00]"
+    }
+  },
+  "note": "built from 123 passage(s) from 40 shared file(s) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "run": "run-004",
+  "saved": "2026-11-17T10:34:07",
+  "run_note": "built from 1 owner document(s)"
+}

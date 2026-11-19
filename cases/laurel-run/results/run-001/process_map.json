@@ -1,0 +1,142 @@
+{
+  "processes": [
+    {
+      "name": "Dealer Order Intake & Quoting",
+      "description": "Manages dealer requests, generates quotes using Excel pricing templates, and routes for approval before order confirmation.",
+      "pain_points": [
+        "Manual Excel pricing formulas",
+        "Dealer-set retail prices creating margin ambiguity",
+        "Multi-approval routing for custom quotes"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:processes/08_quoting.md#1",
+        "doc:processes/01_order_to_delivery.md#2"
+      ]
+    },
+    {
+      "name": "Production Scheduling & Shop Floor Coordination",
+      "description": "Maintains weekly production schedules, tracks order registers and inventory sheets, and manages paper work orders through the shop floor.",
+      "pain_points": [
+        "Disconnected Excel schedule and whiteboard",
+        "Paper work orders slowing floor updates",
+        "Change order communication delays"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:processes/02_production_scheduling.md#1",
+        "doc:interviews/02_production_scheduling_interview.md#5"
+      ]
+    },
+    {
+      "name": "Purchasing, Receiving & Inventory Management",
+      "description": "Handles supplier ordering via Excel/Outlook, processes paper receiving records, and maintains working stock counts separate from accounting software.",
+      "pain_points": [
+        "Excel stock sheets not synced with QuickBooks",
+        "Paper receiving records prone to loss",
+        "Axle release/vendor offer delays"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:processes/03_purchasing_and_receiving.md#1",
+        "doc:processes/04_inventory_counting.md#1"
+      ]
+    },
+    {
+      "name": "Trailer Manufacturing, Assembly & Quality Inspection",
+      "description": "Coordinates steel frame fabrication, panel fitting, wiring, running gear installation, and pre-shipment inspection against dealer-specified models and options.",
+      "pain_points": [
+        "Manual model/option verification against load labels",
+        "Paper-based inspection checklists",
+        "Rework tracking gaps"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:processes/01_order_to_delivery.md#3"
+      ]
+    },
+    {
+      "name": "Shipping, Invoicing & Dealer Delivery Coordination",
+      "description": "Coordinates factory shipment, generates invoices, and manages dealer-arranged delivery appointments while handling post-shipment status inquiries.",
+      "pain_points": [
+        "Dealer-arranged delivery scheduling causing coordination overhead",
+        "Invoice timing misaligned with dealer payment terms",
+        "Status call volume management"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:processes/01_order_to_delivery.md#4"
+      ]
+    },
+    {
+      "name": "Warranty Claims & Dealer Support",
+      "description": "Routes dealer-reported issues to quality leads, evaluates case-specific coverage terms, and approves pre-repair actions before processing claims.",
+      "pain_points": [
+        "No blanket coverage policy requiring case-by-case review",
+        "Multi-step dealer-to-plant claim routing",
+        "Pre-repair approval bottlenecks"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:processes/07_warranty_and_returns.md#1",
+        "doc:interviews/01_order_to_delivery_interview.md#8"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {
+    "doc:interviews/01_order_to_delivery_interview.md#8": {
+      "name": "interviews/01_order_to_delivery_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Laurel Run Trailer Works \u2014 Order-to-Delivery Interview"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#5": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[04:00]"
+    },
+    "doc:processes/01_order_to_delivery.md#2": {
+      "name": "processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "1. Request and quote"
+    },
+    "doc:processes/01_order_to_delivery.md#3": {
+      "name": "processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "2. Make the order and schedule it"
+    },
+    "doc:processes/01_order_to_delivery.md#4": {
+      "name": "processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "3. Build, changes and inspection"
+    },
+    "doc:processes/02_production_scheduling.md#1": {
+      "name": "processes/02_production_scheduling.md",
+      "source_type": "process_document",
+      "heading": "Production scheduling"
+    },
+    "doc:processes/03_purchasing_and_receiving.md#1": {
+      "name": "processes/03_purchasing_and_receiving.md",
+      "source_type": "process_document",
+      "heading": "Purchasing and receiving"
+    },
+    "doc:processes/04_inventory_counting.md#1": {
+      "name": "processes/04_inventory_counting.md",
+      "source_type": "process_document",
+      "heading": "Inventory counting"
+    },
+    "doc:processes/07_warranty_and_returns.md#1": {
+      "name": "processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "Warranty and returns"
+    },
+    "doc:processes/08_quoting.md#1": {
+      "name": "processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "Quoting"
+    }
+  },
+  "note": "built from 132 passage(s) from 40 shared file(s) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "run": "run-001",
+  "run_note": "migrated from result.run1_laurel.json (Laurel Run run 1, Nov 16)"
+}

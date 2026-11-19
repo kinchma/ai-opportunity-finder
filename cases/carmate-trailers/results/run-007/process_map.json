@@ -1,0 +1,68 @@
+{
+  "processes": [
+    {
+      "name": "Quoting & Sales Inquiry",
+      "description": "Process for capturing customer or dealer requests, specifying trailer type, dimensions, and custom options to generate accurate pricing.",
+      "pain_points": [
+        "Manual spec entry errors",
+        "Delayed response times",
+        "Inconsistent pricing across sales channels"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Dealer & Distributor Management",
+      "description": "Onboarding, credentialing, and ongoing support for authorized dealers, including portal access, inventory allocation, and marketing materials.",
+      "pain_points": [
+        "Fragmented dealer communication",
+        "Manual onboarding paperwork",
+        "Inconsistent brand representation at retail"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Warranty & Customer Support",
+      "description": "Handling warranty registrations, processing claims, providing technical support, and collecting customer feedback/surveys.",
+      "pain_points": [
+        "Lengthy claim verification",
+        "Tracking missing warranty documents",
+        "Inconsistent support response times"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Financing & Credit Processing",
+      "description": "Facilitating dealer and end-customer financing applications through partnered lenders to close sales.",
+      "pain_points": [
+        "Lengthy approval cycles",
+        "Manual document submission",
+        "Mismatched credit criteria across lenders"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Production & Manufacturing",
+      "description": "Converting raw materials into finished cargo and car trailers through cutting, welding, assembly, painting, and final inspection.",
+      "pain_points": [
+        "Supply chain delays for specialized components",
+        "Production bottlenecks during peak contractor season",
+        "Quality control inconsistencies"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Order Fulfillment & Logistics",
+      "description": "Scheduling production, coordinating freight/shipping to dealers or direct customers, and managing delivery documentation.",
+      "pain_points": [
+        "Freight damage during transit",
+        "Scheduling conflicts with carrier availability",
+        "Tracking delays for customers"
+      ],
+      "basis": "typical"
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)",
+  "run": "run-007",
+  "run_note": "migrated from result.run7_mac_all_local.json"
+}

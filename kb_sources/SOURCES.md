@@ -23,6 +23,14 @@ everything in `kb/`, so move or copy a file into `kb/<industry>/` when you want 
 | manufacturing/nist-mep-lean-methods.md | NIST MEP, Lean and process improvement | Public domain | Manufacturing overlay |
 | manufacturing/nist-mep-value-stream-mapping.md | NIST MEP, Value Stream Mapping | Public domain | Manufacturing overlay |
 | trailer-manufacturing/nhtsa-manufacturer-requirements.md | NHTSA New Manufacturers Handbook (rev. 10/24/2025) | Public domain | Trailer overlay |
+| professional-services/knowledge-and-admin.md | AUTHOR-WRITTEN placeholder copied from kb/ on 2026-11-17 (no external source) | n/a | Professional-services overlay (placeholder) |
+| distribution/order-and-inventory.md | AUTHOR-WRITTEN placeholder copied from kb/ on 2026-11-17 (no external source) | n/a | Distribution overlay (placeholder) |
+
+The two placeholder overlays keep Brightline (bookkeeping) and distribution cases from getting general
+notes only; their `source:` line says "Author-written starter note", and that label reaches the UI and
+every citation. Replace them with sourced notes when time allows. The app reads this folder by default
+since Nov 17 (`tools/kb.py`); `KB_DIR=kb` selects the old placeholder set. The vector index lives in
+`.chroma/` here (generated, git-ignored).
 
 License notes (checked 2026-11-16)
 - SBA: "Government information on SBA.gov is in the public domain" and may be freely copied; credit SBA. Third-party items on SBA pages may be copyrighted. (https://www.sba.gov/about-sba/open-government/about-the-sba-gov-website/)

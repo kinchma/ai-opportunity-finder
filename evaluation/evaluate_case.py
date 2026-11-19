@@ -1,12 +1,12 @@
 """Post-run evaluation of a FROZEN case result against an answer key. Evaluator-only code.
 
 This file is never imported by the pipeline (opportunity_finder/) and the agents have no tool
-that reaches it or the expectations file. Run it only after a case has finished; it reads
-cases/<id>/result.json and writes evaluations/<id>/report.json (outside the case folder, so the
-agent's own files stay untouched).
+that reaches it or the answer keys. Run it only after a run has finished; it reads
+cases/<id>/results/run-NNN/result.json (the latest run unless --run is given) and writes
+evaluation.json next to it. Agents never read results/, so the report cannot leak into a run.
 
-Expectations file (JSON, written by the evaluator from the case's answer key; keep it in the
-evaluator-only folder of the case, never in documents/):
+Answer key (JSON, written by the evaluator from the case's answer-key notes; kept in
+evaluation/answer_keys/, outside cases/, so no path from a case reaches it):
 {
   "expected_industry": "trailer manufacturing",
   "expected_top_picks": [["quote", "spec"], ["inventory", "shortage"], ["warranty"]],
@@ -18,7 +18,7 @@ evaluator-only folder of the case, never in documents/):
   "min_citation_coverage": 0.6
 }
 
-    python evaluation/evaluate_case.py <case_id> <expectations.json> [--cases-dir cases]
+    python evaluation/evaluate_case.py <case_id> evaluation/answer_keys/<case>.json [--run run-NNN] [--cases-dir cases]
 """
 import argparse
 import json
@@ -90,15 +90,20 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("case_id")
     ap.add_argument("expectations")
+    ap.add_argument("--run", default=None, help="run-NNN (default: the latest run)")
     ap.add_argument("--cases-dir", default="cases")
     a = ap.parse_args()
     case = Path(a.cases_dir) / a.case_id
-    result = json.loads((case / "result.json").read_text(encoding="utf-8"))
-    profile = json.loads((case / "profile.json").read_text(encoding="utf-8")) if (case / "profile.json").exists() else None
+    runs = sorted(p.name for p in (case / "results").glob("run-[0-9][0-9][0-9]") if p.is_dir())
+    run = a.run or (runs[-1] if runs else None)
+    if not run or not (case / "results" / run / "result.json").exists():
+        sys.exit(f"no finished run found for {a.case_id} ({a.run or 'latest'})")
+    result = json.loads((case / "results" / run / "result.json").read_text(encoding="utf-8"))
+    pfile = case / "owner" / "profile.json"
+    profile = json.loads(pfile.read_text(encoding="utf-8")) if pfile.exists() else None
     exp = json.loads(Path(a.expectations).read_text(encoding="utf-8"))
-    report = evaluate(result, exp, profile)
-    out = Path("evaluations") / a.case_id / "report.json"
-    out.parent.mkdir(parents=True, exist_ok=True)
+    report = {"case": a.case_id, "run": run, "answer_key": Path(a.expectations).name, **evaluate(result, exp, profile)}
+    out = case / "results" / run / "evaluation.json"
     out.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps(report, indent=2))
     print(f"\nwritten to {out}")

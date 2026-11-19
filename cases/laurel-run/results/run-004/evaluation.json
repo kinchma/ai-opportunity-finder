@@ -1,0 +1,73 @@
+{
+  "case": "laurel-run",
+  "run": "run-004",
+  "answer_key": "laurel-run.json",
+  "status": "complete",
+  "verified": true,
+  "model_calls": 8,
+  "recommended": [
+    "Warranty Policy Knowledge Base",
+    "Quote Configuration Assistant",
+    "Pre-Shipment Compliance Checker"
+  ],
+  "industry": {
+    "expected": "trailer manufacturing",
+    "got": "trailer manufacturing",
+    "match": true
+  },
+  "expected_picks": {
+    "total": 3,
+    "in_recommendation": 1,
+    "detail": [
+      {
+        "keywords": [
+          "inventory"
+        ],
+        "found": false
+      },
+      {
+        "keywords": [
+          "schedule"
+        ],
+        "found": false
+      },
+      {
+        "keywords": [
+          "quote"
+        ],
+        "found": true
+      }
+    ],
+    "anywhere_in_candidates": 3
+  },
+  "planted_issues": {
+    "total": 15,
+    "surfaced": 3
+  },
+  "citations": {
+    "grounded": 3,
+    "claims": 3,
+    "coverage": 1.0,
+    "with_document_citation": 3,
+    "meets_minimum": true
+  },
+  "forbidden_claims": {
+    "checked": 5,
+    "found": []
+  },
+  "placeholders_used": false,
+  "social_presence_reported": {
+    "found_on_pages_read": {},
+    "not_found_on_pages_read": [
+      "linkedin",
+      "facebook",
+      "instagram",
+      "tiktok",
+      "youtube",
+      "x_twitter"
+    ],
+    "owner_pasted_linkedin": false,
+    "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+  },
+  "pass": true
+}

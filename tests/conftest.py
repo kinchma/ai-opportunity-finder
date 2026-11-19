@@ -36,6 +36,9 @@ def ignore_dotenv_file(monkeypatch):
     except ImportError:
         return
     monkeypatch.setattr(dotenv, "load_dotenv", lambda *a, **k: False)
+    # retrieval: the old placeholder notes (fixtures cite their ids) and no embedding server
+    monkeypatch.setenv("KB_DIR", str(Path(__file__).resolve().parents[1] / "kb"))
+    monkeypatch.setenv("LLM_EMBED_MODEL", "")
     for key in ("LLM_BASE_URL", "LLM_MODEL", "LLM_CRITIC_MODEL", "LLM_CRITIC_BASE_URL",
                 "LLM_STRATEGIST_MODEL", "LLM_STRATEGIST_BASE_URL", "LLM_PLANNER_MODEL"):
         monkeypatch.delenv(key, raising=False)

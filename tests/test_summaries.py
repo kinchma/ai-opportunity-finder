@@ -31,14 +31,25 @@ def test_pruned_rows_translate_angles():
     assert pruned_rows([]) == []
 
 
-def test_score_index_is_relative_to_the_best_possible_and_never_reorders():
-    from opportunity_finder.tools.scoring import best_possible_score, score_index, score_opportunity
-    from opportunity_finder.summaries import ranking_rows
+def test_score_index_is_min_max_between_worst_and_best_and_never_reorders():
+    from opportunity_finder.tools.scoring import (best_possible_score, idea_index, index_band, score_index,
+                                                  score_opportunity, worst_possible_score)
+    from opportunity_finder.summaries import ranking_rows, score_scale_note
     assert best_possible_score(0.5) == 0.9 and best_possible_score(0.4) == 0.89
-    assert score_index(0.9, 0.5) == 100 and score_index(0.0, 0.5) == 0 and score_index(None, 0.5) is None
-    assert score_index(score_opportunity(9, 7, 3, 0.4), 0.4) == 42       # Laurel Run's top idea
-    opps = [{"name": "A", "value": 9, "effort": 7, "risk": 3, "score": 0.37},
-            {"name": "B", "value": 7, "effort": 5, "risk": 2, "score": 0.33}]
+    assert worst_possible_score(0.4) == -1.0
+    assert score_index(0.89, 0.4) == 100 and score_index(-1.0, 0.4) == 0 and score_index(None, 0.4) is None
+    # the Nov 17 Laurel Run ideas: 60/49/36 on the old share-of-best scale
+    assert [idea_index({"value": v, "effort": e, "risk": r}, 0.4) for v, e, r in ((9, 5, 2), (7, 4, 1), (8, 6, 3))] == [81, 76, 70]
+    assert idea_index({"value": 1, "effort": 10, "risk": 10}, 0.4) == 0      # below the stored 0 floor
+    assert idea_index({"score": 0.53}, 0.4) == 81                             # falls back to the score
+    assert [index_band(i) for i in (81, 80, 79, 65, 64, 50, 49, 0)] == [
+        "Strong fit", "Strong fit", "Good fit", "Good fit", "Possible", "Possible", "Weak fit", "Weak fit"]
+    assert index_band(None) == ""
+    opps = [{"name": "A", "value": 9, "effort": 7, "risk": 3, "score": score_opportunity(9, 7, 3, 0.4)},
+            {"name": "B", "value": 7, "effort": 5, "risk": 2, "score": score_opportunity(7, 5, 2, 0.4)},
+            {"name": "C", "value": 5, "effort": 8, "risk": 6, "score": score_opportunity(5, 8, 6, 0.4)}]
     rows = ranking_rows(opps, 0.4)
-    assert [r["rank"] for r in rows] == [1, 2] and rows[0]["value (1-10)"] == 9 and rows[0]["index (0-100)"] == 42
-    assert rows[0]["index (0-100)"] > rows[1]["index (0-100)"]
+    assert [r["opportunity"] for r in rows] == ["A", "B", "C"]            # ranked by score, as before
+    idx = [r["index (0-100)"] for r in rows]
+    assert idx == sorted(idx, reverse=True) and rows[0]["fit"] == "Good fit"   # same order as the scores
+    assert "worst idea possible" in score_scale_note(0.4) and "80+ strong fit" in score_scale_note(0.4)

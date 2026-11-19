@@ -1,6 +1,7 @@
 langgraph>=1.0
 langchain-core
 langchain-openai
+chromadb>=1.0          # vector store for RAG (local, telemetry off; see tools/vectorstore.py)
 python-dotenv
 pytest
 streamlit

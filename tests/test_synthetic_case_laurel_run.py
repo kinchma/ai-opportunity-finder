@@ -1,9 +1,10 @@
 """Laurel Run synthetic case: offline discovery, the owner-confirmation gate, the materials
 boundary, document citations and social-presence facts. All model calls are fakes.
 
-The local fixture site lives in cases/Laurel_Run_Test_Case/website/site; tests that need it are
-skipped when the folder is absent. The evaluator-only folder is never read by these tests; one
-test proves the pipeline cannot receive it."""
+The local fixture site lives in cases/laurel-run/website; the pristine company package in
+evaluation/synthetic/laurel-run/01_analysis_agent_material; the answer key in
+evaluation/answer_keys/laurel-run (outside cases/). Tests that need them are skipped when absent.
+The answer-key files are never read by these tests; tests prove the pipeline cannot receive them."""
 import json
 import os
 from pathlib import Path
@@ -15,10 +16,12 @@ from opportunity_finder.agents import discovery, process_mapper
 from opportunity_finder.agents.website import assess_website
 from opportunity_finder.tools.web import fetch_site_text
 
-CASE = Path(__file__).resolve().parents[1] / "cases" / "Laurel_Run_Test_Case"
-SITE = CASE / "website" / "site"
-MATERIAL = CASE / "01_analysis_agent_material"
-needs_fixture = pytest.mark.skipif(not SITE.exists(), reason="Laurel Run fixture folder not present")
+REPO = Path(__file__).resolve().parents[1]
+SITE = REPO / "cases" / "laurel-run" / "website"
+PACKAGE = REPO / "evaluation" / "synthetic" / "laurel-run"
+MATERIAL = PACKAGE / "01_analysis_agent_material"
+ANSWER_KEY = REPO / "evaluation" / "answer_keys" / "laurel-run"
+needs_fixture = pytest.mark.skipif(not (SITE.exists() and MATERIAL.exists()), reason="Laurel Run fixture folders not present")
 
 
 def profile_reply(industry="trailer manufacturing", conf="high"):
@@ -35,10 +38,10 @@ WEBSITE_REPLY = json.dumps({"scores": {}, "prompts": ["Find a dealer", "Explore 
 def test_local_site_is_read_offline_with_a_path_boundary():
     site = fetch_site_text(SITE.as_uri())
     assert site["error"] is None and site["local_fixture"] is True
-    assert "trailer" in site["text"].lower() and site["url"].endswith("site/index.html")
+    assert "trailer" in site["text"].lower() and site["url"].endswith("website/index.html")
     assert site["signals"]["social_links"]["linkedin"] == []           # not found on the page read
     # the route reads one page inside the named directory and nothing else
-    outside = fetch_site_text((SITE / ".." / ".." / "case_manifest.json").as_uri())
+    outside = fetch_site_text((SITE / ".." / "case.json").as_uri())
     assert outside["error"] and "only a directory with index.html or an .html file" in outside["error"]
     assert fetch_site_text((SITE / "nope.html").as_uri())["error"] == "local site: page not found"
 
@@ -55,6 +58,19 @@ def test_discovery_uses_the_website_alone_and_names_its_evidence(tmp_path, scrip
     # the model saw the website text and nothing from the company package
     prompt = seen["discovery_profile"][0]
     assert "Hollow Glen" in prompt and "01_analysis_agent_material" not in prompt and "interview" not in prompt.lower()
+
+
+def test_a_local_website_case_reads_its_own_website_folder(tmp_path, scripted):
+    """website = "local": the case's own website/ folder, resolved on whatever machine runs it."""
+    scripted({"discovery_profile": profile_reply(), "discovery_website": WEBSITE_REPLY})
+    cid = cases.create_case("Local Site Co", {"website": "local", "risk_tolerance": 0.4}, tmp_path)
+    site = cases.case_dir(cid, tmp_path) / "website"
+    site.mkdir()
+    (site / "index.html").write_text("<html><head><title>Local Site Co</title></head><body>"
+                                     "<p>Pennsylvania trailer manufacturing in Hollow Glen.</p></body></html>", encoding="utf-8")
+    profile = case_runner.discover(cid, tmp_path)
+    assert profile["evidence_source"]["local_fixture"] and profile["evidence_source"]["page"].endswith("website/index.html")
+    assert cases.load_case(cid, tmp_path)["company_input"]["website"] == "local"     # stays portable
     assert cases.load_case(cid, tmp_path)["stage"] == "discovered"
 
 
@@ -94,7 +110,7 @@ def test_reject_stops_the_case_until_a_renewed_acceptance(tmp_path, scripted):
     assert profile["confirmed_by_owner"] and profile["industry"] == "custom trailer manufacturing"
     assert profile["owner_corrections"] == {"industry": "custom trailer manufacturing"}
     assert profile["confidence"] == "owner-confirmed" and profile["evidence"].startswith("Owner corrected")
-    kinds = [d["kind"] for d in cases.load(cid, "decisions.json", [], tmp_path)]
+    kinds = [d["kind"] for d in cases.load(cid, cases.DECISIONS, [], tmp_path)]
     assert kinds == ["profile_rejected", "profile_confirmed"]
     assert case_runner.confirmation_ok(cid, tmp_path) == (True, "")
 
@@ -117,16 +133,19 @@ def test_sharing_copies_only_approved_material_and_refuses_the_evaluator_folder(
     out = cases.share_materials(cid, MATERIAL, ["processes", "interviews", "company"], tmp_path)
     assert len(out["copied"]) >= 20 and not out["refused"]
     files = cases.list_document_files(cid, tmp_path)
-    assert all(f.split("/")[0] in ("processes", "interviews", "company") for f in files)
+    assert {f.split("/")[0] for f in files} == {"documents", "interviews"}          # landed in the right folders
+    assert any(f.startswith("documents/processes/") for f in files) and any(f.startswith("documents/company/") for f in files)
+    assert cases.authorized_folders(cid, tmp_path) == ["documents", "interviews"]
     assert not any("evaluator" in f.lower() or "expectations" in f.lower() for f in files)
-    # the evaluator folder is refused as a root and as an item, even when named explicitly
-    with pytest.raises(ValueError, match="evaluation or generation material"):
-        cases.share_materials(cid, CASE / "02_evaluator_only_DO_NOT_SHARE", None, tmp_path)
-    out2 = cases.share_materials(cid, CASE, ["02_evaluator_only_DO_NOT_SHARE", "case_manifest.json",
-                                             "CLAUDE_DESKTOP_PROMPT.md", "01_analysis_agent_material/README.md"], tmp_path)
+    # the answer key is refused as a root (its path says answer_keys), and generation material as items
+    if ANSWER_KEY.exists():
+        with pytest.raises(ValueError, match="evaluation or generation material"):
+            cases.share_materials(cid, ANSWER_KEY, None, tmp_path)
+    out2 = cases.share_materials(cid, PACKAGE, ["case_manifest.json", "CLAUDE_DESKTOP_PROMPT.md",
+                                                "SYNTHETIC_COMPANY_CREATION_PROMPT.md", "01_analysis_agent_material/README.md"], tmp_path)
     reasons = {r["path"].split("/")[0]: r["reason"] for r in out2["refused"]}
-    assert "02_evaluator_only_DO_NOT_SHARE" in reasons and "case_manifest.json" in reasons and "CLAUDE_DESKTOP_PROMPT.md" in reasons
-    assert out2["copied"] == ["01_analysis_agent_material/README.md"]
+    assert {"case_manifest.json", "CLAUDE_DESKTOP_PROMPT.md", "SYNTHETIC_COMPANY_CREATION_PROMPT.md"} <= set(reasons)
+    assert out2["copied"] == ["documents/01_analysis_agent_material/README.md"]
     # what the pipeline can read is exactly what was copied
     chunks = cases.document_chunks(cid, tmp_path)
     assert chunks and all(c["id"].startswith("doc:") for c in chunks)
@@ -144,7 +163,7 @@ def test_sentinel_outside_the_shared_root_and_symlinks_are_refused(tmp_path):
     (src / "hidden_secret.md").symlink_to(secret)            # a symlink that points outside
     (src / ".hidden.md").write_text("hidden", encoding="utf-8")
     out = cases.share_materials(cid, src, None, tmp_path)
-    assert out["copied"] == ["processes/quoting.md"]
+    assert out["copied"] == ["documents/processes/quoting.md"]
     assert {r["path"]: r["reason"] for r in out["refused"]} == {
         "hidden_secret.md": "symbolic link", ".hidden.md": "evaluation, hidden or generation material"}
     # traversal in an include list cannot reach the sentinel either

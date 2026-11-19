@@ -1,0 +1,137 @@
+{
+  "processes": [
+    {
+      "name": "Dealer Order Intake & Quoting",
+      "description": "Independent dealers request trailer configurations and pricing. The Dealer Account Coordinator processes requests using standard templates, while the Sales Manager approves quotes via an Excel pricing workbook. Dealers independently set final retail prices and handle customer purchases.",
+      "pain_points": [
+        "Manual Excel-based pricing formulas",
+        "Separate quote approval workflow",
+        "Dealer-set retail prices complicate margin tracking"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#2",
+        "doc:documents/processes/08_quoting.md#1"
+      ]
+    },
+    {
+      "name": "Production Scheduling & Shop Floor Coordination",
+      "description": "A dedicated scheduler maintains a master Excel schedule and shop whiteboard, while the Plant Manager oversees daily floor operations. Paper work orders physically travel through fabrication stations. The process includes weekly setup planning and managing schedule changes or material shortages.",
+      "pain_points": [
+        "Reliance on disconnected Excel sheets and paper work orders",
+        "Manual schedule updates during production changes",
+        "Tracking material shortages without integrated ERP"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/02_production_scheduling.md#1",
+        "doc:interviews/02_production_scheduling_interview.md#3"
+      ]
+    },
+    {
+      "name": "Purchasing, Receiving & Inventory Management",
+      "description": "The Materials Manager and Buyer procure components using Excel lists. The Receiving Clerk logs deliveries via paper forms, updates a shared Excel stock sheet, and performs weekly physical counts. QuickBooks Desktop Enterprise is used strictly for supplier billing, not shop-floor inventory tracking.",
+      "pain_points": [
+        "Disconnected Excel/paper inventory tracking",
+        "Manual weekly physical counts",
+        "QuickBooks not integrated with operational stock data"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/03_purchasing_and_receiving.md#1",
+        "doc:documents/processes/04_inventory_counting.md#1"
+      ]
+    },
+    {
+      "name": "Manufacturing (Cutting, Welding, Assembly) & Quality Inspection",
+      "description": "The shop fabricates steel frames, welds components, applies exterior panels, wiring, and running gear, then paints units. A final inspection verifies each trailer against the specific model and dealer-ordered options before it leaves the facility.",
+      "pain_points": [
+        "Manual tracking of work-in-progress across stations",
+        "Potential rework if dealer specs are misinterpreted",
+        "Inspection bottlenecks before shipment"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#4"
+      ]
+    },
+    {
+      "name": "Shipping, Invoicing & Dealer Delivery Coordination",
+      "description": "Completed trailers are shipped from the factory, with independent dealers arranging or accepting delivery by appointment. The Dealer Account Coordinator manages post-shipment invoicing and fields status inquiries from dealers.",
+      "pain_points": [
+        "Coordinating delivery appointments across 80+ independent locations",
+        "Manual status updates for dealers",
+        "Invoice timing misaligned with physical delivery"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#6"
+      ]
+    },
+    {
+      "name": "Warranty Claims & Dealer Support",
+      "description": "Independent dealers report product issues, which are routed to a Quality and Warranty Lead. Claims are evaluated case-by-case without blanket policies; the lead validates issues and approves dealer repairs before work begins.",
+      "pain_points": [
+        "Case-by-case claim evaluation slows resolution",
+        "Pre-approval requirements delay dealer repairs",
+        "Tracking repair status across multiple dealers"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/07_warranty_and_returns.md#1"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {
+    "doc:documents/processes/01_order_to_delivery.md#2": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "1. Request and quote"
+    },
+    "doc:documents/processes/01_order_to_delivery.md#4": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "3. Build, changes and inspection"
+    },
+    "doc:documents/processes/01_order_to_delivery.md#6": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "4. Ship, invoice and answer status calls"
+    },
+    "doc:documents/processes/02_production_scheduling.md#1": {
+      "name": "documents/processes/02_production_scheduling.md",
+      "source_type": "process_document",
+      "heading": "Production scheduling"
+    },
+    "doc:documents/processes/03_purchasing_and_receiving.md#1": {
+      "name": "documents/processes/03_purchasing_and_receiving.md",
+      "source_type": "process_document",
+      "heading": "Purchasing and receiving"
+    },
+    "doc:documents/processes/04_inventory_counting.md#1": {
+      "name": "documents/processes/04_inventory_counting.md",
+      "source_type": "process_document",
+      "heading": "Inventory counting"
+    },
+    "doc:documents/processes/07_warranty_and_returns.md#1": {
+      "name": "documents/processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "Warranty and returns"
+    },
+    "doc:documents/processes/08_quoting.md#1": {
+      "name": "documents/processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "Quoting"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#3": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[00:00]"
+    }
+  },
+  "note": "built from 123 passage(s) from 40 shared file(s) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "run": "run-005",
+  "saved": "2026-11-17T15:15:59",
+  "run_note": "built from 1 owner document(s)"
+}

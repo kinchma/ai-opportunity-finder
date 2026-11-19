@@ -13,3 +13,7 @@ runs/
 # OS files
 .DS_Store
 Thumbs.db
+cases/*/index/
+
+# generated vector indexes (ChromaDB)
+.chroma/

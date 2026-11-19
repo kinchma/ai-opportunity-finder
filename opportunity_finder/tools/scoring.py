@@ -16,31 +16,58 @@ EFFORT_WEIGHT = 0.5        # score lost per effort point (1-10). Untuned: see th
                            # before changing it; every ranking in the project depends on it.
 
 
+def raw_score(value: int, effort: int, risk: int, risk_tolerance: float = 0.5) -> float:
+    """The weighted sum on a /10 scale, NOT clamped at zero (-1.0 at worst, about 0.9 at best)."""
+    return (value - EFFORT_WEIGHT * effort - (1.0 - risk_tolerance) * risk) / 10
+
+
 def score_opportunity(value: int, effort: int, risk: int,
                       risk_tolerance: float = 0.5) -> float:
-    """value/effort/risk on a 1-10 scale. Returns 0..1, higher is better.
+    """value/effort/risk on a 1-10 scale. Returns 0..1, higher is better; this is what ranks ideas.
 
     Lower risk tolerance makes risk count more (weight 1 - tolerance). The result is a ranking
-    index, not a percentage: the best idea possible at tolerance 0.5 scores 0.90, and a strong
-    real idea (value 9, effort 4, risk 2) scores 0.60. Use score_index() to show it on a 0-100
-    scale relative to that best possible score.
-    """
-    raw = value - EFFORT_WEIGHT * effort - (1.0 - risk_tolerance) * risk
-    return round(max(raw, 0.0) / 10, 3)
+    score, not a percentage. Use idea_index() / score_index() to show it on a 0-100 scale."""
+    return round(max(raw_score(value, effort, risk, risk_tolerance), 0.0), 3)
 
 
 def best_possible_score(risk_tolerance: float = 0.5) -> float:
     """The score of a value-10, effort-1, risk-1 idea at this tolerance: the top of the scale."""
-    return score_opportunity(10, 1, 1, risk_tolerance)
+    return round(raw_score(10, 1, 1, risk_tolerance), 3)
+
+
+def worst_possible_score(risk_tolerance: float = 0.5) -> float:
+    """The unclamped score of a value-1, effort-10, risk-10 idea: the bottom of the scale."""
+    return round(raw_score(1, 10, 10, risk_tolerance), 3)
 
 
 def score_index(score: float | None, risk_tolerance: float = 0.5) -> int | None:
-    """A score as 0-100, relative to the best possible score at the owner's risk tolerance.
-    Display only: rankings are still decided by the raw score, so this never changes an order."""
+    """A score as 0-100 by min-max normalization: 0 = the worst idea possible at the owner's risk
+    tolerance (value 1, effort 10, risk 10), 100 = the best (value 10, effort 1, risk 1). A straight
+    rescale of the same number, so it never changes an order. Display only.
+    Note: idea scores are stored clamped at 0, so a stored 0 shows as the index of 0, not lower;
+    idea_index() uses the ratings and has no such floor."""
     if score is None:
         return None
-    top = best_possible_score(risk_tolerance) or 1.0
-    return int(round(100 * max(0.0, min(float(score), top)) / top))
+    lo, hi = worst_possible_score(risk_tolerance), best_possible_score(risk_tolerance)
+    return int(round(100 * max(0.0, min(1.0, (float(score) - lo) / ((hi - lo) or 1.0)))))
+
+
+def idea_index(opp: dict, risk_tolerance: float = 0.5) -> int | None:
+    """0-100 index of one idea, from its three ratings (exact, no clamping); falls back to its score."""
+    v, e, r = (opp or {}).get("value"), (opp or {}).get("effort"), (opp or {}).get("risk")
+    if all(isinstance(x, (int, float)) for x in (v, e, r)):
+        return score_index(raw_score(v, e, r, risk_tolerance), risk_tolerance)
+    return score_index((opp or {}).get("score"), risk_tolerance)
+
+
+# Plain-language bands for the 0-100 index (display only). Tune here; tests pin the boundaries.
+INDEX_BANDS = ((80, "Strong fit"), (65, "Good fit"), (50, "Possible"), (0, "Weak fit"))
+
+
+def index_band(index: int | None) -> str:
+    if index is None:
+        return ""
+    return next(label for floor, label in INDEX_BANDS if index >= floor)
 
 
 def risk_limit(risk_tolerance: float = 0.5) -> float:

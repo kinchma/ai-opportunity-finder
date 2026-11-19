@@ -1,12 +1,13 @@
 """Verifier/Planner: code decides pass or fail; the model only checks citations, and code checks its quote."""
 import re
+from pathlib import Path
 
 from opportunity_finder.agents.planner import planner, quote_in_passage
 from opportunity_finder.supervisor import after_verification, review_decision
 from opportunity_finder.tools import kb
 from tests.test_strategist import opp
 
-PASSAGE = kb.get_passages(["order-to-delivery#1"])["order-to-delivery#1"]["text"]
+PASSAGE = kb.get_passages(["order-to-delivery#1"], Path(__file__).resolve().parents[1] / "kb")["order-to-delivery#1"]["text"]
 QUOTE = " ".join(PASSAGE.split()[:8])
 
 OPPS = [opp("Quote intake", 8, 4, 2, process="Quoting", supporting_chunk_id="order-to-delivery#1"),

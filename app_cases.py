@@ -11,7 +11,7 @@ from opportunity_finder.config import SETTINGS
 from opportunity_finder.observability import summarize
 from opportunity_finder.summaries import (evidence_rows, flag_rows, left_out_ideas, ranking_rows, roadmap_rows,
                                           run_summary_rows, score_scale_note, website_check_view)
-from opportunity_finder.tools.scoring import score_index
+from opportunity_finder.tools.scoring import idea_index, index_band, score_index
 
 st.set_page_config(page_title="AI Opportunity Finder: Cases", page_icon="🗂️", layout="wide")
 ss = st.session_state
@@ -42,7 +42,7 @@ with st.sidebar:
     with st.expander("New case", expanded=not existing):
         with st.form("new_case", border=False):
             name = st.text_input("Business name")
-            site = st.text_input("Website URL (blank = synthetic demo company)")
+            site = st.text_input("Website URL (blank = synthetic demo company; local = the case's own website/ folder)")
             desc = st.text_area("Short description (optional)", height=80)
             linkedin = st.text_area("LinkedIn page text (optional, paste it yourself)", height=80)
             industry = st.text_input("Industry (only used when there is no website)", value="trailer manufacturing")
@@ -93,8 +93,8 @@ if stage == "new":
         st.rerun()
 
 # ------------------------------------------------------------------ stage 2: confirm
-profile = cases.load(meta["id"], "profile.json", {})
-disc = cases.load(meta["id"], "discovery.json", {})
+profile = cases.load(meta["id"], cases.PROFILE, {})
+disc = cases.load(meta["id"], cases.DISCOVERY, {})
 if stage in ("discovered", "rejected", "confirmed", "analyzed") and profile:
     with st.container(border=True):
         st.markdown(f"**{profile.get('name', 'unknown')}**  ·  {profile.get('website', '')}")
@@ -131,19 +131,35 @@ if stage in ("discovered", "rejected"):
 
 # ------------------------------------------------------------------ stage 3: documents and analysis
 if stage in ("confirmed", "analyzed"):
-    st.markdown("#### Process documents from the owner")
+    st.markdown("#### Company material from the owner")
     st.caption("Text files (.txt, .md, .csv, .json) are read by the Process Mapper. Other files are stored but not read yet. "
-               "Documents can arrive weeks after Discovery; add them whenever they do.")
-    ups = st.file_uploader("Add documents", accept_multiple_files=True, key=f"up-{meta['id']}-{len(cases.list_document_files(meta['id']))}")
+               "Material can arrive weeks after Discovery; add it whenever it does. The analysis reads only the "
+               "folders the owner has authorized.")
+    summary = cases.material_summary(meta["id"])
+    if summary:
+        st.dataframe(summary, hide_index=True)
+    pending = [r["folder"] for r in summary if not r["authorized"]]
+    if pending:
+        pick = st.multiselect("Authorize these folders for the analysis", pending, default=[], key=f"auth-{meta['id']}")
+        if pick and st.button("Authorize selected folders"):
+            try:
+                case_runner.authorize(meta["id"], pick)
+                st.rerun()
+            except (ValueError, case_runner.ConfirmationRequired) as exc:
+                st.error(str(exc))
+    target = st.selectbox("Upload into", list(cases.MATERIAL_FOLDERS), key=f"tgt-{meta['id']}",
+                          help="documents: processes, policies, company info; interviews: SME transcripts; "
+                               "data: CSV samples; research: outside material (context, not company facts)")
+    ups = st.file_uploader("Add files", accept_multiple_files=True, key=f"up-{meta['id']}-{len(cases.list_document_files(meta['id']))}")
     if ups:
         for f in ups:
-            info = cases.add_document(meta["id"], f.name, f.getvalue())
+            info = cases.add_document(meta["id"], f.name, f.getvalue(), folder=target)
             st.toast(f"Saved {info['file']}" + ("" if info["readable"] else " (stored, not read)"))
         st.rerun()
-    with st.expander("Share a folder of company material (owner authorization)"):
-        st.caption("Copies the files the owner authorizes into this case's documents folder, keeping subfolders "
-                   "(processes/, interviews/, data/ ... tell the pipeline what each file is). The pipeline reads "
-                   "only that folder. Evaluation material, answer keys and generation prompts are refused even if selected.")
+    with st.expander("Import a folder of company material from this computer (owner authorization)"):
+        st.caption("Copies the files the owner authorizes into this case: interviews/ to interviews, data/ to data, "
+                   "research/ to research, everything else to documents (processes/ marks process documents). "
+                   "Evaluation material, answer keys and generation prompts are refused even if selected.")
         src_dir = st.text_input("Folder path on this computer", key=f"share-{meta['id']}")
         include = st.text_input("Subfolders or files to include, comma-separated (blank = whole folder)", key=f"inc-{meta['id']}")
         if st.button("Share these files with the pipeline"):
@@ -156,7 +172,7 @@ if stage in ("confirmed", "analyzed"):
             except (FileNotFoundError, ValueError, case_runner.ConfirmationRequired) as exc:
                 st.error(str(exc))
     files = cases.list_document_files(meta["id"])
-    st.write(f"Documents on file ({len(files)}): " + (", ".join(files[:12]) + (" ..." if len(files) > 12 else "") if files else "none yet"))
+    st.write(f"Readable by the analysis ({len(files)}): " + (", ".join(files[:12]) + (" ..." if len(files) > 12 else "") if files else "none yet"))
     ok, why = case_runner.confirmation_ok(meta["id"])
     label = "Run analysis" if stage == "confirmed" else "Re-run analysis with the current documents"
     if not ok:
@@ -172,7 +188,9 @@ if stage in ("confirmed", "analyzed"):
 
 # ------------------------------------------------------------------ stage 4: results
 if stage == "analyzed":
-    r = cases.load(meta["id"], "result.json", {})
+    run_names = cases.runs(meta["id"])
+    run = st.selectbox("Run", run_names, index=len(run_names) - 1, key=f"run-{meta['id']}") if len(run_names) > 1 else (run_names or [None])[0]
+    r = cases.load_result(meta["id"], run)
     rec = r.get("final_recommendation", {}).get("roadmap", {})
     opps = r.get("scored_opportunities", [])
     by_name = {o["name"]: o for o in opps}
@@ -189,7 +207,7 @@ if stage == "analyzed":
                 if col.button(choice["label"], key=f"esc-{choice['id']}"):
                     case_runner.owner_decision(meta["id"], choice["id"])
                     st.rerun()
-            st.caption("Your choice is saved in decisions.json. Nothing below has been verified.")
+            st.caption("Your choice is saved in owner/decisions.json. Nothing below has been verified.")
     st.markdown("#### Recommended roadmap" + ("" if r.get("verified") else " (UNVERIFIED DRAFT)"))
     if r.get("status") not in ("complete", "needs_owner_help"):
         st.warning(f"Status: {r.get('status')}")
@@ -203,14 +221,17 @@ if stage == "analyzed":
     tol = meta.get("company_input", {}).get("risk_tolerance", 0.5)
     for col, (i, n) in zip(st.columns(max(len(names), 1)), enumerate(names, 1)):
         o = by_name.get(n, {})
-        col.metric(f"{i}. {n}", f"{score_index(o.get('score'), tol)} / 100",
-                   help=f"raw score {o.get('score')}. " + o.get("what_the_agent_does", ""))
+        idx = idea_index(o, tol)
+        col.metric(f"{i}. {n}", f"{idx} / 100",
+                   help=f"raw score {o.get('score')}; 0 = worst idea possible, 100 = best. " + o.get("what_the_agent_does", ""))
+        col.markdown(f"**{index_band(idx)}**")
         v, e, rk = col.columns(3)
         v.metric("Value", o.get("value"), help="1-10, model's judgment; higher is better")
         e.metric("Effort", o.get("effort"), help="1-10, model's judgment; lower is better")
         rk.metric("Risk", o.get("risk"), help="1-10, model's judgment; lower is better")
     if rec.get("score") is not None:
-        st.caption(f"Roadmap index {score_index(rec['score'], tol)} / 100 (raw {rec['score']}). " + score_scale_note(tol))
+        r_idx = score_index(rec["score"], tol)
+        st.caption(f"Roadmap index {r_idx} / 100, {index_band(r_idx).lower()} (raw {rec['score']}). " + score_scale_note(tol))
     if rec.get("rationale"):
         st.write(rec["rationale"])
         for label, key in (("Why this pilot", "pilot_reason"), ("Assumption to confirm", "assumption")):
@@ -255,11 +276,9 @@ if stage == "analyzed":
             st.caption("Left out of the roadmap:")
             st.dataframe(left, hide_index=True, width="stretch")
     with t2:
-        versions = sorted(p.name for p in cases.case_dir(meta["id"]).glob("process_map.v*.json"))
-        if versions:
-            v = st.selectbox("Version", versions, index=len(versions) - 1)
-            pm = cases.load(meta["id"], v, {})
-            st.caption(f"{pm.get('version_note', '')} · {pm.get('note', '')}")
+        pm = (cases.load(meta["id"], f"results/{run}/process_map.json", None) if run else None) or r.get("process_map") or {}
+        if pm:
+            st.caption(f"{run or ''} · {pm.get('run_note', '')} · {pm.get('note', '')}")
             idx = pm.get("sources_index", {})
             for p in pm.get("processes", []):
                 st.markdown(f"**{p['name']}** ({p['basis']}): {p['description']}")
@@ -289,4 +308,4 @@ if stage == "analyzed":
     with t4:
         root = cases.case_dir(meta["id"])
         st.code("\n".join(str(p.relative_to(root)) for p in sorted(root.rglob("*")) if p.is_file()))
-        st.caption("Owner decisions and corrections are in decisions.json.")
+        st.caption("Owner decisions and corrections are in owner/decisions.json; each run is in results/run-NNN/.")
