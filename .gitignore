@@ -1,0 +1,15 @@
+# local environment and secrets (never commit)
+.venv/
+.env
+.env.off
+
+# generated
+__pycache__/
+.pytest_cache/
+runs/
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db

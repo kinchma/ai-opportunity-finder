@@ -1,0 +1,79 @@
+{
+  "processes": [
+    {
+      "name": "Quoting & Estimation",
+      "description": "Generating custom price quotes for cargo and car trailers based on customer specifications and selected options.",
+      "pain_points": [
+        "Manual spec verification",
+        "Delayed response times",
+        "Version control for custom options"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Dealer Management & Channel Sales",
+      "description": "Onboarding, training, and supporting independent dealers; managing dealer logins, territory assignments, and sales tracking.",
+      "pain_points": [
+        "Inconsistent dealer communication",
+        "Manual onboarding paperwork",
+        "Tracking dealer performance"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Manufacturing & Production",
+      "description": "Fabricating, assembling, and quality-checking custom open/enclosed trailers in a 100-person facility.",
+      "pain_points": [
+        "Supply chain delays for steel/components",
+        "Production scheduling bottlenecks",
+        "Custom order complexity"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Warranty Management & Claims Processing",
+      "description": "Registering warranties, validating claims under the lifetime-plus policy, and authorizing repairs or replacements.",
+      "pain_points": [
+        "Manual claim verification",
+        "Tracking warranty expiration dates",
+        "Coordinating with third-party repair shops"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Customer Support & Parts Fulfillment",
+      "description": "Providing technical support, distributing owner\u2019s manuals, and processing aftermarket parts orders.",
+      "pain_points": [
+        "High volume of repetitive inquiries",
+        "Inventory management for niche parts",
+        "Long shipping times"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Quality Assurance & Customer Feedback",
+      "description": "Collecting post-purchase surveys, analyzing feedback for product improvements, and ensuring compliance with quality standards.",
+      "pain_points": [
+        "Low survey response rates",
+        "Fragmented feedback data",
+        "Slow implementation of design changes"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Dealer Financing Coordination",
+      "description": "Facilitating customer and dealer financing applications through partnered lenders like Sheffield Financial and Northpoint Commercial Finance.",
+      "pain_points": [
+        "Manual application routing",
+        "Inconsistent approval timelines",
+        "Tracking financing status across lenders"
+      ],
+      "basis": "stated"
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)",
+  "version": 3,
+  "saved": "2026-11-14T18:12:21",
+  "version_note": "built from the website and description only"
+}

@@ -1,0 +1,584 @@
+{
+  "company_input": {
+    "risk_tolerance": 0.4,
+    "website": "carmate-trailers.com",
+    "description": "100 person trailer manufacturing company"
+  },
+  "profile": {
+    "name": "Car Mate Trailers, Inc.",
+    "website": "https://carmate-trailers.com",
+    "industry": "trailer manufacturing",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website describes various types of cargo and utility trailers for sale, with a focus on quality and longevity.",
+    "note": ""
+  },
+  "site_text": "Car Mate Trailers makes high-quality, custom open and enclosed trailers. Whatever you need to haul, there's a Car Mate Trailer that's right for you! HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Get a quote HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Trailers that Work for a living Welcome to car mate trailers Car Mate Trailers, Inc. in Leeper, PA, manufactures the best quality cargo and utility trailers in the industry backed by the industry\u2019s best warranty, LIFETIME PLUS 10. Established in 1982, Car Mate has become the name synonymous with quality and longevity when it comes to enclosed cargo & equipment \u201cTrailers that work for a living\u201d. Car Mate is the brand preferred by contractors of all types. Learn More Have a trailer in mind? Request a quote Check out our dealer locator Store locator is loading from StoreRocket Store Locator Widget .. Look & See How they are made Look at these trailer features Car Mate Trailers 100 person trailer manufacturing company",
+  "documents": [],
+  "website_assessment": {
+    "rating": 6.5,
+    "partial": false,
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 7,
+        "reason": "The text clearly states the business name and what it does (manufacturing trailers), but the layout is repetitive with multiple sections of similar information.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 6,
+        "reason": "There is a clear call to action for requesting a quote, but the navigation and product listings are confusing, making it hard to find specific actions like contacting dealers or viewing brochures.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The business has been in operation since 1982 and offers a lifetime warranty with an additional 10 years, which is a strong indicator of trustworthiness. However, there are no customer reviews or testimonials displayed on the page.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 3,
+        "reason": "no phone, email or form found on the page",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 8,
+        "reason": "14 of 17 images lack alt text",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Request Quote",
+      "Contact Dealers",
+      "View Brochures"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "intake_confirmed": true,
+  "best_practices": {
+    "industry": "trailer manufacturing",
+    "practices": [
+      {
+        "practice": "Keep agents away from safety-critical decisions and use them only to prepare or check paperwork.",
+        "why_it_matters": "Weight ratings, structural specifications, and regulatory compliance require engineering sign-off, preventing unsafe or non-compliant automated decisions.",
+        "chunk_id": "risk-and-rollout#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Automate extraction of options, dimensions, and quantities from incoming requests, with human confirmation.",
+        "why_it_matters": "Shortens quote turnaround time and eliminates transcription errors in a common bottleneck for custom trailer builders.",
+        "chunk_id": "order-to-delivery#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Deploy an assistant that answers order status inquiries directly from production schedules and shipping records.",
+        "why_it_matters": "Removes the majority of repetitive calls while reserving staff time for handling exceptions.",
+        "chunk_id": "order-to-delivery#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Use AI to classify supplier invoices, match them to purchase orders and receiving records, and flag mismatches.",
+        "why_it_matters": "Reduces manual matching workload in accounts payable by automating the classification and exception handling process.",
+        "chunk_id": "order-to-delivery#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Start with high-volume, repetitive, rule-governed tasks that have clear right answers.",
+        "why_it_matters": "These tasks provide enough repetitions to demonstrate measurable savings quickly and establish a baseline for success.",
+        "chunk_id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Pilot narrowly on a single process and team with a fixed review date before expanding.",
+        "why_it_matters": "Keeps the financial risk of a failed implementation small while delivering a concrete result to evaluate.",
+        "chunk_id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      }
+    ],
+    "note": "",
+    "sources": [
+      "Author-written starter note (replace with a real, citable source)"
+    ],
+    "passages": [
+      {
+        "id": "risk-and-rollout#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "order-to-delivery#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "order-to-delivery#2",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "order-to-delivery#3",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      }
+    ]
+  },
+  "process_map": {
+    "processes": [
+      {
+        "name": "Quote Management",
+        "description": "Processes customer requests for custom cargo and car trailers, capturing specifications like width, depth, front style, and finish options to generate accurate pricing.",
+        "pain_points": [
+          "Complex custom configurations increase error risk",
+          "Manual specification verification slows turnaround",
+          "Tracking quote-to-order conversion rates"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Custom Manufacturing & Production Scheduling",
+        "description": "Converts approved quotes into build orders, manages raw material procurement, coordinates assembly line workflows, and conducts in-process quality inspections.",
+        "pain_points": [
+          "Supply chain delays for specialized components",
+          "Bottlenecks from high-mix custom orders",
+          "Inventory tracking across numerous variants"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Dealer Channel Management & Onboarding",
+        "description": "Handles dealer applications, integrates financing partnerships (e.g., Sheffield Financial), manages dealer portal access, and maintains the store locator system.",
+        "pain_points": [
+          "Inconsistent dealer compliance with branding",
+          "Complex multi-lender financing paperwork",
+          "Dealer portal synchronization issues"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Warranty Registration & Claims Processing",
+        "description": "Manages lifetime warranty registrations, validates claims against dealer/purchase records, and authorizes repairs or part replacements per company policy.",
+        "pain_points": [
+          "Manual claim verification across decades of models",
+          "Preventing warranty fraud or misuse",
+          "Tracking coverage eligibility for used trailers"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Customer Support & Parts Fulfillment",
+        "description": "Provides technical assistance, distributes owner\u2019s manuals, and processes spare parts orders for existing trailer owners.",
+        "pain_points": [
+          "Identifying correct parts for older/custom builds",
+          "High volume of technical support inquiries",
+          "Shipping costs and logistics for heavy components"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Quality Assurance & Customer Feedback Collection",
+        "description": "Collects and analyzes customer survey data, monitors warranty claim trends for defect identification, and drives continuous improvement initiatives.",
+        "pain_points": [
+          "Low survey response rates",
+          "Linking feedback to specific production batches",
+          "Translating insights into actionable engineering changes"
+        ],
+        "basis": "stated"
+      }
+    ],
+    "doc_vs_reality_gaps": [],
+    "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)"
+  },
+  "gap_report": [
+    {
+      "process": "Quote Management",
+      "gap": "Manual data entry and cross-referencing of custom specs against pricing tables slows quote turnaround.",
+      "opportunity": "Quote Extraction & Validation Agent",
+      "supporting_chunk_id": null
+    },
+    {
+      "process": "Custom Manufacturing & Production Scheduling",
+      "gap": "Reactive tracking of specialized component inventory causes production bottlenecks and schedule delays.",
+      "opportunity": "Production Schedule & Component Alert Agent",
+      "supporting_chunk_id": null
+    },
+    {
+      "process": "Dealer Channel Management & Onboarding",
+      "gap": "Manual review of dealer applications and multi-lender financing forms causes onboarding delays and compliance inconsistencies.",
+      "opportunity": "Dealer Onboarding & Compliance Assistant",
+      "supporting_chunk_id": null
+    },
+    {
+      "process": "Warranty Registration & Claims Processing",
+      "gap": "Manual cross-referencing of historical records and production data to verify claim eligibility is time-consuming and error-prone.",
+      "opportunity": "Warranty Eligibility Pre-Validator",
+      "supporting_chunk_id": null
+    },
+    {
+      "process": "Customer Support & Parts Fulfillment",
+      "gap": "Manual lookup of cross-referenced parts for older or custom trailer builds creates high support ticket volume and shipping errors.",
+      "opportunity": "Parts Lookup & Support Assistant",
+      "supporting_chunk_id": null
+    },
+    {
+      "process": "Quality Assurance & Customer Feedback Collection",
+      "gap": "Manual correlation of scattered customer feedback with production batch data delays defect identification and corrective actions.",
+      "opportunity": "Batch-Linked Feedback Analyzer",
+      "supporting_chunk_id": null
+    },
+    {
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "opportunity": "Website AI assistant",
+      "supporting_chunk_id": null
+    }
+  ],
+  "scored_opportunities": [
+    {
+      "name": "Quote Extraction & Validation Agent",
+      "what_the_agent_does": "Extracts trailer specifications (width, depth, front style, finish) from incoming customer emails and forms, cross-references them against manufacturing constraints and pricing tables, and generates a draft quote for human review.",
+      "process": "Quote Management",
+      "gap": "Manual data entry and cross-referencing of custom specs against pricing tables slows quote turnaround.",
+      "supporting_chunk_id": null,
+      "value": 8,
+      "effort": 6,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value due to direct impact on quote-to-order conversion, moderate effort for spec database integration, low risk as human-in-the-loop validates final pricing.",
+      "placeholder": false,
+      "score": 0.32
+    },
+    {
+      "name": "Production Schedule & Component Alert Agent",
+      "what_the_agent_does": "Monitors inventory levels and supplier lead times for specialized components (e.g., specific axles or lighting kits), automatically flags potential delays, and suggests schedule adjustments to prevent assembly line bottlenecks.",
+      "process": "Custom Manufacturing & Production Scheduling",
+      "gap": "Reactive tracking of specialized component inventory causes production bottlenecks and schedule delays.",
+      "supporting_chunk_id": null,
+      "value": 7,
+      "effort": 8,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "Strong operational value by preventing assembly line stoppages, higher effort due to ERP integration complexity, moderate risk mitigated by human scheduler approval.",
+      "placeholder": false,
+      "score": 0.06
+    },
+    {
+      "name": "Dealer Onboarding & Compliance Assistant",
+      "what_the_agent_does": "Scans submitted dealer applications and marketing materials for branding compliance, auto-fills multi-lender financing forms with lender-specific requirements, and flags missing documentation before submission.",
+      "process": "Dealer Channel Management & Onboarding",
+      "gap": "Manual review of dealer applications and multi-lender financing forms causes onboarding delays and compliance inconsistencies.",
+      "supporting_chunk_id": null,
+      "value": 6,
+      "effort": 5,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Moderate value in accelerating dealer activation, low effort using standard document AI, minimal risk as it strictly prepares paperwork for human review per best practices.",
+      "placeholder": false,
+      "score": 0.23
+    },
+    {
+      "name": "Warranty Eligibility Pre-Validator",
+      "what_the_agent_does": "Cross-references submitted warranty claims with original dealer records, production batch data, and age/mileage to pre-validate eligibility, flag suspicious patterns, and prepare claim authorization packets.",
+      "process": "Warranty Registration & Claims Processing",
+      "gap": "Manual cross-referencing of historical records and production data to verify claim eligibility is time-consuming and error-prone.",
+      "supporting_chunk_id": null,
+      "value": 8,
+      "effort": 7,
+      "risk": 5,
+      "enabler": false,
+      "rating_reason": "High value in reducing warranty fraud and processing time, moderate-high effort due to legacy data integration, elevated risk requires strict human oversight on claim approvals.",
+      "placeholder": false,
+      "score": 0.15
+    },
+    {
+      "name": "Parts Lookup & Support Assistant",
+      "what_the_agent_does": "Takes a trailer VIN, model year, and build sheet to query the parts catalog, identifies compatible components for older/custom builds, and generates shipping labels for heavy items.",
+      "process": "Customer Support & Parts Fulfillment",
+      "gap": "Manual lookup of cross-referenced parts for older or custom trailer builds creates high support ticket volume and shipping errors.",
+      "supporting_chunk_id": null,
+      "value": 7,
+      "effort": 6,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value through reduced support handle time and fewer shipping errors, moderate effort for parts database integration, low risk as incorrect shipments are easily corrected at customer expense.",
+      "placeholder": false,
+      "score": 0.22
+    },
+    {
+      "name": "Batch-Linked Feedback Analyzer",
+      "what_the_agent_does": "Analyzes incoming warranty claims and customer surveys, clusters feedback by production batch/date, and auto-generates defect trend reports for engineering review.",
+      "process": "Quality Assurance & Customer Feedback Collection",
+      "gap": "Manual correlation of scattered customer feedback with production batch data delays defect identification and corrective actions.",
+      "supporting_chunk_id": null,
+      "value": 9,
+      "effort": 7,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Very high value by enabling proactive defect tracking and reducing recall risk, moderate effort for NLP integration, minimal risk as outputs are strictly informational for engineering review.",
+      "placeholder": false,
+      "score": 0.43
+    },
+    {
+      "name": "Website AI assistant",
+      "what_the_agent_does": "Greets visitors and offers starting choices (Request Quote; Contact Dealers; View Brochures), answers common questions from approved business information, and hands off to a person.",
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "supporting_chunk_id": null,
+      "enabler": false,
+      "rating_reason": "ratings set by code (fixed defaults), not by the model",
+      "placeholder": false,
+      "from_website_check": true,
+      "starter_prompts": [
+        "Request Quote",
+        "Contact Dealers",
+        "View Brochures"
+      ],
+      "value": 6,
+      "effort": 3,
+      "risk": 3,
+      "score": 0.27
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": "blend_1",
+      "angle": "blend",
+      "opportunities": [
+        "Batch-Linked Feedback Analyzer",
+        "Quote Extraction & Validation Agent",
+        "Website AI assistant"
+      ],
+      "score": 0.34
+    },
+    {
+      "id": "blend_2",
+      "angle": "blend",
+      "opportunities": [
+        "Batch-Linked Feedback Analyzer",
+        "Quote Extraction & Validation Agent",
+        "Website AI assistant"
+      ],
+      "score": 0.34
+    },
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "Dealer Onboarding & Compliance Assistant",
+        "Batch-Linked Feedback Analyzer",
+        "Quote Extraction & Validation Agent"
+      ],
+      "score": 0.327
+    }
+  ],
+  "review_round": 3,
+  "pruned_log": [
+    {
+      "id": "enabler",
+      "angle": "enabler",
+      "score": 0.203,
+      "reason": "ranked below top 3"
+    },
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "score": 0.273,
+      "reason": "ranked below top 3"
+    },
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "score": 0.3,
+      "reason": "ranked below top 3"
+    }
+  ],
+  "verified": true,
+  "final_recommendation": {
+    "roadmap": {
+      "id": "blend_1",
+      "angle": "blend",
+      "opportunities": [
+        "Batch-Linked Feedback Analyzer",
+        "Quote Extraction & Validation Agent",
+        "Website AI assistant"
+      ],
+      "score": 0.34
+    },
+    "agents_to_build": [
+      "Batch-Linked Feedback Analyzer",
+      "Quote Extraction & Validation Agent",
+      "Website AI assistant"
+    ]
+  },
+  "status": "complete",
+  "model_calls": 12,
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 6.5/10, chatbot: not_found",
+    "discovery_research: 6 practices from 6 passages",
+    "process_mapper: 6 processes",
+    "matcher: 7 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored roadmaps",
+    "review_gate: round 1, kept 3, pruned 1",
+    "strategist: 4 roadmaps",
+    "critic: scored roadmaps",
+    "review_gate: round 2, kept 3, pruned 1",
+    "strategist: 4 roadmaps",
+    "critic: scored roadmaps",
+    "review_gate: round 3, kept 3, pruned 1",
+    "planner: verified, recommendation ready"
+  ],
+  "call_log": [
+    {
+      "ts": "2026-11-14T22:59:27+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 4.454,
+      "error": null,
+      "stub": false,
+      "input_tokens": 889,
+      "output_tokens": 53
+    },
+    {
+      "ts": "2026-11-14T22:59:29+00:00",
+      "agent": "discovery_website",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 2.447,
+      "error": null,
+      "stub": false,
+      "input_tokens": 991,
+      "output_tokens": 169
+    },
+    {
+      "ts": "2026-11-14T23:21:25+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 70.661,
+      "error": null,
+      "stub": false,
+      "input_tokens": 952,
+      "output_tokens": 3455
+    },
+    {
+      "ts": "2026-11-14T23:21:23+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 68.723,
+      "error": null,
+      "stub": false,
+      "input_tokens": 928,
+      "output_tokens": 3289
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 79.832,
+      "error": null,
+      "stub": false,
+      "input_tokens": 765,
+      "output_tokens": 6777
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "strategist",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "critic",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "strategist",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "critic",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "strategist",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "critic",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-14T23:22:45+00:00",
+      "agent": "planner",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ]
+}

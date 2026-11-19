@@ -1,0 +1,9 @@
+{
+  "name": "Ace Hardware",
+  "website": "https://www.acehardware.com/store-details/10740",
+  "industry": "home improvement store",
+  "size": "unknown",
+  "confidence": "low",
+  "evidence": "Franchise owner provided description",
+  "note": "could not fetch the page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)> (used the description you provided instead)"
+}

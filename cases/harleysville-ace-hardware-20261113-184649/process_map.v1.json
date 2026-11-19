@@ -1,0 +1,59 @@
+{
+  "processes": [
+    {
+      "name": "Inventory Management",
+      "description": "Tracking and managing stock levels of hardware items.",
+      "pain_points": [
+        "Stockouts",
+        "Overstocking",
+        "Outdated inventory data"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Customer Service",
+      "description": "Assisting customers with product inquiries, sales, and returns.",
+      "pain_points": [
+        "Long wait times",
+        "Product knowledge gaps",
+        "Handling complaints"
+      ],
+      "basis": "stated"
+    },
+    {
+      "name": "Order Processing",
+      "description": "Handling customer orders for in-store pickup or delivery.",
+      "pain_points": [
+        "Processing delays",
+        "Order errors",
+        "Customer dissatisfaction with order accuracy"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Sales and Marketing",
+      "description": "Promoting products, running promotions, and managing advertising campaigns.",
+      "pain_points": [
+        "Low sales performance",
+        "Ineffective marketing strategies",
+        "Budget constraints"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Supplier Management",
+      "description": "Maintaining relationships with suppliers to ensure product availability and quality.",
+      "pain_points": [
+        "Supply chain disruptions",
+        "Price fluctuations",
+        "Quality issues"
+      ],
+      "basis": "typical"
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)",
+  "version": 1,
+  "saved": "2026-11-13T18:48:57",
+  "version_note": "built from the website and description only"
+}

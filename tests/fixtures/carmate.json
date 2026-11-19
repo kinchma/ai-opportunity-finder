@@ -1,0 +1,194 @@
+{
+ "_about": "Carmate test case, taken from saved run 5 (all agents on Qwen3.6, Nov 14). Replies the fake models give in tests.",
+ "company_input": {
+  "risk_tolerance": 0.4,
+  "description": "100 person trailer manufacturing company"
+ },
+ "profile": {
+  "name": "Car Mate Trailers, Inc.",
+  "industry": "trailer manufacturing",
+  "size": "unknown",
+  "confidence": "high"
+ },
+ "website_assessment": {
+  "rating": 6.5,
+  "chatbot": {
+   "status": "not_found",
+   "vendors": [],
+   "message": "No AI chatbot or chat widget was found on the pages read."
+  },
+  "starter_prompts": [
+   "Request Quote",
+   "Contact Dealers",
+   "View Brochures"
+  ]
+ },
+ "processes": [
+  {
+   "name": "Quoting & Sales Inquiry",
+   "description": "Process for capturing customer or dealer requests, specifying trailer type, dimensions, and custom options to generate accurate pricing.",
+   "pain_points": [
+    "Manual spec entry errors",
+    "Delayed response times",
+    "Inconsistent pricing across sales channels"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Dealer & Distributor Management",
+   "description": "Onboarding, credentialing, and ongoing support for authorized dealers, including portal access, inventory allocation, and marketing materials.",
+   "pain_points": [
+    "Fragmented dealer communication",
+    "Manual onboarding paperwork",
+    "Inconsistent brand representation at retail"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Warranty & Customer Support",
+   "description": "Handling warranty registrations, processing claims, providing technical support, and collecting customer feedback/surveys.",
+   "pain_points": [
+    "Lengthy claim verification",
+    "Tracking missing warranty documents",
+    "Inconsistent support response times"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Financing & Credit Processing",
+   "description": "Facilitating dealer and end-customer financing applications through partnered lenders to close sales.",
+   "pain_points": [
+    "Lengthy approval cycles",
+    "Manual document submission",
+    "Mismatched credit criteria across lenders"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Production & Manufacturing",
+   "description": "Converting raw materials into finished cargo and car trailers through cutting, welding, assembly, painting, and final inspection.",
+   "pain_points": [
+    "Supply chain delays for specialized components",
+    "Production bottlenecks during peak contractor season",
+    "Quality control inconsistencies"
+   ],
+   "basis": "typical"
+  },
+  {
+   "name": "Order Fulfillment & Logistics",
+   "description": "Scheduling production, coordinating freight/shipping to dealers or direct customers, and managing delivery documentation.",
+   "pain_points": [
+    "Freight damage during transit",
+    "Scheduling conflicts with carrier availability",
+    "Tracking delays for customers"
+   ],
+   "basis": "typical"
+  }
+ ],
+ "practices": [
+  {
+   "practice": "Keep agents away from safety-critical decisions and use AI only to prepare or check paperwork.",
+   "why_it_matters": "Weight ratings, structural specifications, and regulatory compliance require engineering sign-off, preventing unsafe or non-compliant decisions.",
+   "chunk_id": "risk-and-rollout#1"
+  },
+  {
+   "practice": "Start with read-only access to ERP or accounting systems before allowing agents to write records.",
+   "why_it_matters": "Integrations are the main effort and risk in manufacturing automations, so read-only access minimizes system disruption.",
+   "chunk_id": "risk-and-rollout#1"
+  },
+  {
+   "practice": "Automate the extraction of options, dimensions, and quantities from incoming customer requests, with human confirmation.",
+   "why_it_matters": "Shortens quote turnaround time and removes transcription errors in order intake.",
+   "chunk_id": "order-to-delivery#1"
+  },
+  {
+   "practice": "Deploy a question-answering assistant grounded in company manuals and policies to handle dealer support requests.",
+   "why_it_matters": "Handles routine spec questions, parts lookups, and warranty rules efficiently while handing off complex issues.",
+   "chunk_id": "order-to-delivery#2"
+  },
+  {
+   "practice": "Use AI to classify invoices, match them to purchase orders and receiving records, and flag mismatches.",
+   "why_it_matters": "Reduces manual matching work in accounts payable and streamlines financial processing.",
+   "chunk_id": "order-to-delivery#2"
+  },
+  {
+   "practice": "Start with high-volume, repetitive, rule-governed work and measure the current process before implementation.",
+   "why_it_matters": "These tasks have clear answers and enough repetitions to show measurable savings quickly, while baselines prove the AI's impact.",
+   "chunk_id": "smb-ai-adoption#1"
+  }
+ ],
+ "candidates": [
+  {
+   "name": "Spec-to-Quote Extractor Agent",
+   "what_the_agent_does": "Parses incoming customer emails and web forms to extract trailer dimensions, custom options, and quantities, then drafts a pricing quote in the ERP for sales rep review.",
+   "process": "Quoting & Sales Inquiry",
+   "gap": "Manual spec entry causes errors and delays; no automated extraction from customer requests.",
+   "supporting_chunk_id": "order-to-delivery#1",
+   "value": 8,
+   "effort": 4,
+   "risk": 2,
+   "enabler": false,
+   "rating_reason": "High value due to direct impact on sales cycle speed and error reduction, low risk as it operates in draft mode with human approval."
+  },
+  {
+   "name": "Dealer Onboarding Assistant",
+   "what_the_agent_does": "Guides new dealers through credential verification, auto-fills onboarding paperwork, and provisions portal access based on compliance checks.",
+   "process": "Dealer & Distributor Management",
+   "gap": "Manual onboarding paperwork and fragmented communication delay dealer activation.",
+   "supporting_chunk_id": "risk-and-rollout#1",
+   "value": 7,
+   "effort": 5,
+   "risk": 3,
+   "enabler": false,
+   "rating_reason": "Strong operational value by accelerating dealer activation, moderate effort due to system integrations, risk managed by phased read-only validation."
+  },
+  {
+   "name": "Warranty Claim Triage Agent",
+   "what_the_agent_does": "Classifies incoming warranty requests, extracts serial numbers and purchase dates from emails, matches them to registration records, and flags missing documents for human review.",
+   "process": "Warranty & Customer Support",
+   "gap": "Lengthy claim verification and tracking missing warranty documents slows resolution.",
+   "supporting_chunk_id": "order-to-delivery#2",
+   "value": 8,
+   "effort": 6,
+   "risk": 4,
+   "enabler": false,
+   "rating_reason": "High value through faster claim processing and better customer experience, moderate effort due to legacy system matching, risk kept low by mandatory human review for payouts."
+  },
+  {
+   "name": "Lender Document Pre-Screener Agent",
+   "what_the_agent_does": "Collects dealer/customer financial documents, formats them to specific lender requirements, and pre-screens against basic credit criteria before submission.",
+   "process": "Financing & Credit Processing",
+   "gap": "Lengthy approval cycles and manual document submission cause sales drop-offs.",
+   "supporting_chunk_id": "risk-and-rollout#1",
+   "value": 7,
+   "effort": 5,
+   "risk": 2,
+   "enabler": false,
+   "rating_reason": "Solid value by reducing approval friction, moderate effort for portal integrations, low risk as it strictly handles document preparation without making lending decisions."
+  },
+  {
+   "name": "Component Shortage Predictor Agent",
+   "what_the_agent_does": "Monitors inventory levels of specialized components, cross-references with production schedules, and alerts procurement when stock falls below threshold for upcoming builds.",
+   "process": "Production & Manufacturing",
+   "gap": "Supply chain delays for specialized components cause production bottlenecks during peak season.",
+   "supporting_chunk_id": "smb-ai-adoption#1",
+   "value": 6,
+   "effort": 7,
+   "risk": 3,
+   "enabler": false,
+   "rating_reason": "Moderate value by preventing costly line stoppages, higher effort due to ERP integration complexity, low risk as it only generates alerts without altering inventory records."
+  },
+  {
+   "name": "Freight & Packaging Knowledge Base",
+   "what_the_agent_does": "Standardizes and indexes all past freight damage reports, carrier performance logs, and packaging specifications into a searchable knowledge base for future reference.",
+   "process": "Order Fulfillment & Logistics",
+   "gap": "No centralized historical data on freight damage or carrier performance to inform packaging/shipping decisions.",
+   "supporting_chunk_id": null,
+   "value": 5,
+   "effort": 4,
+   "risk": 1,
+   "enabler": true,
+   "rating_reason": "Low value/effort/risk as a standalone, but critical enabler that unlocks future logistics and quality agents by providing structured historical data."
+  }
+ ]
+}

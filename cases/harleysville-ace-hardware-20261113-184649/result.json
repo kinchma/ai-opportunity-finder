@@ -1,0 +1,442 @@
+{
+  "company_input": {
+    "risk_tolerance": 0.4,
+    "website": "https://www.acehardware.com/store-details/10740",
+    "description": "Franchise owner",
+    "linkedin_text": "https://www.facebook.com/HarleysvilleHardware"
+  },
+  "profile": {
+    "name": "Ace Hardware",
+    "website": "https://www.acehardware.com/store-details/10740",
+    "industry": "home improvement store",
+    "size": "unknown",
+    "confidence": "low",
+    "evidence": "Franchise owner provided description",
+    "note": "could not fetch the page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)> (used the description you provided instead)"
+  },
+  "site_text": "Franchise owner",
+  "documents": [],
+  "intake_confirmed": true,
+  "best_practices": {
+    "industry": "home improvement store",
+    "practices": [
+      {
+        "practice": "Start with high-volume, repetitive, rule-governed work",
+        "why_it_matters": "These tasks have clear right answers and enough repetitions to show a measurable saving quickly.",
+        "chunk_id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Measure the current process before changing it",
+        "why_it_matters": "Without a baseline you cannot show that an AI agent helped, and you cannot tell which opportunity deserves the next dollar.",
+        "chunk_id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Keep a person in the loop for anything that touches money, customers or compliance",
+        "why_it_matters": "A common pattern is for the agent to draft or classify and for a person to approve, then to loosen the review only after the error rate has been measured.",
+        "chunk_id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Check data readiness before choosing a use case",
+        "why_it_matters": "An agent can only work with information that is accessible and reasonably clean. If the needed data lives in paper files or in one person's head, the first project is organizing the data.",
+        "chunk_id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Protect sensitive data",
+        "why_it_matters": "Prefer models that run inside the company's own environment for customer, employee or financial records, and send only the minimum needed text to any hosted service.",
+        "chunk_id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      },
+      {
+        "practice": "Pilot narrowly, then expand",
+        "why_it_matters": "One process, one team and a fixed review date keeps the cost of a wrong guess small and gives the business a real result to judge.",
+        "chunk_id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)",
+        "url": ""
+      }
+    ],
+    "note": "no curated sources for 'home improvement store'; using general guidance only",
+    "sources": [
+      "Author-written starter note (replace with a real, citable source)"
+    ],
+    "passages": [
+      {
+        "id": "smb-ai-adoption#1",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      },
+      {
+        "id": "smb-ai-adoption#2",
+        "source": "Author-written starter note (replace with a real, citable source)"
+      }
+    ]
+  },
+  "process_map": {
+    "processes": [
+      {
+        "name": "Inventory Management",
+        "description": "Tracking and managing stock levels of hardware items.",
+        "pain_points": [
+          "Stockouts",
+          "Overstocking",
+          "Outdated inventory data"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Customer Service",
+        "description": "Assisting customers with product inquiries, sales, and returns.",
+        "pain_points": [
+          "Long wait times",
+          "Product knowledge gaps",
+          "Handling complaints"
+        ],
+        "basis": "stated"
+      },
+      {
+        "name": "Order Processing",
+        "description": "Handling customer orders for in-store pickup or delivery.",
+        "pain_points": [
+          "Processing delays",
+          "Order errors",
+          "Customer dissatisfaction with order accuracy"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Sales and Marketing",
+        "description": "Promoting products, running promotions, and managing advertising campaigns.",
+        "pain_points": [
+          "Low sales performance",
+          "Ineffective marketing strategies",
+          "Budget constraints"
+        ],
+        "basis": "typical"
+      },
+      {
+        "name": "Supplier Management",
+        "description": "Maintaining relationships with suppliers to ensure product availability and quality.",
+        "pain_points": [
+          "Supply chain disruptions",
+          "Price fluctuations",
+          "Quality issues"
+        ],
+        "basis": "typical"
+      }
+    ],
+    "doc_vs_reality_gaps": [],
+    "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)"
+  },
+  "gap_report": [
+    {
+      "process": "Inventory Management",
+      "gap": "Manual tracking leads to stockouts and overstocking, causing lost sales and storage costs.",
+      "opportunity": "Automated Inventory Alerts",
+      "supporting_chunk_id": "smb-ai-adoption#1"
+    },
+    {
+      "process": "Customer Service",
+      "gap": "Long wait times and product knowledge gaps lead to dissatisfied customers.",
+      "opportunity": "AI-Powered Chatbot for Customer Service",
+      "supporting_chunk_id": "smb-ai-adoption#1"
+    },
+    {
+      "process": "Order Processing",
+      "gap": "Processing delays and order errors lead to customer dissatisfaction.",
+      "opportunity": "Order Processing Automation",
+      "supporting_chunk_id": "smb-ai-adoption#1"
+    },
+    {
+      "process": "Sales and Marketing",
+      "gap": "Low sales performance due to ineffective marketing strategies.",
+      "opportunity": "Sales Forecasting Tool",
+      "supporting_chunk_id": "smb-ai-adoption#2"
+    },
+    {
+      "process": "Supplier Management",
+      "gap": "Supply chain disruptions and quality issues lead to stockouts and customer complaints.",
+      "opportunity": "Supplier Performance Monitoring",
+      "supporting_chunk_id": "smb-ai-adoption#2"
+    }
+  ],
+  "scored_opportunities": [
+    {
+      "name": "Automated Inventory Alerts",
+      "what_the_agent_does": "Monitors inventory levels and sends alerts when stock is running low or exceeds optimal levels.",
+      "process": "Inventory Management",
+      "gap": "Manual tracking leads to stockouts and overstocking, causing lost sales and storage costs.",
+      "supporting_chunk_id": "smb-ai-adoption#1",
+      "value": 8,
+      "effort": 4,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "Reduces stockouts and overstocking, improving customer satisfaction and reducing storage costs.",
+      "placeholder": false,
+      "score": 0.42
+    },
+    {
+      "name": "AI-Powered Chatbot for Customer Service",
+      "what_the_agent_does": "Provides instant responses to common customer inquiries via chat or voice.",
+      "process": "Customer Service",
+      "gap": "Long wait times and product knowledge gaps lead to dissatisfied customers.",
+      "supporting_chunk_id": "smb-ai-adoption#1",
+      "value": 9,
+      "effort": 5,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Improves customer satisfaction by providing quick and accurate responses, reducing wait times.",
+      "placeholder": false,
+      "score": 0.53
+    },
+    {
+      "name": "Order Processing Automation",
+      "what_the_agent_does": "Automates order processing to reduce delays and errors.",
+      "process": "Order Processing",
+      "gap": "Processing delays and order errors lead to customer dissatisfaction.",
+      "supporting_chunk_id": "smb-ai-adoption#1",
+      "value": 7,
+      "effort": 6,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "Improves order accuracy and reduces processing time, enhancing customer satisfaction.",
+      "placeholder": false,
+      "score": 0.22
+    },
+    {
+      "name": "Sales Forecasting Tool",
+      "what_the_agent_does": "Analyzes sales data to predict future trends and suggest marketing strategies.",
+      "process": "Sales and Marketing",
+      "gap": "Low sales performance due to ineffective marketing strategies.",
+      "supporting_chunk_id": "smb-ai-adoption#2",
+      "value": 8,
+      "effort": 7,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "Helps in identifying potential sales opportunities and optimizing marketing efforts.",
+      "placeholder": false,
+      "score": 0.21
+    },
+    {
+      "name": "Supplier Performance Monitoring",
+      "what_the_agent_does": "Tracks supplier performance to ensure product availability and quality.",
+      "process": "Supplier Management",
+      "gap": "Supply chain disruptions and quality issues lead to stockouts and customer complaints.",
+      "supporting_chunk_id": "smb-ai-adoption#2",
+      "value": 7,
+      "effort": 6,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "Improves product availability and quality, reducing supply chain disruptions.",
+      "placeholder": false,
+      "score": 0.22
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "opportunities": [
+        "Automated Inventory Alerts",
+        "AI-Powered Chatbot for Customer Service",
+        "Order Processing Automation"
+      ],
+      "score": 0.39
+    },
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "opportunities": [
+        "AI-Powered Chatbot for Customer Service",
+        "Automated Inventory Alerts",
+        "Order Processing Automation"
+      ],
+      "score": 0.39
+    },
+    {
+      "id": "enabler",
+      "angle": "enabler",
+      "opportunities": [
+        "Automated Inventory Alerts",
+        "AI-Powered Chatbot for Customer Service",
+        "Order Processing Automation"
+      ],
+      "score": 0.39
+    }
+  ],
+  "review_round": 3,
+  "pruned_log": [
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "score": 0.387,
+      "reason": "ranked below top 3"
+    },
+    {
+      "id": "blend_1",
+      "angle": "blend",
+      "score": 0.39,
+      "reason": "ranked below top 3"
+    },
+    {
+      "id": "blend_2",
+      "angle": "blend",
+      "score": 0.39,
+      "reason": "ranked below top 3"
+    }
+  ],
+  "verified": true,
+  "final_recommendation": {
+    "roadmap": {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "opportunities": [
+        "Automated Inventory Alerts",
+        "AI-Powered Chatbot for Customer Service",
+        "Order Processing Automation"
+      ],
+      "score": 0.39
+    },
+    "agents_to_build": [
+      "Automated Inventory Alerts",
+      "AI-Powered Chatbot for Customer Service",
+      "Order Processing Automation"
+    ]
+  },
+  "status": "complete",
+  "model_calls": 11,
+  "trace": [
+    "discovery_profile: website guess -> home improvement store (low) [could not fetch the page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)> (used the description you provided instead)]",
+    "discovery_research: 6 practices from 2 passages [no curated sources for 'home improvement store'; using general guidance only]",
+    "process_mapper: 5 processes",
+    "matcher: 5 candidates scored",
+    "strategist: 4 roadmaps",
+    "critic: scored roadmaps",
+    "review_gate: round 1, kept 3, pruned 1",
+    "strategist: 4 roadmaps",
+    "critic: scored roadmaps",
+    "review_gate: round 2, kept 3, pruned 1",
+    "strategist: 4 roadmaps",
+    "critic: scored roadmaps",
+    "review_gate: round 3, kept 3, pruned 1",
+    "planner: verified, recommendation ready"
+  ],
+  "call_log": [
+    {
+      "ts": "2026-11-13T23:46:59+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 2.96,
+      "error": null,
+      "stub": false,
+      "input_tokens": 154,
+      "output_tokens": 33
+    },
+    {
+      "ts": "2026-11-13T23:48:47+00:00",
+      "agent": "discovery_research",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 8.976,
+      "error": null,
+      "stub": false,
+      "input_tokens": 425,
+      "output_tokens": 427
+    },
+    {
+      "ts": "2026-11-13T23:48:46+00:00",
+      "agent": "process_mapper",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 7.053,
+      "error": null,
+      "stub": false,
+      "input_tokens": 197,
+      "output_tokens": 289
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "matcher",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 9.248,
+      "error": null,
+      "stub": false,
+      "input_tokens": 513,
+      "output_tokens": 647
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "strategist",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "critic",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "strategist",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "critic",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "strategist",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "critic",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "ts": "2026-11-13T23:48:57+00:00",
+      "agent": "planner",
+      "model": "stub",
+      "seconds": null,
+      "error": null,
+      "stub": true,
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "processes": [
+    {
+      "name": "Order Intake",
+      "description": "Receiving and processing customer orders for custom trailers.",
+      "pain_points": [
+        "Complex customization options",
+        "High volume of quotes"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Quoting",
+      "description": "Generating price estimates based on customer requirements.",
+      "pain_points": [
+        "Time-consuming to gather necessary details",
+        "Variety of customization options"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Production Scheduling",
+      "description": "Scheduling production and manufacturing processes for custom trailers.",
+      "pain_points": [
+        "Balancing multiple orders",
+        "Material availability"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Quality Control",
+      "description": "Ensuring all manufactured trailers meet the company's high standards.",
+      "pain_points": [
+        "Consistency in quality across different models",
+        "Meeting warranty requirements"
+      ],
+      "basis": "typical"
+    },
+    {
+      "name": "Customer Support",
+      "description": "Providing support to customers before, during, and after purchase.",
+      "pain_points": [
+        "Handling customer inquiries about customization options",
+        "Warranty claims"
+      ],
+      "basis": "typical"
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "note": "inferred from the website, description and industry; confirm with the owner (no SME interview yet)",
+  "version": 2,
+  "saved": "2026-11-14T18:07:21",
+  "version_note": "built from the website and description only"
+}

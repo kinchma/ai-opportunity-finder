@@ -1,0 +1,169 @@
+{
+ "_about": "Brightline Bookkeeping: a SYNTHETIC 12-person bookkeeping and accounting firm (invented for testing; not a real company). Cautious owner (risk tolerance 0.2) with a small effort budget. Planted traps: the highest-value idea is too risky for this owner, one idea names a process that does not exist, and two ideas cite a passage that does not support them.",
+ "company_input": {
+  "name": "Brightline Bookkeeping",
+  "industry": "bookkeeping and accounting firm",
+  "size": "12",
+  "risk_tolerance": 0.2,
+  "effort_budget": 12,
+  "description": "12-person bookkeeping and accounting firm serving local small businesses. Monthly closes, payroll, and tax-season preparation. Client documents arrive by email, text photo and paper."
+ },
+ "expected_top_picks": [
+  "Client document chaser",
+  "Engagement knowledge base",
+  "New-client intake summarizer"
+ ],
+ "processes": [
+  {
+   "name": "Client onboarding",
+   "description": "New clients fill in a paper form; staff re-key it into the practice system and the billing system.",
+   "pain_points": [
+    "double entry",
+    "missing information"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Document collection",
+   "description": "Staff email and call clients each month for bank statements, receipts and payroll changes.",
+   "pain_points": [
+    "chasing clients",
+    "documents arrive in many formats"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Monthly close",
+   "description": "Bookkeepers categorize transactions, reconcile accounts and send a summary to the client.",
+   "pain_points": [
+    "repetitive categorizing"
+   ],
+   "basis": "stated"
+  },
+  {
+   "name": "Tax preparation",
+   "description": "Seasonal returns prepared by two senior accountants and reviewed by the owner.",
+   "pain_points": [
+    "deadline crunch"
+   ],
+   "basis": "typical"
+  },
+  {
+   "name": "Billing and collections",
+   "description": "Monthly invoices; overdue accounts are followed up by the office manager when time allows.",
+   "pain_points": [
+    "late follow-up"
+   ],
+   "basis": "typical"
+  }
+ ],
+ "practices": [
+  {
+   "practice": "Use structured intake forms with an agent that summarizes and routes new clients",
+   "why_it_matters": "Cuts repeated questions and double entry",
+   "chunk_id": "knowledge-and-admin#1"
+  },
+  {
+   "practice": "Give staff a retrieval assistant over the firm's own documents, with citations",
+   "why_it_matters": "Stops staff recreating past work",
+   "chunk_id": "knowledge-and-admin#2"
+  },
+  {
+   "practice": "Start with high-volume, repetitive, rule-governed work",
+   "why_it_matters": "Clear right answers and a measurable saving",
+   "chunk_id": "smb-ai-adoption#1"
+  },
+  {
+   "practice": "Check data readiness before choosing a use case",
+   "why_it_matters": "An agent can only use data that is accessible and clean",
+   "chunk_id": "smb-ai-adoption#2"
+  }
+ ],
+ "candidates": [
+  {
+   "name": "Autonomous tax return filer",
+   "what_the_agent_does": "Prepares and files client tax returns without review.",
+   "process": "Tax preparation",
+   "gap": "Returns are prepared by hand under deadline pressure.",
+   "supporting_chunk_id": null,
+   "value": 10,
+   "effort": 8,
+   "risk": 9,
+   "enabler": false,
+   "rating_reason": "Huge time saving but a filing error is costly."
+  },
+  {
+   "name": "Client document chaser",
+   "what_the_agent_does": "Sends reminders for missing monthly documents and sorts what arrives into the client folder for a bookkeeper to confirm.",
+   "process": "Document collection",
+   "gap": "Staff chase clients by email and phone every month.",
+   "supporting_chunk_id": "smb-ai-adoption#1",
+   "value": 8,
+   "effort": 3,
+   "risk": 2,
+   "enabler": false,
+   "rating_reason": "High volume, repetitive, low harm if a reminder is wrong."
+  },
+  {
+   "name": "Engagement knowledge base",
+   "what_the_agent_does": "Organizes past work papers, templates and client notes so staff and later agents can search them with citations.",
+   "process": "Monthly close",
+   "gap": "Knowledge lives in individual folders and people's heads.",
+   "supporting_chunk_id": "knowledge-and-admin#2",
+   "value": 6,
+   "effort": 4,
+   "risk": 1,
+   "enabler": true,
+   "rating_reason": "Foundation for the other ideas; low risk."
+  },
+  {
+   "name": "New-client intake summarizer",
+   "what_the_agent_does": "Turns the intake form into a summary and pre-fills the practice and billing systems for a person to approve.",
+   "process": "Client onboarding",
+   "gap": "The same information is typed into two systems.",
+   "supporting_chunk_id": "knowledge-and-admin#1",
+   "value": 7,
+   "effort": 4,
+   "risk": 2,
+   "enabler": false,
+   "rating_reason": "Removes double entry; a person approves."
+  },
+  {
+   "name": "Transaction categorizer",
+   "what_the_agent_does": "Suggests categories for bank transactions; the bookkeeper accepts or corrects them.",
+   "process": "Monthly close",
+   "gap": "Categorizing is repetitive manual work.",
+   "supporting_chunk_id": "smb-ai-adoption#1",
+   "value": 8,
+   "effort": 6,
+   "risk": 4,
+   "enabler": false,
+   "rating_reason": "Valuable but errors reach the books."
+  },
+  {
+   "name": "Overdue invoice follow-up",
+   "what_the_agent_does": "Drafts polite reminders for overdue invoices for the office manager to send.",
+   "process": "Billing and collections",
+   "gap": "Follow-up happens only when there is time.",
+   "supporting_chunk_id": null,
+   "value": 6,
+   "effort": 2,
+   "risk": 2,
+   "enabler": false,
+   "rating_reason": "Quick to build; a person sends."
+  },
+  {
+   "name": "Crypto portfolio advisor",
+   "what_the_agent_does": "Advises clients on crypto holdings.",
+   "process": "Investment advisory",
+   "gap": "",
+   "supporting_chunk_id": "made-up#9",
+   "value": 9,
+   "effort": 5,
+   "risk": 5,
+   "enabler": false,
+   "rating_reason": "Trendy."
+  }
+ ],
+ "expected_top_picks_note": "Written by Claude before the first run, as a stand-in. Mark: replace with your own picks before you use this as evaluation evidence."
+}

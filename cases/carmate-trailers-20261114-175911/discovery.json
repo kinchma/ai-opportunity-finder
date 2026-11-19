@@ -1,0 +1,99 @@
+{
+  "profile": {
+    "name": "Car Mate Trailers, Inc.",
+    "website": "https://carmate-trailers.com",
+    "industry": "trailer manufacturing",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website describes various types of cargo and utility trailers for sale, with a focus on quality and longevity.",
+    "note": ""
+  },
+  "site_text": "Car Mate Trailers makes high-quality, custom open and enclosed trailers. Whatever you need to haul, there's a Car Mate Trailer that's right for you! HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Get a quote HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Trailers that Work for a living Welcome to car mate trailers Car Mate Trailers, Inc. in Leeper, PA, manufactures the best quality cargo and utility trailers in the industry backed by the industry\u2019s best warranty, LIFETIME PLUS 10. Established in 1982, Car Mate has become the name synonymous with quality and longevity when it comes to enclosed cargo & equipment \u201cTrailers that work for a living\u201d. Car Mate is the brand preferred by contractors of all types. Learn More Have a trailer in mind? Request a quote Check out our dealer locator Store locator is loading from StoreRocket Store Locator Widget .. Look & See How they are made Look at these trailer features Car Mate Trailers 100 person trailer manufacturing company",
+  "website_assessment": {
+    "rating": 6.5,
+    "partial": false,
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 7,
+        "reason": "The text clearly states the business name and what it does (manufacturing trailers), but the layout is repetitive with multiple sections of similar information.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 6,
+        "reason": "There is a clear call to action for requesting a quote, but the navigation and product listings are confusing, making it hard to find specific actions like contacting dealers or viewing brochures.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The business has been in operation since 1982 and offers a lifetime warranty with an additional 10 years, which is a strong indicator of trustworthiness. However, there are no customer reviews or testimonials displayed on the page.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 3,
+        "reason": "no phone, email or form found on the page",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 8,
+        "reason": "14 of 17 images lack alt text",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Request Quote",
+      "Contact Dealers",
+      "View Brochures"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "model_calls": 2,
+  "call_log": [
+    {
+      "ts": "2026-11-14T22:59:27+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 4.454,
+      "error": null,
+      "stub": false,
+      "input_tokens": 889,
+      "output_tokens": 53
+    },
+    {
+      "ts": "2026-11-14T22:59:29+00:00",
+      "agent": "discovery_website",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 2.447,
+      "error": null,
+      "stub": false,
+      "input_tokens": 991,
+      "output_tokens": 169
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 6.5/10, chatbot: not_found"
+  ]
+}
