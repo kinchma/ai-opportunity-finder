@@ -3,12 +3,11 @@
 Shows a small-business owner where AI agents could save time and money. Input: a website (and optional pasted LinkedIn text). Output: a ranked list of opportunities and a recommended roadmap of up to 3 ideas.
 
 ## Run and test
-- Install: `pip install -r requirements.txt` (use the project `.venv`). Mac setup: see `MAC_SETUP.md` and `.env.example`
+- Install: `pip install -r requirements.txt` (use the project `.venv`). Setup: see `README.md` and `.env.example`
 - Tests: `python -m pytest -q` (all must pass; no test may need a real model server)
-- Run UIs: `streamlit run app.py` or `streamlit run app_v2.py`, or `python app_nicegui.py` (port 8080)
-- Case workspace (save and resume per customer): `streamlit run app_cases.py`
+- App (the only UI; save and resume per customer): `streamlit run app_cases.py`
 - CLI: `python -m opportunity_finder.main`
-- Local models via LM Studio (default `qwen2.5-7b-instruct` at localhost:1234); settings in `.env` (see `.env.example`)
+- Local models via LM Studio (Qwen3.6-35B-A3B for the agents, Gemma 3 12B for the Critic, nomic embeddings, all at localhost:1234); settings in `.env` (see `.env.example`)
 
 ## Architecture
 LangGraph pipeline: rule-based Supervisor (no LLM) plus six agents: Discovery, Process Mapper, Matcher, Strategist, Critic, Verifier/Planner.
@@ -22,13 +21,12 @@ LangGraph pipeline: rule-based Supervisor (no LLM) plus six agents: Discovery, P
 ## Status (keep this section current; last updated Nov 17, 2026, early am)
 - All six agents are real. LLM-backed: Discovery (profile, research, website check), Process Mapper, Matcher, Strategist (narrative only), Critic (rubric only), Verifier/Planner (citation check only). Code does the rest.
 - Strategist: code builds one roadmap per angle (highest value, quick win, lowest risk, enabler-first or balanced), each a different set of ideas, and revises kept roadmaps from the Critic's findings. One model call per round writes the narrative; a code fallback is flagged `narrative_by: code`.
-- Critic: coded checks in `tools/scoring.py` (`roadmap_checks`), then a rubric on a different model (`LLM_CRITIC_*` in `.env`, currently Qwen2.5 7B on the Omen). A review with no valid evidence is dropped. The rubric moves the coded score by at most 15%.
+- Critic: coded checks in `tools/scoring.py` (`roadmap_checks`), then a rubric on a different model (`LLM_CRITIC_*` in `.env`, currently Gemma 3 12B, a different model family). A review with no valid evidence is dropped. The rubric moves the coded score by at most 15%.
 - Verifier/Planner: code checks every recommended idea against the process map, a kept best practice or the website check (`tools/grounding.py`). Fails on placeholders or under 60% coverage; rejected ideas go to `failed_claims` and the Strategist leaves them out on the retry. Two failures, or zero practices, end the run with `status: needs_owner_help` and a decision card (`escalation`).
 - Counting is honest: no stub records are written any more; `observability.summarize` gives real calls, tokens and seconds per agent and ignores old `stub: true` records. The cap of 40 counts real calls only.
 - Guardrails built: prompt-injection scan (`tools/guard.py`) on website text, pasted LinkedIn text and owner documents; close-call flag when the top roadmap leads by under 10%; escalation when practices come back empty. All flags are in `state["flags"]`.
 - Real-model runs so far: Carmate runs 1-8 (Omen + Mac, then Mac only), Ace Hardware, and Laurel Run run 1 (Nov 16, all on the Mac: verified 3 of 3, every process cited a shared file). Tests: 151, all fake models. Details: PROJECT_NOTES.md Parts 8-13.
-- Everything runs on the Mac alone: `.env` = `.env.mac` (all agents Qwen3.6 on localhost:1234, Critic qwen2.5-7b-instruct, both loaded in LM Studio with context length 16k+).
-- Only `app_cases.py` shows the new output (narrative, evidence, flags, decision card, run log). `app.py`, `app_v2.py` and `app_nicegui.py` still run but show the old view.
+- Everything runs on the Mac alone: `.env` is made from `.env.example` (agents on Qwen3.6, Critic on google/gemma-3-12b, embeddings nomic, all in LM Studio on localhost:1234).
 - Knowledge base (Nov 17): the app reads `kb_sources/` (13 sourced public-domain notes plus two author-written placeholder overlays, professional-services and distribution, labelled as such); `KB_DIR=kb` selects the old placeholder set, which the tests use. Retrieval is hybrid: ChromaDB vectors from local nomic embeddings (`tools/vectorstore.py`, `LLM_EMBED_MODEL`) plus BM25, merged by reciprocal rank fusion; BM25 alone when vectors are unavailable (flag `retrieval_keyword_only` if an embedding model is configured but fails). Chroma telemetry off; its index is `kb_sources/.chroma/` (git-ignored), rebuilt only when notes or the embedding model change. Embedding calls are logged in `best_practices.retrieval.embedding_calls`, not in call_log (they do not count toward the 40-call cap).
 - Per-agent models are supported in `llm.py` (LLM_<AGENT>_MODEL etc.). No `make_agents` factory.
 - Test customers: `tests/fixtures/carmate.json` (from saved run 5) and `tests/fixtures/brightline.json` (synthetic bookkeeping firm with planted traps)
@@ -52,6 +50,6 @@ LangGraph pipeline: rule-based Supervisor (no LLM) plus six agents: Discovery, P
 - Standard library first; add a dependency only with a clear reason, and list it in `requirements.txt`
 - Small functions, plain names, short comments that say why
 - Every new agent behavior gets a test with a fake LLM (see `tests/conftest.py`); tests must not call real models or the network
-- `app_cases.py` is the main UI (decided Nov 14); the other three (`app.py`, `app_v2.py`, `app_nicegui.py`) lag behind and are updated only when asked
-- Update `PROJECT_NOTES.md` when a design decision is made; don't edit course documents or files outside this folder
+- `app_cases.py` is the only UI (the older apps were removed Nov 20)
+- Update `PROJECT_NOTES.md` (local only, git-ignored) when a design decision is made; don't edit course documents or files outside this folder
 - Don't delete files without asking

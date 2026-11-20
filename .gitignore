@@ -17,3 +17,6 @@ cases/*/index/
 
 # generated vector indexes (ChromaDB)
 .chroma/
+
+# personal development log (kept local, not published)
+PROJECT_NOTES.md
