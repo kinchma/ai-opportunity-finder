@@ -6,7 +6,7 @@ description and the first few thousand characters of visible text.
 import re
 import ssl
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import urlparse
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
@@ -73,7 +73,9 @@ def _read_local_site(url: str) -> tuple[bytes | None, str, str | None]:
     (or the single .html file named) is read; the resolved path must stay inside that directory,
     symlinks are refused, and nothing else on disk is reachable through this route.
     Returns (bytes, resolved_url, error)."""
-    raw = unquote(urlparse(url).path)
+    # url2pathname turns the URL path into a real path on this OS: "/C:/Users/x" becomes
+    # "C:\\Users\\x" on Windows (Path("/C:/...") is not valid there); on macOS and Linux it only unquotes.
+    raw = urllib.request.url2pathname(urlparse(url).path)
     base = Path(raw)
     page = base / "index.html" if base.is_dir() else base
     if page.suffix.lower() not in (".html", ".htm"):
