@@ -1,0 +1,256 @@
+{
+  "processes": [
+    {
+      "name": "Dealer Quoting & Order Intake",
+      "description": "Receives dealer requests via phone or email, validates the dealer ID against an Excel list, captures model/dimensions/options in a quote template, and routes exceptional pricing to the sales manager for approval before sending a dated offer.",
+      "pain_points": [
+        "Manual re-keying of quote data into the order register",
+        "Excel-based pricing formulas require manual maintenance and exception handling",
+        "Credit status checks rely on unspecified Excel records rather than automated flags"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/08_quoting.md#2",
+        "doc:interviews/01_order_to_delivery_interview.md#3"
+      ]
+    },
+    {
+      "name": "Production Scheduling & Shop Floor Management",
+      "description": "Assigns unique work-order IDs and target dates to accepted dealer orders, sequences confirmed WOs in Excel and on a shop whiteboard based on stock notes and supervisor input, and distributes paper build packets to fabrication and assembly crews.",
+      "pain_points": [
+        "Target dates are estimates, not guarantees, causing dealer expectation gaps",
+        "Excel schedule lacks real-time floor visibility or automated alerts",
+        "Material shortages cause worker idle time before reassignment to other work"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/02_production_scheduling.md#1",
+        "doc:interviews/02_production_scheduling_interview.md#2"
+      ]
+    },
+    {
+      "name": "Purchasing, Receiving & Inventory Control",
+      "description": "Manages weekly cycle counts of selected SKUs, approves purchase orders, coordinates receiving bay checks against POs, and updates Excel stock sheets while matching supplier bills in QuickBooks for accounting entry.",
+      "pain_points": [
+        "Discrepancy between Excel shop-floor stock sheet and QuickBooks accounting records",
+        "Manual paper receiving slips and partial deliveries delay inventory updates",
+        "Limited competitive re-quoting for critical components like axles"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/03_purchasing_and_receiving.md#2",
+        "doc:interviews/04_inventory_counting_interview.md#8"
+      ]
+    },
+    {
+      "name": "Fabrication, Assembly & Quality Inspection",
+      "description": "Executes cutting, welding, painting, and final assembly per paper build packets; supervisors report progress or material exceptions to the scheduler; quality lead verifies spec revisions, checks compliance of substitutions (brakes, tires, lighting), and signs the final inspection checklist.",
+      "pain_points": [
+        "Manual packet page replacements for spec changes risk version confusion",
+        "Strict compliance review required for every component substitution",
+        "Final inspection checklist stays with the paper WO, risking separation from digital records"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#4",
+        "doc:documents/processes/07_warranty_and_returns.md#5"
+      ]
+    },
+    {
+      "name": "Shipping, Invoicing & Dealer Support",
+      "description": "Schedules trailer shipment, sends confirmation to accounting for QuickBooks invoice generation at shipment, and handles dealer status inquiries by checking the order register and coordinating with the scheduler or shipping coordinator.",
+      "pain_points": [
+        "Manual status checks require cross-department coordination and email trails",
+        "Revenue recognition lags behind shipment due to net-30 terms and tax exclusions",
+        "No separate freight charge complicates cost tracking and dealer billing clarity"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_order_to_delivery.md#6",
+        "doc:interviews/02_production_scheduling_interview.md#6"
+      ]
+    },
+    {
+      "name": "Warranty Claims Processing",
+      "description": "Receives dealer warranty reports, forwards model/VIN/problem details to the quality lead, opens a claim ID, verifies inspection records, approves dealer repairs before work begins, and closes claims upon completion evidence.",
+      "pain_points": [
+        "No blanket coverage policy requires case-by-case review and documentation",
+        "Single point of failure for repair approvals if the quality lead is unavailable",
+        "VINs are often missing from sample claims, complicating trailer tracking"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/07_warranty_and_returns.md#2",
+        "doc:interviews/07_warranty_and_returns_interview.md#4"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {
+    "doc:documents/processes/01_order_to_delivery.md#4": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "3. Build, changes and inspection"
+    },
+    "doc:documents/processes/01_order_to_delivery.md#6": {
+      "name": "documents/processes/01_order_to_delivery.md",
+      "source_type": "process_document",
+      "heading": "4. Ship, invoice and answer status calls"
+    },
+    "doc:documents/processes/02_production_scheduling.md#1": {
+      "name": "documents/processes/02_production_scheduling.md",
+      "source_type": "process_document",
+      "heading": "Production scheduling"
+    },
+    "doc:documents/processes/03_purchasing_and_receiving.md#2": {
+      "name": "documents/processes/03_purchasing_and_receiving.md",
+      "source_type": "process_document",
+      "heading": "Before ordering"
+    },
+    "doc:documents/processes/07_warranty_and_returns.md#2": {
+      "name": "documents/processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "When a dealer reports a problem"
+    },
+    "doc:documents/processes/07_warranty_and_returns.md#5": {
+      "name": "documents/processes/07_warranty_and_returns.md",
+      "source_type": "process_document",
+      "heading": "Repair, return and close"
+    },
+    "doc:documents/processes/08_quoting.md#2": {
+      "name": "documents/processes/08_quoting.md",
+      "source_type": "process_document",
+      "heading": "From request to quote"
+    },
+    "doc:interviews/01_order_to_delivery_interview.md#3": {
+      "name": "interviews/01_order_to_delivery_interview.md",
+      "source_type": "sme_interview",
+      "heading": "Laurel Run Trailer Works \u2014 Order-to-Delivery Interview"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#2": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[00:00]"
+    },
+    "doc:interviews/02_production_scheduling_interview.md#6": {
+      "name": "interviews/02_production_scheduling_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[04:00]"
+    },
+    "doc:interviews/04_inventory_counting_interview.md#8": {
+      "name": "interviews/04_inventory_counting_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[04:00]"
+    },
+    "doc:interviews/07_warranty_and_returns_interview.md#4": {
+      "name": "interviews/07_warranty_and_returns_interview.md",
+      "source_type": "sme_interview",
+      "heading": "[00:00] Role and first contact"
+    }
+  },
+  "note": "built from 99 passage(s) from 40 shared file(s), retrieved per process (hybrid search) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "retrieval": {
+    "mode": "hybrid",
+    "reason": "",
+    "anchored_on": "process documents",
+    "per_process": [
+      {
+        "process": "documents/processes/01_order_to_delivery.md",
+        "retrieved": [
+          "doc:interviews/01_order_to_delivery_interview.md#2",
+          "doc:interviews/01_order_to_delivery_interview.md#1",
+          "doc:interviews/08_quoting_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/02_production_scheduling.md",
+        "retrieved": [
+          "doc:interviews/02_production_scheduling_interview.md#1",
+          "doc:interviews/02_production_scheduling_interview.md#2",
+          "doc:interviews/08_quoting_interview.md#11",
+          "doc:documents/company/03_tools_inventory.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/03_purchasing_and_receiving.md",
+        "retrieved": [
+          "doc:interviews/03_purchasing_and_receiving_interview.md#1",
+          "doc:interviews/04_inventory_counting_interview.md#1",
+          "doc:interviews/03_purchasing_and_receiving_interview.md#5",
+          "doc:documents/company/03_tools_inventory.md#2"
+        ]
+      },
+      {
+        "process": "documents/processes/04_inventory_counting.md",
+        "retrieved": [
+          "doc:interviews/04_inventory_counting_interview.md#2",
+          "doc:interviews/04_inventory_counting_interview.md#8",
+          "doc:interviews/04_inventory_counting_interview.md#1",
+          "doc:data/DATA_DICTIONARY.md#26"
+        ]
+      },
+      {
+        "process": "documents/processes/05_month_end_close.md",
+        "retrieved": [
+          "doc:interviews/05_month_end_close_interview.md#1",
+          "doc:interviews/05_month_end_close_interview.md#2",
+          "doc:interviews/05_month_end_close_interview.md#3",
+          "doc:data/DATA_DICTIONARY.md#22"
+        ]
+      },
+      {
+        "process": "documents/processes/06_payroll_and_time_cards.md",
+        "retrieved": [
+          "doc:interviews/06_payroll_and_time_cards_interview.md#2",
+          "doc:interviews/09_onboarding_interview.md#16",
+          "doc:interviews/06_payroll_and_time_cards_interview.md#1",
+          "doc:data/DATA_DICTIONARY.md#23"
+        ]
+      },
+      {
+        "process": "documents/processes/07_warranty_and_returns.md",
+        "retrieved": [
+          "doc:interviews/07_warranty_and_returns_interview.md#1",
+          "doc:interviews/07_warranty_and_returns_interview.md#4",
+          "doc:interviews/07_warranty_and_returns_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#11"
+        ]
+      },
+      {
+        "process": "documents/processes/08_quoting.md",
+        "retrieved": [
+          "doc:interviews/08_quoting_interview.md#2",
+          "doc:interviews/01_order_to_delivery_interview.md#3",
+          "doc:interviews/01_order_to_delivery_interview.md#2",
+          "doc:documents/company/04_marketing_social_media.md#7"
+        ]
+      },
+      {
+        "process": "documents/processes/09_onboarding.md",
+        "retrieved": [
+          "doc:interviews/06_payroll_and_time_cards_interview.md#1",
+          "doc:interviews/09_onboarding_interview.md#2",
+          "doc:interviews/09_onboarding_interview.md#1",
+          "doc:documents/company/03_tools_inventory.md#1"
+        ]
+      },
+      {
+        "process": "documents/processes/10_facilities_upkeep.md",
+        "retrieved": [
+          "doc:interviews/10_facilities_upkeep_interview.md#1",
+          "doc:interviews/10_facilities_upkeep_interview.md#3",
+          "doc:interviews/10_facilities_upkeep_interview.md#2",
+          "doc:documents/company/01_company_profile_and_website.md#2"
+        ]
+      }
+    ],
+    "skipped_for_space": [],
+    "embedding_calls": 20,
+    "index_rebuilt": false,
+    "passages_in_index": 390
+  },
+  "run": "run-016",
+  "saved": "2026-11-20T16:09:44",
+  "run_note": "built from 1 owner document(s)"
+}

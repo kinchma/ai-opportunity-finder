@@ -1,0 +1,16 @@
+{
+  "id": "nyce-shirt-company",
+  "name": "Nyce Shirt Company",
+  "stage": "analyzed",
+  "status": "Recommendation ready.",
+  "created": "2026-11-20T09:31:16",
+  "updated": "2026-11-20T09:37:21",
+  "company_input": {
+    "risk_tolerance": 0.4,
+    "description": "Nyce Shirt Company is a proud, family-owned business in the heart of Harleysville, PA.  We have been serving Harleysville and the surrounding area since 1990. We have built our reputation on friendly, personable customer service, superior quality, and fast turnarounds, all at a competitive price!\n\n\u200b\n\nOur goal and mission is to exceed customers\u2019 expectations and guarantee satisfaction. We use state of the art machinery and the latest technologies in software to ensure the highest quality work each and every time. Our friendly and helpful IN-HOUSE customer service and art department will give your job the specialized attention it deserves regardless if it is a one dozen order or hundreds of items. We want our customers to have prompt and courteous attention with dedication to deliver what the customer wants, on time and in budget. With our experienced design team, the customer may supply a design, design their own logo, or work with our team who will listen to the requests and make that dream come true for any occasion.",
+    "website": "https://www.nyceshirt.com/",
+    "linkedin_text": "Overview\nNyce Shirt screenprints and embroiders shirts for gifts, sports teams and uniforms.\n\nWebsite\nhttp://www.nyceshirt.com/\nIndustry\nRetail Apparel and Fashion\nCompany size\n2-10 employees\n3 associated members LinkedIn members who\u2019ve listed Nyce Shirt Co. as their current workplace on their profile."
+  },
+  "materials_authorized": [],
+  "latest_run": "run-001"
+}

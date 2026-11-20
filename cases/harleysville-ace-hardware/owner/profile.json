@@ -5,5 +5,8 @@
   "size": "unknown",
   "confidence": "low",
   "evidence": "Franchise owner provided description",
-  "note": "could not fetch the page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)> (used the description you provided instead)"
+  "note": "could not fetch the page: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)> (used the description you provided instead)",
+  "confirmed_by_owner": true,
+  "owner_corrections": {},
+  "owner_note": "Confirmed after the Nov 17 confirmation gate was added"
 }

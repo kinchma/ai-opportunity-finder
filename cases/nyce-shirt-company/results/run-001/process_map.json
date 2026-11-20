@@ -1,0 +1,74 @@
+{
+  "processes": [
+    {
+      "name": "Order Intake & Customer Consultation",
+      "description": "Receiving customer inquiries, discussing order specifications (quantities from one dozen to hundreds), and gathering requirements for custom apparel or promotional items.",
+      "pain_points": [
+        "Managing diverse customer skill levels with design files",
+        "High volume of custom requests requiring detailed notes"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Design & Artwork Development",
+      "description": "Creating or refining logos and branding materials; accepting customer-supplied designs or developing new ones in-house using graphic artists.",
+      "pain_points": [
+        "Revisions and feedback loops",
+        "Ensuring print/embroidery compatibility with artwork"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Screen Printing Production",
+      "description": "Translating approved artwork into high-quality screen prints using state-of-the-art machinery and established workflows.",
+      "pain_points": [
+        "Color matching consistency",
+        "Setup time for multi-color designs",
+        "Inventory management of blank garments"
+      ],
+      "basis": "stated",
+      "sources": []
+    },
+    {
+      "name": "Embroidery & Digitizing",
+      "description": "Converting logos into digital stitch files and executing full-service embroidery on various garments and accessories.",
+      "pain_points": [
+        "Digitizing complexity for detailed logos",
+        "Thread breakage or fabric puckering"
+      ],
+      "basis": "stated",
+      "sources": []
+    },
+    {
+      "name": "Promotional Product Sourcing & Fulfillment",
+      "description": "Curating, purchasing, and distributing thousands of promotional items (apparel, hats, bags, business gifts) to meet client needs.",
+      "pain_points": [
+        "Inventory turnover for slow-moving items",
+        "Supplier lead times"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Production Scheduling & Quality Assurance",
+      "description": "Managing job timelines, prioritizing rush orders, and inspecting finished goods to ensure fast turnarounds and satisfaction guarantees.",
+      "pain_points": [
+        "Balancing rush orders with standard production",
+        "Tracking job status across multiple departments"
+      ],
+      "basis": "typical",
+      "sources": []
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {},
+  "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+  "retrieval": {
+    "mode": "off"
+  },
+  "run": "run-001",
+  "saved": "2026-11-20T09:37:21",
+  "run_note": "built from the website and description only"
+}

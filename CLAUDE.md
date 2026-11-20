@@ -3,7 +3,7 @@
 Shows a small-business owner where AI agents could save time and money. Input: a website (and optional pasted LinkedIn text). Output: a ranked list of opportunities and a recommended roadmap of up to 3 ideas.
 
 ## Run and test
-- Install: `pip install -r requirements.txt` (use the project `.venv`). Mac setup for travel: see `MAC_SETUP.md` and `.env.mac`
+- Install: `pip install -r requirements.txt` (use the project `.venv`). Mac setup: see `MAC_SETUP.md` and `.env.example`
 - Tests: `python -m pytest -q` (all must pass; no test may need a real model server)
 - Run UIs: `streamlit run app.py` or `streamlit run app_v2.py`, or `python app_nicegui.py` (port 8080)
 - Case workspace (save and resume per customer): `streamlit run app_cases.py`

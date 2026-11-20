@@ -1,0 +1,12 @@
+source: ENERGY STAR (EPA), 10 Tips for Hiring a Heating and Cooling Contractor; HVAC Quality Installation page; notice sunsetting the ENERGY STAR Verified HVAC Installation (ESVI) program (August 31, 2025)
+url: https://www.energystar.gov/saveathome/heating-cooling/10-tips-hiring
+industries: hvac, heating, cooling, conditioning, furnace
+license: US government work, public domain (EPA ENERGY STAR); the ENERGY STAR name and mark are protected
+accessed: 2026-11-20
+note: Summary written in my own words from the sources on the access date. Quality installation page: https://www.energystar.gov/saveathome/heating-cooling/esvi
+---
+ENERGY STAR tells homeowners what to expect from a heating and cooling contractor: a licensed and insured company with references, a real evaluation of the home and existing system, equipment sized to the house (its size, insulation and windows) rather than simply as large as possible, duct checks for leaks and insulation with airflow measured against the manufacturer's specifications, written itemized bids compared on cost, efficiency and warranty, and a signed written proposal listing costs, model numbers, schedule and warranty before work begins.
+
+A quality installation has four parts: sizing from the home's actual characteristics rather than a rule of thumb (oversized equipment cycles too often, is less comfortable and wears out sooner), airflow confirmed against the manufacturer's specification, the refrigerant charge tested and adjusted for air conditioners and heat pumps, and the duct system inspected, leak-tested and repaired. ENERGY STAR points homeowners to contractors accredited for quality installation, such as through ACCA's Quality Assured program. EPA ended its own ESVI verification program on August 31, 2025 but continues to promote quality installation.
+
+What this means for operations: customers are told to expect a home evaluation, load-based sizing, written itemized options and documented test results. A contractor can stand out by making those steps routine and visible: a consistent site-survey form, sizing calculations on file, good-better-best written proposals with model numbers and warranties, and commissioning readings (airflow, charge, duct leakage) saved with the job. AI can assemble proposals from survey data and check that each install record has its readings, while the sizing and design judgment stays with qualified staff.

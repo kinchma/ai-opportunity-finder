@@ -1,0 +1,127 @@
+{
+  "profile": {
+    "name": "Nyce Shirt Company",
+    "website": "https://www.nyceshirt.com/",
+    "industry": "custom apparel printing and promotional products",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website explicitly lists screen printing, embroidery, and promotional products as core services, describing the business as a 'full service custom screen print, embroidery, design, and promotional products company.'.",
+    "note": "",
+    "evidence_source": {
+      "page": "https://www.nyceshirt.com/",
+      "fields": [
+        "title",
+        "description",
+        "text"
+      ],
+      "local_fixture": false
+    }
+  },
+  "site_text": "Nyce Shirt Company is a full service custom screen print, embroidery, design, and promotional products company. top of page SAMPLE OF ONLINE STORE CATALOGS & APPAREL HEALTH CARE WORK WEAR CORPORATE WEAR NYCE PROMOS PHONE: 215.256.8327 Services Screen Print Embroidery Design Nyce Promotional Online Stores Gallery About Meet the Team Contact FAQ More Use tab to navigate through the menu items. Website Banner Go-Birds Website Banner 1/6 Screen Print Nyce Shirt has been screen printing garments since 1992. We have a talented staff to take artwork and turn it into high quality screen prints. Stop in our show room to see our samples . Embroidery Nyce Shirt offers full service embroidery from digitizing to the finished embroidered product. All work is done in house by our creative friendly staff. Design Does your business, camp, club or sports team need a logo? Our experienced in house graphic artist will be happy to create a design just for you. Promotional Nyce Promos is your one-stop shop for promotional products and business gifts. Our extensive range of promo products will ensure you find something to suit your requirements. more information > more information > more information > more information > We are a full service custom screen print, embroidery, design, and promotional products company. We carry and distribute thousands of articles of clothing from the latest in casual clothing, team wear, hats, bags, promotional products, and much more. In addition to screen printing and embroidery, our experienced design team is able to establish logo creation or \u2018branding\u2019 for any company or organization. \u00a9 2017 NYCE SHIRT COMPANY CONTACT US: Nyce Shirt Company 310 Broad Street, Suite D Harleysville, PA 19438 Phone: 215.256.8327 Fax: 215.256.1080 Email: nyceshirtco@verizon.net HOURS OF OPERATION: Mon through Thur: 8am \u2013 5pm Fri: 8am-4pm Sat: By Appointment Only Sun: CLOSED bottom of page Nyce Shirt Company is a proud, family-owned business in the heart of Harleysville, PA.  We have been serving Harleysville and the surrounding area since 1990. We have built our reputation on friendly, personable customer service, superior quality, and fast turnarounds, all at a competitive price!\n\n\u200b\n\nOur goal and mission is to exceed customers\u2019 expectations and guarantee satisfaction. We use state of the art machinery and the latest technologies in software to ensure the highest quality work each and every time. Our friendly and helpful IN-HOUSE customer service and art department will give your job the specialized attention it deserves regardless if it is a one dozen order or hundreds of items. We want our customers to have prompt and courteous attention with dedication to deliver what the customer wants, on time and in budget. With our experienced design team, the customer may supply a design, design their own logo, or work with our team who will listen to the requests and make that dream come true for any occasion.",
+  "website_assessment": {
+    "rating": 6.9,
+    "partial": false,
+    "social_presence": {
+      "found_on_pages_read": {
+        "facebook": [
+          "https://www.facebook.com/NyceShirtCompany/"
+        ],
+        "instagram": [
+          "https://www.instagram.com/nyceshirtcompany/"
+        ]
+      },
+      "not_found_on_pages_read": [
+        "linkedin",
+        "tiktok",
+        "youtube",
+        "x_twitter"
+      ],
+      "owner_pasted_linkedin": true,
+      "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+    },
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 8,
+        "reason": "The text explicitly lists all four core services and clearly identifies target audiences like businesses, sports teams, and healthcare workers.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 7,
+        "reason": "The page provides a phone number, physical address, and email but lacks a direct call-to-action button like 'Get a Quote' or 'Start Your Order.'",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 6,
+        "reason": "The text highlights operating since 1992 and provides a physical address, but it omits customer testimonials, client logos, or industry certifications.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 6,
+        "reason": "found email link",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 8,
+        "reason": "no main heading",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Get a Screen Print Quote",
+      "Start Your Embroidery Project",
+      "Design a Custom Logo"
+    ],
+    "linkedin_used": true,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "model_calls": 2,
+  "call_log": [
+    {
+      "ts": "2026-11-20T14:31:48+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 28.699,
+      "error": null,
+      "stub": false,
+      "input_tokens": 814,
+      "output_tokens": 1185
+    },
+    {
+      "ts": "2026-11-20T14:32:20+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 31.533,
+      "error": null,
+      "stub": false,
+      "input_tokens": 801,
+      "output_tokens": 2690
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> custom apparel printing and promotional products (high) | website rating 6.9/10, chatbot: not_found"
+  ],
+  "flags": []
+}

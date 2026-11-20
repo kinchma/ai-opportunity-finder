@@ -1,0 +1,73 @@
+{
+  "processes": [
+    {
+      "name": "Product Configuration & Quoting",
+      "description": "Customers and dealers select trailer types, widths, depths, and custom options to generate a formal quote.",
+      "pain_points": [
+        "Manual spec verification",
+        "Quote turnaround delays"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Dealer Onboarding & Financing",
+      "description": "Processing dealer applications, managing dealer portal access, and facilitating financing through partner lenders.",
+      "pain_points": [
+        "Financing approval delays",
+        "Manual data entry for dealer orders"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Manufacturing & Assembly",
+      "description": "Fabricating and assembling custom open and enclosed trailers at the Leeper, PA facility using a 100-person workforce.",
+      "pain_points": [
+        "Supply chain delays for steel/components",
+        "Labor scheduling conflicts"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Warranty Registration & Support",
+      "description": "Processing lifetime plus 10 warranty registrations, providing technical support, and managing service claims.",
+      "pain_points": [
+        "Manual registration processing",
+        "Claim verification delays"
+      ],
+      "basis": "stated",
+      "sources": []
+    },
+    {
+      "name": "Parts Fulfillment & Maintenance",
+      "description": "Distributing replacement parts and providing owner\u2019s manuals for trailer maintenance and repairs.",
+      "pain_points": [
+        "Parts inventory tracking",
+        "Shipping delays"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Customer Feedback Collection",
+      "description": "Gathering post-purchase feedback via surveys to improve products and dealer service.",
+      "pain_points": [
+        "Low response rates",
+        "Survey data siloing"
+      ],
+      "basis": "typical",
+      "sources": []
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {},
+  "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+  "retrieval": {
+    "mode": "off"
+  },
+  "run": "run-009",
+  "saved": "2026-11-18T23:24:08",
+  "run_note": "built from the website and description only"
+}

@@ -23,6 +23,13 @@ everything in `kb/`, so move or copy a file into `kb/<industry>/` when you want 
 | manufacturing/nist-mep-lean-methods.md | NIST MEP, Lean and process improvement | Public domain | Manufacturing overlay |
 | manufacturing/nist-mep-value-stream-mapping.md | NIST MEP, Value Stream Mapping | Public domain | Manufacturing overlay |
 | trailer-manufacturing/nhtsa-manufacturer-requirements.md | NHTSA New Manufacturers Handbook (rev. 10/24/2025) | Public domain | Trailer overlay |
+| hvac/epa-section608-refrigerant-management.md | EPA Section 608 technician fact sheet and program pages | Public domain (US gov) | HVAC overlay (added 2026-11-20) |
+| hvac/epa-hfc-leak-repair-err-2026.md | EPA ER&R leak repair fact sheet (Jan 2026) | Public domain | HVAC overlay |
+| hvac/epa-technology-transitions-low-gwp-refrigerants.md | EPA Technology Transitions Reconsideration fact sheet (May 2026) | Public domain | HVAC overlay |
+| hvac/energystar-maintenance-checklist.md | ENERGY STAR Maintenance Checklist | Public domain (ENERGY STAR mark protected) | HVAC overlay |
+| hvac/energystar-hiring-and-quality-installation.md | ENERGY STAR 10 Tips for Hiring; HVAC Quality Installation; ESVI sunset notice | Public domain (mark protected) | HVAC overlay |
+| hvac/doe-2023-ac-heat-pump-efficiency-standards.md | DOE central AC regional standards guidance (Dec 2022) | Public domain | HVAC overlay |
+| hvac/irs-25c-home-improvement-credit-ended.md | IRS Energy Efficient Home Improvement Credit page (updated Apr 28, 2026) | Public domain | HVAC overlay |
 | professional-services/knowledge-and-admin.md | AUTHOR-WRITTEN placeholder copied from kb/ on 2026-11-17 (no external source) | n/a | Professional-services overlay (placeholder) |
 | distribution/order-and-inventory.md | AUTHOR-WRITTEN placeholder copied from kb/ on 2026-11-17 (no external source) | n/a | Distribution overlay (placeholder) |
 
@@ -43,3 +50,9 @@ Gaps still open
 - No sourced overlay yet for retail/hardware stores, wholesale distribution or marketing agencies (the existing kb/ placeholder notes cover distribution and professional services). Candidate public-domain sources: SBA industry pages, Census/BLS industry statistics, state MEP and SBDC guides.
 - No per-process "what AI can and cannot do reliably" layer beyond the SBA and NIST notes; that layer is my own synthesis and should be labelled as such.
 - The SBA site was reorganised in late 2026 (business-guide pages now live under /counseling/manage-your-business/ with anchors); re-check URLs before the final report.
+
+HVAC overlay notes (added 2026-11-20)
+- Tags are `hvac, heating, cooling, conditioning, furnace` (single words on purpose: "air" or "contractor" would pull these notes into unrelated cases such as air-compressor or electrical businesses).
+- ACCA Manual J/S/D and the ACCA 5 QI standard are copyrighted; link only (acca.org), do not copy.
+- The refrigerant rules changed in 2025-2026 (Technology Transitions reconsideration finalized May 21, 2026; ER&R leak repair in force Jan 1, 2026, with a May 2026 proposal for transport units). Re-check before a demo.
+- HVAC runs before 2026-11-20 (run-001 to run-011) had general guidance only; later runs have these notes, so compare HVAC results across that line with care.

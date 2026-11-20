@@ -1,0 +1,73 @@
+{
+  "processes": [
+    {
+      "name": "Quote Generation & Order Intake",
+      "description": "Manages customer 'Request For Quote' submissions for custom cargo and car trailers, capturing specifications like width, type, and options.",
+      "pain_points": [
+        "Manual specification verification across 10+ models",
+        "Delayed response times for custom builds"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Dealer Onboarding & Distribution Management",
+      "description": "Handles dealer applications, financing approvals (Sheffield/Northpoint), and manages the dealer locator/portal access.",
+      "pain_points": [
+        "Fragmented credit application workflows",
+        "Manual portal credential management"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Manufacturing & Assembly",
+      "description": "100-person facility production of custom open and enclosed trailers, incorporating specified features and quality standards.",
+      "pain_points": [
+        "Supply chain variability for specialized components",
+        "Labor scheduling across multiple custom configurations"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Warranty Registration & Technical Support",
+      "description": "Processes customer 'Warranty Registration', provides 'Technical Support', and administers the 'Car Mate Limited Warranty'.",
+      "pain_points": [
+        "Manual data entry for lifetime claims",
+        "Tracking support tickets across diverse trailer models"
+      ],
+      "basis": "stated",
+      "sources": []
+    },
+    {
+      "name": "Parts Fulfillment & Maintenance",
+      "description": "Manages 'Owner\u2019s Manual' distribution and direct 'Parts' ordering for existing trailer owners.",
+      "pain_points": [
+        "Inventory tracking for legacy and current model parts",
+        "Shipping cost management"
+      ],
+      "basis": "typical",
+      "sources": []
+    },
+    {
+      "name": "Customer Feedback & Survey Processing",
+      "description": "Collects and analyzes 'Customer Survey' responses to gauge satisfaction and product performance.",
+      "pain_points": [
+        "Low response rates",
+        "Integrating survey insights into production adjustments"
+      ],
+      "basis": "typical",
+      "sources": []
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {},
+  "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+  "retrieval": {
+    "mode": "off"
+  },
+  "run": "run-010",
+  "saved": "2026-11-18T23:30:39",
+  "run_note": "built from the website and description only"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Nyce Shirt Company",
+  "website": "https://www.nyceshirt.com/",
+  "industry": "custom apparel printing and promotional products",
+  "size": "unknown",
+  "confidence": "high",
+  "evidence": "The website explicitly lists screen printing, embroidery, and promotional products as core services, describing the business as a 'full service custom screen print, embroidery, design, and promotional products company.'.",
+  "note": "",
+  "evidence_source": {
+    "page": "https://www.nyceshirt.com/",
+    "fields": [
+      "title",
+      "description",
+      "text"
+    ],
+    "local_fixture": false
+  },
+  "confirmed_by_owner": true,
+  "owner_corrections": {}
+}

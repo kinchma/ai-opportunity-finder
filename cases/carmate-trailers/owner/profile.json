@@ -5,5 +5,8 @@
   "size": "unknown",
   "confidence": "high",
   "evidence": "The website describes various types of cargo and utility trailers for sale, with a focus on quality and longevity.",
-  "note": ""
+  "note": "",
+  "confirmed_by_owner": true,
+  "owner_corrections": {},
+  "owner_note": "Confirmed after the Nov 17 confirmation gate was added"
 }

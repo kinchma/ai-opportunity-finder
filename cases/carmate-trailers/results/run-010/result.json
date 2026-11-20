@@ -1,0 +1,838 @@
+{
+  "company_input": {
+    "risk_tolerance": 0.4,
+    "website": "carmate-trailers.com",
+    "description": "100 person trailer manufacturing company"
+  },
+  "profile": {
+    "name": "Car Mate Trailers, Inc.",
+    "website": "https://carmate-trailers.com",
+    "industry": "trailer manufacturing",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website describes various types of cargo and utility trailers for sale, with a focus on quality and longevity.",
+    "note": "",
+    "confirmed_by_owner": true,
+    "owner_corrections": {},
+    "owner_note": "Confirmed after the Nov 17 confirmation gate was added"
+  },
+  "site_text": "Car Mate Trailers makes high-quality, custom open and enclosed trailers. Whatever you need to haul, there's a Car Mate Trailer that's right for you! HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Get a quote HOME TRAILERS Cargo Trailers Custom Cargo (Enclosed Premium) Custom Cargo (Flat Front) 4\u2032 Wide LD/HD 5\u2032 Wide Single/Tandem 6\u2032 Wide Single/Tandem 7\u2032 Wide Single/Tandem 8\u2032 Wide Tandem 7\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) 8.5\u2032 Wide Avalanche Cargo Trailer (V-Front w/Slope) Advantage Cargo (V-Front) Contractor Trailer Sportster Cargo (Enclosed Mid-Range) Sportster Cargo (Flat Front) V-Sport (Short Depth V) Liberty Sport (Medium Depth V) Super Duty (Enclosed Heavy Duty) Request For Quote Enclosed Car Trailers Custom Car (Premium Flat Front) 8.5\u2032 Wide Avalanche Car Trailer (V-Front w/Slope) Advantage Car (V-Front Premium) Sportster (Mid-Range Flat Front) Eagle Car (Heavy Duty Flat Front) Ball Pull 5th Wheel / Gooseneck Advantage Eagle (V-Front Heavy Duty) Request For Quote Options Colors Brochures Testimonials OWNERS Technical Support Warranty Owner\u2019s Manual Parts Customer Survey Warranty Registration INFORMATION Contact Car Mate About Car Mate Dealer Locator Warranty Registration Car Mate Limited Warranty DEALERS ONLY Dealer Log In Become a Dealer Sheffield Financial Application Northpoint Commercial Finance Dealer Application Trailers that Work for a living Welcome to car mate trailers Car Mate Trailers, Inc. in Leeper, PA, manufactures the best quality cargo and utility trailers in the industry backed by the industry\u2019s best warranty, LIFETIME PLUS 10. Established in 1982, Car Mate has become the name synonymous with quality and longevity when it comes to enclosed cargo & equipment \u201cTrailers that work for a living\u201d. Car Mate is the brand preferred by contractors of all types. Learn More Have a trailer in mind? Request a quote Check out our dealer locator Store locator is loading from StoreRocket Store Locator Widget .. Look & See How they are made Look at these trailer features Car Mate Trailers 100 person trailer manufacturing company",
+  "documents": [],
+  "document_chunks": [],
+  "company_index": "cases/carmate-trailers/index",
+  "company_retrieval": {
+    "mode": "off",
+    "reason": "no authorized company material"
+  },
+  "website_assessment": {
+    "rating": 6.5,
+    "partial": false,
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 7,
+        "reason": "The text clearly states the business name and what it does (manufacturing trailers), but the layout is repetitive with multiple sections of similar information.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 6,
+        "reason": "There is a clear call to action for requesting a quote, but the navigation and product listings are confusing, making it hard to find specific actions like contacting dealers or viewing brochures.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The business has been in operation since 1982 and offers a lifetime warranty with an additional 10 years, which is a strong indicator of trustworthiness. However, there are no customer reviews or testimonials displayed on the page.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 3,
+        "reason": "no phone, email or form found on the page",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 8,
+        "reason": "14 of 17 images lack alt text",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Request Quote",
+      "Contact Dealers",
+      "View Brochures"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "intake_confirmed": true,
+  "best_practices": {
+    "industry": "trailer manufacturing",
+    "practices": [
+      {
+        "practice": "Maintain comprehensive build records that tie each VIN to its specific components (axles, tires, rims, lighting, brakes) and label values.",
+        "why_it_matters": "Ensures inspection sign-off and label verification function as compliance steps, while keeping warranty claims, complaints, and dealer reports reviewable.",
+        "chunk_id": "nhtsa-manufacturer-requirements#4",
+        "source": "NHTSA New Manufacturers Handbook: Requirements for Manufacturers of Motor Vehicles and Motor Vehicle Equipment (revision 10/24/2025)",
+        "url": "https://vpic.nhtsa.dot.gov/ManufacturerHandbook.pdf"
+      },
+      {
+        "practice": "Use AI to prepare, check, and flag gaps in compliance paperwork while retaining a responsible person to certify final compliance.",
+        "why_it_matters": "Meets NHTSA self-certification obligations and helps avoid civil penalties of up to $27,168 per violation.",
+        "chunk_id": "nhtsa-manufacturer-requirements#4",
+        "source": "NHTSA New Manufacturers Handbook: Requirements for Manufacturers of Motor Vehicles and Motor Vehicle Equipment (revision 10/24/2025)",
+        "url": "https://vpic.nhtsa.dot.gov/ManufacturerHandbook.pdf"
+      },
+      {
+        "practice": "Implement value stream mapping and 5S (sort, set in order, shine, standardize, sustain) to organize work areas and expose process waste.",
+        "why_it_matters": "Establishes operational efficiency as the necessary foundation for automation and workforce retention without requiring upfront spending.",
+        "chunk_id": "nist-mep-lean-methods#1",
+        "source": "NIST Manufacturing Extension Partnership: Lean and process improvement",
+        "url": "https://www.nist.gov/mep/lean-and-process-improvement"
+      },
+      {
+        "practice": "Apply assisted automation to routine, repetitive tasks like document extraction/matching (invoice to purchase order to payment), monthly reconciliation, and record retention.",
+        "why_it_matters": "Ensures accurate financial tracking and compliance while allowing staff to focus on approving exceptions.",
+        "chunk_id": "irs-pub583-recordkeeping#5",
+        "source": "IRS Publication 583 (Rev. December 2024), Starting a Business and Keeping Records",
+        "url": "https://www.irs.gov/publications/p583"
+      },
+      {
+        "practice": "Deploy AI tools to spot problems early, analyze business data, automate repeat tasks, and improve customer service.",
+        "why_it_matters": "Delivers core operational benefits while requiring human oversight to manage risks like ethics, security, accuracy, and IP infringement.",
+        "chunk_id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business",
+        "url": "https://www.sba.gov/counseling/manage-your-business/#si-for-small-business"
+      }
+    ],
+    "note": "",
+    "sources": [
+      "IRS Publication 583 (Rev. December 2024), Starting a Business and Keeping Records",
+      "NHTSA New Manufacturers Handbook: Requirements for Manufacturers of Motor Vehicles and Motor Vehicle Equipment (revision 10/24/2025)",
+      "NIST Manufacturing Extension Partnership: Lean and process improvement",
+      "SBA Business Guide: AI for small business"
+    ],
+    "passages": [
+      {
+        "id": "nhtsa-manufacturer-requirements#4",
+        "source": "NHTSA New Manufacturers Handbook: Requirements for Manufacturers of Motor Vehicles and Motor Vehicle Equipment (revision 10/24/2025)"
+      },
+      {
+        "id": "nhtsa-manufacturer-requirements#1",
+        "source": "NHTSA New Manufacturers Handbook: Requirements for Manufacturers of Motor Vehicles and Motor Vehicle Equipment (revision 10/24/2025)"
+      },
+      {
+        "id": "nist-mep-lean-methods#1",
+        "source": "NIST Manufacturing Extension Partnership: Lean and process improvement"
+      },
+      {
+        "id": "nhtsa-manufacturer-requirements#2",
+        "source": "NHTSA New Manufacturers Handbook: Requirements for Manufacturers of Motor Vehicles and Motor Vehicle Equipment (revision 10/24/2025)"
+      },
+      {
+        "id": "sba-ai-for-small-business#1",
+        "source": "SBA Business Guide: AI for small business"
+      },
+      {
+        "id": "irs-pub583-recordkeeping#5",
+        "source": "IRS Publication 583 (Rev. December 2024), Starting a Business and Keeping Records"
+      }
+    ],
+    "retrieval": {
+      "mode": "hybrid",
+      "reason": "",
+      "embed_model": "text-embedding-nomic-embed-text-v1.5",
+      "index_rebuilt": false,
+      "query": "trailer manufacturing AI automation best practices process efficiency The website describes various types of cargo and utility trailers for sale, with a focus on quality and longevity. 100 person trailer manufacturing company",
+      "embedding_calls": [
+        {
+          "agent": "embedding",
+          "model": "text-embedding-nomic-embed-text-v1.5",
+          "texts": 1,
+          "seconds": 0.083,
+          "error": null
+        }
+      ]
+    }
+  },
+  "process_map": {
+    "processes": [
+      {
+        "name": "Quote Generation & Order Intake",
+        "description": "Manages customer 'Request For Quote' submissions for custom cargo and car trailers, capturing specifications like width, type, and options.",
+        "pain_points": [
+          "Manual specification verification across 10+ models",
+          "Delayed response times for custom builds"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Dealer Onboarding & Distribution Management",
+        "description": "Handles dealer applications, financing approvals (Sheffield/Northpoint), and manages the dealer locator/portal access.",
+        "pain_points": [
+          "Fragmented credit application workflows",
+          "Manual portal credential management"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Manufacturing & Assembly",
+        "description": "100-person facility production of custom open and enclosed trailers, incorporating specified features and quality standards.",
+        "pain_points": [
+          "Supply chain variability for specialized components",
+          "Labor scheduling across multiple custom configurations"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Warranty Registration & Technical Support",
+        "description": "Processes customer 'Warranty Registration', provides 'Technical Support', and administers the 'Car Mate Limited Warranty'.",
+        "pain_points": [
+          "Manual data entry for lifetime claims",
+          "Tracking support tickets across diverse trailer models"
+        ],
+        "basis": "stated",
+        "sources": []
+      },
+      {
+        "name": "Parts Fulfillment & Maintenance",
+        "description": "Manages 'Owner\u2019s Manual' distribution and direct 'Parts' ordering for existing trailer owners.",
+        "pain_points": [
+          "Inventory tracking for legacy and current model parts",
+          "Shipping cost management"
+        ],
+        "basis": "typical",
+        "sources": []
+      },
+      {
+        "name": "Customer Feedback & Survey Processing",
+        "description": "Collects and analyzes 'Customer Survey' responses to gauge satisfaction and product performance.",
+        "pain_points": [
+          "Low response rates",
+          "Integrating survey insights into production adjustments"
+        ],
+        "basis": "typical",
+        "sources": []
+      }
+    ],
+    "doc_vs_reality_gaps": [],
+    "sources_index": {},
+    "note": "inferred from the website, description and industry; confirm with the owner (no documents shared)",
+    "retrieval": {
+      "mode": "off"
+    }
+  },
+  "gap_report": [
+    {
+      "process": "Quote Generation & Order Intake",
+      "gap": "Manual specification verification across 10+ models causes delays and errors.",
+      "opportunity": "Custom Spec Validator Agent",
+      "supporting_chunk_id": "nhtsa-manufacturer-requirements#4"
+    },
+    {
+      "process": "Dealer Onboarding & Distribution Management",
+      "gap": "Fragmented credit application workflows and manual portal credential management slow dealer activation.",
+      "opportunity": "Dealer Credit & Portal Provisioning Agent",
+      "supporting_chunk_id": "irs-pub583-recordkeeping#5"
+    },
+    {
+      "process": "Manufacturing & Assembly",
+      "gap": "Manual tracking of specialized components across custom configurations leads to compliance gaps and assembly delays.",
+      "opportunity": "Component Traceability & Compliance Checker Agent",
+      "supporting_chunk_id": "nhtsa-manufacturer-requirements#4"
+    },
+    {
+      "process": "Warranty Registration & Technical Support",
+      "gap": "Manual data entry for lifetime claims and scattered support ticket tracking across diverse models.",
+      "opportunity": "Lifetime Warranty Claim Processor Agent",
+      "supporting_chunk_id": "irs-pub583-recordkeeping#5"
+    },
+    {
+      "process": "Parts Fulfillment & Maintenance",
+      "gap": "Inventory tracking for legacy and current model parts is disjointed, causing shipping delays and cost overruns.",
+      "opportunity": "Legacy Parts Inventory Reconciler Agent",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": "Customer Feedback & Survey Processing",
+      "gap": "Low response rates and unstructured survey insights are not integrated into production adjustments.",
+      "opportunity": "Production Insight Synthesizer Agent",
+      "supporting_chunk_id": "sba-ai-for-small-business#1"
+    },
+    {
+      "process": "Quote Generation & Order Intake",
+      "gap": "Disconnected spec documentation requires manual lookup across PDFs and legacy databases.",
+      "opportunity": "Unified Build Specification Knowledge Base Agent",
+      "supporting_chunk_id": "nhtsa-manufacturer-requirements#4"
+    },
+    {
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "opportunity": "Website AI assistant",
+      "supporting_chunk_id": null
+    }
+  ],
+  "scored_opportunities": [
+    {
+      "name": "Custom Spec Validator Agent",
+      "what_the_agent_does": "Parses incoming RFQ forms, cross-references specifications against 10+ trailer models, flags incompatible combinations, and generates a preliminary quote draft.",
+      "process": "Quote Generation & Order Intake",
+      "gap": "Manual specification verification across 10+ models causes delays and errors.",
+      "supporting_chunk_id": "nhtsa-manufacturer-requirements#4",
+      "value": 8,
+      "effort": 6,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value due to direct revenue acceleration and error reduction; moderate effort requires model database digitization; low risk as it only suggests quotes for human approval.",
+      "placeholder": false,
+      "score": 0.32
+    },
+    {
+      "name": "Dealer Credit & Portal Provisioning Agent",
+      "what_the_agent_does": "Automates collection of dealer applications, routes credit docs to Sheffield/Northpoint for approval, and auto-generates portal credentials upon financing acceptance.",
+      "process": "Dealer Onboarding & Distribution Management",
+      "gap": "Fragmented credit application workflows and manual portal credential management slow dealer activation.",
+      "supporting_chunk_id": "irs-pub583-recordkeeping#5",
+      "value": 7,
+      "effort": 5,
+      "risk": 4,
+      "enabler": false,
+      "rating_reason": "Strong value by accelerating dealer time-to-market; moderate effort due to API integration with financing partners; manageable risk as credential generation is deterministic and auditable.",
+      "placeholder": false,
+      "score": 0.21
+    },
+    {
+      "name": "Component Traceability & Compliance Checker Agent",
+      "what_the_agent_does": "Scans incoming component batches, matches them to VIN-specific build sheets, flags non-compliant parts against NHTSA standards, and updates digital build records.",
+      "process": "Manufacturing & Assembly",
+      "gap": "Manual tracking of specialized components across custom configurations leads to compliance gaps and assembly delays.",
+      "supporting_chunk_id": "nhtsa-manufacturer-requirements#4",
+      "value": 9,
+      "effort": 7,
+      "risk": 5,
+      "enabler": false,
+      "rating_reason": "Critical value for regulatory compliance and recall prevention; high effort due to ERP/MES integration needs; moderate risk as incorrect part flagging could halt production but is mitigated by human sign-off.",
+      "placeholder": false,
+      "score": 0.25
+    },
+    {
+      "name": "Lifetime Warranty Claim Processor Agent",
+      "what_the_agent_does": "Extracts data from warranty registration forms, matches them to original build specs and dealer records, auto-populates lifetime claim files, and routes complex technical tickets to engineers.",
+      "process": "Warranty Registration & Technical Support",
+      "gap": "Manual data entry for lifetime claims and scattered support ticket tracking across diverse models.",
+      "supporting_chunk_id": "irs-pub583-recordkeeping#5",
+      "value": 8,
+      "effort": 4,
+      "risk": 3,
+      "enabler": false,
+      "rating_reason": "High value by reducing administrative overhead and improving customer satisfaction; low-moderate effort using standard OCR/NLP; low risk as it only drafts claims for warranty manager approval.",
+      "placeholder": false,
+      "score": 0.42
+    },
+    {
+      "name": "Legacy Parts Inventory Reconciler Agent",
+      "what_the_agent_does": "Continuously cross-references current sales orders with legacy parts inventory, predicts stockouts for discontinued models, and suggests alternative compatible components.",
+      "process": "Parts Fulfillment & Maintenance",
+      "gap": "Inventory tracking for legacy and current model parts is disjointed, causing shipping delays and cost overruns.",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 7,
+      "effort": 5,
+      "risk": 2,
+      "enabler": false,
+      "rating_reason": "Solid value by reducing dead stock and shipping costs; moderate effort requires historical data cleaning; low risk as it only provides inventory recommendations.",
+      "placeholder": false,
+      "score": 0.33
+    },
+    {
+      "name": "Production Insight Synthesizer Agent",
+      "what_the_agent_does": "Aggregates customer survey responses, identifies recurring quality or feature complaints, and maps them to specific production batches or component suppliers for corrective action.",
+      "process": "Customer Feedback & Survey Processing",
+      "gap": "Low response rates and unstructured survey insights are not integrated into production adjustments.",
+      "supporting_chunk_id": "sba-ai-for-small-business#1",
+      "value": 6,
+      "effort": 3,
+      "risk": 1,
+      "enabler": false,
+      "rating_reason": "Moderate value by closing the feedback loop to manufacturing; low effort using standard text analysis APIs; minimal risk as it only generates reports for management review.",
+      "placeholder": false,
+      "score": 0.39
+    },
+    {
+      "name": "Unified Build Specification Knowledge Base Agent",
+      "what_the_agent_does": "Ingests all 10+ trailer model manuals, spec sheets, and historical RFQ data to create a searchable, structured knowledge base for all downstream agents.",
+      "process": "Quote Generation & Order Intake",
+      "gap": "Disconnected spec documentation requires manual lookup across PDFs and legacy databases.",
+      "supporting_chunk_id": "nhtsa-manufacturer-requirements#4",
+      "value": 5,
+      "effort": 6,
+      "risk": 1,
+      "enabler": true,
+      "rating_reason": "Foundational value enabling all other agents; moderate effort due to data ingestion and structuring; minimal risk as it operates read-only for internal knowledge retrieval.",
+      "placeholder": false,
+      "score": 0.14
+    },
+    {
+      "name": "Website AI assistant",
+      "what_the_agent_does": "Greets visitors and offers starting choices (Request Quote; Contact Dealers; View Brochures), answers common questions from approved business information, and hands off to a person.",
+      "process": null,
+      "gap": "No AI chatbot or chat widget was found on the pages read.",
+      "supporting_chunk_id": null,
+      "enabler": false,
+      "rating_reason": "ratings set by code (fixed defaults), not by the model",
+      "placeholder": false,
+      "from_website_check": true,
+      "starter_prompts": [
+        "Request Quote",
+        "Contact Dealers",
+        "View Brochures"
+      ],
+      "value": 6,
+      "effort": 3,
+      "risk": 3,
+      "score": 0.27
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "opportunities": [
+        "Production Insight Synthesizer Agent",
+        "Website AI assistant",
+        "Lifetime Warranty Claim Processor Agent"
+      ],
+      "score": 0.405,
+      "rationale": "Beginning with customer feedback synthesis allows the company to quickly identify and fix recurring quality issues without disrupting core manufacturing workflows. Implementing the website assistant next leverages existing digital traffic to reduce manual inquiry handling, while deferring warranty processing ensures complex claims are only tackled after simpler operational insights are stabilized. This progression respects a low risk tolerance by delivering fast, low-effort improvements that build confidence before handling more intricate customer interactions.",
+      "pilot_reason": "The Production Insight Synthesizer Agent is piloted first because it requires minimal integration effort and immediately surfaces actionable quality data from existing surveys, delivering fast value with negligible operational disruption.",
+      "assumption": "Customer survey responses are consistently collected and stored in a format that the agent can reliably aggregate and analyze.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 5,
+        "sequencing": 4,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "sba-ai-for-small-business#1"
+        ],
+        "objection": "",
+        "weakest_item": null,
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.36,
+      "penalty": 0,
+      "coded_score": 0.36,
+      "findings": []
+    },
+    {
+      "id": "enabler",
+      "angle": "enabler",
+      "opportunities": [
+        "Unified Build Specification Knowledge Base Agent",
+        "Lifetime Warranty Claim Processor Agent",
+        "Production Insight Synthesizer Agent"
+      ],
+      "score": 0.348,
+      "rationale": "Establishing the knowledge base first ensures all downstream agents have a single source of truth for specifications, preventing conflicting data from propagating through warranty and feedback systems. Implementing the warranty processor next leverages this structured data to accurately match claims with original build specs, while deferring customer feedback analysis ensures that quality insights are only generated after the core specification framework is validated. This foundational approach prevents costly rework and aligns with a cautious strategy by prioritizing data integrity before automating customer-facing or analytical processes.",
+      "pilot_reason": "The Unified Build Specification Knowledge Base Agent is piloted first because it requires no direct customer interaction or live production changes, allowing the team to safely structure critical data before automating dependent workflows.",
+      "assumption": "All existing trailer model manuals, spec sheets, and historical RFQ data are accessible, digitized, and sufficiently standardized to be ingested into a searchable knowledge base.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "nhtsa-manufacturer-requirements#4",
+          "irs-pub583-recordkeeping#5",
+          "sba-ai-for-small-business#1"
+        ],
+        "objection": "",
+        "weakest_item": null,
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.317,
+      "penalty": 0,
+      "coded_score": 0.317,
+      "findings": []
+    },
+    {
+      "id": "highest_value",
+      "angle": "highest_value",
+      "opportunities": [
+        "Component Traceability & Compliance Checker Agent",
+        "Lifetime Warranty Claim Processor Agent",
+        "Custom Spec Validator Agent"
+      ],
+      "score": 0.271,
+      "rationale": "Starting with compliance and traceability addresses regulatory risks first, which is critical for trailer manufacturing. Following with warranty processing captures high-value customer retention data before tackling custom specs, ensuring the most financially impactful processes are automated first. This sequence aligns with a cautious owner by prioritizing regulatory safety and revenue protection over experimental custom configurations.",
+      "pilot_reason": "The Component Traceability & Compliance Checker Agent is piloted first because it directly prevents costly regulatory fines and production rework, offering immediate risk mitigation for a cautious operator.",
+      "assumption": "The business maintains accurate, digitized VIN-specific build sheets and component supplier data that can be reliably scanned by the agent.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 3,
+        "sequencing": 4,
+        "fit": 3,
+        "avg": 3.33,
+        "evidence": [
+          "nhtsa-manufacturer-requirements#4",
+          "irs-pub583-recordkeeping#5",
+          "sba-ai-for-small-business#1"
+        ],
+        "objection": "The roadmap prioritizes a high-risk, high-effort pilot project (Component Traceability & Compliance Checker Agent) above quicker wins, exceeding the owner's risk tolerance and contradicting the coded check findings.",
+        "weakest_item": "Component Traceability & Compliance Checker Agent",
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.33,
+      "penalty": 0.066,
+      "coded_score": 0.264,
+      "findings": [
+        {
+          "code": "risk_above_tolerance",
+          "item": "Component Traceability & Compliance Checker Agent",
+          "penalty": 0.036,
+          "message": "'Component Traceability & Compliance Checker Agent' has risk 5/10, above the owner's limit of 4.4 and it is the pilot",
+          "limit": 4.4
+        },
+        {
+          "code": "pilot_effort",
+          "item": null,
+          "penalty": 0.03,
+          "message": "the pilot ('Component Traceability & Compliance Checker Agent') is high effort (7/10); start with something quicker"
+        }
+      ]
+    }
+  ],
+  "review_round": 1,
+  "revision_exhausted": false,
+  "pruned_log": [
+    {
+      "id": "lowest_risk",
+      "angle": "lowest_risk",
+      "score": 0.266,
+      "reason": "ranked below top 3"
+    }
+  ],
+  "verified": true,
+  "verification_report": {
+    "roadmap": "quick_win",
+    "claims": [
+      {
+        "idea": "Production Insight Synthesizer Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Customer Feedback & Survey Processing",
+            "stated": false
+          }
+        ],
+        "assumption": true,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage lists general AI benefits like spotting problems and analyzing data, but does not describe aggregating surveys or mapping complaints to production batches."
+        },
+        "note": ""
+      },
+      {
+        "idea": "Website AI assistant",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "website_check",
+            "id": "no chat assistant found on the site"
+          }
+        ],
+        "assumption": false,
+        "placeholder": false,
+        "citation": null,
+        "note": ""
+      },
+      {
+        "idea": "Lifetime Warranty Claim Processor Agent",
+        "grounded": true,
+        "basis": [
+          {
+            "type": "process",
+            "id": "Warranty Registration & Technical Support",
+            "stated": true
+          }
+        ],
+        "assumption": false,
+        "placeholder": false,
+        "citation": {
+          "status": "rejected",
+          "detail": "The passage describes automating financial document matching and reconciliation, not warranty claim processing or technical ticket routing."
+        },
+        "note": ""
+      }
+    ],
+    "coverage": 1.0,
+    "grounded": 3,
+    "practices_available": 5,
+    "passed": true,
+    "reasons": [],
+    "no_practices": false,
+    "note": "",
+    "rejected": []
+  },
+  "escalate_now": false,
+  "flags": [],
+  "final_recommendation": {
+    "roadmap": {
+      "id": "quick_win",
+      "angle": "quick_win",
+      "opportunities": [
+        "Production Insight Synthesizer Agent",
+        "Website AI assistant",
+        "Lifetime Warranty Claim Processor Agent"
+      ],
+      "score": 0.405,
+      "rationale": "Beginning with customer feedback synthesis allows the company to quickly identify and fix recurring quality issues without disrupting core manufacturing workflows. Implementing the website assistant next leverages existing digital traffic to reduce manual inquiry handling, while deferring warranty processing ensures complex claims are only tackled after simpler operational insights are stabilized. This progression respects a low risk tolerance by delivering fast, low-effort improvements that build confidence before handling more intricate customer interactions.",
+      "pilot_reason": "The Production Insight Synthesizer Agent is piloted first because it requires minimal integration effort and immediately surfaces actionable quality data from existing surveys, delivering fast value with negligible operational disruption.",
+      "assumption": "Customer survey responses are consistently collected and stored in a format that the agent can reliably aggregate and analyze.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 5,
+        "sequencing": 4,
+        "fit": 5,
+        "avg": 4.67,
+        "evidence": [
+          "sba-ai-for-small-business#1"
+        ],
+        "objection": "",
+        "weakest_item": null,
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.36,
+      "penalty": 0,
+      "coded_score": 0.36,
+      "findings": []
+    },
+    "agents_to_build": [
+      "Production Insight Synthesizer Agent",
+      "Website AI assistant",
+      "Lifetime Warranty Claim Processor Agent"
+    ],
+    "runner_up": {
+      "id": "enabler",
+      "angle": "enabler",
+      "opportunities": [
+        "Unified Build Specification Knowledge Base Agent",
+        "Lifetime Warranty Claim Processor Agent",
+        "Production Insight Synthesizer Agent"
+      ],
+      "score": 0.348,
+      "rationale": "Establishing the knowledge base first ensures all downstream agents have a single source of truth for specifications, preventing conflicting data from propagating through warranty and feedback systems. Implementing the warranty processor next leverages this structured data to accurately match claims with original build specs, while deferring customer feedback analysis ensures that quality insights are only generated after the core specification framework is validated. This foundational approach prevents costly rework and aligns with a cautious strategy by prioritizing data integrity before automating customer-facing or analytical processes.",
+      "pilot_reason": "The Unified Build Specification Knowledge Base Agent is piloted first because it requires no direct customer interaction or live production changes, allowing the team to safely structure critical data before automating dependent workflows.",
+      "assumption": "All existing trailer model manuals, spec sheets, and historical RFQ data are accessible, digitized, and sufficiently standardized to be ingested into a searchable knowledge base.",
+      "narrative_by": "model",
+      "rubric": {
+        "feasibility": 4,
+        "sequencing": 5,
+        "fit": 4,
+        "avg": 4.33,
+        "evidence": [
+          "nhtsa-manufacturer-requirements#4",
+          "irs-pub583-recordkeeping#5",
+          "sba-ai-for-small-business#1"
+        ],
+        "objection": "",
+        "weakest_item": null,
+        "model": "google/gemma-3-12b"
+      },
+      "reviewed": true,
+      "base_score": 0.317,
+      "penalty": 0,
+      "coded_score": 0.317,
+      "findings": []
+    },
+    "close_call": false,
+    "lead_margin": 0.164,
+    "verified": true,
+    "verification": {
+      "roadmap": "quick_win",
+      "claims": [
+        {
+          "idea": "Production Insight Synthesizer Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Customer Feedback & Survey Processing",
+              "stated": false
+            }
+          ],
+          "assumption": true,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage lists general AI benefits like spotting problems and analyzing data, but does not describe aggregating surveys or mapping complaints to production batches."
+          },
+          "note": ""
+        },
+        {
+          "idea": "Website AI assistant",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "website_check",
+              "id": "no chat assistant found on the site"
+            }
+          ],
+          "assumption": false,
+          "placeholder": false,
+          "citation": null,
+          "note": ""
+        },
+        {
+          "idea": "Lifetime Warranty Claim Processor Agent",
+          "grounded": true,
+          "basis": [
+            {
+              "type": "process",
+              "id": "Warranty Registration & Technical Support",
+              "stated": true
+            }
+          ],
+          "assumption": false,
+          "placeholder": false,
+          "citation": {
+            "status": "rejected",
+            "detail": "The passage describes automating financial document matching and reconciliation, not warranty claim processing or technical ticket routing."
+          },
+          "note": ""
+        }
+      ],
+      "coverage": 1.0,
+      "grounded": 3,
+      "practices_available": 5,
+      "passed": true,
+      "reasons": [],
+      "no_practices": false,
+      "note": "",
+      "rejected": []
+    }
+  },
+  "status": "complete",
+  "model_calls": 8,
+  "trace": [
+    "discovery_profile: website guess -> trailer manufacturing (high) | website rating 6.5/10, chatbot: not_found",
+    "discovery_research: 5 practices from 6 passages (hybrid retrieval)",
+    "process_mapper: 6 processes",
+    "matcher: 8 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 16.4%",
+    "planner: verified, 3 of 3 ideas grounded"
+  ],
+  "call_log": [
+    {
+      "ts": "2026-11-14T22:59:27+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 4.454,
+      "error": null,
+      "stub": false,
+      "input_tokens": 889,
+      "output_tokens": 53
+    },
+    {
+      "ts": "2026-11-14T22:59:29+00:00",
+      "agent": "discovery_website",
+      "model": "qwen2.5-7b-instruct",
+      "seconds": 2.447,
+      "error": null,
+      "stub": false,
+      "input_tokens": 991,
+      "output_tokens": 169
+    },
+    {
+      "ts": "2026-11-19T04:27:28+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 82.913,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1216,
+      "output_tokens": 3818
+    },
+    {
+      "ts": "2026-11-19T04:27:36+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 91.605,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1057,
+      "output_tokens": 4534
+    },
+    {
+      "ts": "2026-11-19T04:28:29+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 52.454,
+      "error": null,
+      "stub": false,
+      "input_tokens": 725,
+      "output_tokens": 4448
+    },
+    {
+      "ts": "2026-11-19T04:29:19+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 50.483,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1091,
+      "output_tokens": 4127
+    },
+    {
+      "ts": "2026-11-19T04:30:13+00:00",
+      "agent": "critic",
+      "model": "google/gemma-3-12b",
+      "seconds": 53.531,
+      "error": null,
+      "stub": false,
+      "input_tokens": 2048,
+      "output_tokens": 433
+    },
+    {
+      "ts": "2026-11-19T04:30:39+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 26.363,
+      "error": null,
+      "stub": false,
+      "input_tokens": 458,
+      "output_tokens": 2028
+    }
+  ]
+}

@@ -3,5 +3,14 @@
     "when": "2026-11-13T18:47:11",
     "kind": "profile_confirmed",
     "detail": {}
+  },
+  {
+    "when": "2026-11-18T23:19:19",
+    "kind": "profile_confirmed",
+    "detail": {
+      "corrections": {},
+      "note": "Confirmed after the Nov 17 confirmation gate was added",
+      "after_rejection": false
+    }
   }
 ]

@@ -31,7 +31,7 @@ websites); decide what to do with it before making the repo public for the final
     python3 -m venv .venv
     source .venv/bin/activate
     pip install -r requirements.txt
-    cp .env.mac .env
+    cp .env.example .env
 
 ## 4. On the Mac: LM Studio
 - Load Qwen3.6-35B-A3B (already there) AND a small second model for the Critic, both at once.
