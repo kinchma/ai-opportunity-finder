@@ -18,24 +18,20 @@ documents never leave the machine.
 ## How it works
 
 A LangGraph workflow with six LLM agents, a rule-based Supervisor in plain Python, and a
-human approval step:
+human approval step. The steps run in this order:
 
-    1 Discovery (LLM + web fetch tool)     reads the website, builds a company profile, rates the site
-    2 Owner confirms (human)               LangGraph interrupt: the owner corrects the profile and
-                                           chooses which folders the agents may read
-    Supervisor fan-out, in parallel:
-      Discovery: industry research (LLM + shared RAG over sourced notes in kb_sources/)
-      3 Process Mapper (LLM + company RAG) maps real processes and pain points, one process at a time,
-                                           with each process document beside its interview passages
-    Supervisor fan-in
-    4 Matcher (LLM + code)                 proposes AI ideas and rates value, effort and risk;
-                                           a scoring tool in code turns ratings into a ranked score
-    5 Strategist (LLM + code)  <-> 6 Critic (LLM on a different model family + code)
-                                           Tree of Thoughts over whole roadmaps: 4 angles (highest value,
-                                           quick win, lowest risk, enabler), keep the top 3, revise up to
-                                           3 rounds, stop early when one leads by 10%
-    7 Verifier / Planner (code + LLM)      checks every citation; writes the plan, or after two failed
-                                           checks hands the owner a decision card instead
+| Step | Who | Uses | What it does |
+|---|---|---|---|
+| 1 | **Discovery** | LLM + web fetch tool | Reads the website, builds a company profile and rates the site |
+| 2 | *Owner (human)* | LangGraph interrupt | Confirms or corrects the profile and chooses which folders the agents may read |
+| – | *Supervisor (code)* | Fan-out | Starts the next two steps in parallel |
+| 3a | **Discovery** (second job) | LLM + shared RAG | Finds industry best practices in the sourced notes in `kb_sources/` |
+| 3b | **Process Mapper** | LLM + company RAG | Maps real processes and pain points, one process at a time, with each process document beside its interview passages |
+| – | *Supervisor (code)* | Fan-in | Waits for both branches |
+| 4 | **Matcher** | LLM + code | Proposes AI ideas and rates value, effort and risk; a scoring tool in code turns the ratings into a ranked score |
+| 5 | **Strategist** | LLM + code | Builds roadmaps from 4 angles (highest value, quick win, lowest risk, enabler); code checks them and keeps the top 3 |
+| 6 | **Critic** | LLM (different model family) + code | Scores each roadmap with a rubric and cited evidence; with the Strategist this is the Tree-of-Thoughts loop (up to 3 rounds, stops early when one roadmap leads by 10%) |
+| 7 | **Verifier / Planner** | Code + LLM | Checks every citation, then writes the plan; after two failed checks the owner gets a decision card instead |
 
 Key design decisions:
 - **The model judges, code does the math.** Scoring, ranking, pruning, stop rules and citation
@@ -62,20 +58,24 @@ Key design decisions:
 
 ## Setup
 
-    git clone https://github.com/kinchma/ai-opportunity-finder.git
-    cd ai-opportunity-finder
-    python3 -m venv .venv
-    source .venv/bin/activate          # Windows: .venv\Scripts\activate
-    pip install -r requirements.txt
-    cp .env.example .env               # then set the model ids exactly as LM Studio shows them
-    python scripts/model_check.py      # confirms LM Studio serves every model .env asks for
-    python -m pytest -q                # 152 tests on a fake LLM; no model server needed
+```
+git clone https://github.com/kinchma/ai-opportunity-finder.git
+cd ai-opportunity-finder
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env               # then set the model ids exactly as LM Studio shows them
+python scripts/model_check.py      # confirms LM Studio serves every model .env asks for
+python -m pytest -q                # 152 tests on a fake LLM; no model server needed
+```
 
 ## Usage
 
 Start the app:
 
-    streamlit run app_cases.py
+```
+streamlit run app_cases.py
+```
 
 1. Create a case with the company name, website, a short description and the owner's risk tolerance.
 2. Discovery runs and shows a draft profile and a website check.
@@ -90,12 +90,14 @@ Every run is saved under `cases/<company>/results/run-NNN/`.
 
 Command-line alternative (same steps and the same owner gate):
 
-    python scripts/synthetic_case.py create "<company name>" --site <url> --risk 0.4
-    python scripts/synthetic_case.py discover <case_id>
-    python scripts/synthetic_case.py confirm <case_id>
-    python scripts/synthetic_case.py authorize <case_id> --folders documents,interviews,data
-    python scripts/synthetic_case.py analyze <case_id>
-    python scripts/synthetic_case.py status <case_id>
+```
+python scripts/synthetic_case.py create "<company name>" --site <url> --risk 0.4
+python scripts/synthetic_case.py discover <case_id>
+python scripts/synthetic_case.py confirm <case_id>
+python scripts/synthetic_case.py authorize <case_id> --folders documents,interviews,data
+python scripts/synthetic_case.py analyze <case_id>
+python scripts/synthetic_case.py status <case_id>
+```
 
 ## Evaluation
 
@@ -111,7 +113,9 @@ good consultant would:
   planted issues found, conflicts flagged, forbidden claims) and writes `evaluation.json` next to
   the run. It matches keywords, so it can overcount.
 
-    python evaluation/evaluate_case.py <case_id> evaluation/answer_keys/<case>.json --run run-NNN
+```
+python evaluation/evaluate_case.py <case_id> evaluation/answer_keys/<case>.json --run run-NNN
+```
 
 Main results (details in the final report): on Laurel Run Trailer Works, giving each company its
 own retrieval roughly doubled the planted issues found (about 3.4 to 6.6 of 15 on average), and
@@ -133,24 +137,26 @@ public websites.
 
 ## Repository layout
 
-    app_cases.py                  Streamlit app (the only UI)
-    opportunity_finder/
-      graph.py                    LangGraph nodes and edges: interrupt, fan-out/fan-in, review loop
-      supervisor.py               rule-based routing: review gate, stop rules, escalation (no LLM)
-      state.py                    shared typed state with reducers for parallel branches
-      agents/                     discovery, process_mapper, matcher, strategist, critic, planner
-      tools/                      web fetch, injection guard, site signals, retrieval (BM25 + vectors,
-                                  ChromaDB), scoring and roadmap checks, citation grounding
-      llm.py                      per-agent model settings from .env, hosted-model guard, timeouts
-      observability.py            per-call log: model, seconds, tokens, errors
-      case_runner.py, cases.py    case folders, stages, save and resume
-    kb_sources/                   sourced public-domain best-practice notes (SBA, IRS, NIST, NHTSA,
-                                  EPA, ENERGY STAR, DOE); see kb_sources/SOURCES.md
-    kb/                           older placeholder notes, kept for the tests
-    cases/                        sample companies with every run's results
-    evaluation/                   answer keys, evaluator, synthetic-company generator
-    scripts/                      CLI harness, bundle unpacker, model check, RAG smoke test
-    tests/                        152 tests that run on a fake LLM
+```
+app_cases.py                  Streamlit app (the only UI)
+opportunity_finder/
+  graph.py                    LangGraph nodes and edges: interrupt, fan-out/fan-in, review loop
+  supervisor.py               rule-based routing: review gate, stop rules, escalation (no LLM)
+  state.py                    shared typed state with reducers for parallel branches
+  agents/                     discovery, process_mapper, matcher, strategist, critic, planner
+  tools/                      web fetch, injection guard, site signals, retrieval (BM25 + vectors,
+                              ChromaDB), scoring and roadmap checks, citation grounding
+  llm.py                      per-agent model settings from .env, hosted-model guard, timeouts
+  observability.py            per-call log: model, seconds, tokens, errors
+  case_runner.py, cases.py    case folders, stages, save and resume
+kb_sources/                   sourced public-domain best-practice notes (SBA, IRS, NIST, NHTSA,
+                              EPA, ENERGY STAR, DOE); see kb_sources/SOURCES.md
+kb/                           older placeholder notes, kept for the tests
+cases/                        sample companies with every run's results
+evaluation/                   answer keys, evaluator, synthetic-company generator
+scripts/                      CLI harness, bundle unpacker, model check, RAG smoke test
+tests/                        152 tests that run on a fake LLM
+```
 
 ## Built with
 
