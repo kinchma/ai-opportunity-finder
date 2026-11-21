@@ -373,8 +373,8 @@ def _model_color(model: str) -> tuple:
 
 def _tl_row(label: str, sub: str, inner: str, shade: str, track_h: int) -> str:
     return (f'<div style="display:flex;align-items:center;border-top:1px solid #F0F2F1">'
-            f'<div style="width:260px;flex:none;font-size:.86rem;font-weight:600;color:#13212E;padding-right:10px">{_e(label)}'
-            f'<div style="font-size:.72rem;font-weight:400;color:#5B6770">{_e(sub)}</div></div>'
+            f'<div title="{_e(sub)}" style="width:260px;flex:none;font-size:.84rem;font-weight:600;color:#13212E;'
+            f'padding-right:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{_e(label)}</div>'
             f'<div style="position:relative;flex:1;height:{track_h}px;background:#F4F2EC">{shade}{inner}</div></div>')
 
 
@@ -404,7 +404,7 @@ def _code_marks(result: dict, ana: list, xpos, width) -> str:
         if x - last_x < 2.2:
             x = last_x + 2.2
         last_x = x
-        out.append(f'<div class="tl-x tl-{n}" title="{_e(lab)}" style="position:absolute;left:calc({x:.2f}% - 11px);top:6px;width:22px;height:22px;'
+        out.append(f'<div class="tl-x tl-{n}" title="{_e(lab)}" style="position:absolute;left:calc({x:.2f}% - 10px);top:3px;width:20px;height:20px;'
                    f'border-radius:50%;background:#13212E;color:#F6DDB0;font-size:.7rem;font-weight:700;display:flex;'
                    f'align-items:center;justify-content:center">{n}</div>')
     return "".join(out)
@@ -498,14 +498,50 @@ def agent_story_html(result: dict, run: str | None, meta: dict) -> str:
            'letters match the code dots on the timeline. Scroll this box; hover a step to light it up on the timeline.'
            '</div></div><div class="aof-steps">']
     for i, (n, title, tags, txt) in enumerate(rows):
+        detail = _step_calls(result, [k for tok in _rx.split(r"[^0-9A-Za-z]+", n) if tok for k in keymap.get(tok, [])])
         badge = (f'<div style="flex:none;min-width:34px;height:26px;padding:0 6px;border-radius:13px;background:#13212E;'
                  f'color:#F6DDB0;font-size:.74rem;font-weight:700;display:flex;align-items:center;justify-content:center">{_e(n)}</div>'
                  if n else '<div style="flex:none;min-width:34px"></div>')
         out.append(f'<div class="aof-step st-{i}" style="display:flex;gap:14px;padding:10px 18px;border-top:1px solid #F0F2F1">{badge}'
                    f'<div style="flex:1"><div style="font-weight:700;color:#13212E;font-size:.92rem;margin-bottom:3px">{_e(title)}</div>'
+                   f'{detail}'
                    f'<div>{_tags(*tags)}</div><div style="font-size:.86rem;color:#1F2933;line-height:1.5">{_e(txt)}</div></div></div>')
     out.append('</div></div>')
     return "".join(out)
+
+
+AGENT_NAMES = {"discovery_profile": "Discovery profile", "discovery_website": "Website check",
+               "discovery_research": "Industry research", "process_mapper": "Process Mapper", "matcher": "Matcher",
+               "strategist": "Strategist", "critic": "Critic", "planner": "Verifier / Planner"}
+
+
+def _step_calls(result: dict, keys: list) -> str:
+    """Small grey lines under a step's title: calls, model, seconds and tokens per agent (or the owner pause)."""
+    from datetime import datetime, timedelta
+    calls = [c for c in result.get("call_log") or [] if not c.get("stub") and c.get("seconds") is not None]
+    lines = []
+    for k in keys:
+        if k == "owner":
+            try:
+                spans = [(datetime.fromisoformat(c["ts"]) - timedelta(seconds=float(c["seconds"])), datetime.fromisoformat(c["ts"]), c["agent"])
+                         for c in calls if c.get("ts")]
+                d_end = max(e for _, e, a in spans if a in DISCOVERY_AGENTS)
+                a_start = min(s0 for s0, _, a in spans if a not in DISCOVERY_AGENTS)
+                hrs = (a_start - d_end).total_seconds() / 3600
+                lines.append(f"paused {hrs:.1f} h for the owner, then approved" if hrs >= 1
+                             else f"paused {hrs * 60:.0f} min for the owner, then approved")
+            except (ValueError, KeyError):
+                pass
+            continue
+        mine = [c for c in calls if c["agent"] == k]
+        if not mine:
+            continue
+        name = AGENT_NAMES.get(k, k) + ": " if len(keys) > 1 else ""
+        lines.append(f"{name}{len(mine)} call{'s' if len(mine) != 1 else ''} · {mine[0].get('model')} · {_tok_line(mine)}")
+    if not lines:
+        return ""
+    return ('<div style="font-size:.76rem;color:#5B6770;margin:0 0 4px;line-height:1.45">'
+            + "<br>".join(_e(l) for l in lines) + "</div>")
 
 
 def _tok_n(c: dict, key: str):
@@ -573,7 +609,7 @@ def agent_timeline_html(result: dict) -> str:
 
     known = [a for a, _ in AGENT_ROWS]
     rows = AGENT_ROWS + [(a, a) for a in dict.fromkeys(c["agent"] for c in calls) if a not in known]
-    track_h = 34
+    track_h = 26
     out = ['<div style="border:1px solid #DDE3E1;border-radius:14px;padding:16px 18px;background:#FFFFFF">']
     # axis labels
     axis = ['<div style="position:relative;height:20px;margin-left:260px;font-size:.72rem;color:#5B6770">']
@@ -603,20 +639,18 @@ def agent_timeline_html(result: dict) -> str:
                    f"out {c.get('output_tokens') or '?'} tokens" + (f" · ERROR: {err}" if err else ""))
             lab = f"{float(c['seconds']):.0f}s" if width(c) > 3.5 else ""
             bars.append(f'<div class="tl-x tl-{agent}" title="{_e(tip)}" style="position:absolute;left:{xpos(c["start"]):.2f}%;width:{width(c):.2f}%;'
-                        f'top:5px;height:{track_h - 10}px;background:{bg};color:{fg};border:{border};border-radius:6px;'
+                        f'top:3px;height:{track_h - 6}px;background:{bg};color:{fg};border:{border};border-radius:6px;'
                         f'font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;'
                         f'overflow:hidden;white-space:nowrap">{lab}</div>')
         shade = (f'<div style="position:absolute;left:{d_w}%;width:{gap_w}%;top:0;bottom:0;'
                  'background:repeating-linear-gradient(45deg,#F3F6F5,#F3F6F5 4px,#FFFFFF 4px,#FFFFFF 8px)"></div>') if disc else ""
         out.append(f'<div style="display:flex;align-items:center;border-top:1px solid #F0F2F1">'
-                   f'<div style="width:260px;flex:none;font-size:.86rem;font-weight:600;color:#13212E;padding-right:10px">{_e(label)}'
-                   f'<div style="font-size:.72rem;font-weight:400;color:#5B6770">{len(mine)} call{"s" if len(mine) != 1 else ""}'
-                   f'{" · " + _e(mine[0].get("model")) if mine else ""}'
-                   f'{"<br>" + _tok_line(mine) if mine else ""}</div></div>'
+                   f'<div style="width:260px;flex:none;font-size:.84rem;font-weight:600;color:#13212E;padding-right:10px;'
+                   f'white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{_e(label)}</div>'
                    f'<div style="position:relative;flex:1;height:{track_h}px;background:#FAFBFB">{shade}{"".join(bars)}</div></div>')
         if agent == "discovery_website" and disc:
             pill = (f'<div class="tl-x tl-owner" title="The graph paused here until the owner accepted the profile (LangGraph interrupt)" '
-                    f'style="position:absolute;left:{d_w + 0.3:.2f}%;width:{gap_w - 0.6:.2f}%;top:5px;height:{track_h - 10}px;'
+                    f'style="position:absolute;left:{d_w + 0.3:.2f}%;width:{gap_w - 0.6:.2f}%;top:3px;height:{track_h - 6}px;'
                     f'border:2px solid #13212E;border-radius:6px;background:#FFFFFF;font-size:.66rem;font-weight:700;'
                     f'display:flex;align-items:center;justify-content:center;color:#13212E">OK</div>')
             out.append(_tl_row("2 Owner confirms (human)", f"paused {pause}, then approved", pill, shade, track_h))
