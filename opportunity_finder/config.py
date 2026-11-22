@@ -12,6 +12,7 @@ class Settings:
     roadmap_size: int = 3               # ideas per roadmap (pilot + up to two more)
     min_evidence_coverage: float = 0.60  # share of recommended ideas that must trace to a source
     rubric_weight: float = 0.15         # the Critic model can move the coded score by at most +/-15%
+    deep_min_rounds: int = 3            # deep review (case setting): review rounds before an early stop is allowed
 
 
 SETTINGS = Settings()

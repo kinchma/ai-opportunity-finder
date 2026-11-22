@@ -92,7 +92,10 @@ def confirmation_ok(case_id: str, base=None) -> tuple[bool, str]:
     return True, ""
 
 
-def analyze(case_id: str, base=None) -> dict:
+def analyze(case_id: str, base=None, on_event=None) -> dict:
+    """Run the analysis. `on_event(kind, node)` is optional: when given, the graph is streamed and the
+    callback hears "start" and "end" for each node as it happens (used by the app's live progress panel).
+    Without it the graph runs exactly as before."""
     ok, why = confirmation_ok(case_id, base)
     if not ok:
         raise ConfirmationRequired(why)
@@ -100,7 +103,11 @@ def analyze(case_id: str, base=None) -> dict:
     disc = cases.load(case_id, cases.DISCOVERY, {}, base)
     docs = cases.load_documents(case_id, base)
     chunks = cases.document_chunks(case_id, base)
+    if on_event:
+        on_event("start", "company_index")
     retrieval = refresh_index(case_id, base, chunks)
+    if on_event:
+        on_event("end", "company_index")
     seed = {"company_input": meta["company_input"], "profile": cases.load(case_id, cases.PROFILE, {}, base),
             "site_text": disc.get("site_text", ""), "documents": docs, "document_chunks": chunks,
             "intake_confirmed": True,
@@ -112,7 +119,31 @@ def analyze(case_id: str, base=None) -> dict:
         seed["website_assessment"] = disc["website_assessment"]
     graph, cfg = build_graph(), {"configurable": {"thread_id": case_id}}
     graph.update_state(cfg, seed, as_node="owner_confirm")  # continue as if the owner just confirmed
-    graph.invoke(None, cfg)
+    if on_event is None:
+        graph.invoke(None, cfg)
+    else:
+        running = set()  # a node's finish comes from the node itself ("custom"); the debug end is a fallback
+
+        def emit(kind, name):
+            try:
+                on_event(kind, name)
+            except Exception:  # a display problem must never stop the analysis
+                pass
+
+        for mode, ev in graph.stream(None, cfg, stream_mode=["debug", "custom"]):
+            if mode == "custom":
+                name, kind = (ev or {}).get("node_end") if isinstance(ev, dict) else None, "end"
+            else:
+                kind = {"task": "start", "task_result": "end"}.get(ev.get("type"))
+                name = (ev.get("payload") or {}).get("name")
+            if not name or not kind:
+                continue
+            if kind == "start":
+                running.add(name)
+                emit("start", name)
+            elif name in running:
+                running.discard(name)
+                emit("end", name)
     result = graph.get_state(cfg).values
     note = (f"built from {len(docs)} owner document(s)" if docs else "built from the website and description only")
     run = cases.save_run(case_id, result, note, base)

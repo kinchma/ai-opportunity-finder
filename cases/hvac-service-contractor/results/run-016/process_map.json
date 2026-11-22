@@ -1,0 +1,304 @@
+{
+  "processes": [
+    {
+      "name": "Service Call Intake",
+      "description": "Captures service requests via phone, after-hours answering service, web form, and social media; enters data into a central dispatch spreadsheet and prioritizes calls based on urgency.",
+      "pain_points": [
+        "Duplicate rows from overlapping contact channels",
+        "Delayed callbacks for web form requests",
+        "Missing answering service emails"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/01_service_call_intake.md#3",
+        "doc:documents/processes/01_service_call_intake.md#4",
+        "doc:documents/processes/01_service_call_intake.md#8"
+      ]
+    },
+    {
+      "name": "Dispatch & Scheduling",
+      "description": "Builds daily technician schedules on a physical whiteboard and spreadsheet, prioritizes emergency (P1) calls, assigns jobs by skill/area, and manages real-time schedule changes.",
+      "pain_points": [
+        "Whiteboard vs spreadsheet mismatches",
+        "P1 call disruptions causing board chaos",
+        "Customer confusion from Housecall Pro reminder texts"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/02_scheduling_and_dispatch.md#3",
+        "doc:documents/processes/02_scheduling_and_dispatch.md#4",
+        "doc:documents/processes/02_scheduling_and_dispatch.md#7"
+      ]
+    },
+    {
+      "name": "Service Ticket Processing & Invoicing",
+      "description": "Collects completed three-part paper tickets, verifies against dispatch status, enters labor/parts into QuickBooks, applies on-site payments, and generates commercial invoices.",
+      "pain_points": [
+        "Missing or late yellow tickets (25-35/month)",
+        "Illegible handwriting or missing part numbers",
+        "Delayed commercial invoicing (~8 days)"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/03_service_ticket_to_invoice.md#3",
+        "doc:documents/processes/03_service_ticket_to_invoice.md#4",
+        "doc:documents/processes/03_service_ticket_to_invoice.md#8"
+      ]
+    },
+    {
+      "name": "Maintenance Agreement Management",
+      "description": "Manages commercial PM contracts and residential Comfort Club memberships, handles renewal outreach, books seasonal tune-ups, and tracks agreement status.",
+      "pain_points": [
+        "Missed visits due to lapsed agreements",
+        "Members not reached by season end leading to skipped bookings",
+        "Renewal process stuck on paper"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/04_maintenance_agreements.md#2",
+        "doc:documents/processes/04_maintenance_agreements.md#3",
+        "doc:documents/processes/04_maintenance_agreements.md#5"
+      ]
+    },
+    {
+      "name": "Installation Project Execution",
+      "description": "Manages residential system replacements and commercial RTU projects from sale to close, including equipment ordering, permit pulling, installation, startup testing, photo documentation, and warranty registration.",
+      "pain_points": [
+        "Equipment delays at supplier counter",
+        "Failed inspections requiring rebooking",
+        "30-day callbacks for installation issues"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/05_installations.md#3",
+        "doc:documents/processes/05_installations.md#4",
+        "doc:documents/processes/05_installations.md#7"
+      ]
+    },
+    {
+      "name": "Procurement & Inventory Management",
+      "description": "Sources equipment and parts from primary/secondary suppliers, processes purchase orders with approval thresholds, manages warehouse cage counts, and maintains van stock levels.",
+      "pain_points": [
+        "Approver unavailability causing delivery delays",
+        "Wrong parts delivered requiring swaps",
+        "Frequent out-of-stock items forcing extra supplier trips"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/06_purchasing_and_inventory.md#3",
+        "doc:documents/processes/06_purchasing_and_inventory.md#4",
+        "doc:documents/processes/06_purchasing_and_inventory.md#8"
+      ]
+    },
+    {
+      "name": "Financial Close & Reporting",
+      "description": "Reconciles QuickBooks, processes supplier bills against POs, records Comfort Club renewals and payroll, and compiles the Monthly Numbers workbook for leadership review.",
+      "pain_points": [
+        "Misaligned spreadsheets requiring manual data cleaning",
+        "Northgate statement discrepancies requiring AR calls",
+        "Delayed close when bookkeeper is absent"
+      ],
+      "basis": "stated",
+      "sources": [
+        "doc:documents/processes/07_month_end_close.md#3",
+        "doc:documents/processes/07_month_end_close.md#4",
+        "doc:documents/processes/07_month_end_close.md#8"
+      ]
+    }
+  ],
+  "doc_vs_reality_gaps": [],
+  "sources_index": {
+    "doc:documents/processes/01_service_call_intake.md#3": {
+      "name": "documents/processes/01_service_call_intake.md",
+      "source_type": "process_document",
+      "heading": "Where requests come from"
+    },
+    "doc:documents/processes/01_service_call_intake.md#4": {
+      "name": "documents/processes/01_service_call_intake.md",
+      "source_type": "process_document",
+      "heading": "Steps for a phone call"
+    },
+    "doc:documents/processes/01_service_call_intake.md#8": {
+      "name": "documents/processes/01_service_call_intake.md",
+      "source_type": "process_document",
+      "heading": "When things go wrong"
+    },
+    "doc:documents/processes/02_scheduling_and_dispatch.md#3": {
+      "name": "documents/processes/02_scheduling_and_dispatch.md",
+      "source_type": "process_document",
+      "heading": "Tools"
+    },
+    "doc:documents/processes/02_scheduling_and_dispatch.md#4": {
+      "name": "documents/processes/02_scheduling_and_dispatch.md",
+      "source_type": "process_document",
+      "heading": "Daily steps"
+    },
+    "doc:documents/processes/02_scheduling_and_dispatch.md#7": {
+      "name": "documents/processes/02_scheduling_and_dispatch.md",
+      "source_type": "process_document",
+      "heading": "When things go wrong"
+    },
+    "doc:documents/processes/03_service_ticket_to_invoice.md#3": {
+      "name": "documents/processes/03_service_ticket_to_invoice.md",
+      "source_type": "process_document",
+      "heading": "The paper ticket"
+    },
+    "doc:documents/processes/03_service_ticket_to_invoice.md#4": {
+      "name": "documents/processes/03_service_ticket_to_invoice.md",
+      "source_type": "process_document",
+      "heading": "Steps"
+    },
+    "doc:documents/processes/03_service_ticket_to_invoice.md#8": {
+      "name": "documents/processes/03_service_ticket_to_invoice.md",
+      "source_type": "process_document",
+      "heading": "When things go wrong"
+    },
+    "doc:documents/processes/04_maintenance_agreements.md#2": {
+      "name": "documents/processes/04_maintenance_agreements.md",
+      "source_type": "process_document",
+      "heading": "Commercial PM agreements"
+    },
+    "doc:documents/processes/04_maintenance_agreements.md#3": {
+      "name": "documents/processes/04_maintenance_agreements.md",
+      "source_type": "process_document",
+      "heading": "Renewal procedure"
+    },
+    "doc:documents/processes/04_maintenance_agreements.md#5": {
+      "name": "documents/processes/04_maintenance_agreements.md",
+      "source_type": "process_document",
+      "heading": "Comfort Club"
+    },
+    "doc:documents/processes/05_installations.md#3": {
+      "name": "documents/processes/05_installations.md",
+      "source_type": "process_document",
+      "heading": "Volumes"
+    },
+    "doc:documents/processes/05_installations.md#4": {
+      "name": "documents/processes/05_installations.md",
+      "source_type": "process_document",
+      "heading": "Steps"
+    },
+    "doc:documents/processes/05_installations.md#7": {
+      "name": "documents/processes/05_installations.md",
+      "source_type": "process_document",
+      "heading": "When things go wrong"
+    },
+    "doc:documents/processes/06_purchasing_and_inventory.md#3": {
+      "name": "documents/processes/06_purchasing_and_inventory.md",
+      "source_type": "process_document",
+      "heading": "Suppliers"
+    },
+    "doc:documents/processes/06_purchasing_and_inventory.md#4": {
+      "name": "documents/processes/06_purchasing_and_inventory.md",
+      "source_type": "process_document",
+      "heading": "Purchase orders"
+    },
+    "doc:documents/processes/06_purchasing_and_inventory.md#8": {
+      "name": "documents/processes/06_purchasing_and_inventory.md",
+      "source_type": "process_document",
+      "heading": "When things go wrong"
+    },
+    "doc:documents/processes/07_month_end_close.md#3": {
+      "name": "documents/processes/07_month_end_close.md",
+      "source_type": "process_document",
+      "heading": "Timing"
+    },
+    "doc:documents/processes/07_month_end_close.md#4": {
+      "name": "documents/processes/07_month_end_close.md",
+      "source_type": "process_document",
+      "heading": "Checklist (see data/month_end_checklist.csv)"
+    },
+    "doc:documents/processes/07_month_end_close.md#8": {
+      "name": "documents/processes/07_month_end_close.md",
+      "source_type": "process_document",
+      "heading": "Who uses the report"
+    }
+  },
+  "note": "built from 93 passage(s) from 46 shared file(s), retrieved per process (hybrid search) plus the website; interviews are owner-shared transcripts (no live SME interview yet)",
+  "retrieval": {
+    "mode": "hybrid",
+    "reason": "",
+    "anchored_on": "process documents",
+    "per_process": [
+      {
+        "process": "documents/processes/01_service_call_intake.md",
+        "retrieved": [
+          "doc:interviews/01_service_call_intake_interview.md#7",
+          "doc:interviews/01_service_call_intake_interview.md#2",
+          "doc:interviews/02_scheduling_and_dispatch_interview.md#11",
+          "doc:documents/company/03_tools_inventory.md#8"
+        ]
+      },
+      {
+        "process": "documents/processes/02_scheduling_and_dispatch.md",
+        "retrieved": [
+          "doc:interviews/02_scheduling_and_dispatch_interview.md#2",
+          "doc:interviews/personas/02_dispatch.md#1",
+          "doc:interviews/personas/01_customer_service.md#1",
+          "doc:documents/company/03_tools_inventory.md#3"
+        ]
+      },
+      {
+        "process": "documents/processes/03_service_ticket_to_invoice.md",
+        "retrieved": [
+          "doc:interviews/03_service_ticket_to_invoice_interview.md#4",
+          "doc:interviews/03_service_ticket_to_invoice_interview.md#7",
+          "doc:interviews/03_service_ticket_to_invoice_interview.md#12",
+          "doc:documents/company/03_tools_inventory.md#3"
+        ]
+      },
+      {
+        "process": "documents/processes/04_maintenance_agreements.md",
+        "retrieved": [
+          "doc:interviews/04_maintenance_agreements_interview.md#2",
+          "doc:interviews/04_maintenance_agreements_interview.md#4",
+          "doc:interviews/02_scheduling_and_dispatch_interview.md#9",
+          "doc:documents/company/01_company_profile.md#4"
+        ]
+      },
+      {
+        "process": "documents/processes/05_installations.md",
+        "retrieved": [
+          "doc:interviews/05_installations_interview.md#2",
+          "doc:interviews/05_installations_interview.md#3",
+          "doc:interviews/05_installations_interview.md#6",
+          "doc:documents/company/03_tools_inventory.md#5"
+        ]
+      },
+      {
+        "process": "documents/processes/06_purchasing_and_inventory.md",
+        "retrieved": [
+          "doc:interviews/06_purchasing_and_inventory_interview.md#3",
+          "doc:interviews/06_purchasing_and_inventory_interview.md#4",
+          "doc:interviews/personas/06_purchasing_and_inventory.md#1",
+          "doc:documents/company/01_company_profile.md#8"
+        ]
+      },
+      {
+        "process": "documents/processes/07_month_end_close.md",
+        "retrieved": [
+          "doc:interviews/07_month_end_close_interview.md#2",
+          "doc:interviews/07_month_end_close_interview.md#9",
+          "doc:interviews/07_month_end_close_interview.md#13",
+          "doc:data/month_end_checklist.csv#1"
+        ]
+      },
+      {
+        "process": "documents/processes/08_payroll_and_timesheets.md",
+        "retrieved": [
+          "doc:interviews/08_payroll_and_timesheets_interview.md#6",
+          "doc:interviews/08_payroll_and_timesheets_interview.md#4",
+          "doc:interviews/08_payroll_and_timesheets_interview.md#8",
+          "doc:documents/company/03_tools_inventory.md#7"
+        ]
+      }
+    ],
+    "skipped_for_space": [],
+    "embedding_calls": 16,
+    "index_rebuilt": false,
+    "passages_in_index": 251
+  },
+  "run": "run-016",
+  "saved": "2026-11-21T18:38:19",
+  "run_note": "built from 2 owner document(s)"
+}

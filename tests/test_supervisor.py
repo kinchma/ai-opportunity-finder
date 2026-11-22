@@ -56,3 +56,15 @@ def test_placeholder_run_is_escalated_not_passed():
     assert len(result["roadmaps"]) <= 3
     assert result["escalation"]["choices"] and result["escalation"]["what_is_uncertain"]
     assert result["final_recommendation"]["unverified_draft"] is True
+
+
+def test_deep_review_skips_the_early_stop_until_the_minimum_rounds():
+    """Deep review (a case setting, off by default): a clear leader still gets reviewed until the round cap
+    (deep_min_rounds = 3); nothing to revise still ends the loop."""
+    deep = {"deep_review": True}
+    state = {"roadmaps": [rm("a", 1.2), rm("b", 1.0)], "review_round": 1, "model_calls": 5, "company_input": deep}
+    assert review_decision(state) == "revise"
+    assert review_decision({**state, "company_input": {}}) == "finalize"           # default: early stop
+    assert review_decision({**state, "review_round": 2}) == "revise"               # still under the minimum
+    assert review_decision({**state, "revision_exhausted": True}) == "finalize"    # nothing left to revise
+    assert review_decision({**state, "review_round": 3}) == "finalize"             # round cap still holds

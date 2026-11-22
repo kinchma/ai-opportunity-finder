@@ -5,6 +5,12 @@ Pure functions so they can be unit tested without a model.
 from .config import SETTINGS, Settings
 
 
+def deep_review(state: dict) -> bool:
+    """Case setting (company_input.deep_review, off by default): every Critic objection becomes a
+    revision request and the review loop runs at least `deep_min_rounds` rounds."""
+    return bool((state.get("company_input") or {}).get("deep_review"))
+
+
 def prune_roadmaps(roadmaps: list, k: int):
     """Keep the top k by score. Return (kept, log_entries) for the pruned ones."""
     ranked = sorted(roadmaps, key=lambda r: r["score"], reverse=True)
@@ -53,6 +59,8 @@ def review_decision(state: dict, settings: Settings = SETTINGS) -> str:
         return "finalize"
     if not state.get("roadmaps") or state.get("revision_exhausted"):
         return "finalize"  # nothing to compare, or the Strategist has no revision left to offer
+    if deep_review(state) and state.get("review_round", 0) < settings.deep_min_rounds:
+        return "revise"    # owner asked for a deeper review: no early stop before the minimum rounds
     if lead_margin(state.get("roadmaps", [])) >= settings.early_stop_margin:
         return "finalize"
     return "revise"

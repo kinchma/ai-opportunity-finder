@@ -1,0 +1,216 @@
+{
+  "thread_id": "hvac-service-contractor",
+  "status": "complete",
+  "review_rounds": 2,
+  "summary": {
+    "calls": 8,
+    "calls_by_agent": {
+      "discovery_profile": 1,
+      "discovery_website": 1,
+      "discovery_research": 1,
+      "process_mapper": 1,
+      "matcher": 1,
+      "strategist": 1,
+      "critic": 1,
+      "planner": 1
+    },
+    "by_agent": {
+      "discovery_profile": {
+        "calls": 1,
+        "input_tokens": 714,
+        "output_tokens": 1364,
+        "seconds": 31.905,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_website": {
+        "calls": 1,
+        "input_tokens": 797,
+        "output_tokens": 2044,
+        "seconds": 25.08,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "discovery_research": {
+        "calls": 1,
+        "input_tokens": 1235,
+        "output_tokens": 3370,
+        "seconds": 144.607,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "process_mapper": {
+        "calls": 1,
+        "input_tokens": 14078,
+        "output_tokens": 7090,
+        "seconds": 197.067,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "matcher": {
+        "calls": 1,
+        "input_tokens": 893,
+        "output_tokens": 5791,
+        "seconds": 72.485,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "strategist": {
+        "calls": 1,
+        "input_tokens": 1186,
+        "output_tokens": 3892,
+        "seconds": 50.712,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      },
+      "critic": {
+        "calls": 1,
+        "input_tokens": 2076,
+        "output_tokens": 483,
+        "seconds": 31.511,
+        "errors": 0,
+        "models": [
+          "google/gemma-3-12b"
+        ]
+      },
+      "planner": {
+        "calls": 1,
+        "input_tokens": 819,
+        "output_tokens": 2296,
+        "seconds": 33.502,
+        "errors": 0,
+        "models": [
+          "qwen3.6-35b-a3b-mlx"
+        ]
+      }
+    },
+    "input_tokens": 21798,
+    "output_tokens": 26330,
+    "calls_without_usage": 0,
+    "errors": 0,
+    "seconds": 586.869,
+    "stub_records_ignored": 0
+  },
+  "call_log": [
+    {
+      "ts": "2026-11-18T20:28:39+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 31.905,
+      "error": null,
+      "stub": false,
+      "input_tokens": 714,
+      "output_tokens": 1364
+    },
+    {
+      "ts": "2026-11-18T20:29:04+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 25.08,
+      "error": null,
+      "stub": false,
+      "input_tokens": 797,
+      "output_tokens": 2044
+    },
+    {
+      "ts": "2026-11-22T00:04:52+00:00",
+      "agent": "discovery_research",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 144.607,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1235,
+      "output_tokens": 3370
+    },
+    {
+      "ts": "2026-11-22T00:05:46+00:00",
+      "agent": "process_mapper",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 197.067,
+      "error": null,
+      "stub": false,
+      "input_tokens": 14078,
+      "output_tokens": 7090
+    },
+    {
+      "ts": "2026-11-22T00:06:58+00:00",
+      "agent": "matcher",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 72.485,
+      "error": null,
+      "stub": false,
+      "input_tokens": 893,
+      "output_tokens": 5791
+    },
+    {
+      "ts": "2026-11-22T00:07:49+00:00",
+      "agent": "strategist",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 50.712,
+      "error": null,
+      "stub": false,
+      "input_tokens": 1186,
+      "output_tokens": 3892
+    },
+    {
+      "ts": "2026-11-22T00:08:21+00:00",
+      "agent": "critic",
+      "model": "google/gemma-3-12b",
+      "seconds": 31.511,
+      "error": null,
+      "stub": false,
+      "input_tokens": 2076,
+      "output_tokens": 483
+    },
+    {
+      "ts": "2026-11-22T00:08:54+00:00",
+      "agent": "planner",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 33.502,
+      "error": null,
+      "stub": false,
+      "input_tokens": 819,
+      "output_tokens": 2296
+    }
+  ],
+  "verified": true,
+  "flags": [
+    {
+      "type": "close_call",
+      "detail": "highest_value leads quick_win by 2.7% (under 10%). They differ in: Ticket OCR & QuickBooks Pusher vs Website AI assistant."
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> HVAC contracting and repair (high) | website rating 8.2/10, chatbot: not_found",
+    "discovery_research: 5 practices from 6 passages (hybrid retrieval)",
+    "process_mapper: 7 processes, 7 with document citations (hybrid retrieval per process)",
+    "matcher: 7 candidates scored [added a website AI assistant (no chat widget found on the site).]",
+    "strategist: 4 roadmaps",
+    "critic: scored 4 roadmaps, 4 with a rubric",
+    "review_gate: round 1, kept 3, pruned 1, best leads by 2.7%",
+    "strategist: 3 roadmaps [nothing left to revise]",
+    "critic: scored 3 roadmaps, 3 with a rubric",
+    "review_gate: round 2, kept 3, pruned 0, best leads by 2.7%",
+    "planner: verified, 3 of 3 ideas grounded, CLOSE CALL with the runner-up"
+  ],
+  "pruned_log": [
+    {
+      "id": "balanced",
+      "angle": "balanced",
+      "score": 0.491,
+      "reason": "ranked below top 3"
+    }
+  ]
+}

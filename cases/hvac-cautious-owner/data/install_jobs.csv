@@ -1,0 +1,11 @@
+job_id,customer,town,install_date,crew,equipment_pickup,price,data_plate_photos,warranty_registered,registered_date
+JOB-2026-0544,Henry and Joan Liu,Westerville,2026-06-13,1,counter pickup (Ray),11240,no,no,
+JOB-2026-0561,Carla Benning,Larkmoor,2026-06-17,1,counter pickup (Ray),12300,"new unit only, no data plate",no,
+JOB-2026-0602,Dev Patel,New Albany,2026-06-26,2,warehouse,13900,no,no,
+JOB-2026-0688,Fenwick Road Medical Offices,Larkmoor,2026-07-23,2,yard delivery,24600,no,n/a (commercial RTU),
+JOB-2026-0730,Gail Simmons,Gahanna,2026-07-30,1,counter pickup (Ray),12100,yes,yes,2026-10-02
+JOB-2026-0907,Martin and Gail Ostrowski,Gahanna,2026-09-15,1,counter pickup (Ray),12450,yes,yes,2026-09-29
+JOB-2026-0931,Owen and Rita Marsh,Delaware,2026-09-25,2,warehouse,15300,yes,yes,2026-10-09
+JOB-2026-0978,Kim Vance,Westerville,2026-10-08,1,counter pickup (Ray),10450,yes,yes,2026-10-16
+JOB-2026-0979,Paul Okafor,Larkmoor,2026-10-09,1,counter pickup (Ray),10450,yes,not yet,
+JOB-2026-0980,Susan Drake,Gahanna,2026-10-12,2,counter pickup (Ray),10900,no,not yet,

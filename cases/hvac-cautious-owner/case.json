@@ -1,0 +1,21 @@
+{
+  "id": "hvac-cautious-owner",
+  "name": "Larkmoor Comfort Heating & Air (cautious owner)",
+  "stage": "analyzed",
+  "status": "Recommendation ready.",
+  "created": "2026-11-21T13:16:41",
+  "updated": "2026-11-21T13:30:33",
+  "company_input": {
+    "website": "local",
+    "risk_tolerance": 0.6,
+    "description": "Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard.",
+    "deep_review": true
+  },
+  "materials_authorized": [
+    "documents",
+    "interviews",
+    "data",
+    "research"
+  ],
+  "latest_run": "run-001"
+}

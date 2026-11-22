@@ -1,0 +1,36 @@
+employee_id,name,title,reports_to,finance_accounting_pct,sales_pct,marketing_pct,service_delivery_pct,dispatch_scheduling_pct,customer_service_pct,purchasing_inventory_pct,hr_payroll_pct,it_admin_pct,management_pct,training_pct
+EMP-008,Wes Delacroix,Commercial Accounts Manager,EMP-001,5,70,0,0,0,25,0,0,0,0,0
+EMP-004,Dana Pruitt,Office Manager and Bookkeeper,EMP-002,80,0,0,0,0,10,0,0,10,0,0
+EMP-003,Kyle Vossberg,Operations Manager,EMP-001,0,0,0,20,10,0,20,0,5,45,0
+EMP-026,Ray Mendez,Install Lead,EMP-011,0,0,0,80,0,0,20,0,0,0,0
+EMP-006,Marisol Quintero,Customer Service Rep and Backup Dispatcher,EMP-003,0,0,0,0,25,75,0,0,0,0,0
+EMP-010,Lisa Tran,Purchasing and Inventory Coordinator,EMP-003,0,0,0,0,0,0,100,0,0,0,0
+EMP-002,Ruth Vossberg,Vice President,EMP-001,0,0,0,0,0,0,0,85,0,15,0
+EMP-012,Sam Kowalczyk,Lead Service Technician and Field Trainer,EMP-003,0,0,0,75,0,0,0,0,0,0,25
+EMP-001,Glen Vossberg,President,,0,20,10,0,0,0,0,0,0,70,0
+EMP-005,Trevor Haskins,Dispatcher,EMP-003,0,0,0,0,85,15,0,0,0,0,0
+EMP-007,Jolene Fairweather,Customer Service Rep and Reception,EMP-003,0,0,5,0,0,90,0,0,5,0,0
+EMP-009,Nadia Ferris,Comfort Advisor,EMP-003,5,90,5,0,0,0,0,0,0,0,0
+EMP-011,Ben Okonkwo,Install Manager,EMP-003,0,0,0,60,25,0,10,0,0,5,0
+EMP-013,Alan Reyes,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-014,Bridget Nolan,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-015,Carlos Ibarra,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-016,Derek Hsu,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-017,Evan Mott,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-018,Frank Delgado,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-019,Grant Fuller,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-020,Hector Paz,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-021,Ivan Petrov,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-022,Jake Lindqvist,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-023,Kevin Amadi,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-024,Luis Moreno,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-025,Marcus Webb,Service Technician,EMP-003,0,0,0,100,0,0,0,0,0,0,0
+EMP-027,Nate Brody,Installer,EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-028,Owen Fisk,Installer (Crew 2 Lead),EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-029,Pedro Salas,Installer,EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-030,Quinn Harlow,Installer,EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-031,Rob Tate,Installer,EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-032,Steve Yoon,Installer,EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-033,Tom Ashby,Installer,EMP-011,0,0,0,100,0,0,0,0,0,0,0
+EMP-034,Uma Castellano,Apprentice,EMP-012,0,0,0,80,0,0,0,0,0,0,20
+EMP-035,Victor Lund,Apprentice,EMP-012,0,0,0,80,0,0,0,0,0,0,20

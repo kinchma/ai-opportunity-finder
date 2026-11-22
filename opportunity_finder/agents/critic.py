@@ -10,6 +10,7 @@ The model is set with LLM_CRITIC_MODEL / LLM_CRITIC_BASE_URL / LLM_CRITIC_API_KE
 """
 import re
 
+from ..supervisor import deep_review
 from ..config import SETTINGS
 from ..llm import llm_settings
 from ..summaries import ANGLE_MEANING
@@ -157,6 +158,7 @@ def critic(state: dict) -> dict:
     tol, budget = company.get("risk_tolerance", 0.5), company.get("effort_budget")
     grounded = grounded_map(opps, state)
     roadmaps = [dict(r) for r in state.get("roadmaps", [])]
+    deep = deep_review(state)   # owner asked for a deeper review: every objection becomes a revision request
 
     coded = {r["id"]: roadmap_checks([by_name[n] for n in r["opportunities"] if n in by_name], tol, budget, grounded)
              for r in roadmaps}
@@ -191,7 +193,8 @@ def critic(state: dict) -> dict:
                 rubric["model"] = records[-1]["model"] if records else None
             r.update(rubric=rubric, reviewed=True)
         rubric, findings = r.get("rubric"), list(coded[r["id"]])
-        if rubric and rubric.get("weakest_item") and rubric.get("objection") and min(rubric[k] for k in RUBRIC_KEYS) <= 2:
+        if rubric and rubric.get("weakest_item") and rubric.get("objection") and (
+                deep or min(rubric[k] for k in RUBRIC_KEYS) <= 2):
             findings.append({"code": "weakest_item", "item": rubric["weakest_item"], "penalty": 0.0,
                              "message": f"Critic model: {rubric['objection']}"})
         items = [by_name[n] for n in r["opportunities"] if n in by_name]

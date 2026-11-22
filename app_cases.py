@@ -1,6 +1,8 @@
-"""Case workspace: start a customer case, close the app, and resume it later.
+"""AI Opportunity Finder: the case workspace (Streamlit UI).
 
 Run:  streamlit run app_cases.py
+One design system (palette, type scale, components), a dark case header with a progress stepper,
+headline KPI tiles, styled section headers and callouts, and a developer section for the agent internals.
 Owner-first layout: the recommendation comes right after a compact company summary; Discovery and
 the company material fold into sections below it. "Behind the recommendation" holds the agent
 timeline (every model call, code step, tokens and time), the roadmaps compared, the evidence and the run log.
@@ -17,7 +19,7 @@ from opportunity_finder.summaries import (evidence_rows, flag_rows, left_out_ide
 from opportunity_finder.tools import company_rag
 from opportunity_finder.tools.scoring import idea_index, index_band, risk_limit, score_index
 
-st.set_page_config(page_title="AI Opportunity Finder", page_icon="🗂️", layout="wide")
+st.set_page_config(page_title="AI Opportunity Finder", page_icon="🔎", layout="wide")
 ss = st.session_state
 STEPS = [("new", "Discovery"), ("discovered", "Confirm profile"), ("confirmed", "Documents"), ("analyzed", "Recommendation")]
 
@@ -149,6 +151,331 @@ def strategy_box(rec: dict) -> str:
     return (f'<div class="rm-why"><div class="rm-lbl">Why this roadmap, in this order</div>'
             f'<div class="rm-txt">{_e(rec.get("rationale"))}</div>{critic}</div>')
 
+
+
+# ================================================================== design system
+# One palette, one type scale, one set of components, used everywhere on the page.
+INK, TEAL, TEAL_D, TEAL_50, AMBER, AMBER_50, PAPER, LINE, MUTED = (
+    "#13212E", "#0F6E56", "#0B5040", "#E3ECEA", "#E8A33D", "#FFF7E8", "#F6F5F1", "#E2E6E4", "#5B6770")
+
+DESIGN_CSS = """<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--ink:#13212E;--teal:#0F6E56;--teal-d:#0B5040;--teal-50:#E3ECEA;--amber:#E8A33D;--amber-50:#FFF7E8;
+      --paper:#F6F5F1;--line:#E2E6E4;--muted:#5B6770;--card:#FFFFFF;--shadow:0 1px 2px rgba(16,24,40,.05),0 1px 8px rgba(16,24,40,.04)}
+html,body,.stApp,button,input,textarea,select{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+.stMarkdown,[data-testid="stMarkdownContainer"],.stMarkdown p,.stMarkdown li,[data-testid="stCaptionContainer"],
+[data-testid="stWidgetLabel"] p,.stApp td,.stApp th,.stApp label{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif!important}
+.stAppDeployButton,[data-testid="stAppDeployButton"]{display:none!important}
+.stApp{background:var(--paper)}
+header[data-testid="stHeader"]{background:transparent}
+.block-container{padding-top:1.1rem;padding-bottom:4rem;max-width:1320px}
+h1,h2,h3,h4,.pro-display{font-family:'Space Grotesk','Inter',sans-serif!important;color:var(--ink);letter-spacing:-.01em}
+.stMarkdown p{color:#1F2933}
+/* sidebar */
+section[data-testid="stSidebar"]{background:#FFFFFF;border-right:1px solid var(--line)}
+section[data-testid="stSidebar"] .block-container{padding-top:1rem}
+/* buttons */
+.stButton>button,.stFormSubmitButton>button,.stDownloadButton>button{border-radius:10px;font-weight:600;
+  border:1px solid var(--line);padding:.48rem 1rem;transition:all .15s ease;box-shadow:none}
+.stButton>button:hover{border-color:var(--teal);color:var(--teal)}
+button[data-testid="stBaseButton-primary"],button[data-testid="stBaseButton-primaryFormSubmit"],
+.stButton>button[kind="primary"],.stFormSubmitButton>button[kind="primary"]{background:var(--teal);border-color:var(--teal);color:#fff}
+button[data-testid="stBaseButton-primary"]:hover,.stButton>button[kind="primary"]:hover{background:var(--teal-d);border-color:var(--teal-d);color:#fff}
+/* expanders as cards */
+div[data-testid="stExpander"]{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+div[data-testid="stExpander"] details{border:none}
+div[data-testid="stExpander"] summary{font-weight:600;color:var(--ink);padding-top:.7rem;padding-bottom:.7rem}
+div[data-testid="stExpander"] summary:hover{color:var(--teal)}
+/* tabs as a segmented control */
+.stTabs [role="tablist"]{gap:4px;background:#ECEFED;padding:5px;border-radius:12px;width:fit-content;max-width:100%;flex-wrap:wrap;border-bottom:none!important;box-shadow:none}
+.stTabs [data-testid="stTab"]{border-radius:9px;padding:7px 16px!important;height:auto;font-weight:600;color:var(--muted);background:transparent;border:none!important}
+.stTabs [data-testid="stTab"] p{font-size:.92rem;font-weight:600}
+.stTabs [data-testid="stTab"][aria-selected="true"],.stTabs [data-testid="stTab"][data-selected]{background:#FFFFFF;color:var(--ink);box-shadow:0 1px 3px rgba(16,24,40,.12)}
+.stTabs [data-testid="stTab"]::after,.stTabs [role="tablist"]::after,.stTabs [role="tablist"]>span{display:none!important}
+.stTabs [data-testid="stTab"]:hover{color:var(--ink)}
+.stTabs [role="tabpanel"]{padding-top:1rem}
+.stTabs [data-baseweb="tab-list"]{gap:4px;background:#ECEFED;padding:5px;border-radius:12px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.stTabs [data-baseweb="tab"]{border-radius:9px;padding:7px 16px;height:auto;font-weight:600;color:var(--muted);background:transparent}
+.stTabs [data-baseweb="tab"] p{font-size:.92rem}
+.stTabs [aria-selected="true"]{background:#FFFFFF;color:var(--ink);box-shadow:0 1px 3px rgba(16,24,40,.12)}
+.stTabs [data-baseweb="tab-highlight"],.stTabs [data-baseweb="tab-border"]{display:none}
+.stTabs [data-baseweb="tab-panel"]{padding-top:1rem}
+/* bordered containers, tables, code */
+div[data-testid="stVerticalBlockBorderWrapper"]{border-radius:14px;background:var(--card);border-color:var(--line)}
+div[data-testid="stDataFrame"]{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+div[data-testid="stCodeBlock"] pre,.stCode pre{border-radius:12px}
+div[data-testid="stMetric"]{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+div[data-testid="stAlert"]{border-radius:12px}
+.stSelectbox label,.stTextInput label,.stTextArea label,.stSlider label,.stNumberInput label,.stMultiSelect label{font-weight:600;color:var(--ink)}
+/* roadmap cards get the display face */
+.rm-name,.rm-num{font-family:'Space Grotesk','Inter',sans-serif}
+/* ---------- pro components ---------- */
+.pro-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px}
+.pro-brand{display:flex;align-items:center;gap:12px}
+.pro-logo{width:40px;height:40px;border-radius:11px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+.pro-name{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.25rem;color:var(--ink);line-height:1.1}
+.pro-tag{font-size:.8rem;color:var(--muted)}
+.pro-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.pro-pill{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:600;padding:5px 11px;border-radius:999px;
+  background:#FFFFFF;border:1px solid var(--line);color:var(--ink);white-space:nowrap}
+.pro-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block}
+.pro-hero{background:var(--ink);border-radius:20px;padding:26px 30px;color:#F3EFE6;box-shadow:0 10px 30px rgba(19,33,46,.18);margin-bottom:14px}
+.pro-hero-top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.pro-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.pro-hero h1.pro-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:2.15rem;line-height:1.1;margin:6px 0 8px;color:#FFFFFF;padding:0}
+.pro-sub{font-size:.95rem;color:#B9C6CF}
+.pro-sub a{color:#F6DDB0;text-decoration:none}
+.pro-chips{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.pro-chip{font-size:.78rem;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);color:#E7ECEF}
+.pro-chip.ok{background:rgba(15,110,86,.28);border-color:rgba(120,200,170,.45);color:#C9F0DF}
+.pro-chip.warn{background:rgba(232,163,61,.18);border-color:rgba(232,163,61,.5);color:#F6DDB0}
+.pro-steps{display:flex;align-items:center;gap:0;min-width:360px}
+.pro-step{display:flex;flex-direction:column;align-items:center;gap:6px;width:92px;text-align:center}
+.pro-step .c{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;
+  font-size:.82rem;border:2px solid rgba(255,255,255,.25);color:#B9C6CF}
+.pro-step.done .c{background:var(--teal);border-color:var(--teal);color:#fff}
+.pro-step.now .c{background:var(--amber);border-color:var(--amber);color:var(--ink);box-shadow:0 0 0 5px rgba(232,163,61,.22)}
+.pro-step .l{font-size:.72rem;color:#B9C6CF;line-height:1.2}
+.pro-step.done .l,.pro-step.now .l{color:#FFFFFF;font-weight:600}
+.pro-line{flex:1;height:2px;background:rgba(255,255,255,.18);margin-top:-22px;min-width:14px}
+.pro-line.done{background:var(--teal)}
+.pro-kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.pro-kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+.pro-kpi .k{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pro-kpi .v{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.7rem;font-weight:700;color:var(--ink);line-height:1.1;margin-top:6px}
+.pro-kpi .v small{font-size:.9rem;color:var(--muted);font-weight:600}
+.pro-kpi .s{font-size:.78rem;color:var(--muted);margin-top:4px;line-height:1.3}
+.pro-kpi.hi{background:var(--amber-50);border-color:#EFD3A1}
+.pro-kpi.hi .v{color:#8A5208}
+@media (max-width:1100px){.pro-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pro-sec{margin:30px 0 14px}
+.pro-sec .pro-eyebrow{color:var(--teal)}
+.pro-sec h2{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.65rem;margin:4px 0 4px;padding:0;color:var(--ink)}
+.pro-sec .d{color:var(--muted);font-size:.95rem;max-width:900px}
+.pro-sec.dev{background:var(--ink);border-radius:18px;padding:20px 24px;margin-top:38px}
+.pro-sec.dev .pro-eyebrow{color:var(--amber)}
+.pro-sec.dev h2{color:#FFFFFF}
+.pro-sec.dev .d{color:#B9C6CF}
+.pro-lead{font-size:1.06rem;color:#1F2933;margin-top:6px}
+.pro-lead b{color:var(--ink)}
+.pro-call{border-radius:14px;padding:12px 16px;margin:8px 0;font-size:.93rem;line-height:1.5;display:flex;gap:12px;align-items:flex-start;border:1px solid}
+.pro-call .i{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.78rem;margin-top:1px}
+.pro-call.ok{background:#F0F8F4;border-color:#CBE5DA;color:#0B3F32}.pro-call.ok .i{background:var(--teal);color:#fff}
+.pro-call.warn{background:var(--amber-50);border-color:#EFD3A1;color:#5A3A08}.pro-call.warn .i{background:var(--amber);color:var(--ink)}
+.pro-call.bad{background:#FCEFEC;border-color:#F0C9BE;color:#6E2414}.pro-call.bad .i{background:#B4281E;color:#fff}
+.pro-call.info{background:#F1F5F9;border-color:#D8E1E8;color:#1F2933}.pro-call.info .i{background:var(--ink);color:#F6DDB0}
+.pro-empty{background:var(--card);border:1px dashed #C9D1CE;border-radius:20px;padding:44px 36px;text-align:center;margin-top:10px}
+.pro-empty h2{font-family:'Space Grotesk','Inter',sans-serif;margin:8px 0 6px}
+.pro-empty p{color:var(--muted);max-width:620px;margin:0 auto}
+.pro-flow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.pro-flow span{background:#F3F6F5;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:.82rem;font-weight:600;color:var(--ink)}
+.pro-side-brand{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.pro-side-brand .pro-logo{width:32px;height:32px;border-radius:9px}
+.pro-side-brand b{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.02rem;color:var(--ink)}
+/* live analysis panel */
+@keyframes lvspin{to{transform:rotate(360deg)}}
+@keyframes lvpulse{0%,100%{opacity:1}50%{opacity:.55}}
+.lv{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px 20px;margin:8px 0 14px}
+.lv-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.lv-title{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink)}
+.lv-meta{font-size:.8rem;color:var(--muted)}
+.lv-row{display:grid;grid-template-columns:34px 1fr 130px 170px;align-items:center;gap:10px;padding:9px 6px;border-top:1px solid #F0F2F1;border-radius:10px}
+.lv-row.run{background:#FFF9EE;animation:lvpulse 1.6s ease-in-out infinite}
+.lv-ic{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.lv-ic.wait{border:2px solid #D3D9D7}
+.lv-ic.run{border:3px solid #F3E2C0;border-top-color:var(--amber);animation:lvspin .8s linear infinite}
+.lv-ic.done{background:var(--teal);color:#fff}
+.lv-name{font-weight:600;color:var(--ink);font-size:.93rem}
+.lv-name small{display:block;font-weight:400;color:var(--muted);font-size:.76rem}
+.lv-kind{font-size:.74rem;font-weight:600;color:var(--muted)}
+.lv-stat{font-size:.8rem;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lv-stat.run{color:#8A5208;font-weight:600}
+.lv-x{display:inline-block;margin-left:6px;font-size:.68rem;font-weight:700;padding:1px 7px;border-radius:999px;background:#13212E;color:#F6DDB0}
+</style>"""
+
+LOGO_SVG = ('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-label="logo">'
+            '<circle cx="11" cy="11" r="6.5" stroke="#F6DDB0" stroke-width="2.2"/>'
+            '<path d="M16 16l4.5 4.5" stroke="#E8A33D" stroke-width="2.4" stroke-linecap="round"/>'
+            '<circle cx="11" cy="11" r="2.2" fill="#E8A33D"/></svg>')
+
+
+def tol_word(t: float) -> str:
+    return "cautious" if t < 0.35 else "balanced" if t < 0.65 else "comfortable with risk"
+
+
+LIVE_STEPS = [
+    ("company_index", "Setup: Company search index", "Builds or refreshes this company's vector store", "code + embeddings"),
+    ("discovery_research", "3a Discovery: Industry research", "Best practices from the shared knowledge base", "LLM + RAG"),
+    ("process_mapper", "3b Process Mapper", "Maps processes and pain points from company material", "LLM + RAG"),
+    ("matcher", "4 Matcher", "Proposes and rates AI ideas; code scores them", "LLM + code"),
+    ("strategist", "5 Strategist", "Builds and revises roadmaps (Tree of Thoughts)", "LLM + code"),
+    ("critic", "6 Critic", "Reviews each roadmap on a different model", "LLM + code"),
+    ("review_gate", "Review gate", "Keeps the top 3; revise or stop", "code"),
+    ("planner", "7 Verifier / Planner", "Checks every citation, writes the plan", "code + LLM"),
+    ("escalate_to_owner", "Decision card", "Hands the decision to the owner", "code"),
+]
+
+
+def _live_html(state: dict, t_start: float, done_all: bool = False) -> str:
+    import time as _t
+    now = _t.time()
+    rows = []
+    for key, name, desc, kind in LIVE_STEPS:
+        s_ = state.get(key, {})
+        stt = s_.get("st", "wait")
+        if key == "escalate_to_owner" and stt == "wait":
+            continue
+        icon = {"wait": "", "run": "", "done": "✓"}[stt]
+        rounds = f'<span class="lv-x">×{s_["n"]}</span>' if s_.get("n", 0) > 1 else ""
+        if stt == "run":
+            stat = f'running since {_t.strftime("%H:%M:%S", _t.localtime(s_["t0"]))}'
+        elif stt == "done":
+            stat = f'{s_["secs"]:.0f} s' if s_["secs"] >= 1 else "under 1 s"
+        else:
+            stat = "waiting"
+        rows.append(f'<div class="lv-row {stt}"><div class="lv-ic {stt}">{icon}</div>'
+                    f'<div class="lv-name">{_e(name)}{rounds}<small>{_e(desc)}</small></div>'
+                    f'<div class="lv-kind">{_e(kind)}</div><div class="lv-stat {stt}">{stat}</div></div>')
+    running = [n for k, n, _, _ in LIVE_STEPS if state.get(k, {}).get("st") == "run"]
+    title = "Analysis complete" if done_all else ("Running: " + " and ".join(running) if running else "Starting the analysis")
+    meta_ = f"{(now - t_start) / 60:.1f} min elapsed · updates as each step starts and finishes"
+    return (f'<div class="lv"><div class="lv-head"><div class="lv-title">{_e(title)}</div>'
+            f'<div class="lv-meta">{meta_}</div></div>{"".join(rows)}</div>')
+
+
+def live_analyze(case_id: str):
+    """Run the analysis with a live panel: one row per agent, a spinner on whichever is running now
+    (two at once during the parallel step), a tick and the time when each finishes, and a round
+    counter when the Strategist and Critic loop."""
+    import time as _t
+    box = st.empty()
+    state: dict = {}
+    t_start = _t.time()
+
+    def on_event(kind: str, node: str):
+        s_ = state.setdefault(node, {"st": "wait", "n": 0, "t0": None, "secs": 0.0})
+        if kind == "start":
+            s_.update(st="run", t0=_t.time())
+            s_["n"] += 1
+        else:
+            s_["secs"] += _t.time() - (s_["t0"] or _t.time())
+            s_["st"] = "done"
+        box.markdown(_live_html(state, t_start), unsafe_allow_html=True)
+
+    box.markdown(_live_html(state, t_start), unsafe_allow_html=True)
+    case_runner.analyze(case_id, on_event=on_event)
+    box.markdown(_live_html(state, t_start, done_all=True), unsafe_allow_html=True)
+
+
+def pro_css():
+    st.markdown(DESIGN_CSS, unsafe_allow_html=True)
+
+
+def _models_in_use() -> list:
+    """Model ids from .env, for the header pills (display only; never fails the page)."""
+    try:
+        from opportunity_finder.llm import llm_settings
+        main, critic = llm_settings()["model"], llm_settings(agent="critic")["model"]
+        return list(dict.fromkeys(m for m in (main, critic) if m))
+    except Exception:
+        return []
+
+
+def _run_models(case_id) -> list:
+    """Models the latest run of this case actually called (from its call log)."""
+    try:
+        runs_ = cases.runs(case_id)
+        log = cases.load_result(case_id, runs_[-1]).get("call_log", []) if runs_ else []
+        return list(dict.fromkeys(c.get("model") for c in log if c.get("model") and not c.get("stub")))
+    except Exception:
+        return []
+
+
+def pro_app_bar():
+    models = (_run_models(ss.get("case_id")) if ss.get("case_id") else []) or _models_in_use()
+    pills = ('<span class="pro-pill"><span class="pro-dot"></span>Runs locally · private</span>'
+             + "".join(f'<span class="pro-pill">{_e(m)}</span>' for m in models))
+    st.markdown(
+        f'<div class="pro-bar"><div class="pro-brand"><div class="pro-logo">{LOGO_SVG}</div><div>'
+        f'<div class="pro-name">AI Opportunity Finder</div>'
+        f'<div class="pro-tag">Where AI can actually help a small business · a local multi-agent system</div></div></div>'
+        f'<div class="pro-pills">{pills}</div></div>', unsafe_allow_html=True)
+
+
+def pro_steps_html(stage: str) -> str:
+    done = cases.tracker_index(stage)
+    parts = []
+    for i, (_, label) in enumerate(STEPS):
+        state = "done" if (i < done or stage == "analyzed") else "now" if i == done else ""
+        mark = "✓" if state == "done" else str(i + 1)
+        if i:
+            parts.append(f'<div class="pro-line{" done" if i <= done or stage == "analyzed" else ""}"></div>')
+        parts.append(f'<div class="pro-step {state}"><div class="c">{mark}</div><div class="l">{_e(label)}</div></div>')
+    return '<div class="pro-steps">' + "".join(parts) + "</div>"
+
+
+def pro_hero(meta: dict, profile: dict, stage: str):
+    tol_ = meta.get("company_input", {}).get("risk_tolerance", 0.5)
+    site = profile.get("website") or meta.get("company_input", {}).get("website") or ""
+    site_html = (f'<a href="{_e(site)}" target="_blank">{_e(site.replace("https://", "").replace("http://", "").rstrip("/"))}</a>'
+                 if site.startswith("http") else "local test website" if site.startswith("file:") else _e(site))
+    industry = profile.get("industry") or meta.get("company_input", {}).get("industry") or "industry not set yet"
+    industry = industry[:1].upper() + industry[1:]
+    updated = str(meta.get("updated", "")).replace("T", " ")[:16]
+    chips = []
+    if profile:
+        chips.append('<span class="pro-chip ok">✓ Profile confirmed by owner</span>' if profile.get("confirmed_by_owner")
+                     else '<span class="pro-chip warn">Profile awaiting owner</span>')
+    chips.append(f'<span class="pro-chip">Risk tolerance {tol_:g} · {tol_word(tol_)}</span>')
+    if meta.get("company_input", {}).get("deep_review"):
+        chips.append('<span class="pro-chip warn">Deep review on</span>')
+    for m in cases.material_summary(meta["id"]):
+        chips.append(f'<span class="pro-chip{" ok" if m["authorized"] else ""}">{_e(m["folder"]).capitalize()} · '
+                     f'{m["files"]} file{"s" if m["files"] != 1 else ""}{"" if m["authorized"] else " · not shared"}</span>')
+    sub = " · ".join(x for x in (_e(industry), site_html, f"updated {_e(updated)}" if updated else "") if x)
+    st.markdown(
+        f'<div class="pro-hero"><div class="pro-hero-top"><div><div class="pro-eyebrow">Case · {_e(str(meta.get("status", stage)).rstrip("."))}</div>'
+        f'<h1 class="pro-title">{_e(meta["name"])}</h1><div class="pro-sub">{sub}</div>'
+        f'<div class="pro-chips">{"".join(chips)}</div></div>{pro_steps_html(stage)}</div></div>',
+        unsafe_allow_html=True)
+
+
+def pro_section(eyebrow: str, title: str, desc: str = "", dev: bool = False, extra: str = ""):
+    st.markdown(f'<div class="pro-sec{" dev" if dev else ""}"><div class="pro-eyebrow">{_e(eyebrow)}</div>'
+                f'<h2>{_e(title)}</h2>' + (f'<div class="d">{desc}</div>' if desc else "") + extra + '</div>',
+                unsafe_allow_html=True)
+
+
+def pro_callout(kind: str, text_html: str):
+    icon = {"ok": "✓", "warn": "!", "bad": "!", "info": "i"}.get(kind, "i")
+    st.markdown(f'<div class="pro-call {kind}"><div class="i">{icon}</div><div>{text_html}</div></div>',
+                unsafe_allow_html=True)
+
+
+def pro_kpis(r: dict, names: list, by_name: dict, tol: float, ver: dict):
+    """Six headline numbers for the run: the owner's view first, the system's view last."""
+    pm = r.get("process_map") or {}
+    summ = summarize(r.get("call_log", []))
+    top = by_name.get(names[0], {}) if names else {}
+    t_idx = idea_index(top, tol) if top else None
+    claims = ver.get("claims", [])
+    tok = (summ["input_tokens"] or 0) + (summ["output_tokens"] or 0)
+    tiles = [
+        ("hi", "Pilot fit", f'{t_idx if t_idx is not None else "–"}<small> / 100</small>',
+         (index_band(t_idx) + " · " + _e(names[0])) if names else "no recommendation"),
+        ("", "Ideas considered", str(len(r.get("scored_opportunities", []))), f"{len(names)} chosen for the roadmap"),
+        ("", "Processes", str(len(pm.get("processes", []))), "mapped from company material"),
+        ("", "Grounded", f'{ver.get("grounded", "–")}<small> / {len(claims) or "–"}</small>',
+         "verified" if r.get("verified") else "not verified"),
+        ("", "Model time", f'{(summ["seconds"] or 0) / 60:.1f}<small> min</small>', f'{summ["calls"]} model calls'),
+        ("", "Tokens", f"{tok / 1000:.1f}<small>k</small>" if tok else "–",
+         f'{summ["input_tokens"]:,} in · {summ["output_tokens"]:,} out' if tok else "not reported"),
+    ]
+    st.markdown('<div class="pro-kpis">' + "".join(
+        f'<div class="pro-kpi {c}"><div class="k">{k}</div><div class="v">{v}</div><div class="s">{s}</div></div>'
+        for c, k, v, s in tiles) + "</div>", unsafe_allow_html=True)
 
 
 def left_out_v2(opps: list, names: list, rec: dict, tol: float) -> list:
@@ -356,7 +683,7 @@ def roadmaps_html(rows: list) -> str:
 
 
 AGENT_ROWS = [("discovery_profile", "1 Discovery · profile"), ("discovery_website", "1 Discovery · website check"),
-              ("discovery_research", "3a Research (industry RAG)"), ("process_mapper", "3b Process Mapper (company RAG)"),
+              ("discovery_research", "3a Discovery · industry research"), ("process_mapper", "3b Process Mapper (company RAG)"),
               ("matcher", "4 Matcher"), ("strategist", "5 Strategist"), ("critic", "6 Critic"),
               ("planner", "7 Verifier / Planner")]
 DISCOVERY_AGENTS = ("discovery_profile", "discovery_website")
@@ -398,12 +725,16 @@ def _code_points(result: dict, ana: list) -> list:
 
 
 def _code_marks(result: dict, ana: list, xpos, width) -> str:
-    out, last_x = [], -99.0
-    for n, t, lab in _code_points(result, ana):
+    pts = _code_points(result, ana)
+    gap, right = 2.4, 98.6                     # min spacing between dots and the last position that still fits
+    xs = []
+    for _, t, _ in pts:                        # left to right: keep dots apart
         x = xpos(t)
-        if x - last_x < 2.2:
-            x = last_x + 2.2
-        last_x = x
+        xs.append(max(x, xs[-1] + gap) if xs else x)
+    for i in range(len(xs) - 1, -1, -1):       # right to left: keep the last dots inside the track
+        xs[i] = min(xs[i], right if i == len(xs) - 1 else xs[i + 1] - gap)
+    out = []
+    for (n, t, lab), x in zip(pts, xs):
         out.append(f'<div class="tl-x tl-{n}" title="{_e(lab)}" style="position:absolute;left:calc({x:.2f}% - 10px);top:3px;width:20px;height:20px;'
                    f'border-radius:50%;background:#13212E;color:#F6DDB0;font-size:.7rem;font-weight:700;display:flex;'
                    f'align-items:center;justify-content:center">{n}</div>')
@@ -441,7 +772,7 @@ def agent_story_html(result: dict, run: str | None, meta: dict) -> str:
     cite_txt = ", ".join(f"{cites.count(s)} {s}" for s in ("confirmed", "unconfirmed", "rejected") if cites.count(s))
     inj = sum(1 for f in result.get("flags") or [] if f.get("type") == "injection")
     shared = ", ".join(meta.get("materials_authorized") or []) or "no folders"
-    tol = meta.get("company_input", {}).get("risk_tolerance", 0.5)
+    tol = (result.get("company_input") or meta.get("company_input", {})).get("risk_tolerance", 0.5)
     gates = tr.get("review_gate", [])
     strat = tr.get("strategist", [])
     pruned = ", ".join(f"{p.get('id')} ({p.get('reason')})" for p in result.get("pruned_log") or []) or "none"
@@ -454,7 +785,7 @@ def agent_story_html(result: dict, run: str | None, meta: dict) -> str:
          f"The LangGraph graph paused at an interrupt until the owner accepted the profile. Folders the owner shared: {shared}."),
         ("A", "Supervisor fans out", ("Coordination", "Code"),
          "Plain Python routing started industry research and the Process Mapper as parallel branches of the graph."),
-        ("3a", "Research", ("RAG", "LLM"),
+        ("3a", "Discovery: Industry research", ("RAG", "LLM"),
          f"Hybrid search ({bret.get('mode', 'n/a')}: {bret.get('embed_model') or 'keywords'} vectors plus BM25, merged by rank "
          f"fusion) over sourced industry notes. {'; '.join(tr.get('discovery_research', []))}."),
         ("3b", "Process Mapper", ("RAG", "Chain of thought", "LLM"),
@@ -638,7 +969,8 @@ def agent_timeline_html(result: dict) -> str:
             tip = (f"{c.get('model')} · {float(c['seconds']):.0f} s · in {c.get('input_tokens') or '?'} / "
                    f"out {c.get('output_tokens') or '?'} tokens" + (f" · ERROR: {err}" if err else ""))
             lab = f"{float(c['seconds']):.0f}s" if width(c) > 3.5 else ""
-            bars.append(f'<div class="tl-x tl-{agent}" title="{_e(tip)}" style="position:absolute;left:{xpos(c["start"]):.2f}%;width:{width(c):.2f}%;'
+            left_ = min(xpos(c["start"]), 99.0)
+            bars.append(f'<div class="tl-x tl-{agent}" title="{_e(tip)}" style="position:absolute;left:{left_:.2f}%;width:{max(0.6, min(width(c), 100 - left_)):.2f}%;'
                         f'top:3px;height:{track_h - 6}px;background:{bg};color:{fg};border:{border};border-radius:6px;'
                         f'font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;'
                         f'overflow:hidden;white-space:nowrap">{lab}</div>')
@@ -690,9 +1022,12 @@ def tracker(stage: str):
 
 
 # ------------------------------------------------------------------ sidebar: pick or create
+pro_css()
 with st.sidebar:
-    st.header("Cases")
-    st.caption(f"Folder: {cases.base_dir().resolve()}")
+    st.markdown(f'<div class="pro-side-brand"><div class="pro-logo">{LOGO_SVG}</div><b>Opportunity Finder</b></div>',
+                unsafe_allow_html=True)
+    st.markdown("#### Cases")
+    st.caption(f"Saved in {cases.base_dir().resolve()}")
     existing = cases.list_cases()
     labels = {c["id"]: f"{c['name']} ({c['stage']})" for c in existing}
     if existing:
@@ -737,20 +1072,29 @@ with st.sidebar:
                 ss.case_id = None
                 st.rerun()
 
-st.title("AI Opportunity Finder: case workspace")
+pro_app_bar()
 if not ss.get("case_id"):
-    st.write("Create a case in the sidebar to begin. Cases are saved to disk, so you can close this app and resume later.")
+    st.markdown(
+        '<div class="pro-empty"><div class="pro-eyebrow" style="color:#0F6E56">Get started</div>'
+        '<h2>Find where AI can help a business</h2>'
+        '<p>Create a case in the sidebar with the company’s website and the owner’s risk tolerance. '
+        'Cases are saved to disk, so you can stop at any step and pick the case up later.</p>'
+        '<div class="pro-flow"><span>1 · Discovery reads the website</span><span>2 · Owner confirms</span>'
+        '<span>3 · Agents map the business</span><span>4 · Ranked AI roadmap</span></div></div>',
+        unsafe_allow_html=True)
     st.stop()
 
 meta = cases.load_case(ss.case_id)
 stage = meta["stage"]
-st.subheader(meta["name"])
-tracker(stage)
-st.caption(f"{meta['status']}  ·  last updated {meta['updated']}  ·  folder: cases/{meta['id']}")
+_hero_profile = cases.load(meta["id"], cases.PROFILE, {})
+pro_hero(meta, _hero_profile, stage)
+st.caption(f"Case folder: cases/{meta['id']}")
 
 # ------------------------------------------------------------------ stage 1: discovery
 if stage == "new":
-    st.write("Discovery reads the website, guesses the industry, and rates the site. Results are saved to this case.")
+    pro_section("Step 1 · Discovery", "Read the business",
+                "Discovery reads the website, guesses the industry and rates the site. Results are saved to this case, "
+                "and nothing else runs until the owner confirms the profile.")
     if st.button("Run Discovery", type="primary"):
         with st.spinner("Reading the business..."):
             case_runner.discover(meta["id"])
@@ -762,14 +1106,23 @@ disc = cases.load(meta["id"], cases.DISCOVERY, {})
 
 
 def run_button(label: str, ok: bool, key: str, **kw):
+    """The button only asks for a run; the run itself happens in run_pending(), at full page width,
+    so the live progress panel is never squeezed into the button's column."""
     if st.button(label, type="primary", disabled=not ok, key=key, **kw):
-        with st.spinner("Analyzing the business (about 8 to 12 minutes with the local models)..."):
-            try:
-                case_runner.analyze(meta["id"])
-            except case_runner.ConfirmationRequired as exc:
-                st.error(f"Analysis refused: {exc}")
-                st.stop()
+        ss["pending_run"] = meta["id"]
         st.rerun()
+
+
+def run_pending():
+    if ss.get("pending_run") != meta["id"]:
+        return
+    ss.pop("pending_run", None)
+    try:
+        live_analyze(meta["id"])
+    except case_runner.ConfirmationRequired as exc:
+        st.error(f"Analysis refused: {exc}")
+        st.stop()
+    st.rerun()
 
 
 def profile_card():
@@ -841,12 +1194,12 @@ def material_section(key: str):
     run_button("Run analysis" if stage == "confirmed" else "Re-run analysis with the current documents", ok, key)
 
 
-def tol_word(t: float) -> str:
-    return "cautious" if t < 0.35 else "balanced" if t < 0.65 else "comfortable with risk"
-
-
 def owner_overview():
     """Compact company summary and the re-run button, so the recommendation sits near the top."""
+    return _control_row()
+
+
+def _unused_summary_box():
     tol_ = meta.get("company_input", {}).get("risk_tolerance", 0.5)
     summary = cases.material_summary(meta["id"])
     chips = "".join(
@@ -865,15 +1218,43 @@ def owner_overview():
         f' &nbsp;·&nbsp; Risk tolerance {tol_:g} ({tol_word(tol_)})</div>'
         f'<div>{chips or _none}</div></div>',
         unsafe_allow_html=True)
-    b_col, sel_col, note_col = st.columns([1, 1, 2], vertical_alignment="bottom")
+
+
+def _control_row():
     ok, why = case_runner.confirmation_ok(meta["id"])
-    with b_col:
-        run_button("Re-run analysis", ok, "rerun-top", width="stretch")
-    note_col.caption("Re-run uses the material shared now." if ok else f"Re-run blocked: {why}")
+    ci = meta.get("company_input", {})
+    cur = float(ci.get("risk_tolerance", 0.5))
+    with st.container(border=True):
+        b_col, sel_col, r_col, go_col = st.columns([1, 1.1, 1.6, 1.1], vertical_alignment="bottom")
+        with b_col:
+            run_button("Re-run analysis", ok, "rerun-top", width="stretch")
+        new_tol = r_col.slider("Owner risk tolerance", 0.0, 1.0, cur, 0.05, key=f"tol-{meta['id']}",
+                               help="0 = very cautious, 1 = comfortable with risk. The highest risk rating the owner "
+                                    "accepts is 2 + 6 x tolerance. Re-running at a new value saves it to this case.")
+        cur_deep = bool(ci.get("deep_review"))
+        new_deep = st.toggle("Deep review: the Critic’s objections drive revisions, at least 2 rounds",
+                             value=cur_deep, key=f"deep-{meta['id']}",
+                             help="Off (default): the Strategist revises only for a concrete problem (risk over the "
+                                  "owner's limit, over budget, ungrounded, a low Critic score) and the loop stops early "
+                                  "when one roadmap leads by 10%. On: every idea the Critic names as weakest is sent "
+                                  "back for a swap, and the loop runs at least 2 rounds (3 at most).")
+        changed = abs(new_tol - cur) > 1e-9 or new_deep != cur_deep
+        if go_col.button("Re-run with these settings" if changed else "Re-run with settings", type="primary",
+                         disabled=not (ok and changed), key=f"tolrun-{meta['id']}", width="stretch"):
+            cases.update_case(meta["id"], company_input={**ci, "risk_tolerance": round(new_tol, 2),
+                                                         "deep_review": new_deep})
+            ss["pending_run"] = meta["id"]
+            st.rerun()
+        st.caption((f"Now {cur:g} ({tol_word(cur)}): ideas rated above {risk_limit(cur):g} risk count against a roadmap. "
+                    + (f"At {new_tol:g} ({tol_word(new_tol)}) the limit becomes {risk_limit(new_tol):g}; a lower limit "
+                       "makes the Strategist and Critic revise more." if changed else
+                       "Move the slider to try a different owner, then re-run.")) if ok else f"Re-run blocked: {why}")
     return sel_col
 
 
 if stage in ("discovered", "rejected", "confirmed") and profile:
+    pro_section("Step 2 · Owner review" if stage != "confirmed" else "Profile", "What Discovery found",
+                "The owner checks this before any company material is read.")
     profile_card()
 if stage == "rejected":
     st.error("The owner rejected this profile. Correct it and confirm to continue; nothing runs until then.")
@@ -897,10 +1278,14 @@ if stage in ("discovered", "rejected"):
         st.rerun()
 
 if stage == "confirmed":
+    pro_section("Step 3 · Company material", "Share documents and run the analysis",
+                "Process documents, interview transcripts and data exports make the answer specific to this business.")
     material_section("run-first")
+    run_pending()
 _run_col = None
 if stage == "analyzed":
     _run_col = owner_overview()
+    run_pending()
 
 # ------------------------------------------------------------------ stage 4: results
 if stage == "analyzed":
@@ -924,23 +1309,25 @@ if stage == "analyzed":
                     st.rerun()
             st.caption("Your choice is saved in owner/decisions.json. Nothing below has been verified.")
     _plan = rec.get("opportunities", [])
-    st.markdown(
-        '<div style="border-top:1px solid #DDE3E1;margin:2px 0 0;padding-top:14px">'
-        '<div style="font-size:1.55rem;font-weight:700;color:#13212E;line-height:1.2">Your recommended AI roadmap'
-        + ("" if r.get("verified") else ' <span style="font-size:.9rem;color:#A8620F">(unverified draft)</span>') + '</div>'
-        + ('<div style="margin-top:6px;font-size:1rem;color:#1F2933">Start with <b>' + _e(_plan[0]) + '</b>'
-           + "".join(f", then <b>{_e(x)}</b>" for x in _plan[1:]) + '.</div>' if _plan else '')
-        + '</div>', unsafe_allow_html=True)
-    if r.get("status") not in ("complete", "needs_owner_help"):
-        st.warning(f"Status: {r.get('status')}")
-    if any(o.get("placeholder") for o in opps):
-        st.warning("The model gave too few valid ideas, so PLACEHOLDER opportunities were used. Treat this as a demo.")
     ver = full.get("verification") or {}
-    if r.get("verified") and ver:
-        st.success(f"Verified: {ver.get('grounded')} of {len(ver.get('claims', []))} recommended ideas trace to a "
-                   f"process, a cited best practice or the website check.")
     names = rec.get("opportunities", [])
-    tol = meta.get("company_input", {}).get("risk_tolerance", 0.5)
+    tol = (r.get("company_input") or meta.get("company_input", {})).get("risk_tolerance", 0.5)
+    _cur_tol = meta.get("company_input", {}).get("risk_tolerance", 0.5)
+    if run and abs(float(tol) - float(_cur_tol)) > 1e-9:
+        pro_callout("info", f"This analysis ({_e(run)}) ran at risk tolerance <b>{tol:g}</b>; the case is now set to "
+                            f"<b>{_cur_tol:g}</b>. Scores below use {tol:g}, the value this run used.")
+    pro_kpis(r, names, by_name, tol, ver)
+    _lead = ('<div class="pro-lead">Start with <b>' + _e(_plan[0]) + '</b>'
+             + "".join(f", then <b>{_e(x)}</b>" for x in _plan[1:]) + '.</div>') if _plan else ""
+    pro_section("Recommendation", "Your recommended AI roadmap" + ("" if r.get("verified") else " (unverified draft)"),
+                extra=_lead)
+    if r.get("status") not in ("complete", "needs_owner_help"):
+        pro_callout("warn", f"Status: <b>{_e(r.get('status'))}</b>")
+    if any(o.get("placeholder") for o in opps):
+        pro_callout("warn", "The model gave too few valid ideas, so PLACEHOLDER opportunities were used. Treat this as a demo.")
+    if r.get("verified") and ver:
+        pro_callout("ok", f"<b>Verified.</b> {ver.get('grounded')} of {len(ver.get('claims', []))} recommended ideas trace to a "
+                          f"process, a cited best practice or the website check.")
     st.markdown(roadmap_cards(names, by_name, tol, rec, ver.get("claims", [])), unsafe_allow_html=True)
     if rec.get("score") is not None:
         r_idx = score_index(rec["score"], tol)
@@ -952,15 +1339,22 @@ if stage == "analyzed":
         st.caption("Narrative written by the " + ("Strategist model." if rec.get("narrative_by") == "model"
                                                  else "code fallback (the model was unavailable)."))
     if full.get("close_call"):
-        st.warning("Close call: " + full.get("close_call_detail", "") + " Compare both before deciding.")
         ru = full.get("runner_up") or {}
-        st.caption("Runner-up: " + " → ".join(ru.get("opportunities", [])))
+        pro_callout("warn", "<b>Close call.</b> " + _e(full.get("close_call_detail", "")) + " Compare both before deciding."
+                    + (f'<br><span style="opacity:.85">Runner-up: {_e(" → ".join(ru.get("opportunities", [])))}</span>'
+                       if ru.get("opportunities") else ""))
     flags = flag_rows(r.get("flags"))
     if flags:
         with st.expander(f"Checks and warnings ({len(flags)})", expanded=any(f["flag"].startswith("Possible") for f in flags)):
             st.markdown(flags_html(flags), unsafe_allow_html=True)
     _owner_box = st.container()
-    _tech = st.expander("Behind the recommendation: how the agents decided (timeline, roadmaps compared, evidence, run log)")
+    with _owner_box:
+        pro_section("Explore", "Everything the agents considered",
+                    "Every idea and how it scored, how the business runs today, the website check and the case files.")
+    pro_section("For developers", "Behind the recommendation",
+                "How the agents decided: every model call and code step with time and tokens, the Tree-of-Thoughts "
+                "roadmaps compared, the evidence behind each idea and the full run log.", dev=True)
+    _tech = st.container()
     tT, tR, tE, tL = _tech.tabs(["Agent timeline", "Roadmaps compared", "Evidence", "Run log"])
     with tT:
         st.markdown('<div class="aofw">' + agent_timeline_html(r) + agent_story_html(r, run, meta) + '</div>',
@@ -1040,8 +1434,7 @@ if stage == "analyzed":
 
 # ------------------------------------------------------------------ details, folded below the recommendation
 if stage == "analyzed":
-    st.divider()
-    st.markdown("#### Company details")
+    pro_section("Company", "Company details", "The Discovery profile and the company material behind this case.")
     with st.expander("Company profile from Discovery"):
         profile_card()
     with st.expander("Company material: add files, share folders, re-run"):

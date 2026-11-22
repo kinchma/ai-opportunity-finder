@@ -144,3 +144,61 @@ def test_write_gives_up_if_the_file_stays_locked(tmp_path, monkeypatch):
     monkeypatch.setattr(cases.time, "sleep", lambda s: None)
     with pytest.raises(PermissionError):
         cases.write_json(tmp_path / "case.json", {"ok": True})
+
+
+def test_analyze_reports_each_step_live_and_gives_the_same_result(tmp_path):
+    """The app's live progress panel: with on_event, every agent reports start and end as it runs,
+    and the saved result is the same kind of result as a run without it."""
+    cid = cases.create_case("Synthetic Trailers", SYNTH, tmp_path)
+    case_runner.discover(cid, tmp_path)
+    case_runner.confirm(cid, {}, tmp_path)
+    events = []
+    result = case_runner.analyze(cid, tmp_path, on_event=lambda kind, node: events.append((kind, node)))
+    started = [n for k, n in events if k == "start"]
+    ended = [n for k, n in events if k == "end"]
+    for node in ("company_index", "discovery_research", "process_mapper", "matcher", "strategist", "critic",
+                 "review_gate", "planner"):
+        assert node in started and node in ended
+    assert started.index("matcher") > max(started.index("discovery_research"), started.index("process_mapper"))
+    assert result.get("final_recommendation") or result.get("escalation")
+    assert cases.load_case(cid, tmp_path)["stage"] == "analyzed"
+
+
+def test_a_parallel_step_reports_its_finish_before_its_slower_partner():
+    """Live panel timing: with a checkpointer, LangGraph's own end events for 3a and 3b wait for both.
+    The wrapper's "custom" event must arrive as soon as the faster node returns."""
+    import operator
+    import time
+    from typing import Annotated, TypedDict
+
+    from langgraph.checkpoint.memory import MemorySaver
+    from langgraph.graph import END, START, StateGraph
+
+    from opportunity_finder.graph import _reports_finish
+
+    class S(TypedDict):
+        log: Annotated[list, operator.add]
+
+    def fast(state):
+        return {"log": ["fast"]}
+
+    def slow(state):
+        time.sleep(0.3)
+        return {"log": ["slow"]}
+
+    g = StateGraph(S)
+    g.add_node("fast", _reports_finish("fast", fast))
+    g.add_node("slow", _reports_finish("slow", slow))
+    g.add_edge(START, "fast")
+    g.add_edge(START, "slow")
+    g.add_edge("fast", END)
+    g.add_edge("slow", END)
+    graph = g.compile(checkpointer=MemorySaver())
+    order = []
+    for mode, ev in graph.stream({"log": []}, {"configurable": {"thread_id": "t"}}, stream_mode=["debug", "custom"]):
+        if mode == "custom":
+            order.append(("custom_end", ev["node_end"]))
+        elif ev.get("type") == "task_result":
+            order.append(("debug_end", ev["payload"]["name"]))
+    assert order.index(("custom_end", "fast")) < order.index(("debug_end", "slow"))
+    assert order.index(("custom_end", "fast")) < order.index(("custom_end", "slow"))

@@ -4,7 +4,7 @@
   "stage": "analyzed",
   "status": "Recommendation ready.",
   "created": "2026-11-16T14:50:50",
-  "updated": "2026-11-20T16:09:44",
+  "updated": "2026-11-21T16:44:10",
   "company_input": {
     "website": "local",
     "risk_tolerance": 0.2
@@ -14,5 +14,5 @@
     "interviews",
     "data"
   ],
-  "latest_run": "run-016"
+  "latest_run": "run-017"
 }

@@ -6,7 +6,10 @@ START -> discovery_profile -> owner_confirm (human) -> [discovery_research || pr
 planner --(done)--> END | --(revise)--> strategist | --(escalate)--> escalate_to_owner -> END
 (escalate_to_owner ends the run with status needs_owner_help and a decision card; it does not pause)
 """
+import functools
+
 from langgraph.checkpoint.memory import MemorySaver
+from langgraph.config import get_stream_writer
 from langgraph.graph import END, START, StateGraph
 from langgraph.types import interrupt
 
@@ -59,6 +62,21 @@ def escalate_to_owner(state: dict) -> dict:
             "trace": [f"escalate_to_owner: {card['reason']}"]}
 
 
+def _reports_finish(name, fn):
+    """Wrap a node so it announces its own finish on the "custom" stream the moment it returns.
+    LangGraph's own end-of-task events wait for every parallel task in the step (3a and 3b), so the
+    live panel uses this one instead. Display only: it never changes the node's result."""
+    @functools.wraps(fn)
+    def run(state):
+        out = fn(state)
+        try:
+            get_stream_writer()({"node_end": name})
+        except Exception:
+            pass
+        return out
+    return run
+
+
 def build_graph(checkpointer=None):
     g = StateGraph(OpportunityState)
     for name, fn in [
@@ -68,7 +86,7 @@ def build_graph(checkpointer=None):
         ("review_gate", review_gate), ("planner", planner),
         ("escalate_to_owner", escalate_to_owner),
     ]:
-        g.add_node(name, fn)
+        g.add_node(name, _reports_finish(name, fn))
 
     g.add_edge(START, "discovery_profile")
     g.add_edge("discovery_profile", "owner_confirm")

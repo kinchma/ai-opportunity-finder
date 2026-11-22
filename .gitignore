@@ -20,3 +20,4 @@ cases/*/index/
 
 # personal development log (kept local, not published)
 PROJECT_NOTES.md
+app_cases_backup.py

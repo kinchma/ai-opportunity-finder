@@ -1,0 +1,125 @@
+{
+  "profile": {
+    "name": "Larkmoor Comfort Heating & Air",
+    "website": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+    "industry": "HVAC contracting and repair",
+    "size": "unknown",
+    "confidence": "high",
+    "evidence": "The website explicitly identifies the business as a family-owned heating and air conditioning (HVAC) contractor that provides repair, installation, and maintenance for residential and commercial properties.",
+    "note": "",
+    "evidence_source": {
+      "page": "file:///Users/kinch/agentic/ai-opportunity-finder/cases/hvac-service-contractor/website/index.html",
+      "fields": [
+        "title",
+        "description",
+        "text"
+      ],
+      "local_fixture": true
+    }
+  },
+  "site_text": "Larkmoor Comfort Heating & Air is a family-owned HVAC contractor in Larkmoor, Ohio: furnace and air conditioner repair, replacement, the Comfort Club maintenance plan, and commercial maintenance agreements across the north and east Columbus suburbs. Larkmoor Comfort Heating & Air Family-owned heating and air conditioning (HVAC) contractor since 1994. Service, repair and installation for homes and commercial buildings in Larkmoor, Westerville, Gahanna, New Albany, Delaware and the north and east Columbus suburbs of Ohio. Call (614) 555-0142 service@larkmoorcomfort.example Heating and cooling service and repair Furnaces, heat pumps, central air conditioners, ductless mini-splits, humidifiers and thermostats. Our licensed technicians repair all major brands. Same-day service when the schedule allows; after-hours emergency service through our answering service. System replacement When repair no longer makes sense, a Comfort Advisor visits your home, measures the house and gives you written options. Our install crews replace about 300 home systems a year. We are an authorized dealer for Aerovance heating and cooling equipment. Comfort Club maintenance plan Two tune-ups a year (spring cooling, fall heating), priority scheduling, no overtime charges and 15% off repairs. $189 per year. More than 600 neighbors are members. Commercial HVAC Preventive maintenance agreements, rooftop unit (RTU) service and replacement for offices, retail centers, churches, schools and property managers. Our commercial team maintains equipment for about 90 buildings in central Ohio. Request service Name Phone Address What is going on? Send request Requests sent through this form go to our office inbox. For no heat or no cooling, please call. About us Glen and Ruth Vossberg started Larkmoor Comfort in 1994 with one truck. Today about 35 people work here, including 14 service technicians and two install crews. Ohio HVAC contractor license on file. Hours: Monday to Friday 7:30 am to 5:00 pm; emergency service after hours. Follow us on Facebook . Larkmoor Comfort Heating & Air, Inc. | 2290 Fenwick Road, Larkmoor, OH | (614) 555-0142 Fictional company created for an academic test case. Family-owned HVAC service and installation contractor, about 35 people, Columbus suburbs; the office runs on paper tickets, a spreadsheet and a whiteboard.",
+  "website_assessment": {
+    "rating": 8.2,
+    "partial": false,
+    "social_presence": {
+      "found_on_pages_read": {
+        "facebook": [
+          "https://www.facebook.com/larkmoorcomfort.example"
+        ]
+      },
+      "not_found_on_pages_read": [
+        "linkedin",
+        "instagram",
+        "tiktok",
+        "youtube",
+        "x_twitter"
+      ],
+      "owner_pasted_linkedin": false,
+      "basis": "code: links on the page read, plus text the owner pasted; nothing was looked up elsewhere"
+    },
+    "sub_ratings": [
+      {
+        "name": "Clear offer",
+        "score": 9,
+        "reason": "The page explicitly states the business name, service types, target locations, and customer segments (homeowners and commercial property managers) within the first few lines.",
+        "basis": "model"
+      },
+      {
+        "name": "Call to action",
+        "score": 9,
+        "reason": "The page provides a direct phone number, an email address, and a prominent 'Request service' form with clear instructions to call for emergencies.",
+        "basis": "model"
+      },
+      {
+        "name": "Trust signals",
+        "score": 8,
+        "reason": "The text provides substantial credibility markers including a 1994 founding date, an on-file state license, specific employee and project counts, and a named equipment partnership.",
+        "basis": "model"
+      },
+      {
+        "name": "Easy to reach",
+        "score": 10,
+        "reason": "found phone link, email link, form",
+        "basis": "code"
+      },
+      {
+        "name": "Mobile-ready",
+        "score": 9,
+        "reason": "has a mobile viewport setting",
+        "basis": "code"
+      },
+      {
+        "name": "Page basics",
+        "score": 7,
+        "reason": "not served over https",
+        "basis": "code"
+      },
+      {
+        "name": "AI assistant",
+        "score": 3,
+        "reason": "No AI chatbot or chat widget was found on the pages read.",
+        "basis": "code"
+      }
+    ],
+    "chatbot": {
+      "status": "not_found",
+      "vendors": [],
+      "message": "No AI chatbot or chat widget was found on the pages read."
+    },
+    "starter_prompts": [
+      "Schedule a Comfort Club",
+      "Request Emergency Service",
+      "Get a System Quote"
+    ],
+    "linkedin_used": false,
+    "caveat": "Based on the text and source of the pages read. It cannot judge visual design, speed or pages it did not load.",
+    "note": ""
+  },
+  "model_calls": 2,
+  "call_log": [
+    {
+      "ts": "2026-11-18T20:28:39+00:00",
+      "agent": "discovery_profile",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 31.905,
+      "error": null,
+      "stub": false,
+      "input_tokens": 714,
+      "output_tokens": 1364
+    },
+    {
+      "ts": "2026-11-18T20:29:04+00:00",
+      "agent": "discovery_website",
+      "model": "qwen3.6-35b-a3b-mlx",
+      "seconds": 25.08,
+      "error": null,
+      "stub": false,
+      "input_tokens": 797,
+      "output_tokens": 2044
+    }
+  ],
+  "trace": [
+    "discovery_profile: website guess -> HVAC contracting and repair (high) | website rating 8.2/10, chatbot: not_found"
+  ],
+  "flags": []
+}

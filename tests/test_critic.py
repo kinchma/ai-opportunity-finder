@@ -156,3 +156,18 @@ def test_abbreviated_roadmap_id_matches_when_unambiguous(scripted):
     out = critic(state(both))
     assert out["roadmaps"][0]["rubric"] and out["roadmaps"][1]["rubric"] is None
     assert "1 unknown id" in out["trace"][0]
+
+
+def test_deep_review_turns_a_mild_objection_into_a_revision_request(scripted):
+    """Default: an objection only becomes a finding when a rubric score is 2 or less. With the case's
+    deep_review setting on, any named weakest item with an objection asks the Strategist to revise."""
+    mild = {"critic": {"reviews": [review("highest_value", 4, 4, 4, objection="Warranty triage is heavy.",
+                                          weakest="warranty triage")]}}
+    scripted(mild)
+    plain = critic(state(TWO))
+    h = next(r for r in plain["roadmaps"] if r["id"] == "highest_value")
+    assert "weakest_item" not in codes(h["findings"])
+    scripted(mild)
+    deep = critic({**state(TWO), "company_input": {**state(TWO).get("company_input", {}), "deep_review": True}})
+    h = next(r for r in deep["roadmaps"] if r["id"] == "highest_value")
+    assert "weakest_item" in codes(h["findings"])
